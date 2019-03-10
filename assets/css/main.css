@@ -1,0 +1,126 @@
+.press{
+    padding-bottom: 0px;
+}
+
+.promo .social .line {
+    margin: 5px;
+}
+
+.footer{
+    height: auto;
+}
+
+.tab-content{
+    padding-top: 20px;
+}
+
+.dashboard-cover{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.dashboard-cover .title{
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+
+.dashboard-cover .sub-section .heading {
+    text-align: center;
+    background: #444;
+    color: #fff;
+    font-size: 22px;
+    padding: 10px 0;
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -webkit-border-top-left-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -moz-border-radius-bottomright: 0;
+    -moz-border-radius-bottomleft: 0;
+    -moz-border-radius-topleft: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.dashboard-cover .sub-section .content{
+    background: #f5f5f5;
+    padding: 30px;
+
+}
+
+.dashboard-cover .sub-section .content .feature-list{
+    font-size: 20px;
+    color: #414141;
+    margin-bottom: 9px;
+
+}
+
+.dashboard-cover .sub-section .content .feature-list > li > h4 {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+    padding-left: 9px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.dashboard-cover .sub-section .content .feature-list > li:hover {
+    background: #e4ffde;
+    box-shadow: -4px 0 0 0 #44a94b;
+}
+
+.dashboard-active {
+    background: #e4ffde;
+    box-shadow: -4px 0 0 0 #44a94b;
+}
+
+.dashboard-active > a {
+    color: #000000;
+}
+
+.content .intro {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #252525;
+    margin-bottom: 30px;
+}
+
+.right-content{
+    font-size: 13px;
+    font-weight: normal;
+}
+.right-content .btn{
+    height: 36px;
+    font-weight: normal;
+    font-size: 13px;
+}
+.content .card-title {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.sort-panel{
+    background: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sort-panel .title{
+    font-size: 16px;
+}
+
+.sort-panel .form-control{
+    height: 35px;
+}
