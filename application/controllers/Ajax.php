@@ -621,6 +621,7 @@ class Ajax extends CI_Controller {
                             }
 
                         } catch (Exception $e) {
+                            // No exception
                         }
 
                     }else{
