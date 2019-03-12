@@ -319,27 +319,28 @@ function network_code( $network ){
     }
 }
 
-// Package code
-//function package_code( $plan_name){
+// DSTV Package code for vtpass
+// We find our plan name and return an array with vtpass plan - amount
+//function package_code_amount( $plan_name){
 //    $plan_name = trim( strtolower( $plan_name ));
 //    switch ($plan_name) {
 //        case 'dstv access':
 //        case 'gotv lite':
 //        case 'startimes nova':
-//            return 01;
+//            return array('variation_code' => 'dstv1', 'variation_amount' => 1800);
 //            break;
 //        case 'dstv family':
 //        case 'gotv value':
 //        case 'startimes basic':
-//            return 02;
+//            return array('variation_code' => 'dstv2', 'variation_amount' => 3600);
 //            break;
-//        case 'dstv compact':
+//        case 'dstv premium':
 //        case 'gotv plus':
 //        case 'startimes smart':
-//            return 03;
+//            return array('variation_code' => 'dstv3', 'variation_amount' => 13980);
 //            break;
-//        case 'dstv compact plus':
-//            return 04;
+//        case 'dstv german only':
+//            return array('variation_code' => 'dstv4', 'variation_amount' => 3940);
 //            break;
 //        case 'dstv premium':
 //            return 05;
@@ -348,7 +349,8 @@ function network_code( $network ){
 //        case 'dstv premium + hd/exra view':
 //            return 06;
 //            break;
-//        case
+//        default:
+//            break;
 //
 //    }
 //}

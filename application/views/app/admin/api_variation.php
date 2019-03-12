@@ -22,30 +22,48 @@
 
                             <div class="col-sm-12 sort-panel">
                                 <?php $this->load->view('msg_view');?>
-                                <form method="POST" action="<?= base_url('admin/plans/')?>">
+                                <form method="POST" action="<?= base_url('admin/api_variation/')?>">
                                     <div class="row">
+                                        <p class="text-center text-info">Here you can attach TV cable plan with their respective API distributor variation name and amount</p>
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <label class="label" for="Service Type">Service A Service</label>
-                                                <select class="form-control" name="service" id="service" required>
-                                                    <option value="">-- Select a service --</option>
-                                                    <?php foreach( $services as $service ) : ?>
-                                                        <option value="<?= $service->id; ?>"><?= ucwords($service->title. ' - ' . $service->discount_type);?></option>
+                                                <label class="label" for="Service Type">Service A Plan</label>
+                                                <select class="form-control" name="plan_id" id="service" required>
+                                                    <option value="">-- Select a plan --</option>
+                                                    <?php foreach( $plans as $plan ) : ?>
+                                                        <option value="<?= $plan->id; ?>"><?= ucwords($plan->name);?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <label class="label" for="Starting From">Plan - Amount</label>
-                                                <input type="text" class="form-control" required name="plans" required placeholder="Eg : 1GB - 3000, 2GB - 2500 e.t.c.">
+                                                <label class="label" for="Starting From">Variation Name / code</label>
+                                                <input type="text" class="form-control" name="variation_name" required placeholder="Eg : dstv1">
                                             </div>
-                                            <span class="text-danger"><b>The format should be plan - amount separated with comma(,) if many</b></span>
+                                            <span class="text-danger"><b>The variation name / code should be exact format as stated from the API source website. EG: vtpass.com use dstv1 as a variation name for Dstv Family</b></span>
+                                        </div>
+
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="label" for="Starting From">Variation Amount</label>
+                                                <input type="text" class="form-control number" name="variation_amount" required placeholder="Eg : 1300">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="label" for="Starting From">API Source</label>
+                                                <select name="api_source" class="form-control" required>
+                                                    <option value="" selected>--Select--</option>
+                                                    <option value="vtpass">Vtpass.com</option>
+                                                    <option value="clubkonnect">Clubconnect.com</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
-                                    <br />
                                     <div class="col-sm-12 col-md-4 offset-4">
-                                        <button class="btn btn-cta btn-cta-primary btn-sm" type="submit" >Create</button>
+                                        <button class="btn btn-cta btn-cta-primary btn-sm" type="submit" >Submit</button>
                                     </div>
                                 </form>
                             </div>
@@ -55,32 +73,22 @@
                                     <thead>
                                     <tr>
                                         <th>S/N</th>
-                                        <th>Service Name</th>
-                                        <th>Plan Starts From</th>
-                                        <th>Amount From</th>
+                                        <th>Plan Name</th>
+                                        <th>API source</th>
+                                        <th>Variation Name / Amount</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?php $x = 1; foreach( $plans as $plan) : ?>
-                                    <tr id="<?= $plan->id; ?>">
+                                    <?php $x = 1; foreach( $variations as $var) : ?>
+                                    <tr id="<?= $var->id; ?>">
                                         <td><?= $x; ?></td>
-                                        <td class="text-center"><?= ucwords($plan->service_name) . ' -' .$plan->discount_type; ?></td>
-                                        <td class="text-center"><?= $plan->name; ?></td>
-                                        <td class="text-center"><?= ngn($plan->amount) ?></td>
+                                        <td class="text-center"><?= ucwords($var->plan_name); ?></td>
+                                        <td class="text-center"><?= $var->api_source; ?></td>
+                                        <td class="text-center"><?= $var->variation_name .'/'. ngn($var->variation_amount) ?></td>
                                         <td>
-                                            <?php if(!$id_set) : ?>
-                                            <button type="button"
-                                                    data-id="<?= $plan->sid; ?>" data-name="<?= $plan->service_name . ' - ', $plan->discount_type; ?>" class="btn btn-outline-success btn-sm open-plan-modal" data-toggle="modal" data-target="#planModal">
-                                                See All
-                                            </button>
-                                            <?php else : ?>
-                                                <button type="button"
-                                                        data-id="<?= $plan->id; ?>" data-name="<?= $plan->name; ?>" data-amount="<?= $plan->amount;?>" class="btn btn-outline-success btn-sm open-plan-update" data-toggle="modal" data-target="#editModal">
-                                                    Edit Plan
-                                                </button>
-                                                <button class="btn btn-danger btn-sm delete-plan" data-id="<?= $plan->id ; ?>">Delete</button>
-                                            <?php endif; ?>
+                                            <button class="btn btn-info btn-sm" data-id="<?= $var->id ; ?>">Edit</button>
+                                            <button class="btn btn-danger btn-sm delete-plan" data-id="<?= $var->id ; ?>">Delete</button>
                                         </td>
                                     </tr>
                                     <?php $x++; endforeach;?>

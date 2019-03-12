@@ -60,6 +60,14 @@ class Admin extends CI_Controller {
 
 	public function services(){
         if( $this->input->post() ){
+            $this->form_validation->set_rules('title', 'Service Name','trim|required|xss_clean|is_unique[services.title]', array('is_unique' => 'This %s has already been registered!'));
+            $this->form_validation->set_rules('network_name', 'Network','trim|required|xss_clean');
+
+            if( $this->input->form_validation->run() == FALSE ){
+                $this->session->set_flashdata('error_msg', validation_errors());
+                $_SERVER['HTTP_REFERER'];
+            }
+
             $slug = urlify( $this->input->post('title') );
             $array = array(
                 'title' => $this->input->post('title'),
@@ -71,6 +79,8 @@ class Admin extends CI_Controller {
                 'availability' => $this->input->post('availability'),
                 'network_name' => $this->input->post('network_name')
             );
+
+
             $array['slug'] = $this->site->check_slug( $slug );
 
             if( is_numeric($this->site->insert_data('services', $array)) ){
@@ -177,7 +187,71 @@ class Admin extends CI_Controller {
             $page_data['page'] = 'plans';
             $page_data['services'] = $this->site->get_result('services', 'id, title, discount_type');
             $page_data['plans'] = $this->site->run_sql($query)->result();
+//            var_dump( $page_data['plans']);
             $this->load->view('app/admin/plans', $page_data);
+        }
+    }
+
+
+    /*
+     * API Variation And Plan
+     * */
+
+    public function api_variation(){
+        if( $this->input->post()){
+
+            $this->form_validation->set_rules('variation_name', 'Variation Name','trim|required|xss_clean');
+            $this->form_validation->set_rules('variation_amount', 'Variation Amount','trim|required|xss_clean');
+            $this->form_validation->set_rules('api_source', 'Variation Source','trim|required|xss_clean');
+            $this->form_validation->set_rules('plan_id', 'Plan','trim|required|xss_clean');
+
+
+            if( $this->form_validation->run() == FALSE ){
+                $this->session->set_flashdata('error_msg', validation_errors());
+                redirect( $_SERVER['HTTP_REFERER']);
+            }
+
+            // pile up d array
+            $plan_id = $this->input->post('plan_id');
+            $api_source = $this->input->post('api_source');
+
+            $check = $this->site->run_sql("SELECT id FROM api_variation WHERE plan_id = {$plan_id} AND api_source = '{$api_source}'")->num_rows();
+            if( $check > 0 ){
+                $this->session->set_flashdata('error_msg', "Heads up! This plan with exact api source has been created before");
+                redirect( $_SERVER['HTTP_REFERER']);
+            }
+
+            $insert_array = array(
+                'plan_id' => $plan_id,
+                'variation_name' => $this->input->post('variation_name'),
+                'variation_amount' => $this->input->post('variation_amount'),
+                'api_source' => $api_source,
+            );
+
+
+
+            if( $this->site->insert_data('api_variation', $insert_array) ){
+                $this->session->set_flashdata('success_msg', 'Variation details added successfully');
+
+            }else{
+                $this->session->set_flashdata('error_msg', 'There was an error inserting that variation detail');
+            }
+            redirect( $_SERVER['HTTP_REFERER']);
+
+        }else{
+            $query = "SELECT p.*,s.title service_name FROM plans p LEFT JOIN services s ON(s.id = p.sid) WHERE s.product_id IN (3,4,5) ORDER BY p.id";
+//            $id = $this->input->get('id', true);
+//            $id = cleanit($id);
+//            $page_data['id_set'] = false;
+//            if( $id ) {
+//                $query = "SELECT p.*,s.title service_name, s.discount_type FROM plans p LEFT JOIN services s ON(s.id = p.sid) WHERE p.sid = {$id}";
+//                $page_data['id_set'] = true;
+//            }
+
+            $page_data['page'] = 'api_variation';
+            $page_data['plans'] = $this->site->run_sql($query)->result();
+            $page_data['variations'] = $this->site->run_sql("SELECT v.*, p.name plan_name FROM api_variation v LEFT JOIN plans p ON (p.id = v.plan_id)")->result();
+            $this->load->view('app/admin/api_variation', $page_data);
         }
     }
 }

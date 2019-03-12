@@ -303,6 +303,7 @@ class Ajax extends CI_Controller {
         // LETS PROCESS
 
         $this->form_validation->set_rules('amount', 'Amount','trim|required|xss_clean');
+        $this->form_validation->set_rules('network_name', 'Network','trim|required|xss_clean');
         $this->form_validation->set_rules('recipents', 'Recipents NUmber','trim|required|xss_clean');
         if(  $this->form_validation->run() == FALSE ){
             $response['message'] = validation_errors();
@@ -545,6 +546,7 @@ class Ajax extends CI_Controller {
             $this->return_response( $response );
         }
 
+
         $product_id = $this->input->post('product_id', true);
         $network_id = $this->input->post('network', true);
         $plan_id = $this->input->post('plan_id', true);
@@ -558,20 +560,10 @@ class Ajax extends CI_Controller {
 
         // verify...
         $plan_detail = $this->site->run_sql("SELECT name, amount FROM plans WHERE id = {$plan_id}")->row();
-//        $response['message'] = $plan_detail->name;
-//        $this->return_response( $response );
 
-        if( $plan_detail->amount > $wallet ){
-            $response['message'] = "Oops! Sorry you don't have sufficient fund in your wallet to process the order.";
-            $this->return_response( $response );
-        }
+        $variation_detail = $this->site->run_sql("SELECT variation_name, variation_amount, api_source FROM api_variation WHERE plan_id = {$plan_id}")->row();
 
-
-        // Call API
-
-        // if API return  == success
-
-        $description = ucwords( $network_name) . " subscription plan for {$plan_detail->name} for {$plan_detail->amount}.";
+        $description = ucwords( $network_name) . " subscription plan for {$plan_detail->name} at N{$plan_detail->amount}.";
         $transaction_id = $this->site->generate_code('transactions', 'trans_id');
         $insert_data = array(
             'amount'        => $plan_detail->amount,
@@ -581,24 +573,84 @@ class Ajax extends CI_Controller {
             'payment_method' => 2,
             'date_initiated'    => get_now(),
             'user_id'        => $user_id,
-            'status'        => 'success'
+            'status'        => 'pending'
         );
-        if( $this->site->set_field('users', 'wallet', "wallet-{$plan_detail->amount}", "id={$user_id}") ){
-            $this->site->insert_data('transactions', $insert_data);
-            $response['status'] = 'success';
-            $response['message'] = "Thank you for subscribing your {$network_name} with us. You will be credited in less than 2 min.";
-            $this->return_response( $response );
+        // verify the IUC number
+//        $info = array('iuc' => $smart_card_number, 'network' => $network_name);
+//        $info_response = $this->verify_iuc_number( $info );
+//        if( $info_response['message'] == 'invalid_smartcardno' ){
+//            $response['message'] = "The smart card number is invalid";
+//            $this->return_response( $response );
+//        }
+        if( $variation_detail ){
+            switch ( $variation_detail->api_source) {
+                case 'vtpass':
+                    // we're dealing with vtpass
+                    if( $this->site->insert_data('transactions', $insert_data)){
+                        $data = array(
+                            'serviceID' => $network_name,
+//                        'billersCode' => $smart_card_number,
+                            'billersCode' => "1111111111",
+                            'variation_code' => $variation_detail->variation_name,
+                            'amount'    => (int)$variation_detail->variation_amount,
+//                        'phone'     => (int) $registered_number,
+                            'phone'     => "08123456789",
+                            'request_id'    => $transaction_id
+                        );
+
+                        try {
+                            // call the API
+
+                            $return = $this->vtpass_curl( $data );
+//                        $this->return_response( $response );
+                            if( $return['code'] == "000"){
+                                $insert_data['orderid'] = $return['content'][0]['requestId'];
+                                $insert_data['status'] = 'success';
+                                $insert_data['payment_status'] = $return['response_description'];
+                                $this->site->set_field('users', 'wallet', "wallet-{$plan_detail->amount}", "id={$user_id}");
+                                $response['status'] = 'success';
+                                $response['message'] = "Thank you for subscribing your {$network_name} cable with us. Your transaction code is <b>{$transaction_id}</b>, more details on your dashboard.";
+                                $this->return_response( $response );
+                            }else{
+                                $insert_data['status'] = 'fail';
+                                $insert_data['orderid'] = $return['content'][0]['requestId'];
+                                $insert_data['payment_status'] = $return['response_description'];
+                                $response['status'] = 'error';
+                                $response['message'] = "There was an error subscribing your  {$network_name}, please try again. Contact us if debited..";
+                                $this->return_response( $response );
+                            }
+
+                        } catch (Exception $e) {
+                        }
+
+                    }else{
+                        $response['message'] = "There was an error processing that order.";
+                        $this->return_response( $response );
+                    }
+                    break;
+
+                default:
+                    break;
+            }
         }else{
-            $response['message'] = "There was an error processing that order.";
+            $response['message'] = "Oops! We can't process your order now, contact us via WhatsApp (" . lang['contact_no']. ")";
             $this->return_response( $response );
         }
+
+
+        if( $plan_detail->amount > $wallet ){
+            $response['message'] = "Oops! Sorry you don't have sufficient fund in your wallet to process the order.";
+            $this->return_response( $response );
+        }
+
     }
 
 
     // Verify Smart Card Number
-    function verify_iuc_number(){
-        $iuc = $this->input->post('iuc', true);
-        $network = $this->input->post('network', true);
+    function verify_iuc_number( $info = array() ){
+
+        $iuc = ( !empty($info) ) ? $info['iuc'] : $this->input->post('iuc', true);
+        $network = ( !empty($info) ) ? $info['network'] : $this->input->post('network', true);
         if( $iuc ){
             $response['status'] = 'success';
             $post_url = "https://www.nellobytesystems.com/APIVerifyCableTVV1.0.asp";
@@ -615,7 +667,6 @@ class Ajax extends CI_Controller {
             $return = curl_get_result( $url );
             $return = json_decode( $return );
             $response['message'] = strtolower( $return->customer_name );
-//            $response['message'] = $cable_code;
             $this->return_response( $response );
         }
     }
@@ -685,6 +736,7 @@ class Ajax extends CI_Controller {
 
 //https://www.nellobytesystems.com/APIBuyCableTV.asp?UserID=your_userid&APIKey=your_apikey&CableTV=cabletv_code&Package=pacakge_code&SmartCardNo=recipient_smartcardno&CallBackURL=callback_url
 
+    // For club konnect... deprecated
     public function callCableAPI( $data ){
         $cable_code = network_code( $data['network']) ;
 //        $network_code = ;
@@ -699,5 +751,24 @@ class Ajax extends CI_Controller {
             )
         );
         return $getResponse;
+    }
+
+    function vtpass_curl( $data ){
+        $curl       = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => VTPASS_HOST,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_USERPWD => VTPASS_USERNAME.":" .VTPASS_PASSWORD,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $data,
+        ));
+        $response = curl_exec($curl);
+        $response = json_decode($response, TRUE);
+        curl_close($curl);
+        return $response;
     }
 }

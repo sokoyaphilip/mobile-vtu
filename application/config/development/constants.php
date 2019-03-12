@@ -102,3 +102,10 @@ defined('CK_USER_ID')      OR define('CK_USER_ID', "CK10073078"); //Clubkonnect 
 defined('CK_KEY')      OR define('CK_KEY', "57E90LT10E07S132AUM7JV10B6HT4Y4IVDCT50U8L8TQP3R458S14G9AWO679XO3"); //Clubkonnect User Key
 defined('CK_AIRTIME_URL')      OR define('CK_AIRTIME_URL', "https://www.nellobytesystems.com/APIBuyAirTime.asp"); //Clubkonnect Airtime
 
+
+// VT PASS
+defined('VTPASS_HOST') OR define('VTPASS_HOST', "http://sandbox.vtpass.com/api/payfix");
+defined('VTPASS_USERNAME') OR define('VTPASS_USERNAME', "sandbox@vtpass.com");
+defined('VTPASS_PASSWORD') OR define('VTPASS_PASSWORD', "sandbox");
+
+

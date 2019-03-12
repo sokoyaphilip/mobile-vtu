@@ -17,8 +17,11 @@
                 <h4 class="<?php if( $page =='plans' ) echo 'dashboard-active'; ?>"><a href="<?= base_url('admin/plans/'); ?>">Plans</a></h4>
             </li>
             <li>
+                <h4 class="<?php if( $page =='api_variation' ) echo 'dashboard-active'; ?>"><a href="<?= base_url('admin/api_variation/'); ?>">API Variation</a></h4>
+            </li>
+            <li>
                 <h4 class="<?php if( $page =='wallet_funding' ) echo 'dashboard-active'; ?>">
-                    <a href="<?= base_url('admin/wallet/'); ?>">Wallet Funding <?= ($wallet_count > 0 ) ? '( <span class="text-right text-danger font-weight-bold">'.$wallet_count.'</span> )' : '';?></a>
+                    <a href="<?= base_url('admin/wallet/'); ?>">Wallet Funding Approval <?= ($wallet_count > 0 ) ? '( <span class="text-right text-danger font-weight-bold">'.$wallet_count.'</span> )' : '';?></a>
                 </h4>
             </li>
             <li>

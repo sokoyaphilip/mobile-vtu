@@ -288,7 +288,7 @@ $(document).ready(function() {
         let discount = $('#airtime_network').find(':selected').data('discount');
 
         if( amount === '' || amount < 100 ){
-            sweet_alert('Error', 'Sorry amount can not be less than N1009s9s9s9s', 'error');
+            sweet_alert('Error', 'Sorry amount can not be less than N100', 'error');
             _btn.prop('disabled', false);
             return false;
         }
@@ -302,7 +302,6 @@ $(document).ready(function() {
             _btn.prop('disabled', false);
             return false;
         }
-
         // payment method
 
         $.ajax({
@@ -368,7 +367,7 @@ $(document).ready(function() {
             sweet_alert('Error', 'Registered number can not be empty', 'error');
             return false;
         }
-
+        //7028877148
         $.ajax({
             url : base_url + 'ajax/tv_cable/',
             method: "POST",
@@ -381,9 +380,13 @@ $(document).ready(function() {
                 if( response.status === 'success' ){
                     sweet_alert('Success', response.message, 'success', false);
                 }else{
+                    console.log(response.message);
                     sweet_alert('Error', response.message, 'error', false);
-                    $(this).prop('disabled');
+                    $(this).prop('disabled', false);
                 }
+                $('.swal-button--confirm').on('click', function () {
+                    window.location = window.location.href;
+                });
             }
         });
 
@@ -635,6 +638,7 @@ $(document).ready(function() {
                         $('#smart-card-info').text('Invalid Smart card number.')
                     }else{
                         $('#smart-card-info').text(`Customer Name: ${response['message']}`);
+                        $('#registered_name').val(response['message']);
                         $('.tv-cable').prop('disabled', false);
                     }
                 }
