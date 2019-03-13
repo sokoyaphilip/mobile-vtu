@@ -35,11 +35,11 @@ class Dashboard extends CI_Controller {
                 $end = date('Y-m-d', strtotime($end));
             }
 
-            $query = "SELECT * FROM transactions WHERE date_initiated BETWEEN '{$start}' AND '{$end}' AND user_id ={$id}";
+            $query = "SELECT * FROM transactions WHERE date_initiated BETWEEN '{$start}' AND '{$end}' AND user_id ={$id} ";
 
             if( $this->input->post('transaction_type') ){
                 $transaction = $this->input->post('transaction_type');
-                $query .= " AND product_id = {$transaction} ";
+                $query .= " AND product_id = {$transaction} ORDER BY id DESC";
             }
         }
 

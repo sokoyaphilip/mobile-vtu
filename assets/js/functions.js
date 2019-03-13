@@ -445,13 +445,17 @@ $(document).ready(function() {
                 if( response.status === 'success' ){
                     sweet_alert('Success', response.message, 'success', false);
                 }else{
-                    console.log(response.message);
+
                     sweet_alert('Error', response.message, 'error', false);
                     $(this).prop('disabled', false);
                 }
                 $('.swal-button--confirm').on('click', function () {
                     window.location = window.location.href;
                 });
+            },
+            error : function (response) {
+                console.log(response.message);
+                sweet_alert('Error', "Sorry there was an error with that action. Please contact us if error persist.");
             }
         });
 

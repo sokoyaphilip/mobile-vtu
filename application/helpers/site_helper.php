@@ -217,18 +217,18 @@ if (!function_exists('statusLabel')) {
     function statusLabel($status){
         switch ($status) {
             case 'pending':
-                return '<span class="label label-warning"><b>' . ucfirst( $status ). '</b></span>';
+                return '<div class="alert alert-warning">' . ucfirst( $status ). '</b></div>';
                 break;
             case 'approved':
             case 'success':
-                return '<span class="label label-success"><b>' . ucfirst( $status ). '</b></span>';
+                return '<div class="alert alert-success">' . ucfirst( $status ). '</b></div>';
                 break;
             case 'returned':
             case 'cancelled':
-                return '<span class="label label-danger"><b>' . ucfirst( $status ). '</b></span>';
+                return '<div class="alert alert-danger">' . ucfirst( $status ). '</b></div>';
                 break;
             default:
-                return '<span class="label label-danger"><b>' . ucfirst( $status ). '</b></span>';
+                return '<div class="alert alert-danger">' . ucfirst( $status ). '</b></div>';
                 break;
         }
     }

@@ -595,25 +595,26 @@ class Ajax extends CI_Controller {
 
                         try {
                             // call the API
-
                             $return = $this->vtpass_curl( $data );
-//                        $this->return_response( $response );
+                            $update_data = array();
                             if( $return['code'] == "000"){
-                                $insert_data['orderid'] = $return['content'][0]['requestId'];
-                                $insert_data['status'] = 'success';
-                                $insert_data['payment_status'] = $return['response_description'];
+                                $update_data['orderid'] = $return['content'][0]['requestId'];
+                                $update_data['status'] = 'success';
+                                $update_data['payment_status'] = $return['response_description'];
                                 $this->site->set_field('users', 'wallet', "wallet-{$plan_detail->amount}", "id={$user_id}");
                                 $response['status'] = 'success';
                                 $response['message'] = "Thank you for subscribing your {$network_name} cable with us. Your transaction code is <b>{$transaction_id}</b>, more details on your dashboard.";
-                                $this->return_response( $response );
+
                             }else{
-                                $insert_data['status'] = 'fail';
-                                $insert_data['orderid'] = $return['content'][0]['requestId'];
-                                $insert_data['payment_status'] = $return['response_description'];
+                                $update_data['status'] = 'fail';
+                                $update_data['orderid'] = $return['content'][0]['requestId'];
+                                $update_data['payment_status'] = $return['response_description'];
                                 $response['status'] = 'error';
                                 $response['message'] = "There was an error subscribing your  {$network_name}, please try again. Contact us if debited..";
-                                $this->return_response( $response );
+
                             }
+                            $this->site->update('transactions',  $update_data, array('trans_id' => $transaction_id));
+                            $this->return_response( $response );
 
                         } catch (Exception $e) {
                             // No exception
@@ -673,7 +674,12 @@ class Ajax extends CI_Controller {
 
         $variation_detail = $this->site->run_sql("SELECT variation_name, api_source FROM api_variation WHERE plan_id = {$plan_id} LIMIT 1")->row();
 
-        $description = "N{$amount} paid for {$plan_detail->name} " . ucwords( $network_name) . " bill.";
+
+        // Do they have discount
+        if( $discount > 1 ){
+            $amount = $amount - ( $discount/100 * $amount );
+        }
+        $description = "N{$amount} payment  for {$plan_detail->name} " . ucwords( $network_name) . " bill.";
         $transaction_id = $this->site->generate_code('transactions', 'trans_id');
         $insert_data = array(
             'amount'        => $amount,
@@ -690,11 +696,13 @@ class Ajax extends CI_Controller {
             switch ( $variation_detail->api_source) {
                 case 'vtpass':
                     // we're dealing with vtpass
+//                    $response['message']=   $variation_detail->variation_name;
+//                    $this->return_response( $response );
                     if( $this->site->insert_data('transactions', $insert_data)){
                         $data = array(
-                            'serviceID' => $network_name.'-bill',
-//                        'billersCode' => $smart_card_number,
-                            'variation_code' => $variation_detail->variation_name,
+                            'serviceID' => trim($variation_detail->variation_name),
+//                        'billersCode' => $meter_number,
+//                            'variation_code' => $variation_detail->variation_name,
                             'billersCode' => "1111111111",
                             'amount'    => (int)$amount,
 //                        'phone'     => (int) $registered_number,
@@ -704,26 +712,26 @@ class Ajax extends CI_Controller {
 
                         try {
                             // call the API
-
                             $return = $this->vtpass_curl( $data );
-                            $response['message']= $return;
-                            $this->return_response( $response );
+                            $update_data = array();
                             if( $return['code'] == "000"){
-                                $insert_data['orderid'] = $return['content'][0]['requestId'];
-                                $insert_data['status'] = 'success';
-                                $insert_data['payment_status'] = $return['response_description'];
-                                $this->site->set_field('users', 'wallet', "wallet-{$plan_detail->amount}", "id={$user_id}");
+                                $update_data['orderid'] = $return['content'][0]['requestId'];
+                                $update_data['status'] = 'success';
+                                $update_data['payment_status'] = $return['response_description'];
+                                $this->site->set_field('users', 'wallet', "wallet-{$amount}", "id={$user_id}");
                                 $response['status'] = 'success';
-                                $response['message'] = "Thank you for subscribing your {$network_name} cable with us. Your transaction code is <b>{$transaction_id}</b>, more details on your dashboard.";
-                                $this->return_response( $response );
+                                $response['message'] = "Thank you for paying your {$plan_detail->name} bill with us. Your transaction code is <b>{$transaction_id}</b>, more details on your dashboard.";
                             }else{
-                                $insert_data['status'] = 'fail';
-                                $insert_data['orderid'] = $return['content'][0]['requestId'];
-                                $insert_data['payment_status'] = $return['response_description'];
+                                $update_data['status'] = 'fail';
+                                $update_data['orderid'] = $return['content'][0]['requestId'];
+                                $update_data['payment_status'] = $return['response_description'];
                                 $response['status'] = 'error';
-                                $response['message'] = "There was an error subscribing your  {$network_name}, please try again. Contact us if debited..";
+                                $response['message'] = "There was an error subscribing your {$plan_detail->name}, please try again. Contact us if debited..";
                                 $this->return_response( $response );
                             }
+
+                            $this->site->update('transactions',  $update_data, array('trans_id' => $transaction_id));
+                            $this->return_response( $response );
 
                         } catch (Exception $e) {
                             // No exception
