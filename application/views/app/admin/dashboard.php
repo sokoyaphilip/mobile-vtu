@@ -107,7 +107,7 @@
                                     <?php foreach( $transactions as $transaction ): ?>
                                         <tr>
                                             <td><?= $transaction->trans_id; ?></td>
-                                            <td><?= $transaction->user_id; ?></td>
+                                            <td><?= $transaction->phone; ?></td>
                                             <td><?= neatDate( $transaction->date_initiated); ?></td>
                                             <td><?= paymentMethod($transaction->payment_method); ?></td>
                                             <td><?= payment_id_replacer($transaction->description); ?></td>

@@ -15,7 +15,7 @@ class Admin extends CI_Controller {
         $page_data['page'] = 'home';
         $page_data['products'] = $this->site->get_result('products');
 
-        $query = "SELECT * FROM transactions ORDER BY id DESC";
+        $query = "SELECT t.*, u.phone FROM transactions t LEFT JOIN users u ON(u.id = t.user_id) ORDER BY id DESC";
         $start = $end = $transaction ='';
         if( $this->input->post() ){
             // start empty
@@ -32,17 +32,16 @@ class Admin extends CI_Controller {
                 $end = date('Y-m-d', strtotime($end));
             }
 
-            $query = "SELECT * FROM transactions WHERE date_initiated BETWEEN '{$start}' AND '{$end}'";
+            $query = "SELECT t.*, u.phone FROM transactions t LEFT JOIN users u ON(u.uid = t.user_id) WHERE date_initiated BETWEEN '{$start}' AND '{$end}'";
 
             if( $this->input->post('transaction_type') ){
                 $transaction = $this->input->post('transaction_type');
-                $query .= " AND product_id = {$transaction} ";
+                $query .= " AND product_id = {$transaction} ORDER BY id DESC";
             }
         }
         $today = date('d', strtotime(get_now()));
 
         $page_data['today'] = $this->site->run_sql("SELECT SUM(amount) amount FROM transactions WHERE DAY(date_initiated) = '$today' AND (status = 'success' OR status = 'approved') ")->row()->amount;
-//        die( $today );
 
         $page_data['week'] = $this->site->run_sql("SELECT SUM(amount) amount FROM transactions 
         WHERE WEEK(date_initiated) = WEEK(CURRENT_DATE()) AND status = 'success' ")->row()->amount;
