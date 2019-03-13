@@ -618,6 +618,9 @@ class Ajax extends CI_Controller {
 
                         } catch (Exception $e) {
                             // No exception
+                            $update_data['status'] = 'fail';;
+                            $update_data['payment_status'] = "Transaction failed.";
+                            $this->site->update('transactions',  $update_data, array('trans_id' => $transaction_id));
                         }
 
                     }else{
