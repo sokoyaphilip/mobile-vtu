@@ -16,7 +16,7 @@
                     <?php $this->load->view('resources/left_menu'); ?>
 
                     <div class="col-md-8 sub-section">
-                        <h3 class="heading">Plan</h3>
+                        <h3 class="heading">API Variation</h3>
 
                         <div class="content right-content">
 
@@ -47,7 +47,7 @@
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label class="label" for="Starting From">Variation Amount</label>
-                                                <input type="text" class="form-control number" name="variation_amount" required placeholder="Eg : 1300">
+                                                <input type="text" class="form-control number" name="variation_amount" placeholder="Eg : 1300">
                                             </div>
                                         </div>
 

@@ -392,6 +392,71 @@ $(document).ready(function() {
 
     });
 
+
+    // TV cable purchase
+
+    $('.electricity-bill').on('click', function (e) {
+        e.preventDefault();
+        $(this).prop('disabled', true);
+
+        let _btn = $(this);
+        let product_id = $('#product_id').val();
+        let plan_id = $('#plan').val();
+        let amount = $('#amount').val();
+        let phone_number = $('#phone_number').val();
+        let meter_number = $('#meter_number').val();
+        let network_name = $('#plan').find(':selected').data('network-name');
+        let network = $('#plan').find(':selected').data('service-id');
+        let discount = $('#plan').find(':selected').data('service-discount');
+
+        if( amount === '') {
+            _btn.prop('disabled', false);
+            sweet_alert('Error', 'Amount can not be empty', 'error');
+            return false;
+        }
+
+        if( amount < 500 || amount > 200000) {
+            _btn.prop('disabled', false);
+            sweet_alert('Error', 'Amount can not be less than N500, or more than N200,000', 'error');
+            return false;
+        }
+
+        if( phone_number === '') {
+            _btn.prop('disabled', false);
+            sweet_alert('Error', 'Phone number can not be empty', 'error');
+            return false;
+        }
+
+        if( meter_number === '') {
+            _btn.prop('disabled', false);
+            sweet_alert('Error', 'Meter number can not be empty', 'error');
+            return false;
+        }
+        //7028877148
+        $.ajax({
+            url : base_url + 'ajax/electricity_bill/',
+            method: "POST",
+            data: {'product_id' : product_id,
+                'plan_id' : plan_id, 'amount' : amount, 'discount' : discount,
+                'meter_number' : meter_number,
+                'phone_number' : phone_number,
+                'network' : network, 'network_name' : network_name },
+            success : function(response){
+                if( response.status === 'success' ){
+                    sweet_alert('Success', response.message, 'success', false);
+                }else{
+                    console.log(response.message);
+                    sweet_alert('Error', response.message, 'error', false);
+                    $(this).prop('disabled', false);
+                }
+                $('.swal-button--confirm').on('click', function () {
+                    window.location = window.location.href;
+                });
+            }
+        });
+
+    });
+
     $('.transfer-now').on('click', function (e) {
         e.preventDefault();
         let _this = $(this);

@@ -61,9 +61,9 @@ class Admin extends CI_Controller {
 	public function services(){
         if( $this->input->post() ){
             $this->form_validation->set_rules('title', 'Service Name','trim|required|xss_clean|is_unique[services.title]', array('is_unique' => 'This %s has already been registered!'));
-            $this->form_validation->set_rules('network_name', 'Network','trim|required|xss_clean');
+//            $this->form_validation->set_rules('network_name', 'Network','trim|required|xss_clean');
 
-            if( $this->input->form_validation->run() == FALSE ){
+            if( $this->form_validation->run() == FALSE ){
                 $this->session->set_flashdata('error_msg', validation_errors());
                 $_SERVER['HTTP_REFERER'];
             }
@@ -159,9 +159,12 @@ class Admin extends CI_Controller {
                 if( $explode ) { // double check that admin didn't add extra comma (,)
                     $res['sid'] = $sid;
                     $res['name'] = trim(strtoupper($explode[0]));
-                    $res['amount'] = trim((int)$explode[1]);
-                    if( $discount > 0 ) {
-                        $res['amount'] = trim((int)$explode[1]) - ( $discount / 100 * trim((int)$explode[1]) );
+                    $res['amount'] = null;
+                    if( isset( $explode[1]) ) {
+                        $res['amount'] = $explode[1];
+                        if( $discount > 0 ) {
+                            $res['amount'] = trim((int)$explode[1]) - ( $discount / 100 * trim((int)$explode[1]) );
+                        }
                     }
                     array_push( $plans_array, $res );
                 }
@@ -201,7 +204,6 @@ class Admin extends CI_Controller {
         if( $this->input->post()){
 
             $this->form_validation->set_rules('variation_name', 'Variation Name','trim|required|xss_clean');
-            $this->form_validation->set_rules('variation_amount', 'Variation Amount','trim|required|xss_clean');
             $this->form_validation->set_rules('api_source', 'Variation Source','trim|required|xss_clean');
             $this->form_validation->set_rules('plan_id', 'Plan','trim|required|xss_clean');
 

@@ -25,9 +25,9 @@
                     <a href="<?= base_url('dashboard/subscription/'); ?>">TV subscription</a>
                 </h4>
             </li>
-<!--            <li>-->
-<!--                <h4 class="--><?php //if( $page =='electricity' ) echo 'dashboard-active'; ?><!--"><a href="--><?//= base_url('dashboard/electricity/'); ?><!--">Electricity Bills</a></h4>-->
-<!--            </li>-->
+            <li>
+                <h4 class="<?php if( $page =='electricity' ) echo 'dashboard-active'; ?>"><a href="<?= base_url('dashboard/electricity/'); ?>">Electricity Bills</a></h4>
+            </li>
             <li>
                 <h4 class="<?php if( $page =='wallet' ) echo 'dashboard-active'; ?>"><a href="<?= base_url('dashboard/wallet/'); ?>">My Wallet</a></h4>
             </li>

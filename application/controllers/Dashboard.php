@@ -80,7 +80,14 @@ class Dashboard extends CI_Controller {
 
     // electricity
     public function electricity(){
-
+        $id = $this->session->userdata('logged_id');
+        $page_data['page'] = 'electricity';
+        $page_data['user'] = $this->get_profile($id);
+        $page_data['plans'] = $this->site->run_sql("SELECT s.id service_id, network_name, discount, pl.id, pl.name FROM products p 
+        LEFT JOIN services s ON (p.id = s.product_id) 
+        JOIN plans pl ON (pl.sid = s.id)
+        WHERE p.slug ='electricity-bill' ")->result();
+        $this->load->view('app/users/electricity', $page_data);
     }
 
     // fund wallet

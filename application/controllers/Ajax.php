@@ -532,6 +532,7 @@ class Ajax extends CI_Controller {
         }
     }
 
+
     // TV cable
     public function tv_cable(){
         $response = array('status' => 'error');
@@ -575,13 +576,7 @@ class Ajax extends CI_Controller {
             'user_id'        => $user_id,
             'status'        => 'pending'
         );
-        // verify the IUC number
-//        $info = array('iuc' => $smart_card_number, 'network' => $network_name);
-//        $info_response = $this->verify_iuc_number( $info );
-//        if( $info_response['message'] == 'invalid_smartcardno' ){
-//            $response['message'] = "The smart card number is invalid";
-//            $this->return_response( $response );
-//        }
+
         if( $variation_detail ){
             switch ( $variation_detail->api_source) {
                 case 'vtpass':
@@ -603,6 +598,116 @@ class Ajax extends CI_Controller {
 
                             $return = $this->vtpass_curl( $data );
 //                        $this->return_response( $response );
+                            if( $return['code'] == "000"){
+                                $insert_data['orderid'] = $return['content'][0]['requestId'];
+                                $insert_data['status'] = 'success';
+                                $insert_data['payment_status'] = $return['response_description'];
+                                $this->site->set_field('users', 'wallet', "wallet-{$plan_detail->amount}", "id={$user_id}");
+                                $response['status'] = 'success';
+                                $response['message'] = "Thank you for subscribing your {$network_name} cable with us. Your transaction code is <b>{$transaction_id}</b>, more details on your dashboard.";
+                                $this->return_response( $response );
+                            }else{
+                                $insert_data['status'] = 'fail';
+                                $insert_data['orderid'] = $return['content'][0]['requestId'];
+                                $insert_data['payment_status'] = $return['response_description'];
+                                $response['status'] = 'error';
+                                $response['message'] = "There was an error subscribing your  {$network_name}, please try again. Contact us if debited..";
+                                $this->return_response( $response );
+                            }
+
+                        } catch (Exception $e) {
+                            // No exception
+                        }
+
+                    }else{
+                        $response['message'] = "There was an error processing that order.";
+                        $this->return_response( $response );
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+        }else{
+            $response['message'] = "Oops! We can't process your order now, contact us via WhatsApp (" . lang['contact_no']. ")";
+            $this->return_response( $response );
+        }
+
+
+        if( $plan_detail->amount > $wallet ){
+            $response['message'] = "Oops! Sorry you don't have sufficient fund in your wallet to process the order.";
+            $this->return_response( $response );
+        }
+
+    }
+
+    // Electricity bills
+    public function electricity_bill(){
+        $response = array('status' => 'error');
+        $this->form_validation->set_rules('amount', 'Amount','trim|required|xss_clean');
+        $this->form_validation->set_rules('phone_number', 'Phone number','trim|required|xss_clean');
+        $this->form_validation->set_rules('network', 'Network','trim|required|xss_clean');
+        $this->form_validation->set_rules('plan_id', 'Plan','trim|required|xss_clean');
+
+
+        if( $this->form_validation->run() == FALSE ){
+            $response['message'] = validation_errors();
+            $this->return_response( $response );
+        }
+
+
+        $product_id = $this->input->post('product_id', true);
+        $network_id = $this->input->post('network', true);
+        $plan_id = $this->input->post('plan_id', true);
+        $amount = $this->input->post('amount');
+        $meter_number = $this->input->post('meter_number');
+        $phone_number = $this->input->post('phone_number');
+        $discount = $this->input->post('discount');
+        $network_name = $this->input->post('network_name', true ); // electricity
+        $wallet = $this->session->userdata('wallet');
+        $user_id = $this->session->userdata('logged_id');
+
+
+        // verify...
+        $plan_detail = $this->site->run_sql("SELECT name FROM plans WHERE id = {$plan_id}")->row();
+
+        $variation_detail = $this->site->run_sql("SELECT variation_name, api_source FROM api_variation WHERE plan_id = {$plan_id} LIMIT 1")->row();
+
+        $description = "N{$amount} paid for {$plan_detail->name} " . ucwords( $network_name) . " bill.";
+        $transaction_id = $this->site->generate_code('transactions', 'trans_id');
+        $insert_data = array(
+            'amount'        => $amount,
+            'product_id'    => $product_id,
+            'description'   => $description,
+            'trans_id'      => $transaction_id,
+            'payment_method' => 2,
+            'date_initiated'    => get_now(),
+            'user_id'        => $user_id,
+            'status'        => 'pending'
+        );
+
+        if( $variation_detail ){
+            switch ( $variation_detail->api_source) {
+                case 'vtpass':
+                    // we're dealing with vtpass
+                    if( $this->site->insert_data('transactions', $insert_data)){
+                        $data = array(
+                            'serviceID' => $network_name.'-bill',
+//                        'billersCode' => $smart_card_number,
+                            'variation_code' => $variation_detail->variation_name,
+                            'billersCode' => "1111111111",
+                            'amount'    => (int)$amount,
+//                        'phone'     => (int) $registered_number,
+                            'phone'     => "08123456789",
+                            'request_id'    => $transaction_id
+                        );
+
+                        try {
+                            // call the API
+
+                            $return = $this->vtpass_curl( $data );
+                            $response['message']= $return;
+                            $this->return_response( $response );
                             if( $return['code'] == "000"){
                                 $insert_data['orderid'] = $return['content'][0]['requestId'];
                                 $insert_data['status'] = 'success';
