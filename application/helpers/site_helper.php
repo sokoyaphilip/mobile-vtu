@@ -145,10 +145,13 @@ function product_id_replacer($in){
                     return '<b>Recharge Card</b>';
                     break;
                 case 6:
-                    return '<b>Wsllet Funding</b>';
+                    return '<b>Wallet Funding</b>';
                     break;
                 case 7:
-                    return '<b>Wallet Funding</b>';
+                    return '<b>Wallet Transfer</b>';
+                    break;
+                case 8:
+                    return '<b>Airtime to Cash - Pin</b>';
                     break;
                 default:
                     return '';
@@ -217,6 +220,7 @@ if (!function_exists('statusLabel')) {
     function statusLabel($status){
         switch ($status) {
             case 'pending':
+            case 'process':
                 return '<div class="alert alert-warning">' . ucfirst( $status ). '</b></div>';
                 break;
             case 'approved':
@@ -245,6 +249,9 @@ if(!function_exists('paymentMethod')){
                 break;
             case 3:
                 return '<b>Payment Via Paystack</b>';
+                break;
+            case 4:
+                return '<b>Gecharl Payment</b>';
                 break;
         }
     }

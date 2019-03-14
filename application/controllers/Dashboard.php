@@ -112,11 +112,17 @@ class Dashboard extends CI_Controller {
 
     function airtime_process(){
         $post_type = $this->input->post('post_type', true);
-        $network = $this->input->post('network');
+        $network = $this->input->post('airtime_pin_network');
+        $user_id = $this->session->userdata('logged_id');
         switch ($post_type) {
             case 'pin_transfer':
+                $product_id = $this->input->post('product_id');
+                $amount = $this->input->post('amount');
+                $transaction_id = $this->site->generate_code('transactions', 'trans_id');
+                $how_to_receive = $this->input->post('how_to_receive');
                 $this->form_validation->set_rules('airtime_pin_network', 'Airtime Network','trim|required|xss_clean');
                 $this->form_validation->set_rules('pin', 'Pin Network','trim|required|xss_clean');
+                $this->form_validation->set_rules('amount', 'Amount','trim|required|xss_clean');
                 if( $this->form_validation->run() == false ){
                     $this->session->set_flashdata('error_msg', validation_errors());
                     redirect($_SERVER['HTTP_REFERER']);
@@ -140,6 +146,44 @@ class Dashboard extends CI_Controller {
                         }
                         break;
                 }
+
+                $description = ucwords($network) . " N" . $amount . " pin transfer ( {$pin} ) to gecharl.com";
+                $transaction_table = array(
+                    'product_id' => $product_id,
+                    'trans_id'      => $transaction_id,
+                    'user_id'       => $user_id,
+                    'amount'        => $amount,
+                    'payment_method' => 4,
+                    'description'   => $description,
+                    'date_initiated'    => get_now(),
+                    'status'            => 'pending'
+                );
+                try {
+                    $this->db->trans_start();
+                    $tid = $this->site->insert_data('transactions',  $transaction_table);
+                    $airtime_to_cash_table = array(
+                        'tid' => $tid,
+                        'uid' => $user_id,
+                        'network' => $network,
+                        'amount' => $amount,
+                        'detail' => ucwords($network) . " N" . $amount . " pin transfer ( {$pin} ) to gecharl.com and to receive by wallet funding",
+                        'datetime'  => get_now()
+                    );
+                    $this->site->insert_data('airtime_to_cash', $airtime_to_cash_table);
+                    $this->db->trans_complete();
+                    if ($this->db->trans_status() === FALSE){
+                        $this->session->set_flashdata('error_msg', 'There was an error processing your request.');
+                        // Send a message to the admin??
+                        $this->db->trans_rollback();
+                    }else{
+                        $this->db->trans_commit();
+                        $this->session->set_flashdata('success_msg', 'Your request has been received and its under processed.');
+                    }
+
+                } catch (Exception $e) {
+
+                }
+                redirect( $_SERVER['HTTP_REFERER']);
                 break;
         }
     }
