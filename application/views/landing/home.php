@@ -24,6 +24,7 @@
         <div class="container intro">
             <div class="row">
                 <div class="features-intro col-lg-5 col-md-6 col-12">
+
                     <h2 class="title">Welcome to Gecharl connect.</h2>
                     <span style="font-max-size: small">Your one stop shop on Airtime,Mobile data and bills payment</span>
                     <p class="summary">Gecharl focuses on offering subsidised Internet subscription and Airtime on all Telecommunication Networks. With Gecharl you are sure of saving on your Data/Airtime purchase. </p>

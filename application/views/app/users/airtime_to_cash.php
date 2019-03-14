@@ -27,73 +27,81 @@
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="fund-tab" data-toggle="tab" href="#fund_tab" role="tab" aria-controls="fund" aria-selected="true">Fund Wallet</a>
+                                        <a class="nav-link active" id="pin-tab" data-toggle="tab" href="#pin_tab" role="tab" aria-controls="pin" aria-selected="true">Recharge Pin Transfer</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="transfer-tab" data-toggle="tab" href="#transfer_tab" role="tab" aria-controls="transfer" aria-selected="false">Fund Transfer</a>
+                                        <a class="nav-link" id="transfer-tab" data-toggle="tab" href="#transfer_tab" role="tab" aria-controls="transfer" aria-selected="false">Airtime Transfer</a>
                                     </li>
                                 </ul>
 
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                    <div class="tab-pane active" id="fund_tab" role="tabpanel" aria-labelledby="fund-tab">
-                                        <div class="alert alert-secondary" role="alert">
-                                            <b>Please note:</b>
-                                            <ul>
-                                                <li>A transaction ID will be generated for you, which should be used as a reference.</li>
-                                                <li>If you'll be paying via <b>Bank Transfer / Deposit</b>, an account details will be shown to you where you will make debosit to..</li>
-                                            </ul>
-                                        </div>
-                                        <form>
+                                    <div class="tab-pane active" id="pin_tab" role="tabpanel" aria-labelledby="pin-tab">
+<!--                                        <div class="alert alert-secondary" role="alert">-->
+<!--                                            <b>Please note:</b>-->
+<!--                                            <ul>-->
+<!--                                                <li>A transaction ID will be generated for you, which should be used as a reference.</li>-->
+<!--                                                <li>If you'll be paying via <b>Bank Transfer / Deposit</b>, an account details will be shown to you where you will make debosit to..</li>-->
+<!--                                            </ul>-->
+<!--                                        </div>-->
+                                        <form id="pin_transfer" action="<?= base_url('dashboard/airtime_process');?>" method="post">
                                             <div class="row">
-                                                <div class="col-sm-6">
+                                                <div class="col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="label" for="Amount">Amount</label>
-                                                        <input type="text" autocomplete="off" class="form-control number" name="amount" id="pay_amount" required placeholder="Enter Amount">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label class="label" for="Payment method">Payment Method</label>
-                                                        <select class="form-control" name="payment_method" id="payment_method" required>
-                                                            <option value=""> -- How will you like to pay? --</option>
-                                                            <option value="1">Bank Transfer / Deposit</option>
-                                                            <option value="3">Pay Online Via Paystack</option>
+                                                        <label class="label" for="Network">Please select network <span class="text-danger">*</span></label>
+                                                        <select class="form-control" name="airtime_pin_network" id="airtime_pin_network" required>
+                                                            <option value=""> -- select --</option>
+                                                            <?php foreach ($networks as $network ): ?>
+                                                                <option data-discount="<?= $network->discount; ?>"
+                                                                        value="<?= $network->network_name; ?>"><?= ucwords($network->title); ?></option>
+                                                            <?php endforeach; ?>
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="label" for="Network">Enter Pin <span class="text-danger">* </span> </label>
+                                                        <input type="text" class="form-control number" name="pin" required />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="label" for="Network">Please select the amount you're sending <span class="text-danger">*</span></label>
+                                                        <select class="form-control" name="amount" id="amount" required>
+                                                            <option value=""> -- select --</option>
+                                                            <?php for( $x = 100; $x <= 1000; $x += 100 ) : ?>
+                                                                <option value="<?= $x; ?>"> <?= ngn( $x ); ?></option>
+                                                            <?php endfor; ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="label" for="Network">How will you like to be funded <span class="text-danger">*</span></label>
+                                                        <select class="form-control" name="how_to_receive" id="how_to_receive" required>
+                                                            <option value="wallet">Fund my wallet</option>
+                                                            <option value="data" disabled>Swap with mobile data (From N1,000 above)</option>
+                                                            <option value="data" disabled>Transfer the money into my account (From N1,000 above)</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             <input type="hidden" name="product_id" id="product_id" value="6" />
-                                            <input type="hidden" name="post_type" value="wallet_funding" />
+                                            <input type="hidden" name="post_type" value="pin_transfer" />
+                                            <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4">Transfer Now</button>
                                             <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear</button>&nbsp;&nbsp;
-                                            <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 pay-now">Pay Now</button>
                                         </form>
 
-
-                                        <div style="margin-top: 20px" class="table-responsive">
-                                            <table class="table table-striped" id="table">
-                                                <thead>
-                                                <tr>
-                                                    <th>Transaction ID</th>
-                                                    <th>Date</th>
-                                                    <th>Description</th>
-                                                    <th>Amount</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <?php foreach( $fundings as $funding ): ?>
-                                                    <tr>
-                                                        <td><?= $funding->trans_id; ?></td>
-                                                        <td><?= neatDate( $funding->date_initiated); ?></td>
-                                                        <td><?= payment_id_replacer($funding->description); ?></td>
-                                                        <td><?= ngn($funding->amount)?></td>
-                                                        <td><?= statusLabel($funding->status)?></td>
-                                                    </tr>
-                                                <?php endforeach; ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
                                     </div>
 
                                     <div class="tab-pane" id="transfer_tab" role="tabpanel" aria-labelledby="transfer-tab">

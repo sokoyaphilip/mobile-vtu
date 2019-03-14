@@ -100,6 +100,50 @@ class Dashboard extends CI_Controller {
 
     }
 
+    public function airtime_to_cash(){
+        $id = $this->session->userdata('logged_id');
+        $page_data['page'] = 'airtime2cash';
+        $page_data['title'] = "Airtime to Cash";
+        $page_data['user'] = $this->get_profile( $id );
+        $page_data['networks'] = $this->site->run_sql("SELECT p.slug, s.id, s.title, network_name, discount FROM products p LEFT JOIN services s ON (p.id = s.product_id) WHERE p.title ='airtime' ")->result();
+        $page_data['fundings'] = $this->site->get_result('transactions', '*' , " user_id = {$id}");
+        $this->load->view('app/users/airtime_to_cash', $page_data);
+    }
+
+    function airtime_process(){
+        $post_type = $this->input->post('post_type', true);
+        $network = $this->input->post('network');
+        switch ($post_type) {
+            case 'pin_transfer':
+                $this->form_validation->set_rules('airtime_pin_network', 'Airtime Network','trim|required|xss_clean');
+                $this->form_validation->set_rules('pin', 'Pin Network','trim|required|xss_clean');
+                if( $this->form_validation->run() == false ){
+                    $this->session->set_flashdata('error_msg', validation_errors());
+                    redirect($_SERVER['HTTP_REFERER']);
+                }
+                $pin = trim($this->input->post('pin'));
+                // Mtn - Airtel : 16, Glo - 9mobile : 15,
+                $length = strlen( $pin );
+                switch ( $network ) {
+                    case 'glo':
+                    case '9mobile':
+                        if( $length != 15){
+                            $this->session->set_flashdata('error_msg', "Sorry the " . strtoupper( $network) . " network pin is invalid");
+                            redirect( $_SERVER['HTTP_REFERER']);
+                        }
+                        break;
+                    case 'mtn':
+                    case 'airtime':
+                        if( $length != 16){
+                            $this->session->set_flashdata('error_msg', "Sorry the " . strtoupper( $network) . " network pin is invalid");
+                            redirect( $_SERVER['HTTP_REFERER']);
+                        }
+                        break;
+                }
+                break;
+        }
+    }
+
 	function get_profile($id){
 	    return $this->site->run_sql("SELECT phone, email, name, user_code, wallet, account_type FROM users where id = {$id}")->row();
     }

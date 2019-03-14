@@ -31,10 +31,12 @@
             <li>
                 <h4 class="<?php if( $page =='wallet' ) echo 'dashboard-active'; ?>"><a href="<?= base_url('dashboard/wallet/'); ?>">My Wallet</a></h4>
             </li>
-
-<!--            <li>-->
-<!--                <h4><a href="#">Profile Setting</a></h4>-->
-<!--            </li>-->
+            <li>
+                <h4 class="<?php if( $page =='airtime2cash' ) echo 'dashboard-active'; ?>"><a href="<?= base_url('dashboard/airtime_to_cash/'); ?>">Airtime to Cash</a></h4>
+            </li>
+            <li>
+                <h4><a href="#">Profile Setting</a></h4>
+            </li>
             <li>
                 <h4><a href="<?= base_url('logout/'); ?>">Logout</a></h4>
             </li>

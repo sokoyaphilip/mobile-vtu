@@ -1,5 +1,6 @@
 <footer class="footer">
-    <div class="footer-content">
+    <?php if (!$this->agent->is_mobile()) : ?>
+        <div class="footer-content">
         <div class="container">
             <div class="row">
                 <div class="footer-col col-lg-5 col-md-7 col-12 about">
@@ -36,6 +37,7 @@
             </div><!--//row-->
         </div><!--//container-->
     </div><!--//footer-content-->
+    <?php endif;?>
     <div class="bottom-bar">
         <div class="container">
             <div class="row">

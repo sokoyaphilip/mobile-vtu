@@ -72,7 +72,7 @@
                                             <div class="form-group">
                                                 <label class="label" for="Network Name">Network Name</label>
                                                 <select class="form-control" name="network_name">
-                                                    <option value="">== Please select the appropriate --</option>
+                                                    <option value="">-- Please select the appropriate --</option>
                                                     <option value="glo">Glo</option>
                                                     <option value="9mobile">9mobile</option>
                                                     <option value="mtn">MTN</option>
