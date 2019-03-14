@@ -24,24 +24,26 @@ class Dashboard extends CI_Controller {
             // start empty
             $start = $this->input->post('start');
             if( empty( $start) || !isset($start) ){
-                $start = $_POST['start'] = date('Y-m-d', strtotime('first day of the year'));
+                $start = $_POST['start'] = date('Y-m-d', strtotime('first day of this year'));
             }else{
                 $start = date('Y-m-d', strtotime($start));
             }
             $end = $this->input->post('end');
             if( empty( $end) || !isset($end) ){
-                $end = $_POST['end'] = date('Y-m-d', strtotime('first day of the year'));
+                $end = $_POST['end'] = date('Y-m-d', strtotime('tomorrow'));
             }else{
                 $end = date('Y-m-d', strtotime($end));
             }
 
-            $query = "SELECT * FROM transactions WHERE date_initiated BETWEEN '{$start}' AND '{$end}' AND user_id ={$id} ";
+            $query = "SELECT * FROM transactions WHERE date_initiated BETWEEN '{$start}' AND '{$end}' AND user_id ='{$id}' ";
 
             if( $this->input->post('transaction_type') ){
                 $transaction = $this->input->post('transaction_type');
-                $query .= " AND product_id = {$transaction} ORDER BY id DESC";
+                $query .= " AND product_id = '{$transaction}' ORDER BY id DESC";
             }
         }
+
+//        var_dump($_POST);
 
         $page_data['transactions'] = $this->site->run_sql( $query )->result();
 
@@ -134,14 +136,14 @@ class Dashboard extends CI_Controller {
                     case 'glo':
                     case '9mobile':
                         if( $length != 15){
-                            $this->session->set_flashdata('error_msg', "Sorry the " . strtoupper( $network) . " network pin is invalid");
+                            $this->session->set_flashdata('error_msg', "Error: The " . strtoupper( $network) . " network pin is invalid");
                             redirect( $_SERVER['HTTP_REFERER']);
                         }
                         break;
                     case 'mtn':
                     case 'airtime':
                         if( $length != 16){
-                            $this->session->set_flashdata('error_msg', "Sorry the " . strtoupper( $network) . " network pin is invalid");
+                            $this->session->set_flashdata('error_msg', "Error: The " . strtoupper( $network) . " network pin is invalid");
                             redirect( $_SERVER['HTTP_REFERER']);
                         }
                         break;
@@ -166,7 +168,8 @@ class Dashboard extends CI_Controller {
                         'uid' => $user_id,
                         'network' => $network,
                         'amount' => $amount,
-                        'detail' => ucwords($network) . " N" . $amount . " pin transfer ( {$pin} ) to gecharl.com and to receive by wallet funding",
+                        'status' => 'pending',
+                        'details' => ucwords($network) . " N" . $amount . " pin transfer ( {$pin} ) to gecharl.com and to receive by wallet funding",
                         'datetime'  => get_now()
                     );
                     $this->site->insert_data('airtime_to_cash', $airtime_to_cash_table);

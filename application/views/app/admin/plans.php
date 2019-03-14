@@ -19,7 +19,6 @@
                         <h3 class="heading">Plan</h3>
 
                         <div class="content right-content">
-
                             <div class="col-sm-12 sort-panel">
                                 <?php $this->load->view('msg_view');?>
                                 <form method="POST" action="<?= base_url('admin/plans/')?>">
@@ -65,7 +64,9 @@
                                     <?php $x = 1; foreach( $plans as $plan) : ?>
                                     <tr id="<?= $plan->id; ?>">
                                         <td><?= $x; ?></td>
-                                        <td class="text-center"><?= ucwords($plan->service_name) . ' -' .$plan->discount_type; ?></td>
+                                        <td class="text-center">
+                                            <?= ucwords($plan->service_name) ?><?= ($plan->discount_type =='all') ? '' : '('.$plan->discount_type.')' ?>
+                                        </td>
                                         <td class="text-center"><?= $plan->name; ?></td>
                                         <td class="text-center"><?= ngn($plan->amount) ?></td>
                                         <td>

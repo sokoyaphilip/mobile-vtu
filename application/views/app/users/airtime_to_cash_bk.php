@@ -105,6 +105,51 @@
                                     </div>
 
                                     <div class="tab-pane" id="transfer_tab" role="tabpanel" aria-labelledby="transfer-tab">
+                                        <h4 class="text-danger"><b>Your current wallet balance - <?= ngn($user->wallet);?></b></h4>
+                                        <form method="POST" action="<?= base_url('dashboard/')?>">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label class="label" for="Amount">Amount</label>
+                                                        <input type="text" class="form-control number" name="amount" id="transfer_amount" required placeholder="Enter Amount you want to send">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label class="label" for="Payment method">Receiver Username</label>
+                                                        <input type="text" name="receiver" id="receiver" class="form-control" required placeholder="Receiver phone number">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="product_id" id="transfer_product_id" value="7" />
+                                            <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear</button>&nbsp;&nbsp;
+                                            <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 transfer-now" data-balance="<?= $user->wallet;?>">Transfer Now</button>
+                                        </form>
+
+                                        <div style="margin-top: 20px" class="table-responsive">
+                                            <table class="table table-striped" id="table">
+                                                <thead>
+                                                <tr>
+                                                    <th>Transaction ID</th>
+                                                    <th>Date</th>
+                                                    <th>Description</th>
+                                                    <th>Amount</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <?php foreach( $fundings as $funding ): ?>
+                                                    <tr>
+                                                        <td><?= $funding->trans_id; ?></td>
+                                                        <td><?= neatDate( $funding->date_initiated); ?></td>
+                                                        <td><?= payment_id_replacer($funding->description); ?></td>
+                                                        <td><?= ngn($funding->amount)?></td>
+                                                        <td><?= statusLabel($funding->status)?></td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
 

@@ -186,6 +186,9 @@ function product_name($id)
         case 7:
             return '<b>Wallet Funding</b>';
             break;
+        case 8:
+            return '<b>Airtime to Cash</b>';
+            break;
         default:
             return '';
             break;

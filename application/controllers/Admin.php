@@ -21,13 +21,13 @@ class Admin extends CI_Controller {
             // start empty
             $start = $this->input->post('start');
             if( empty( $start) || !isset($start) ){
-                $start = $_POST['start'] = date('Y-m-d', strtotime('first day of the year'));
+                $start = $_POST['start'] = date('Y-m-d', strtotime('first day of this year'));
             }else{
                 $start = date('Y-m-d', strtotime($start));
             }
             $end = $this->input->post('end');
             if( empty( $end) || !isset($end) ){
-                $end = $_POST['end'] = date('Y-m-d', strtotime('first day of the year'));
+                $end = $_POST['end'] = date('Y-m-d', strtotime('last day of this year'));
             }else{
                 $end = date('Y-m-d', strtotime($end));
             }
@@ -39,16 +39,27 @@ class Admin extends CI_Controller {
                 $query .= " AND product_id = {$transaction} ORDER BY id DESC";
             }
         }
-        $today = date('d', strtotime(get_now()));
+        $today = date('Y-m-d', strtotime('today'));
 
-        $page_data['today'] = $this->site->run_sql("SELECT SUM(amount) amount FROM transactions WHERE DAY(date_initiated) = '$today' AND (status = 'success' OR status = 'approved') ")->row()->amount;
+        $page_data['today'] = $this->site->run_sql("SELECT SUM(amount) amount FROM transactions WHERE date_initiated = '$today' AND (status = 'success' OR status = 'approve') ")->row()->amount;
 
+//        die("SELECT SUM(amount) amount FROM transactions WHERE date_initiated = '$today' AND (status = 'success' OR status = 'approve') ");
+        $first_day = date('Y-m-d', strtotime('first day of the week'));
+        $last_day = date('Y-m-d', strtotime('last day of the week'));
         $page_data['week'] = $this->site->run_sql("SELECT SUM(amount) amount FROM transactions 
-        WHERE WEEK(date_initiated) = WEEK(CURRENT_DATE()) AND status = 'success' ")->row()->amount;
+        WHERE date_initiated BETWEEN('{$first_day}' AND '{$last_day}') AND (status = 'success' OR status = 'approve' )  ")->row()->amount;
+
+        $first_day = date('Y-m-d', strtotime('first day of the month'));
+        $last_day = date('Y-m-d', strtotime('last day of the month'));
         $page_data['month'] = $this->site->run_sql("SELECT SUM(amount) amount FROM transactions 
-        WHERE MONTH(date_initiated) = MONTH(CURRENT_DATE) AND status = 'success' ")->row()->amount;
+        WHERE date_initiated BETWEEN('{$first_day}' AND '{$last_day}') AND (status = 'success' OR status = 'approve' ) ")->row()->amount;
+
+
+        $first_day = date('Y-m-d', strtotime('first day of the year'));
+        $last_day = date('Y-m-d', strtotime('last day of the year'));
         $page_data['year'] = $this->site->run_sql("SELECT SUM(amount) amount FROM transactions 
-        WHERE YEAR(date_initiated) = YEAR(CURRENT_DATE) AND status = 'success' ")->row()->amount;
+        WHERE date_initiated BETWEEN ('{$first_day}' AND '{$last_day}') AND (status = 'success' OR status = 'approve' )")->row()->amount;
+
         $page_data['transactions'] = $this->site->run_sql( $query )->result();
 		$this->load->view('app/admin/dashboard', $page_data);
 	}
@@ -102,7 +113,7 @@ class Admin extends CI_Controller {
     /*
      * Wallet
      * */
-    public function wallet(){
+    public function approval(){
 
         if( $this->input->post() ){
             $status = $this->input->post('action', true);
@@ -120,10 +131,12 @@ class Admin extends CI_Controller {
             }
             redirect( $_SERVER['HTTP_REFERER']);
         }else{
-            $page_data['page'] = 'wallet_funding';
+            $page_data['page'] = 'approval';
             $page_data['fundings'] = $this->site->run_sql("SELECT t.* , u.name name, u.phone, u.email FROM transactions t LEFT JOIN users u ON (u.id = t.user_id) 
-        WHERE t.status = 'pending'")->result();
-            $this->load->view('app/admin/wallet', $page_data);
+        WHERE t.status = 'pending' AND t.product_id = 6")->result();
+            $page_data['airtime_to_cash_pin'] = $this->site->get_result('airtime_to_cash', 'id,tid,incoming,outgoing,details,datetime,status', "(status = 'pending')");
+            $page_data['title'] = "Funding Approval";
+            $this->load->view('app/admin/approval', $page_data);
         }
     }
 
