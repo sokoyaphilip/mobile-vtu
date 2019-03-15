@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/application/views/app/users/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/development/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/development/constants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/helpers/site_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/helpers/site_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/language/english/english_lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/language/english/english_lang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/app/admin/approval.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/app/admin/approval.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/app/users/airtime_to_cash.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/app/users/airtime_to_cash.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/app/users/data.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/app/users/data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/app/users/subscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/app/users/subscription.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/app/users/wallet.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/app/users/wallet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/resources/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/resources/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/resources/script.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/resources/script.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/resources/users/left_menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/resources/users/left_menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment.php" beforeDir="false" afterPath="$PROJECT_DIR$/environment.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="821" column="38" lean-forward="true" selection-start-line="821" selection-start-column="38" selection-end-line="821" selection-end-column="38" />
+            <state relative-caret-position="448">
+              <caret line="831" column="47" lean-forward="true" selection-start-line="831" selection-start-column="47" selection-end-line="831" selection-end-column="47" />
               <folding>
                 <element signature="e#14#593#0" />
                 <element signature="e#6333#7855#0" />
@@ -210,7 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/css/main.css" />
         <option value="$PROJECT_DIR$/application/config/development/config.php" />
         <option value="$PROJECT_DIR$/application/models/User_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/Home.php" />
@@ -261,6 +244,7 @@
         <option value="$PROJECT_DIR$/application/config/production/constants.php" />
         <option value="$PROJECT_DIR$/application/controllers/Ajax.php" />
         <option value="$PROJECT_DIR$/assets/js/functions.js" />
+        <option value="$PROJECT_DIR$/environment.php" />
       </list>
     </option>
   </component>
@@ -412,12 +396,12 @@
       <workItem from="1552492692543" duration="5661000" />
       <workItem from="1552532637090" duration="15885000" />
       <workItem from="1552571660378" duration="726000" />
-      <workItem from="1552594885571" duration="27178000" />
+      <workItem from="1552594885571" duration="28839000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="354859000" />
+    <option name="totallyTimeSpent" value="356520000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -448,9 +432,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/landing/about.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/landing/pricing.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -821,10 +802,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/environment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="821" column="38" lean-forward="true" selection-start-line="821" selection-start-column="38" selection-end-line="821" selection-end-column="38" />
+        <state relative-caret-position="448">
+          <caret line="831" column="47" lean-forward="true" selection-start-line="831" selection-start-column="47" selection-end-line="831" selection-end-column="47" />
           <folding>
             <element signature="e#14#593#0" />
             <element signature="e#6333#7855#0" />

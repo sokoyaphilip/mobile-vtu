@@ -6,6 +6,8 @@ if(! defined('ENVIRONMENT') )
 
     switch($domain) {
         case 'gecharl.com' :
+        case 'https://www.gecharl.com':
+        case 'www.gecharl.com':
             define('ENVIRONMENT', 'production');
             break;
 
@@ -19,3 +21,4 @@ if(! defined('ENVIRONMENT') )
             break;
     }
 }
+
