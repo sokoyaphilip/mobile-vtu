@@ -261,6 +261,8 @@ $(document).ready(function() {
     $('.airtime-purchase').on('click', function(e){
         e.preventDefault();
         $(this).prop('disabled', true);
+        $(this).text("Processing...");
+
         let product_id = $('#product_id').val();
         let amount = $('#amount').val();
         let network = $('#airtime_network').val();
@@ -268,19 +270,23 @@ $(document).ready(function() {
         let network_name = $('#airtime_network').find(':selected').data('network-name');
         let discount = $('#airtime_network').find(':selected').data('discount');
 
-        // if( amount === '' || amount < 100 ){
-        //     sweet_alert('Error', 'Sorry amount can not be less than N100', 'error');
-        //     _btn.prop('disabled', false);
-        //     return false;
-        // }
-        if( recipents === '' ){
-            sweet_alert('Error', 'Please fill in the right number', 'error');
+        if( amount === '' || amount < 100 ){
+            sweet_alert('Error', 'Sorry amount can not be less than N100', 'error');
             _btn.prop('disabled', false);
+            $(this).text("Buy Now");
+            return false;
+        }
+
+        if( recipents === '' ){
+            sweet_alert('Error', 'Please fill in the phone number', 'error');
+            _btn.prop('disabled', false);
+            $(this).text("Buy Now");
             return false;
         }
         if( network === '' ){
             sweet_alert('Error', 'You need to select a network', 'error');
             _btn.prop('disabled', false);
+            $(this).text("Buy Now");
             return false;
         }
 
@@ -296,6 +302,8 @@ $(document).ready(function() {
                     })
                 }else{
                     sweet_alert('Error', response.message, 'error', false);
+                    $(this).text("Buy Now");
+                    _btn.prop('disabled', false);
                 }
             },
             error : function(response){
@@ -373,6 +381,7 @@ $(document).ready(function() {
         $(this).prop('disabled', true);
 
         let _btn = $(this);
+        _btn.text('Processing...');
         let product_id = $('#product_id').val();
         let network = $('#network').val();
         let plan_id = $('#network_plan').val();
@@ -384,18 +393,21 @@ $(document).ready(function() {
         if( smart_card_number === '') {
             _btn.prop('disabled', false);
             sweet_alert('Error', 'Smart card number can not be empty', 'error');
+            _btn.text('Subscribe');
             return false;
         }
 
         if( registered_name === '') {
             _btn.prop('disabled', false);
             sweet_alert('Error', 'Registered name can not be empty', 'error');
+            _btn.text('Subscribe');
             return false;
         }
 
         if( registered_number === '') {
             _btn.prop('disabled', false);
             sweet_alert('Error', 'Registered number can not be empty', 'error');
+            _btn.text('Subscribe');
             return false;
         }
         //7028877148
@@ -413,6 +425,7 @@ $(document).ready(function() {
                 }else{
                     console.log(response.message);
                     sweet_alert('Error', response.message, 'error', false);
+                    _btn.text('Subscribe');
                     $(this).prop('disabled', false);
                 }
                 $('.swal-button--confirm').on('click', function () {
@@ -431,6 +444,7 @@ $(document).ready(function() {
         $(this).prop('disabled', true);
 
         let _btn = $(this);
+        _btn.text("Processing...");
         let product_id = $('#product_id').val();
         let plan_id = $('#plan').val();
         let amount = $('#amount').val();
@@ -443,24 +457,28 @@ $(document).ready(function() {
         if( amount === '') {
             _btn.prop('disabled', false);
             sweet_alert('Error', 'Amount can not be empty', 'error');
+            _btn.text("Pay Now");
             return false;
         }
 
         if( amount < 500 || amount > 200000) {
             _btn.prop('disabled', false);
             sweet_alert('Error', 'Amount can not be less than N500, or more than N200,000', 'error');
+            _btn.text("Pay Now");
             return false;
         }
 
         if( phone_number === '') {
             _btn.prop('disabled', false);
             sweet_alert('Error', 'Phone number can not be empty', 'error');
+            _btn.text("Pay Now");
             return false;
         }
 
         if( meter_number === '') {
             _btn.prop('disabled', false);
             sweet_alert('Error', 'Meter number can not be empty', 'error');
+            _btn.text("Pay Now");
             return false;
         }
         //7028877148
@@ -476,8 +494,8 @@ $(document).ready(function() {
                 if( response.status === 'success' ){
                     sweet_alert('Success', response.message, 'success', false);
                 }else{
-
                     sweet_alert('Error', response.message, 'error', false);
+                    _btn.text("Pay Now");
                     $(this).prop('disabled', false);
                 }
                 $('.swal-button--confirm').on('click', function () {
@@ -743,6 +761,23 @@ $(document).ready(function() {
             });
         }
     });
+
+    // Pin transfer
+    // $('#pin_amount').on('change', function () {
+    //     let _val = $(this).val();
+    //     let options = $('#how_to_receive > option').length;
+    //     if( _val >= 1000 ){
+    //         for ( i = 0 ; i < options; i++ ){
+    //             $('#how_to_receive').children(i+1).prop('disabled', false);
+    //         }
+    //     }else{
+    //         // disable
+    //         for ( i = 0 ; i < options; i++ ){
+    //             console.log(i);
+    //             $('#how_to_receive').children(i+1).prop('disabled', true);
+    //         }
+    //     }
+    // });
 
 
 });

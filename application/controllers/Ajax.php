@@ -488,6 +488,11 @@ class Ajax extends CI_Controller {
             if( $discount > 1 ){
                 $total_amount = $total_amount - ( $discount/100 * $total_amount );
             }
+
+            if( $total_amount > $discount ){
+                $response['message'] = "You don't have enough fund to process this, please fund your wallet first.";
+                $this->return_response($response);
+            }
             $description = ucfirst( $network_name) . " ({$amount}) airtime purchase for {$message} recipent";
             $transaction_id = $this->site->generate_code('transactions', 'trans_id');
             $insert_data = array(
@@ -523,7 +528,6 @@ class Ajax extends CI_Controller {
                 }
             }
             // else call the payment channel
-
             $this->site->insert_data('transactions', $insert_data);
             $response['status'] = 'success';
             $response['message'] = $transaction_id;
@@ -567,8 +571,11 @@ class Ajax extends CI_Controller {
 
         $variation_detail = $this->site->run_sql("SELECT variation_name, variation_amount, api_source FROM api_variation WHERE plan_id = {$plan_id}")->row();
 
+
+
         $description = ucwords( $network_name) . " subscription plan for {$plan_detail->name} at N{$plan_detail->amount}.";
         $transaction_id = $this->site->generate_code('transactions', 'trans_id');
+
         $insert_data = array(
             'amount'        => $plan_detail->amount,
             'product_id'    => $product_id,
@@ -642,7 +649,7 @@ class Ajax extends CI_Controller {
 
 
         if( $plan_detail->amount > $wallet ){
-            $response['message'] = "Oops! Sorry you don't have sufficient fund in your wallet to process the order.";
+            $response['message'] = "Oops! Sorry you don't have sufficient fund in your wallet to process the order, please fund your wallet first.";
             $this->return_response( $response );
         }
 

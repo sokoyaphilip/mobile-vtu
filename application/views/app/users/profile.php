@@ -36,7 +36,7 @@
                                 <div class="tab-content">
                                     <!-- User -->
                                     <div class="tab-pane active" id="account_tab" role="tabpanel" aria-labelledby="account">
-                                        <?= form_open(); ?>
+                                        <?= form_open('dashboard/profile_setting/'); ?>
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="form-group">
@@ -48,14 +48,14 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label for="phone">Phone Number</label>
-                                                    <input type="text" name="phone" id="phone" class="form-control number" value="<?= $user->phone;?>" required autocomplete="off" placeholder="Phone Number">
+                                                    <input type="text" name="phone" id="phone" class="form-control" readonly value="<?= $user->phone;?>" required autocomplete="off" placeholder="Phone Number">
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label for="email">Email</label>
-                                                    <input type="text" name="email" id="email" class="form-control" value="<?= $user->email; ?>" required placeholder="Email Address">
+                                                    <input type="text" name="email" id="email" class="form-control" readonly value="<?= $user->email; ?>" required placeholder="Email Address">
                                                 </div>
                                             </div>
 
@@ -82,7 +82,7 @@
                                                         <?php
                                                         $banks = explode(',', lang('banks'));
                                                         foreach ( $banks as $bank ) : ?>
-                                                            <option value="<?= trim($bank); ?>" <?php if( $user->bank_name == $bank ) echo 'selected'; ?> ><?= trim($bank); ?></option>
+                                                            <option value="<?= trim($bank); ?>" <?php if( $user->bank_name == trim($bank) ) echo 'selected'; ?> ><?= trim($bank); ?></option>
                                                         <?php endforeach;
                                                         ?>
                                                     </select>
@@ -92,7 +92,7 @@
                                             <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label for="password">Confirm Password</label>
-                                                    <input type="password" name="confirm_password" id="confirm_password" class="form-control" required placeholder="Please eneter your password for confirmation">
+                                                    <input type="password" name="confirm_password" id="confirm_password" class="form-control" required placeholder="Please enter your password for confirmation">
                                                 </div>
                                             </div>
                                         </div>
@@ -103,7 +103,7 @@
                                     </div>
                                     <!--Password -->
                                     <div class="tab-pane" id="password_tab" role="tabpanel" aria-labelledby="password-tab">
-                                        <form method="POST" action="<?= base_url('dashboard/account_settings')?>">
+                                        <?= form_open('dashboard/profile_setting/'); ?>
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
@@ -128,7 +128,7 @@
                                             <input type="hidden" name="post_type" value="password_change">
                                             <button type="submit" class="btn btn-cta btn-cta-primary btn-sm col-sm-4">Update</button>
                                             <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear</button>&nbsp;&nbsp;
-                                        </form>
+                                        <?= form_close(); ?>
                                     </div>
                                 </div>
                             </div>
