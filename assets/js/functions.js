@@ -824,7 +824,7 @@ function verifyPaystack( pref, ref){
                 sweet_alert('Success!', response.message, response.status );
                 console.log(response.message);
             }else{
-                // sweet_alert('Error!', response.message, response.status );
+                sweet_alert('Error!', response.message, response.status );
                 console.log(response.message);
             }
         },
