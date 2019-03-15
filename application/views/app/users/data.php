@@ -57,6 +57,20 @@
                                         <div class="col-sm-12">
                                             <span class="text-success you-pay"></span>
                                         </div>
+                                        <br />
+
+
+<!--                                        <div class="col-sm-12">-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label for="how_to_pay">How will you like to pay?</label>-->
+<!--                                                <select class="form-control" name="pay_method" id="pay_method">-->
+<!--                                                    <option value="1">Bank Deposit / Transfer</option>-->
+<!--                                                    <option value="2">Payment from my wallet</option>-->
+<!--                                                    <option value="3">Payment Via Wallet</option>-->
+<!--                                                </select>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+
                                     </div>
                                     <input type="hidden" id="product_id" value="1">
                                 <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 data-purchase" data-balance="<?= $user->wallet;?>">Buy Now</button>

@@ -109,3 +109,7 @@ defined('VTPASS_USERNAME') OR define('VTPASS_USERNAME', "sandbox@vtpass.com");
 defined('VTPASS_PASSWORD') OR define('VTPASS_PASSWORD', "sandbox");
 
 
+//Paystack
+defined('S_KEY') OR define('S_KEY', 'sk_test_7f9e0d2c426861d566a1abf1bffee4839a1176ea');
+defined('P_KEY') OR define('P_KEY', 'pk_test_89ca6e3e4316cc4ec8f983eea76a5c3ba32631e4');
+

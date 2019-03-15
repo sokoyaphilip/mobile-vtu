@@ -14,6 +14,7 @@ class Dashboard extends CI_Controller {
 
     public function index(){
         $page_data['page'] = 'home';
+        $page_data['title'] = 'Welcome to your dashboard';
         $id = $this->session->userdata('logged_id');
         $page_data['user'] = $this->get_profile($id);
         $page_data['products'] = $this->site->get_result('products');
@@ -55,6 +56,7 @@ class Dashboard extends CI_Controller {
     public function data(){
         $id = $this->session->userdata('logged_id');
         $page_data['page'] = 'data';
+        $page_data['title'] = 'Buy Mtn, Glo, 9mobile, Airtel Data Subscription, works for all smartphones...';
         $page_data['user'] = $this->get_profile($id);
         $page_data['networks'] = $this->site->run_sql("SELECT p.slug, s.id, s.title, s.network_name, discount FROM products p LEFT JOIN services s ON (p.id = s.product_id) WHERE p.title ='data' ")->result();
         $this->load->view('app/users/data', $page_data);
@@ -64,6 +66,7 @@ class Dashboard extends CI_Controller {
     public function airtime(){
         $id = $this->session->userdata('logged_id');
         $page_data['page'] = 'airtime';
+        $page_data['title'] = 'Buy Mtn, Glo, 9mobile, Airtel Airtime';
         $page_data['user'] = $this->get_profile($id);
         $page_data['networks'] = $this->site->run_sql("SELECT p.slug, s.id, s.title, network_name, discount FROM products p LEFT JOIN services s ON (p.id = s.product_id) WHERE p.title ='airtime' ")->result();
         $this->load->view('app/users/airtime', $page_data);
@@ -74,6 +77,7 @@ class Dashboard extends CI_Controller {
     public function subscription(){
         $id = $this->session->userdata('logged_id');
         $page_data['page'] = 'subscription';
+        $page_data['title'] = 'Subscribe your GoTV, DSTV, Startimes ... decoder';
         $page_data['user'] = $this->get_profile($id);
         $page_data['networks'] = $this->site->run_sql("SELECT p.slug, s.id, s.title, network_name, discount FROM products p LEFT JOIN services s ON (p.id = s.product_id) WHERE p.slug ='tv-subscription' ")->result();
         $this->load->view('app/users/subscription', $page_data);
@@ -84,6 +88,7 @@ class Dashboard extends CI_Controller {
     public function electricity(){
         $id = $this->session->userdata('logged_id');
         $page_data['page'] = 'electricity';
+        $page_data['page'] = 'Pay your electricity bill';
         $page_data['user'] = $this->get_profile($id);
         $page_data['plans'] = $this->site->run_sql("SELECT s.id service_id, network_name, discount, pl.id, pl.name FROM products p 
         LEFT JOIN services s ON (p.id = s.product_id) 
@@ -96,6 +101,7 @@ class Dashboard extends CI_Controller {
     public function wallet(){
         $id = $this->session->userdata('logged_id');
         $page_data['page'] = 'wallet';
+        $page_data['title'] = 'My Wallet';
         $page_data['user'] = $this->get_profile( $id );
         $page_data['fundings'] = $this->site->get_result('transactions', '*' , " user_id = {$id}");
         $this->load->view('app/users/wallet', $page_data);
@@ -118,17 +124,20 @@ class Dashboard extends CI_Controller {
         $user_id = $this->session->userdata('logged_id');
         switch ($post_type) {
             case 'pin_transfer':
-                $product_id = $this->input->post('product_id');
-                $amount = $this->input->post('amount');
-                $transaction_id = $this->site->generate_code('transactions', 'trans_id');
-                $how_to_receive = $this->input->post('how_to_receive');
+
                 $this->form_validation->set_rules('airtime_pin_network', 'Airtime Network','trim|required|xss_clean');
                 $this->form_validation->set_rules('pin', 'Pin Network','trim|required|xss_clean');
                 $this->form_validation->set_rules('amount', 'Amount','trim|required|xss_clean');
+                $this->form_validation->set_rules('amount_earned', 'Amount EArned','trim|required|xss_clean');
                 if( $this->form_validation->run() == false ){
                     $this->session->set_flashdata('error_msg', validation_errors());
                     redirect($_SERVER['HTTP_REFERER']);
                 }
+                $product_id = $this->input->post('product_id');
+                $amount = $this->input->post('amount');
+                $outgoing = $this->input->post('amount_earned');
+                $transaction_id = $this->site->generate_code('transactions', 'trans_id');
+                $how_to_receive = $this->input->post('how_to_receive');
                 $pin = trim($this->input->post('pin'));
                 // Mtn - Airtel : 16, Glo - 9mobile : 15,
                 $length = strlen( $pin );
@@ -161,24 +170,30 @@ class Dashboard extends CI_Controller {
                     'status'            => 'pending'
                 );
                 try {
+                    $receiving_channel = $this->input->post('how_to_receive');
+                    $details = ucwords($network) . " N" . $amount . " pin transfer ( {$pin} ) to gecharl.com and to receive by {$receiving_channel}";
+                    $receiver = $this->input->post('receiver', true);
+                    if( $receiver ) $details .= " : {$receiver}";
                     $this->db->trans_start();
                     $tid = $this->site->insert_data('transactions',  $transaction_table);
                     $airtime_to_cash_table = array(
                         'tid' => $tid,
                         'uid' => $user_id,
                         'network' => $network,
-                        'amount' => $amount,
+                        'incoming' => $amount,
+                        'outgoing' => $outgoing,
+                        'type' => $receiving_channel,
                         'status' => 'pending',
-                        'details' => ucwords($network) . " N" . $amount . " pin transfer ( {$pin} ) to gecharl.com and to receive by wallet funding",
+                        'details' => $details,
                         'datetime'  => get_now()
                     );
                     $this->site->insert_data('airtime_to_cash', $airtime_to_cash_table);
                     $this->db->trans_complete();
                     if ($this->db->trans_status() === FALSE){
                         $this->session->set_flashdata('error_msg', 'There was an error processing your request.');
-                        // Send a message to the admin??
                         $this->db->trans_rollback();
                     }else{
+                        // Send a message to the admin??
                         $this->db->trans_commit();
                         $this->session->set_flashdata('success_msg', 'Your request has been received and its under processed.');
                     }
@@ -189,6 +204,16 @@ class Dashboard extends CI_Controller {
                 redirect( $_SERVER['HTTP_REFERER']);
                 break;
         }
+    }
+
+
+    // Profile
+    public function profile(){
+        $id = $this->session->userdata('logged_id');
+        $page_data['page'] = 'profile';
+        $page_data['title'] = "Proile Setting";
+        $page_data['user'] = $this->site->run_sql("SELECT name, phone, email,user_code,wallet, account_name, account_type, bank_name FROM users WHERE id = {$id}")->row();
+        $this->load->view('app/users/profile', $page_data);
     }
 
 	function get_profile($id){

@@ -156,16 +156,16 @@ $(document).ready(function() {
                 if( response.status === 'success' ){
                     console.log(payment_method);
                     if( payment_method === '1' ){ // Payment via Bank Transfer
-
                         sweet_alert('Info',
-                            `Please pay to any of our account details, and use the transaction ID as reference ${response.message}. <b>Ogechi Charles-Mbaeto</b><br />GTB: 0216290799 or Fidelity: 6070020271 or Keystone: 6021461466`,
+                            `Please pay to any of our account details, and use the transaction ID as reference ${response.message}. <b>Ogechi Charles-Mbaeto</b><br />GTB: 0216290799 or Fidelity: 6070020271 or Keystone: 6021461466.`,
                             'info', false);
-
+                        $('.swal-button--confirm').on('click', function () {
+                            window.location = window.location.href;
+                        });
                     }else{ // 3
-                        // @TODO: Payment via Pay stack
-
+                        let data = {'amount' : amount * 100, 'ref' : response.message};
+                        payWithPaystack( data );
                     }
-
                 }else{
                     sweet_alert('Error!', response.message, response.status );
                     _this.removeAttr('disabled');
@@ -223,6 +223,37 @@ $(document).ready(function() {
             }
         });
 
+    });
+
+    // Get the commition for airtime transfer
+    $('#pin_amount').on('change', function () {
+        let pin_amount = $(this).val();
+        let network = $('#airtime_pin_network').val();
+        let amount = 0;
+        if( network !== '' ){
+            switch (network) {
+                case 'mtn':
+                    amount = (85/100) * pin_amount;
+                    $('.to_receive').text(`You will be receiving N${amount}`);
+                    $('#amount_earned').val(amount);
+                    break;
+                case 'glo':
+                    amount = (70/100) * pin_amount;
+                    $('.to_receive').text(`You will be receiving N${amount}`);
+                    $('#amount_earned').val(amount);
+                    break;
+                case '9mobile':
+                    amount = (80/100) * pin_amount;
+                    $('.to_receive').text(`You will be receiving N${amount}`);
+                    $('#amount_earned').val(amount);
+                    break;
+                default:
+                    amount = (70/100) * pin_amount;
+                    $('.to_receive').text(`You will be receiving N${amount}`);
+                    $('#amount_earned').val(amount);
+                    break;
+            }
+        }
     });
 
 
@@ -520,9 +551,9 @@ $(document).ready(function() {
         $('#smart-card-info').html('');
         $('#smart_card_number').val('');
         let discount = $(this).data('discount');
-        // let discount = $(this).find(':selected').data('discount');
+        if( discount === undefined) discount = $(this).find(':selected').data('discount');
 
-        $('.you-pay').html(discount +'% discount');
+        $('.you-pay').html('You get '+ discount +' % discount');
 
         $('#network_plan')
             .find('option')
@@ -551,8 +582,6 @@ $(document).ready(function() {
 
     ///////////////////////////////////////////////
     //////////// ADMIN ////////////////////////////
-    ///////////////////////////////////////////////
-    ///////////////////////////////////////////////
     ///////////////////////////////////////////////
 
     // delete service
@@ -756,6 +785,55 @@ function addCommas(nStr) {
     }
     return x1 + x2;
 }
+
+
+function payWithPaystack( data ){
+    var handler = PaystackPop.setup({
+        key: pk_key,
+        email: user.email,
+        amount: data.amount,
+        currency: "NGN",
+        ref: ''+data.ref,
+        metadata: {
+            custom_fields: [
+                {
+                    display_name: "",
+                    variable_name: "user",
+                    value: user.user
+                }
+            ]
+        },
+        callback: function(response){
+            // alert('success. transaction ref is ' + response.reference);
+            verifyPaystack( response.reference, data.ref );
+        },
+        onClose: function(){
+            sweet_alert('Info', "You closed the window, and for this reason we couldn'nt validate your payment", 'info');
+        }
+    });
+    handler.openIframe();
+}
+
+function verifyPaystack( pref, ref){
+    $.ajax({
+        url : base_url + 'ajax/verifyPaystack/',
+        method : "POST",
+        data : {'reference' : pref, 'ref' : ref },
+        success: function (response) {
+            if( response.status === 'success' ){
+                sweet_alert('Success!', response.message, response.status );
+                console.log(response.message);
+            }else{
+                sweet_alert('Error!', response.message, response.status );
+                console.log(response.message);
+            }
+        },
+        error : function (response) {
+            console.log(response.responseText);
+        }
+    });
+}
+
 
 
 

@@ -49,7 +49,7 @@
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label class="label" for="Network">Please select network <span class="text-danger">*</span></label>
-                                                        <select class="form-control" name="airtime_pin_network" id="airtime_pin_network" required>
+                                                            <select class="form-control" name="airtime_pin_network" id="airtime_pin_network" required>
                                                             <option value=""> -- select --</option>
                                                             <?php foreach ($networks as $network ): ?>
                                                                 <option data-discount="<?= $network->discount; ?>"
@@ -73,7 +73,7 @@
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <label class="label" for="amount">Please select the amount you're sending <span class="text-danger">*</span></label>
-                                                        <select class="form-control" name="amount" id="amount" required>
+                                                        <select class="form-control" name="amount" id="pin_amount" required>
                                                             <option value=""> -- select --</option>
                                                             <?php for( $x = 100; $x <= 1000; $x += 100 ) : ?>
                                                                 <option value="<?= $x; ?>"> <?= ngn( $x ); ?></option>
@@ -90,13 +90,29 @@
                                                         <select class="form-control" name="how_to_receive" id="how_to_receive" required>
                                                             <option value="wallet">Fund my wallet</option>
                                                             <option value="data" disabled>Swap with mobile data (From N1,000 above)</option>
-                                                            <option value="data" disabled>Transfer the money into my account (From N1,000 above)</option>
+                                                            <option value="account" disabled>Transfer the money into my account (From N1,000 above)</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
 
+                                            <div class="row" style="display: none;">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="label" for="receiver">Please enter the number <span class="text-danger">*</span></label>
+                                                        <input type="text" name="receiver" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <span class="to_receive text-danger"></span>
+                                                <br />
+                                            </div>
+
                                             <input type="hidden" name="product_id" id="product_id" value="8" />
+                                            <input type="hidden" name="amount_earned" id="amount_earned" value="" />
                                             <input type="hidden" name="post_type" value="pin_transfer" />
                                             <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4" type="submit">Submit</button>
                                             <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear</button>&nbsp;&nbsp;
@@ -105,6 +121,9 @@
                                     </div>
 
                                     <div class="tab-pane" id="transfer_tab" role="tabpanel" aria-labelledby="transfer-tab">
+                                        <div class="alert alert-danger" role="alert">
+                                            <b>Coming Soon!!!</b>
+                                        </div>
                                     </div>
                                 </div>
 

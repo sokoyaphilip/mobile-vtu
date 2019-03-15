@@ -29,7 +29,7 @@
                             <p class="tel col-lg-12 col-md-4 col-12"><i class="fas fa-whatsapp text-white"></i><a class="text-white" href="https://api.whatsapp.com/send?phone=<?=lang('contact_no');?>"><?= lang('contact_no');?></a></p>
                             <p class="email col-lg-12 col-md-4 col-12"><i class="fas fa-envelope text-white"></i><a class="text-white" href="mailto:<?= lang('app_email')?>"><?= lang('app_email')?></a></p>
                             <p class="email col-lg-12 col-md-4 col-12"><i class="fas fa-map text-white"></i>
-                                <span class="text-white">Address: Okebanu Plaza besides 2nd Salvation Ministries, Elikpokwu-Odu Aluu link Road, Rukpokwu, Pssort Harcourt Rivers State.</span>
+                                <span class="text-white">Address: <?= lang('address'); ?></span>
                             </p>
                         </div>
                     </div><!--//footer-col-inner-->

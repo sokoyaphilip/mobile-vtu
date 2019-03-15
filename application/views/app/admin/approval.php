@@ -34,13 +34,6 @@
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="wallet_tab" role="tabpanel" aria-labelledby="wallet-tab">
-                                        <div class="alert alert-secondary" role="alert">
-                                            <b>Please note:</b>
-                                            <ul>
-                                                <li>A transaction ID will be generated for you, which should be used as a reference.</li>
-                                                <li>If you'll be paying via <b>Bank Transfer / Deposit</b>, an account details will be shown to you where you will make debosit to..</li>
-                                            </ul>
-                                        </div>
                                         <div style="margin-top: 20px" class="table-responsive">
                                             <table class="table table-striped" id="table">
                                                 <thead>
@@ -87,13 +80,6 @@
                                     </div>
 
                                     <div class="tab-pane" id="airtime-cash-pin" role="tabpanel" aria-labelledby="airtime-cash-pin-tab">
-                                        <div class="alert alert-secondary" role="alert">
-                                            <b>Please note:</b>
-                                            <ul>
-                                                <li>A transaction ID will be generated for you, which should be used as a reference.</li>
-                                                <li>If you'll be paying via <b>Bank Transfer / Deposit</b>, an account details will be shown to you where you will make debosit to..</li>
-                                            </ul>
-                                        </div>
                                         <div style="margin-top: 20px" class="table-responsive">
                                             <table class="table table-striped" id="table">
                                                 <thead>
@@ -113,15 +99,18 @@
                                                         <td><?= ngn($cash->incoming)?></td>
                                                         <td><?= ngn($cash->outgoing)?></td>
                                                         <td>
-                                                            <form class="form-inline" method="post" action="<?= base_url('admin/wallet')?>" id="<?= $cash->id?>">
+                                                            <form class="form-inline" method="post" action="<?= base_url('admin/tocashprocess/')?>" id="<?= $cash->id?>">
                                                                 <div class="form-group mx-sm-3 mb-2">
                                                                     <label for="action" class="sr-only">Action</label>
                                                                     <select class="form-control-sm" name="action" required>
                                                                         <option value=""> -- Select action --</option>
-                                                                        <option value="approved"> Approve </option>
-                                                                        <option value="declined"> Decline </option>
+                                                                        <option value="approve"> Approve </option>
+                                                                        <option value="decline"> Decline </option>
                                                                     </select>
+                                                                    <input type="hidden" name="transaction_type" value="<?= $cash->type;?>">
                                                                     <input type="hidden" name="txn_id" value="<?= $cash->tid; ?>" />
+                                                                    <input type="hidden" name="user_id" value="<?= $cash->uid; ?>" />
+                                                                    <input type="hidden" name="amount" value="<?= $cash->outgoing; ?>" />
                                                                     <button type="submit" class="btn btn-sm btn-outline-success mb-2 btn-sm">Submit</button>
                                                                 </div>
                                                             </form>

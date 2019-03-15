@@ -68,32 +68,6 @@
                                             <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear</button>&nbsp;&nbsp;
                                             <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 pay-now">Pay Now</button>
                                         </form>
-
-
-                                        <div style="margin-top: 20px" class="table-responsive">
-                                            <table class="table table-striped" id="table">
-                                                <thead>
-                                                <tr>
-                                                    <th>Transaction ID</th>
-                                                    <th>Date</th>
-                                                    <th>Description</th>
-                                                    <th>Amount</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <?php foreach( $fundings as $funding ): ?>
-                                                    <tr>
-                                                        <td><?= $funding->trans_id; ?></td>
-                                                        <td><?= neatDate( $funding->date_initiated); ?></td>
-                                                        <td><?= payment_id_replacer($funding->description); ?></td>
-                                                        <td><?= ngn($funding->amount)?></td>
-                                                        <td><?= statusLabel($funding->status)?></td>
-                                                    </tr>
-                                                <?php endforeach; ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
                                     </div>
 
                                     <div class="tab-pane" id="transfer_tab" role="tabpanel" aria-labelledby="transfer-tab">
@@ -118,30 +92,7 @@
                                             <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 transfer-now" data-balance="<?= $user->wallet;?>">Transfer Now</button>
                                         </form>
 
-                                        <div style="margin-top: 20px" class="table-responsive">
-                                            <table class="table table-striped" id="table">
-                                                <thead>
-                                                <tr>
-                                                    <th>Transaction ID</th>
-                                                    <th>Date</th>
-                                                    <th>Description</th>
-                                                    <th>Amount</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <?php foreach( $fundings as $funding ): ?>
-                                                    <tr>
-                                                        <td><?= $funding->trans_id; ?></td>
-                                                        <td><?= neatDate( $funding->date_initiated); ?></td>
-                                                        <td><?= payment_id_replacer($funding->description); ?></td>
-                                                        <td><?= ngn($funding->amount)?></td>
-                                                        <td><?= statusLabel($funding->status)?></td>
-                                                    </tr>
-                                                <?php endforeach; ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
+
                                     </div>
                                 </div>
 

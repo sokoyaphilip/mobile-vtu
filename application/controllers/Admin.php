@@ -32,7 +32,7 @@ class Admin extends CI_Controller {
                 $end = date('Y-m-d', strtotime($end));
             }
 
-            $query = "SELECT t.*, u.phone FROM transactions t LEFT JOIN users u ON(u.uid = t.user_id) WHERE date_initiated BETWEEN '{$start}' AND '{$end}'";
+            $query = "SELECT t.*, u.phone FROM transactions t LEFT JOIN users u ON(u.id = t.user_id) WHERE date_initiated BETWEEN '{$start}' AND '{$end}'";
 
             if( $this->input->post('transaction_type') ){
                 $transaction = $this->input->post('transaction_type');
@@ -134,10 +134,41 @@ class Admin extends CI_Controller {
             $page_data['page'] = 'approval';
             $page_data['fundings'] = $this->site->run_sql("SELECT t.* , u.name name, u.phone, u.email FROM transactions t LEFT JOIN users u ON (u.id = t.user_id) 
         WHERE t.status = 'pending' AND t.product_id = 6")->result();
-            $page_data['airtime_to_cash_pin'] = $this->site->get_result('airtime_to_cash', 'id,tid,incoming,outgoing,details,datetime,status', "(status = 'pending')");
+            $page_data['airtime_to_cash_pin'] = $this->site->get_result('airtime_to_cash', 'id,tid,uid,incoming,outgoing,details,datetime,status,type', "(status = 'pending')");
             $page_data['title'] = "Funding Approval";
             $this->load->view('app/admin/approval', $page_data);
         }
+    }
+
+    function tocashprocess(){
+//        var_dump($_POST);
+        $action = $this->input->post('action');
+        $txid  = $this->input->post('txn_id');
+        $user_id = $this->input->post('user_id');
+        $amount = $this->input->post('amount');
+
+        if( $action == 'approve' ){
+            $txn_update = array('status' => 'success');
+            $airtime_update = array('status' => 'success');
+            $this->db->trans_start();
+            if( $_POST['transaction_type'] == 'wallet' ){
+                $this->site->set_field('users', 'wallet', "wallet+{$amount}", "id={$user_id}");
+            }
+            $this->site->update('airtime_to_cash', $airtime_update, "( tid = {$txid})");
+            $this->site->update('transactions', $txn_update, "( id = {$txid})");
+
+            $this->db->trans_complete();
+            if ($this->db->trans_status() === FALSE){
+                $this->session->set_flashdata('error_msg', 'There was an error processing that request.');
+                $this->db->trans_rollback();
+            }else{
+                $this->db->trans_commit();
+                $this->session->set_flashdata('success_msg', 'Request successful.');
+            }
+            redirect( $_SERVER['HTTP_REFERER']);
+
+        }
+
     }
 
 

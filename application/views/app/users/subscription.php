@@ -67,20 +67,20 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <label for="sub_duration">Subscription Duration</label>
-                                                <select name="duration" class="form-control" id="sub_duration">
-                                                    <?php
-                                                        for( $x = 1; $x <= 12; $x++ ){
-                                                            ?>
-                                                            <option value="<?= $x; ?>"> <?= $x; ?> <?= ( $x == 1 ) ? 'Month' : 'Months'; ?> </option>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </select>
-                                            </div>
-                                        </div>
+<!--                                        <div class="col-sm-12">-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label for="sub_duration">Subscription Duration</label>-->
+<!--                                                <select name="duration" class="form-control" id="sub_duration">-->
+<!--                                                    --><?php
+//                                                        for( $x = 1; $x <= 12; $x++ ){
+//                                                            ?>
+<!--                                                            <option value="--><?//= $x; ?><!--"> --><?//= $x; ?><!-- --><?//= ( $x == 1 ) ? 'Month' : 'Months'; ?><!-- </option>-->
+<!--                                                        --><?php
+//                                                    }
+//                                                    ?>
+<!--                                                </select>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
 
                                     </div>
                                 <input type="hidden" id="product_id" value="3">

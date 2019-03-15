@@ -36,6 +36,7 @@ class Ajax extends CI_Controller {
                 $session_data = array('logged_in' => true, 'logged_id' => $user->id,
                     'login_username' => $this->input->post('login_username'),
                     'wallet' => $user->wallet,
+                    'email' => $user->email,
                     'is_admin' => $user->is_admin);
                 $this->session->set_userdata($session_data);
                 $response['status'] = 'success';
@@ -80,7 +81,9 @@ class Ajax extends CI_Controller {
                     'password'       => $this->input->post('password', true)
                 );
                 $user = $this->user->login($login_data);
-                $session_data = array('logged_in' => true, 'logged_id' => $user->id,
+                $session_data = array('logged_in' => true,
+                    'logged_id' => $user->id,
+                    'email' => $this->input->post('signup_email', true),
                     'login_username' => $this->input->post('login_username'),
                     'is_admin' => $user->is_admin
                 );
@@ -788,15 +791,7 @@ class Ajax extends CI_Controller {
         }
     }
 
-    /*
-     * Help us to return the response
-     * */
-    function return_response( $array = array()){
-        header('Content-type: text/json');
-        header('Content-type: application/json');
-        echo json_encode( $array );
-        exit;
-    }
+
 
 
     private function _submitGet( $data ){
@@ -888,4 +883,94 @@ class Ajax extends CI_Controller {
         curl_close($curl);
         return $response;
     }
+
+
+    function verifyPaystack(){
+        $response = array('status' => 'error');
+        $paystackreference = $this->input->post('reference', true);
+        $ref = $this->input->post('ref', true);
+        // Get row of the transaction
+        $row = $this->site->run_sql("SELECT user_id, amount FROM transactions WHERE trans_id = '{$ref}'")->row();
+        if( !$row ){
+            $response['message'] = "We couldn't find the transaction.";
+            $this->return_response($response);
+        }else{
+            $amount = (int) $row->amount;
+            //The parameter after verify/ is the transaction reference to be verified
+            $url = 'https://api.paystack.co/transaction/verify/' . $paystackreference;
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt(
+                $ch, CURLOPT_HTTPHEADER, array('Authorization: Bearer '. S_KEY)
+            );
+            $request = curl_exec($ch);
+            curl_close($ch);
+            if ($request) {
+                $result = json_decode($request, true);
+                // print_r($result);
+                if($result){
+                    if($result['data']){
+                        //something came in
+                        if($result['data']['status'] == 'success'){
+                            // the transaction was successful, you can deliver value
+                            // Update the transaction
+                            $this->db->trans_start();
+                            $this->site->update('transactions', array('status' => 'success', 'payment_status' => $result['message']), "(trans_id = {$ref})" );
+                            $this->site->set_field('users', 'wallet', "wallet-{$amount}", "id={$row->user_id}");
+                            $this->db->trans_complete();
+                            if ($this->db->trans_status() === FALSE){
+                                $this->db->trans_rollback();
+                                $response['message'] = "There was an error updating your payment. PLease chat us up if debited.";
+                                $this->return_response($response);
+                            }else{
+                                // Send a message to the admin??
+                                $this->db->trans_commit();
+                                $response['status'] = 'success';
+                                $response['message'] = "Transaction successful.";
+                                $this->return_response($response);
+                            }
+                        }else{
+                            // the transaction was not successful, do not deliver value'
+                            // print_r($result);  //uncomment this line to inspect the result, to check why it failed.
+                            $response['message'] = $result;
+                            $this->return_response($response);
+
+                        }
+                    }else{
+                        $response['message'] = $result['message'];
+                        $this->return_response($response);
+                    }
+
+                }else{
+                    //print_r($result);
+                    $response['message'] = $result;
+                    $this->return_response($response);
+//                    die("Something went wrong while trying to convert the request variable to json. Uncomment the print_r command to see what is in the result variable.");
+                }
+            }else{
+                //var_dump($request);
+                $response['message'] = $request;
+                $this->return_response($response);
+//                die("Something went wrong while executing curl. Uncomment the var_dump line above this line to see what the issue is. Please check your CURL command to make sure everything is ok");
+            }
+        }
+    }
+
+
+    /* General FUnction
+     * Help us to return the response
+     * */
+    function return_response( $array = array()){
+        header('Content-type: text/json');
+        header('Content-type: application/json');
+        echo json_encode( $array );
+        exit;
+    }
+
 }
+
+
+
+
+
