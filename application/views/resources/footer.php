@@ -46,8 +46,8 @@
                     <ul class="social list-inline">
                         <li class="last list-inline-item"><a href="#" ><i class="fab fa-youtube"></i></a></li>
                         <li class="list-inline-item"><a href="#" ><i class="fab fa-linkedin-in"></i></a></li>
-                        <li class="list-inline-item"><a href="#" ><i class="fab fa-facebook-f"></i></a></li>
-                        <li class="list-inline-item"><a href="#" ><i class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="fb.me/gecharl" ><i class="fab fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/Gecharl1" ><i class="fab fa-twitter"></i></a></li>
                     </ul><!--//social-->
                 </div><!--//social-container-->
             </div><!--//row-->

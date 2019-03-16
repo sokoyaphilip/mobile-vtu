@@ -29,7 +29,7 @@
                                 </span>
                             </p>
                         </div><!--//form-group-->
-                        <button type="button" class="btn btn-block btn-cta-primary log-in">Log in</button>
+                        <button type="button" disabled class="btn btn-block btn-cta-primary log-in">Log in</button>
                     </form>
                 </div><!--//login-form-container-->
                 <br />
@@ -81,7 +81,7 @@
                             <label class="sr-only" for="signup-password">Confirm password</label>
                             <input id="confirm-password" name="confirm-password" required type="password" class="form-control confirm-password" placeholder="Confirm Password" autocomplete="off">
                         </div><!--//form-group-->
-                        <button type="button" class="btn btn-block btn-cta-primary sign-up">Sign up</button>
+                        <button type="button" disabled class="btn btn-block btn-cta-primary sign-up">Sign up</button>
                     </form>
                 </div><!--//login-form-container-->
                 <br />
