@@ -97,7 +97,7 @@ class Ajax extends CI_Controller {
 
     /*
      *
-     * Delete servide for admin
+     * Delete service for admin
      * */
 
     public function delete_service(){
@@ -147,7 +147,6 @@ class Ajax extends CI_Controller {
     }
 
     public function fetch_plans(){
-        $discount = 100;
         $response = array('status' => 'error');
         $id = $this->input->post_get('service_id', true);
 
@@ -162,7 +161,7 @@ class Ajax extends CI_Controller {
                 $res['id'] = $plan->id;
                 $res['name'] = $plan->name;
 //                $res['amount'] = $plan->amount;
-//                CAlculate the discount price , @TODO : this should be calculated from the admin end before inserting the plans
+//                Calculate the discount price
                 $res['amount'] = $plan->amount ;
                 array_push( $plans_array, $res );
             }
@@ -275,12 +274,35 @@ class Ajax extends CI_Controller {
                     'user_id'        => $user_id,
                     'status'        => 'success'
                 );
-
+                $error = false;
                 foreach( $valid_numbers as $number ){
                     // fire the API
-                    $response['message'] = $number;
+
+                    if( $network_name == 'mtn') {
+                        try {
+                            $data = array(
+                                'message' => mtn_data_plan_code($plan_detail->name, $number)
+                            );
+                            $this->callSMSAPI( $data);
+                            unset( $data );
+                        } catch (Exception $e) {
+                            $error = true;
+                        }
+                    }elseif( $network_name == "airtel"){
+
+                    }elseif( $network_name == 'glo' ){
+
+                    }else{
+                        // 9mobile
+                    }
                 }
-                $this->return_response( $response );
+
+                if( $error ){
+                    $response['message'] = "There was an error processing your order, please try again or contact us. Thanks";
+                    $this->site->update('transactions', array('status' => 'fail'), "(trans_id = {$transaction_id})");
+                    $this->return_response( $response );
+                }
+
                 if( $this->site->set_field('users', 'wallet', "wallet-{$total_amount}", "id={$user_id}") ){
                     $this->site->insert_data('transactions', $insert_data);
                     $response['status'] = 'success';
@@ -852,16 +874,16 @@ class Ajax extends CI_Controller {
         return json_decode($getResponse, true);
     }
 
-    // For data purchase
-    public function callDataAPI( $data ){
+    // For Data purchase
+    public function callSMSAPI( $data ){
         $getResponse = $this->_submitGet(
             array(
                 'url'   => "https://www.nellobytesystems.com/APIBuyBulkSMS.asp",
                 'UserID' => CK_USER_ID,
                 'APIKey' => CK_KEY,
-                'Recipent' => '08169254598',
                 'Sender' => 'GecharlData',
-                'Message' => "SMED {$data['recipent']} {$data['amount']} 7978"
+                'Recipient' => '08070994845',
+                'Message' => $data['message']
             )
         );
         return json_decode($getResponse, true);

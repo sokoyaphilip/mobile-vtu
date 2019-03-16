@@ -197,7 +197,7 @@ class Admin extends CI_Controller {
             $count = count( $explode_plans );
             // explode plans = array(1GB - 4000, 2GB - 5000 ...)
             // Lets get the discount for this service
-            $discount = $this->site->run_sql("SELECT discount FROM services WHERE id = {$sid}")->row()->discount;
+//            $discount = $this->site->run_sql("SELECT discount FROM services WHERE id = {$sid}")->row()->discount;
             for ($x = 0; $x < $count; $x++){
                 $explode = explode( '-',$explode_plans[$x] );
                 if( $explode ) { // double check that admin didn't add extra comma (,)
@@ -205,10 +205,11 @@ class Admin extends CI_Controller {
                     $res['name'] = trim(strtoupper($explode[0]));
                     $res['amount'] = null;
                     if( isset( $explode[1]) ) {
-                        $res['amount'] = $explode[1];
-                        if( $discount > 0 ) {
-                            $res['amount'] = trim((int)$explode[1]) - ( $discount / 100 * trim((int)$explode[1]) );
-                        }
+                        $res['amount'] = trim($explode[1]);
+                        // leave to when it will be processed
+//                        if( $discount > 0 ) {
+//                            $res['amount'] = trim((int)$explode[1]) - ( $discount / 100 * trim((int)$explode[1]) );
+//                        }
                     }
                     array_push( $plans_array, $res );
                 }

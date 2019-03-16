@@ -329,6 +329,25 @@ function network_code( $network ){
     }
 }
 
+
+// Get MTN data plan
+function mtn_data_plan_code( $plan, $number){
+    $plan = trim($plan);
+    switch ($plan) {
+        case '5G':
+            return "SMEE {$number} 5000 8025";
+            break;
+        case '2G':
+            return "SMED {$number} 2000 8025";
+            break;
+        case '1G':
+            return "SMEC {$number} 1000 8025";
+            break;
+        default:
+            return "SMEB {$number} 500 8025";
+    }
+}
+
 // DSTV Package code for vtpass
 // We find our plan name and return an array with vtpass plan - amount
 //function package_code_amount( $plan_name){

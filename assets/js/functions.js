@@ -168,6 +168,7 @@ $(document).ready(function() {
                     }
                 }else{
                     sweet_alert('Error!', response.message, response.status );
+                    console.log(response.message);
                     _this.removeAttr('disabled');
                 }
             },
@@ -184,7 +185,7 @@ $(document).ready(function() {
         e.preventDefault();
         $(this).prop('disabled');
         let _btn = $(this);
-
+        _btn.text("Processing...");
         let product_id = $('#product_id').val();
         let plan_id = $('#network_plan').val();
         let recipents = $('#data-recipents').val();
@@ -194,17 +195,20 @@ $(document).ready(function() {
         if( recipents === '') {
             _btn.prop('disabled', false);
             sweet_alert('Error', 'Number field can not be empty', 'error');
+            _btn.text("Buy Now");
             return false;
         }
         if( network === '') {
             _btn.prop('disabled', false);
             sweet_alert('Error', 'Please select a network', 'error');
+            _btn.text("Buy Now");
             return false;
         }
 
         if( plan_id === ''){
             _btn.prop('disabled', false);
             sweet_alert('Error', 'Please select a plan', 'error');
+            _btn.text("Buy Now");
             return false;
         }
 
@@ -215,9 +219,12 @@ $(document).ready(function() {
             success : function(response){
                 if( response.status === 'success' ){
                     sweet_alert('Success', response.message, 'success', false);
-
+                    $('.swal-button--confirm').on('click', function () {
+                        window.location = window.location.href;
+                    })
                 }else{
                     sweet_alert('Error', response.message, 'error', false);
+                    _btn.text("Buy Now");
                     $(this).prop('disabled');
                 }
             }
@@ -624,7 +631,6 @@ $(document).ready(function() {
                             sweet_alert('Success', 'Service and associated deleted successfully.', 'success')
                             $(_this).parents("tr").remove();
                         }else{
-
                             sweet_alert('Error!', response.message, response.status );
                         }
 
