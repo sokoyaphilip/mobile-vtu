@@ -122,8 +122,8 @@
                                     <tr>
                                         <th>Service ID</th>
                                         <th>Title</th>
-                                        <th>Discount</th>
                                         <th>Category</th>
+                                        <th>Discount</th>
                                         <th>Availability</th>
                                         <th>Action</th>
                                     </tr>
@@ -133,9 +133,9 @@
                                     <tr id="<?= $service->id; ?>">
                                         <td class="text-center"><?= $service->id; ?></td>
                                         <td class="text-center"><?= ucwords($service->title); ?></td>
-                                        <td class="text-center"><?= $service->discount .'% / ' .$service->discount_type; ?></td>
+                                        <td class="text-center"><?= ucwords($service->product_name); ?></td>
+                                        <td class="text-center"><?= $service->discount .'% / For ' .$service->discount_type .' buyers'; ?></td>
                                         <td class="text-center"><?= ( $service->availability == 1 ) ? 'Yes' : 'No'; ?></td>
-                                        <td class="text-center"><?= $service->product_name?></td>
                                         <td>
                                             <a href="<?= base_url('admin/plans/?id=' . $service->id .'#plan-table' ); ?>" class="btn btn-outline-success btn-sm">View</a> |
                                             <button class="btn btn-danger btn-sm delete-service" data-id="<?= $service->id ; ?>">Delete</button>

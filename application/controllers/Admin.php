@@ -70,7 +70,8 @@ class Admin extends CI_Controller {
 
 	public function services(){
         if( $this->input->post() ){
-            $this->form_validation->set_rules('title', 'Service Name','trim|required|xss_clean|is_unique[services.title]', array('is_unique' => 'This %s has already been registered!'));
+            $this->form_validation->set_rules('title', 'Service Name','trim|required|xss_clean');
+//            $this->form_validation->set_rules('title', 'Service Name','trim|required|xss_clean|is_unique[services.title]', array('is_unique' => 'This %s has already been registered!'));
 //            $this->form_validation->set_rules('network_name', 'Network','trim|required|xss_clean');
 
             if( $this->form_validation->run() == FALSE ){
@@ -231,7 +232,8 @@ class Admin extends CI_Controller {
                 $page_data['id_set'] = true;
             }
             $page_data['page'] = 'plans';
-            $page_data['services'] = $this->site->get_result('services', 'id, title, discount_type');
+//            $page_data['services'] = $this->site->get_result('services', 'id, title, discount_type');
+            $page_data['services'] = $this->site->run_sql('SELECT s.id,s.title,s.discount_type, p.title product_name FROM services s LEFT JOIN products p ON (p.id = s.product_id)')->result();
             $page_data['plans'] = $this->site->run_sql($query)->result();
 //            var_dump( $page_data['plans']);
             $this->load->view('app/admin/plans', $page_data);

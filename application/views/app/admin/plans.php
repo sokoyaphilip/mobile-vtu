@@ -29,7 +29,7 @@
                                                 <select class="form-control" name="service" id="service" required>
                                                     <option value="">-- Select a service --</option>
                                                     <?php foreach( $services as $service ) : ?>
-                                                        <option value="<?= $service->id; ?>"><?= ucwords($service->title. ' - ' . $service->discount_type);?></option>
+                                                        <option value="<?= $service->id; ?>"><?= ucwords($service->title. '('. ucwords($service->product_name).') - D   iscount for ' . $service->discount_type);?></option>
                                                     <?php endforeach; ?>
                                                 </select>
                                             </div>

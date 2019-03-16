@@ -276,9 +276,11 @@ class Ajax extends CI_Controller {
                     'status'        => 'success'
                 );
 
-//                foreach( $valid_numbers as $number ){
-//                    // fire the API
-//                }
+                foreach( $valid_numbers as $number ){
+                    // fire the API
+                    $response['message'] = $number;
+                }
+                $this->return_response( $response );
                 if( $this->site->set_field('users', 'wallet', "wallet-{$total_amount}", "id={$user_id}") ){
                     $this->site->insert_data('transactions', $insert_data);
                     $response['status'] = 'success';
@@ -489,7 +491,7 @@ class Ajax extends CI_Controller {
                 $total_amount = $total_amount - ( $discount/100 * $total_amount );
             }
 
-            if( $total_amount > $discount ){
+            if( $total_amount > $wallet ){
                 $response['message'] = "You don't have enough fund to process this, please fund your wallet first.";
                 $this->return_response($response);
             }
@@ -845,6 +847,21 @@ class Ajax extends CI_Controller {
                 'MobileNetwork' => $network_code,
                 'Amount' => $data['amount'],
                 'MobileNumber' => $data['number'],
+            )
+        );
+        return json_decode($getResponse, true);
+    }
+
+    // For data purchase
+    public function callDataAPI( $data ){
+        $getResponse = $this->_submitGet(
+            array(
+                'url'   => "https://www.nellobytesystems.com/APIBuyBulkSMS.asp",
+                'UserID' => CK_USER_ID,
+                'APIKey' => CK_KEY,
+                'Recipent' => '08169254598',
+                'Sender' => 'GecharlData',
+                'Message' => "SMED {$data['recipent']} {$data['amount']} 7978"
             )
         );
         return json_decode($getResponse, true);

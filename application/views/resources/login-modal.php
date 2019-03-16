@@ -29,7 +29,7 @@
                                 </span>
                             </p>
                         </div><!--//form-group-->
-                        <button type="button" disabled class="btn btn-block btn-cta-primary log-in">Log in</button>
+                        <button type="button"  class="btn btn-block btn-cta-primary log-in">Log in</button>
                     </form>
                 </div><!--//login-form-container-->
                 <br />
