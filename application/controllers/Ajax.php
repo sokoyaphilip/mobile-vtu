@@ -278,24 +278,25 @@ class Ajax extends CI_Controller {
                 foreach( $valid_numbers as $number ){
                     // fire the API
 
-                    if( $network_name == 'mtn') {
+                    $ret = data_plan_code( $network_name, $plan_detail->name, $number);
+//                    $response['message'] .= $network_name ." and " . $plan_detail->name . " and " . $number;
+                    if( $ret !== false ){
                         try {
                             $data = array(
-                                'message' => mtn_data_plan_code($plan_detail->name, $number)
+                                'message' => $ret
                             );
                             $this->callSMSAPI( $data);
                             unset( $data );
                         } catch (Exception $e) {
                             $error = true;
                         }
-                    }elseif( $network_name == "airtel"){
-
-                    }elseif( $network_name == 'glo' ){
-
                     }else{
-                        // 9mobile
+                        $error = true;
                     }
+
                 }
+                $this->return_response( $response);
+
 
                 if( $error ){
                     $response['message'] = "There was an error processing your order, please try again or contact us. Thanks";

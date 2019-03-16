@@ -329,22 +329,65 @@ function network_code( $network ){
     }
 }
 
-
-// Get MTN data plan
-function mtn_data_plan_code( $plan, $number){
-    $plan = trim($plan);
-    switch ($plan) {
-        case '5G':
-            return "SMEE {$number} 5000 8025";
+function data_plan_code( $network , $plan, $number){
+    $plan = trim(strtoupper( $plan));
+    switch ($network) {
+        case "mtn":
+            switch ($plan) {
+                case '5GB':
+                    return "SMEE {$number} 5000 8025";
+                    break;
+                case '2GB':
+                    return "SMED {$number} 2000 8025";
+                    break;
+                case '1GB':
+                    return "SMEC {$number} 1000 8025";
+                    break;
+                case "500MB":
+                    return "SMEB {$number} 500 8025";
+                default :
+                    return false;
+                    break;
+            }
             break;
-        case '2G':
-            return "SMED {$number} 2000 8025";
+        case "9mobile":
+        case "etisalat":
+            switch ( $plan ) {
+            case "1GB":
+                return "*229*2*7*{$number}#";
+                break;
+            case "1.5GB":
+                return "*229*2*25*{$number}#";
+                break;
+            case "2.5GB":
+                return "*229*2*8*{$number}#";
+                break;
+            case "4GB":
+                return "*229*2*35*{$number}#";
+                break;
+            case "5.5GB":
+                return "*229*2*36*{$number}#";
+                break;
+            case "11.5GB":
+                return "*229*2*5*{$number}#";
+                break;
+            case "15GB":
+                return "*229*4*1*{$number}#";
+                break;
+            case "27.5GB":
+                return "*229*4*3*{$number}#";
+                break;
+            default:
+                return false;
+                break;
+        }
             break;
-        case '1G':
-            return "SMEC {$number} 1000 8025";
+        case "airtel":
+            return false;
             break;
         default:
-            return "SMEB {$number} 500 8025";
+            return false;
+            break;
     }
 }
 
