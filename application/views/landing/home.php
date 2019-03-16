@@ -28,7 +28,7 @@
                     <h2 class="title">Welcome to Gecharl connect.</h2>
                     <span style="font-max-size: small">Your one stop shop on Airtime,Mobile data and bills payment</span>
                     <p class="summary">Gecharl focuses on offering subsidised Internet subscription and Airtime on all Telecommunication Networks. With Gecharl you are sure of saving on your Data/Airtime purchase. </p>
-                    <a class="btn btn-cta btn-cta-secondary" href="<?= base_url('page/all-services/'); ?>">All Service</a>
+<!--                    <a class="btn btn-cta btn-cta-secondary" href="--><?//= base_url('page/all-services/'); ?><!--">All Service</a>-->
                 </div><!--//intro-->
                 <div class="features-video col-lg-7 col-md-6 col-12">
                     <div class="card-bg-white border border-success rounded">
