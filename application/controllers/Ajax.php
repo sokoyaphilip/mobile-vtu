@@ -295,9 +295,6 @@ class Ajax extends CI_Controller {
                     }
 
                 }
-                $this->return_response( $response);
-
-
                 if( $error ){
                     $response['message'] = "There was an error processing your order, please try again or contact us. Thanks";
                     $this->site->update('transactions', array('status' => 'fail'), "(trans_id = {$transaction_id})");
