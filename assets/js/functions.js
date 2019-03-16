@@ -166,6 +166,7 @@ $(document).ready(function() {
                         let data = {'amount' : amount * 100, 'ref' : response.message};
                         payWithPaystack( data );
                     }
+
                 }else{
                     sweet_alert('Error!', response.message, response.status );
                     console.log(response.message);
@@ -225,7 +226,7 @@ $(document).ready(function() {
                 }else{
                     sweet_alert('Error', response.message, 'error', false);
                     _btn.text("Buy Now");
-                    $(this).prop('disabled');
+                    $(this).prop('disabled', false);
                 }
             }
         });

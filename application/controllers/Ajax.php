@@ -224,6 +224,7 @@ class Ajax extends CI_Controller {
         $message = $description_number =  $invalid_numbers = '';
         $valid_numbers = array();
         $numbers = explode( ',', $recipents);
+
         foreach( $numbers as $key => $msisdn ){
             $msisdn = preg_replace('/\D/', '', $msisdn);
             $strlen = strlen( $msisdn );
@@ -274,29 +275,22 @@ class Ajax extends CI_Controller {
                     'user_id'        => $user_id,
                     'status'        => 'success'
                 );
-                $error = false;
+                $error = false; $api_ret = 'ORDER_COMPLETED';
                 foreach( $valid_numbers as $number ){
                     // fire the API
 
                     $ret = data_plan_code( $network_name, $plan_detail->name, $number);
-//                    $response['message'] .= $network_name ." and " . $plan_detail->name . " and " . $number;
                     if( $ret !== false ){
-                        try {
-                            $data = array(
-                                'message' => $ret
-                            );
-                            $this->callSMSAPI( $data);
-                            unset( $data );
-                        } catch (Exception $e) {
-                            $error = true;
-                        }
+                        $sms_array = array( '08070994845' => $ret );
+                        $this->load->library('AfricaSMS', $sms_array);
+                        $this->africasms->sendsms();
                     }else{
                         $error = true;
                     }
-
                 }
+
                 if( $error ){
-                    $response['message'] = "There was an error processing your order, please try again or contact us. Thanks";
+                    $response['message'] = "There was an error processing your order, {$api_ret['status']} please try again or contact us. Thanks";
                     $this->site->update('transactions', array('status' => 'fail'), "(trans_id = {$transaction_id})");
                     $this->return_response( $response );
                 }
@@ -880,8 +874,9 @@ class Ajax extends CI_Controller {
                 'UserID' => CK_USER_ID,
                 'APIKey' => CK_KEY,
                 'Sender' => 'GecharlData',
-                'Recipient' => '08070994845',
+                'Recipient' => '08151148607',
                 'Message' => $data['message']
+//                08151148607
             )
         );
         return json_decode($getResponse, true);
