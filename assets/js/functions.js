@@ -363,7 +363,7 @@ $(document).ready(function() {
                             'info', false);
 
                         $('.swal-button--confirm').on('click', function () {
-                            setTimeout( sweet_alert('info','Transaction successful, thanks for using Gecharl, please check your balance.', 'info'),3000);
+                            setTimeout( sweet_alert('Info','Transaction successful, thanks for using Gecharl. You wil be credited immediately payment is confirmed.', 'info'),3000);
                         });
                     }else if( payment === 2 ){
                         sweet_alert('success','Transaction successful. Check your dashboard for transaction details..', 'info')

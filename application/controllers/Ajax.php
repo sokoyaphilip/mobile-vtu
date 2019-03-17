@@ -505,7 +505,7 @@ class Ajax extends CI_Controller {
                 $total_amount = $total_amount - ( $discount/100 * $total_amount );
             }
 
-            if( $total_amount > $wallet ){
+            if( $payment == 2 && $total_amount > $wallet ){
                 $response['message'] = "You don't have enough fund to process this, please fund your wallet first.";
                 $this->return_response($response);
             }
@@ -517,7 +517,8 @@ class Ajax extends CI_Controller {
                 'description'   => $description,
                 'trans_id'      => $transaction_id,
                 'payment_method' => $payment,
-                'date_initiated'    => get_now()
+                'date_initiated'    => get_now(),
+                'status'        => 'pending'
             );
 
             // Call Payment Channel
@@ -929,7 +930,7 @@ class Ajax extends CI_Controller {
         $paystackreference = $this->input->post('reference', true);
         $ref = $this->input->post('ref', true);
         // Get row of the transaction
-        $row = $this->site->run_sql("SELECT user_id, amount FROM transactions WHERE trans_id = '{$ref}'")->row();
+        $row = $this->site->run_sql("SELECT user_id, amount, product_id FROM transactions WHERE trans_id = '{$ref}'")->row();
         if( !$row ){
             $response['message'] = "We couldn't find the transaction.";
             $this->return_response($response);
@@ -956,7 +957,10 @@ class Ajax extends CI_Controller {
                             // Update the transaction
                             $this->db->trans_start();
                             $this->site->update('transactions', array('status' => 'success', 'payment_status' => $result['message']), "(trans_id = {$ref})" );
-                            $this->site->set_field('users', 'wallet', "wallet-{$amount}", "id={$row->user_id}");
+                            if( $row->product_id == 6){
+                                // WAllet funding
+                                $this->site->set_field('users', 'wallet', "wallet-{$amount}", "id={$row->user_id}");
+                            }
                             $this->db->trans_complete();
                             if ($this->db->trans_status() === FALSE){
                                 $this->db->trans_rollback();
@@ -972,7 +976,7 @@ class Ajax extends CI_Controller {
                         }else{
                             // the transaction was not successful, do not deliver value'
                             // print_r($result);  //uncomment this line to inspect the result, to check why it failed.
-                            $response['message'] = $result;
+                            $response['message'] = "Transaction was unsuccessful, please contact us if debited.";
                             $this->return_response($response);
 
                         }
@@ -983,13 +987,13 @@ class Ajax extends CI_Controller {
 
                 }else{
                     //print_r($result);
-                    $response['message'] = $result;
+                    $response['message'] = "Technical Error. Please contact us if persist.";
                     $this->return_response($response);
 //                    die("Something went wrong while trying to convert the request variable to json. Uncomment the print_r command to see what is in the result variable.");
                 }
             }else{
                 //var_dump($request);
-                $response['message'] = $request;
+                $response['message'] = "Error";
                 $this->return_response($response);
 //                die("Something went wrong while executing curl. Uncomment the var_dump line above this line to see what the issue is. Please check your CURL command to make sure everything is ok");
             }
