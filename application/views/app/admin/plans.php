@@ -56,7 +56,7 @@
                                         <th>S/N</th>
                                         <th>Service Name</th>
                                         <th>Plan Starts From</th>
-                                        <th>Amount From</th>
+                                        <th>Starting From</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
