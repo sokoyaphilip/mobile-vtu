@@ -368,6 +368,9 @@ $(document).ready(function() {
                     }else if( payment === 2 ){
                         sweet_alert('success','Transaction successful. Check your dashboard for transaction details..', 'info')
                     }else{
+
+                        let data = {'amount' : amount * 100, 'ref' : response.message};
+                        payWithPaystack( data );
                         // paystack
                     }
 
