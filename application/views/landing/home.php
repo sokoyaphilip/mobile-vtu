@@ -62,7 +62,8 @@
                                     <div class="form-group">
                                         <label for="recipents">Phone No(s)</label>
                                         <input type="text" name="recipents" required id="recipents" class="form-control" placeholder="The receiver phone nos" />
-                                        <span class="text-muted">Separate phone nos with comma.</span><br /><span class="text-success you-pay"></span>
+                                        <span class="text-muted">Separate phone nos with comma.</span><br />
+                                        <span class="text-success you-pay"></span>
                                     </div>
                                 </div>
 
@@ -83,7 +84,7 @@
                                 </div>
                             </div>
 
-                            <span class="text-danger you-pay"></span><br />
+
                             <input type="hidden" id="product_id" value="2">
                             <div class="row">
                                 <div class="col-sm-12">
