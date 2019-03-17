@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/environment.php" beforeDir="false" afterPath="$PROJECT_DIR$/environment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/theme-1.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/theme-1.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,10 +63,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_real.php">
+        <entry file="file://$PROJECT_DIR$/application/views/landing/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+            <state relative-caret-position="330">
+              <caret line="106" column="39" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/css/theme-1.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="39264" selection-start-column="39264" selection-end-column="39264" />
             </state>
           </provider>
         </entry>
@@ -90,41 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/environment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="45" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="229" column="17" selection-start-line="229" selection-start-column="17" selection-end-line="229" selection-end-column="17" />
-              <folding>
-                <element signature="e#14#593#0" />
-                <element signature="e#4412#6506#0" />
-                <element signature="n#!!block;n#format_currency#0" />
-                <element signature="n#!!block;n#sweet_alert#0" />
-                <element signature="n#!!block;n#addCommas#0" />
-                <element signature="n#!!block;n#verifyPaystack#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/helpers/site_helper.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="351" selection-start-line="351" selection-end-line="351" />
-              <folding>
-                <element signature="e#11114#11864#0#PHP" />
-                <element signature="e#9186#9217#0#PHP" />
-              </folding>
+            <state relative-caret-position="225">
+              <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -141,8 +122,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>electricity</find>
-      <find>buy_airtime</find>
       <find>tv-cable</find>
       <find>selected</find>
       <find>tv_cable</find>
@@ -171,6 +150,8 @@
       <find>callSm</find>
       <find>swa</find>
       <find>call</find>
+      <find>promo</find>
+      <find>gecharl-data-service</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -179,7 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/config/recaptcha.php" />
         <option value="$PROJECT_DIR$/application/libraries/Recaptcha.php" />
         <option value="$PROJECT_DIR$/application/views/landing/contact.php" />
         <option value="$PROJECT_DIR$/application/views/sitemap.php" />
@@ -230,6 +210,7 @@
         <option value="$PROJECT_DIR$/application/config/production/constants.php" />
         <option value="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
         <option value="$PROJECT_DIR$/environment.php" />
+        <option value="$PROJECT_DIR$/assets/css/theme-1.css" />
       </list>
     </option>
   </component>
@@ -385,12 +366,12 @@
       <workItem from="1552532637090" duration="15885000" />
       <workItem from="1552571660378" duration="726000" />
       <workItem from="1552594885571" duration="40953000" />
-      <workItem from="1552741826590" duration="32004000" />
+      <workItem from="1552741826590" duration="33115000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="400638000" />
+    <option name="totallyTimeSpent" value="401749000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -430,13 +411,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/index.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/theme-1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="5448" selection-start-line="7" selection-start-column="5448" selection-end-line="7" selection-end-column="5448" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/landing/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -606,13 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1335">
           <caret line="89" column="125" selection-start-line="89" selection-start-column="111" selection-end-line="89" selection-end-column="125" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/landing/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -810,8 +777,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/environment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="45" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="45" />
+        <state relative-caret-position="225">
+          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/landing/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="106" column="39" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/theme-1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="39264" selection-start-column="39264" selection-end-column="39264" />
         </state>
       </provider>
     </entry>
