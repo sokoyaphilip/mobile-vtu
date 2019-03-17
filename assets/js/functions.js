@@ -29,7 +29,7 @@ $(document).ready(function() {
 
         if( login_password == '' ){
             _btn.prop('disabled', false);
-            sweet_alert('Error', 'Email field can not be empty', 'error');
+            sweet_alert('Error', 'Password field can not be empty', 'error');
             return false;
         }
 
