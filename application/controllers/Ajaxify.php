@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Ajax extends CI_Controller {
+class Ajaxify extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
@@ -959,7 +959,7 @@ class Ajax extends CI_Controller {
                             $this->site->update('transactions', array('status' => 'success', 'payment_status' => $result['message']), "(trans_id = {$ref})" );
                             if( $row->product_id == 6){
                                 // WAllet funding
-                                $this->site->set_field('users', 'wallet', "wallet-{$amount}", "id={$row->user_id}");
+                                $this->site->set_field('users', 'wallet', "wallet+{$amount}", "id={$row->user_id}");
                             }
                             $this->db->trans_complete();
                             if ($this->db->trans_status() === FALSE){

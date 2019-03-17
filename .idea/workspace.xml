@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/application/views/resources/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/resources/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Ajaxify.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/resources/login-modal.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/resources/login-modal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/dataTables.editor.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/dataTables.editor.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/libraries/Javascript/Jquery.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/libraries/Javascript/Jquery.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,10 +21,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Ajax.php">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Ajaxify.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="749">
-              <caret line="995" column="45" selection-start-line="995" selection-start-column="45" selection-end-line="995" selection-end-column="45" />
+            <state relative-caret-position="284">
+              <caret line="189" column="47" selection-start-line="189" selection-start-column="32" selection-end-line="189" selection-end-column="47" />
               <folding>
                 <element signature="n#delete_plan#0;n#Ajax#0;n#!!top" />
                 <element signature="n#update_plan#0;n#Ajax#0;n#!!top" />
@@ -38,10 +42,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/app/users/wallet.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="68" column="103" lean-forward="true" selection-start-line="68" selection-start-column="103" selection-end-line="68" selection-end-column="110" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/helpers/site_helper.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="74">
+              <caret line="198" column="22" selection-start-line="198" selection-start-column="17" selection-end-line="198" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6646">
-              <caret line="352" column="33" selection-start-line="352" selection-start-column="33" selection-end-line="352" selection-end-column="33" />
+            <state relative-caret-position="628">
+              <caret line="216" column="37" selection-start-line="216" selection-start-column="37" selection-end-line="216" selection-end-column="37" />
+              <caret line="301" column="37" selection-start-line="301" selection-start-column="37" selection-end-line="301" selection-end-column="37" />
+              <caret line="358" column="37" selection-start-line="358" selection-start-column="37" selection-end-line="358" selection-end-column="37" />
+              <caret line="429" column="37" selection-start-line="429" selection-start-column="37" selection-end-line="429" selection-end-column="37" />
+              <caret line="500" column="37" selection-start-line="500" selection-start-column="37" selection-end-line="500" selection-end-column="37" />
+              <caret line="545" column="37" selection-start-line="545" selection-start-column="37" selection-end-line="545" selection-end-column="37" />
+              <caret line="599" column="37" selection-start-line="599" selection-start-column="37" selection-end-line="599" selection-end-column="37" />
+              <caret line="635" column="45" selection-start-line="635" selection-start-column="45" selection-end-line="635" selection-end-column="45" />
+              <caret line="672" column="45" selection-start-line="672" selection-start-column="45" selection-end-line="672" selection-end-column="45" />
+              <caret line="702" column="37" selection-start-line="702" selection-start-column="37" selection-end-line="702" selection-end-column="37" />
+              <caret line="737" column="37" selection-start-line="737" selection-start-column="37" selection-end-line="737" selection-end-column="37" />
+              <caret line="763" column="41" selection-start-line="763" selection-start-column="41" selection-end-line="763" selection-end-column="41" />
+              <caret line="869" column="33" selection-start-line="869" selection-start-column="33" selection-end-line="869" selection-end-column="33" />
+              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+              <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
+              <caret line="151" column="37" selection-start-line="151" selection-start-column="37" selection-end-line="151" selection-end-column="37" />
               <folding>
                 <element signature="e#14#593#0" />
                 <element signature="n#!!block;n#format_currency#0" />
@@ -52,7 +89,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/resources/menu.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="279">
@@ -64,11 +101,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/landing/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state relative-caret-position="810">
               <caret line="78" column="160" selection-start-line="78" selection-start-column="160" selection-end-line="78" selection-end-column="160" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Home.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/resources/login-modal.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="83" column="45" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -86,61 +141,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/resources/meta.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/resources/script.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/theme-1.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="599">
-              <caret line="357" column="33" selection-start-line="357" selection-start-column="33" selection-end-line="357" selection-end-column="33" />
-              <caret line="358" column="30" selection-start-line="358" selection-start-column="30" selection-end-line="358" selection-end-column="30" />
-              <caret line="359" column="28" selection-start-line="359" selection-start-column="28" selection-end-line="359" selection-end-column="28" />
-              <caret line="360" column="25" selection-start-line="360" selection-start-column="25" selection-end-line="360" selection-end-column="25" />
-              <caret line="365" column="33" selection-start-line="365" selection-start-column="33" selection-end-line="365" selection-end-column="33" />
-              <caret line="366" column="30" selection-start-line="366" selection-start-column="30" selection-end-line="366" selection-end-column="30" />
-              <caret line="367" column="28" selection-start-line="367" selection-start-column="28" selection-end-line="367" selection-end-column="28" />
-              <caret line="368" column="25" selection-start-line="368" selection-start-column="25" selection-end-line="368" selection-end-column="25" />
-              <caret line="373" column="33" selection-start-line="373" selection-start-column="33" selection-end-line="373" selection-end-column="33" />
-              <caret line="374" column="30" selection-start-line="374" selection-start-column="30" selection-end-line="374" selection-end-column="30" />
-              <caret line="375" column="28" selection-start-line="375" selection-start-column="28" selection-end-line="375" selection-end-column="28" />
-              <caret line="376" column="25" selection-start-line="376" selection-start-column="25" selection-end-line="376" selection-end-column="25" />
-              <caret line="381" column="33" selection-start-line="381" selection-start-column="33" selection-end-line="381" selection-end-column="33" />
-              <caret line="382" column="30" selection-start-line="382" selection-start-column="30" selection-end-line="382" selection-end-column="30" />
-              <caret line="383" column="28" selection-start-line="383" selection-start-column="28" selection-end-line="383" selection-end-column="28" />
-              <caret line="384" column="25" selection-start-line="384" selection-start-column="25" selection-end-line="384" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/config/production/constants.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1455">
-              <caret line="97" column="6" selection-start-line="97" selection-start-column="6" selection-end-line="97" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/environment.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -157,9 +161,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>services</find>
-      <find>title</find>
-      <find>function services</find>
       <find>network n</find>
       <find>function pl</find>
       <find>function ser</find>
@@ -185,8 +186,11 @@
       <find>quick-a</find>
       <find>quick_airtime</find>
       <find>airtime_network</find>
-      <find>verifyPaystack</find>
       <find>quick</find>
+      <find>ajax</find>
+      <find>verifyPaystack</find>
+      <find>sign</find>
+      <find>fund</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -195,7 +199,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/libraries/Recaptcha.php" />
         <option value="$PROJECT_DIR$/application/views/landing/contact.php" />
         <option value="$PROJECT_DIR$/application/views/sitemap.php" />
         <option value="$PROJECT_DIR$/application/views/resources/faq.php" />
@@ -228,7 +231,6 @@
         <option value="$PROJECT_DIR$/application/views/resources/meta.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/profile.php" />
         <option value="$PROJECT_DIR$/application/controllers/Dashboard.php" />
-        <option value="$PROJECT_DIR$/application/views/resources/login-modal.php" />
         <option value="$PROJECT_DIR$/application/views/app/admin/services.php" />
         <option value="$PROJECT_DIR$/application/views/app/admin/plans.php" />
         <option value="$PROJECT_DIR$/application/controllers/Admin.php" />
@@ -243,9 +245,11 @@
         <option value="$PROJECT_DIR$/application/views/resources/footer.php" />
         <option value="$PROJECT_DIR$/application/views/resources/script.php" />
         <option value="$PROJECT_DIR$/application/views/landing/home.php" />
+        <option value="$PROJECT_DIR$/application/views/resources/menu.php" />
         <option value="$PROJECT_DIR$/application/controllers/Ajax.php" />
         <option value="$PROJECT_DIR$/assets/js/functions.js" />
-        <option value="$PROJECT_DIR$/application/views/resources/menu.php" />
+        <option value="$PROJECT_DIR$/application/views/resources/login-modal.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Ajaxify.php" />
       </list>
     </option>
   </component>
@@ -408,12 +412,12 @@
       <workItem from="1552571660378" duration="726000" />
       <workItem from="1552594885571" duration="40953000" />
       <workItem from="1552741826590" duration="33820000" />
-      <workItem from="1552806310815" duration="9936000" />
+      <workItem from="1552806310815" duration="12890000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="412390000" />
+    <option name="totallyTimeSpent" value="415344000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -423,7 +427,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32827586" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32780084" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -475,13 +479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="91" column="18" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -562,13 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/app/users/wallet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="68" column="103" lean-forward="true" selection-start-line="68" selection-start-column="103" selection-end-line="68" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/app/admin/approval.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
@@ -625,13 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/resources/login-modal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/app/admin/services.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -685,17 +668,6 @@
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
             <element signature="n#check_slug#0;n#Site_model#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/helpers/site_helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="351" selection-start-line="351" selection-end-line="351" />
-          <folding>
-            <element signature="e#11114#11864#0#PHP" />
-            <element signature="e#9186#9217#0#PHP" />
           </folding>
         </state>
       </provider>
@@ -805,9 +777,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/resources/menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="29" column="69" lean-forward="true" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="216" column="37" selection-start-line="216" selection-start-column="37" selection-end-line="216" selection-end-column="37" />
+          <caret line="301" column="37" selection-start-line="301" selection-start-column="37" selection-end-line="301" selection-end-column="37" />
+          <caret line="358" column="37" selection-start-line="358" selection-start-column="37" selection-end-line="358" selection-end-column="37" />
+          <caret line="429" column="37" selection-start-line="429" selection-start-column="37" selection-end-line="429" selection-end-column="37" />
+          <caret line="500" column="37" selection-start-line="500" selection-start-column="37" selection-end-line="500" selection-end-column="37" />
+          <caret line="545" column="37" selection-start-line="545" selection-start-column="37" selection-end-line="545" selection-end-column="37" />
+          <caret line="599" column="37" selection-start-line="599" selection-start-column="37" selection-end-line="599" selection-end-column="37" />
+          <caret line="635" column="45" selection-start-line="635" selection-start-column="45" selection-end-line="635" selection-end-column="45" />
+          <caret line="672" column="45" selection-start-line="672" selection-start-column="45" selection-end-line="672" selection-end-column="45" />
+          <caret line="702" column="37" selection-start-line="702" selection-start-column="37" selection-end-line="702" selection-end-column="37" />
+          <caret line="737" column="37" selection-start-line="737" selection-start-column="37" selection-end-line="737" selection-end-column="37" />
+          <caret line="763" column="41" selection-start-line="763" selection-start-column="41" selection-end-line="763" selection-end-column="41" />
+          <caret line="869" column="33" selection-start-line="869" selection-start-column="33" selection-end-line="869" selection-end-column="33" />
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+          <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
+          <caret line="151" column="37" selection-start-line="151" selection-start-column="37" selection-end-line="151" selection-end-column="37" />
+          <folding>
+            <element signature="e#14#593#0" />
+            <element signature="n#!!block;n#format_currency#0" />
+            <element signature="n#!!block;n#sweet_alert#0" />
+            <element signature="n#!!block;n#addCommas#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/landing/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="810">
           <caret line="78" column="160" selection-start-line="78" selection-start-column="160" selection-end-line="78" selection-end-column="160" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -815,10 +822,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Ajax.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/Home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="749">
-          <caret line="995" column="45" selection-start-line="995" selection-start-column="45" selection-end-line="995" selection-end-column="45" />
+        <state relative-caret-position="120">
+          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/resources/login-modal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="83" column="45" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Ajaxify.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="189" column="47" selection-start-line="189" selection-start-column="32" selection-end-line="189" selection-end-column="47" />
           <folding>
             <element signature="n#delete_plan#0;n#Ajax#0;n#!!top" />
             <element signature="n#update_plan#0;n#Ajax#0;n#!!top" />
@@ -834,23 +855,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
+    <entry file="file://$PROJECT_DIR$/application/views/app/users/wallet.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6646">
-          <caret line="352" column="33" selection-start-line="352" selection-start-column="33" selection-end-line="352" selection-end-column="33" />
-          <folding>
-            <element signature="e#14#593#0" />
-            <element signature="n#!!block;n#format_currency#0" />
-            <element signature="n#!!block;n#sweet_alert#0" />
-            <element signature="n#!!block;n#addCommas#0" />
-          </folding>
+        <state relative-caret-position="269">
+          <caret line="68" column="103" lean-forward="true" selection-start-line="68" selection-start-column="103" selection-end-line="68" selection-end-column="110" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/resources/menu.php">
+    <entry file="file://$PROJECT_DIR$/application/helpers/site_helper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="29" column="69" lean-forward="true" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+        <state relative-caret-position="74">
+          <caret line="198" column="22" selection-start-line="198" selection-start-column="17" selection-end-line="198" selection-end-column="22" />
         </state>
       </provider>
     </entry>

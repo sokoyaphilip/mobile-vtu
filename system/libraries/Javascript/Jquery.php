@@ -717,7 +717,7 @@ class CI_Jquery extends CI_Javascript {
 	/**
 	 * Updater
 	 *
-	 * An Ajax call that populates the designated DOM node with
+	 * An Ajaxify call that populates the designated DOM node with
 	 * returned content
 	 *
 	 * @param	string	The element to attach the event to

@@ -34,7 +34,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url: base_url + 'ajax/login/',
+            url: base_url + 'ajaxify/login/',
             method: 'POST',
             data: {'login_username': login_username, 'password': login_password},
             success: function (response) {
@@ -77,7 +77,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url: base_url + 'ajax/signup/',
+            url: base_url + 'ajaxify/signup/',
             method: 'POST',
             data: {'signup_email': signup_email, 'signup_phone': signup_phone, 'password': password, 'confirm_password' : confirm_password},
             success: function (response) {
@@ -149,7 +149,7 @@ $(document).ready(function() {
         }
         // Generate Transaction ID , message coming as Transaction ID
         $.ajax({
-            url : base_url + 'ajax/fund_wallet/',
+            url : base_url + 'ajaxify/fund_wallet/',
             method : "POST",
             data : {'payment_method' : payment_method, 'amount' : amount, 'product_id' : product_id },
             success: function (response) {
@@ -214,7 +214,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url : base_url + 'ajax/data_purchase/',
+            url : base_url + 'ajaxify/data_purchase/',
             method: "POST",
             data: {'product_id' : product_id, 'plan_id' : plan_id, 'recipents' : recipents, 'network' : network, 'network_name' : network_name },
             success : function(response){
@@ -299,7 +299,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url : base_url + 'ajax/buy_airtime/',
+            url : base_url + 'ajaxify/buy_airtime/',
             method: "POST",
             data: {'product_id' : product_id, 'amount' : amount, 'discount' : discount, 'network' : network, 'recipents' : recipents, 'network_name' : network_name},
             success : function(response){
@@ -356,7 +356,7 @@ $(document).ready(function() {
         // payment method
 
         $.ajax({
-            url : base_url + 'ajax/quick_airtime/',
+            url : base_url + 'ajaxify/quick_airtime/',
             method: "POST",
             data: {'product_id' : product_id, 'discount' : discount, 'amount' : amount, 'network' : network, 'payment' : payment, 'recipents' : recipents, 'network_name' : network_name},
             success : function(response){
@@ -427,7 +427,7 @@ $(document).ready(function() {
         }
         //7028877148
         $.ajax({
-            url : base_url + 'ajax/tv_cable/',
+            url : base_url + 'ajaxify/tv_cable/',
             method: "POST",
             data: {'product_id' : product_id,
                     'plan_id' : plan_id, 'smart_card_number' : smart_card_number,
@@ -498,7 +498,7 @@ $(document).ready(function() {
         }
         //7028877148
         $.ajax({
-            url : base_url + 'ajax/electricity_bill/',
+            url : base_url + 'ajaxify/electricity_bill/',
             method: "POST",
             data: {'product_id' : product_id,
                 'plan_id' : plan_id, 'amount' : amount, 'discount' : discount,
@@ -543,7 +543,7 @@ $(document).ready(function() {
         }
         // Generate Transaction ID , message coming as Transaction ID
         $.ajax({
-            url : base_url + 'ajax/fund_wallet/',
+            url : base_url + 'ajaxify/fund_wallet/',
             method : "POST",
             data : {'payment_method' : payment_method, 'amount' : amount, 'product_id' : product_id },
             success: function (response) {
@@ -597,7 +597,7 @@ $(document).ready(function() {
             .append('<option value="" selected>--Select Plan --</option>');
 
         $.ajax({
-            url : base_url + 'ajax/fetch_plans/',
+            url : base_url + 'ajaxify/fetch_plans/',
             method: "POST",
             data: {'service_id' : service_id },
             success : function(response){
@@ -633,7 +633,7 @@ $(document).ready(function() {
             if (willDelete) {
 
                 $.ajax({
-                    url : base_url + 'ajax/delete_service/',
+                    url : base_url + 'ajaxify/delete_service/',
                     method: 'POST',
                     data : {'service_id' : id },
                     success : function(response){
@@ -670,7 +670,7 @@ $(document).ready(function() {
             if (willDelete) {
 
                 $.ajax({
-                    url : base_url + 'ajax/delete_plan/',
+                    url : base_url + 'ajaxify/delete_plan/',
                     method: 'POST',
                     data : {'plan_id' : id },
                     success : function(response){
@@ -700,7 +700,7 @@ $(document).ready(function() {
         $('#plan-body').empty();
         $('.plan-name').text($(this).data('name'));
         $.ajax({
-            url : base_url + 'ajax/fetch_plans/',
+            url : base_url + 'ajaxify/fetch_plans/',
             method: 'POST',
             data : {'service_id' : sid },
             success : function(response){
@@ -735,7 +735,7 @@ $(document).ready(function() {
         let id = $('#edit_plan_id').val();
 
         $.ajax({
-            url : base_url + 'ajax/update_plan/',
+            url : base_url + 'ajaxify/update_plan/',
             method: 'POST',
             data : {'id' : id, 'plan_name' : plan_name, 'plan_amount' : plan_amount },
             success : function(response){
@@ -761,7 +761,7 @@ $(document).ready(function() {
         let network_name = $('#network').find(':selected').data('network-name');
         if( $('#network').val() !== '' && number !== '' ){
             $.ajax({
-                url : base_url + 'ajax/verify_iuc_number/',
+                url : base_url + 'ajaxify/verify_iuc_number/',
                 method: "POST",
                 data: { 'iuc' : number ,'network' : network_name},
                 success: function( response ){
@@ -867,7 +867,7 @@ function payWithPaystack( data ){
 
 function verifyPaystack( pref, ref){
     $.ajax({
-        url : base_url + 'ajax/verifyPaystack/',
+        url : base_url + 'ajaxify/verifyPaystack/',
         method : "POST",
         data : {'reference' : pref, 'ref' : ref },
         success: function (response) {
