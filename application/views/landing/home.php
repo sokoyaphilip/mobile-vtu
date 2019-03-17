@@ -107,6 +107,7 @@
                     <li class="slide slide-1"></li>
                     <li class="slide slide-2"></li>
                     <li class="slide slide-3"></li>
+                    <li class="slide slide-4"></li>
                 </ul>
             </div>
         </div><!--//bg-slider-wrapper-->
