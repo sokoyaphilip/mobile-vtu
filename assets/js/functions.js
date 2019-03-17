@@ -570,8 +570,10 @@ $(document).ready(function() {
     }
 
     $('#airtime_network').on('change', function () {
-        let discount = $(this).find(':selected').data('discount');
-        $('.you-pay').text('You get '+ discount +'% discount');
+        if( $(this).val() ){
+            let discount = $(this).find(':selected').data('discount');
+            $('.you-pay').text('You get '+ discount +'% discount');
+        }
     });
 
     $('#network').on('change', function(e){
