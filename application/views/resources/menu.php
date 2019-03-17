@@ -27,6 +27,7 @@
                             <a class="dropdown-item" href="#">Airtime Purchase</a>
                             <a class="dropdown-item" href="#">Electricity Bills</a>
                             <a class="dropdown-item" href="#">TV subscription</a>
+                            <a class="dropdown-item" href="#">Airtime to Cash</a>
                         </div>
                     </li><!--//dropdown-->
                     <li class="<?php if( $page == 'about') echo 'active'; ?> nav-item"><a class="nav-link" href="<?= base_url('about/'); ?>">About Us</a></li>

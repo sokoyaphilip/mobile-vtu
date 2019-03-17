@@ -325,6 +325,7 @@ $(document).ready(function() {
 
         e.preventDefault();
         let _btn = $(this);
+        _btn.text("Processing...");
         $(this).prop('disabled', true);
         let product_id = $('#product_id').val();
         let amount = $('#amount').val();
@@ -337,16 +338,19 @@ $(document).ready(function() {
         if( amount === '' || amount < 100 ){
             sweet_alert('Error', 'Sorry amount can not be less than N100', 'error');
             _btn.prop('disabled', false);
+            _btn.text("Buy Now");
             return false;
         }
         if( recipents === '' ){
             sweet_alert('Error', 'Please fill in the right number', 'error');
             _btn.prop('disabled', false);
+            _btn.text("Buy Now");
             return false;
         }
         if( network === '' ){
             sweet_alert('Error', 'You need to select a network', 'error');
             _btn.prop('disabled', false);
+            _btn.text("Buy Now");
             return false;
         }
         // payment method
