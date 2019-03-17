@@ -83,7 +83,7 @@
                                 </div>
                             </div>
 
-                            <!--                                <span class="text-danger pay-amount">You will be paying</span><br />-->
+                            <span class="text-danger pay-amount">You will be paying</span><br />
                             <input type="hidden" id="product_id" value="2">
                             <div class="row">
                                 <div class="col-sm-12">
