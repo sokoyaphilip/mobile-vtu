@@ -611,7 +611,9 @@ $(document).ready(function() {
         let discount = $(this).data('discount');
         if( discount === undefined) discount = $(this).find(':selected').data('discount');
 
-        $('.you-pay').html('You get '+ discount +' % discount');
+        if( discount > 0 ) {
+            $('.you-pay').html('You get '+ discount +' % discount');
+        }
 
         $('#network_plan')
             .find('option')
