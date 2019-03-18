@@ -90,10 +90,11 @@ $(document).ready(function() {
             url: base_url + 'aj/signup/',
             method: 'POST',
             cache: false,
+            async:false,
             data: {'signup_email': signup_email, 'signup_phone': signup_phone, 'password': password, 'confirm_password' : confirm_password},
             success: function (response) {
                 if (response.status === 'success') {
-                    setTimeout(function(){  location.reload(true); }, 2000);
+
                     sweet_alert('Success!', "Registration successfull. Buy Airtime - Data - Subscribe your TV Decoder...", 'success');
                 } else {
                     sweet_alert('Error!', response.message, response.status);
