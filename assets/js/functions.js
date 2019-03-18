@@ -37,12 +37,13 @@ $(document).ready(function() {
         $.ajax({
             url: base_url + 'aj/login/',
             method: 'POST',
-            cache: false,
             data: {'login_username': login_username, 'password': login_password},
             success: function (response) {
                 if (response.status === 'success') {
-                    setTimeout(function(){  window.location.href = window.location.href; }, 2000);
                     sweet_alert('Success!', 'You are now logged in', 'success');
+                    $('.swal-button--confirm').on('click', function () {
+                        window.location = window.location.href;
+                    });
                 } else {
                     sweet_alert('Error!', response.message, response.status);
                 }
@@ -89,13 +90,15 @@ $(document).ready(function() {
         $.ajax({
             url: base_url + 'aj/signup/',
             method: 'POST',
-            cache: false,
-            async:false,
             data: {'signup_email': signup_email, 'signup_phone': signup_phone, 'password': password, 'confirm_password' : confirm_password},
             success: function (response) {
                 if (response.status === 'success') {
 
                     sweet_alert('Success!', "Registration successfull. Buy Airtime - Data - Subscribe your TV Decoder...", 'success');
+                    $('.swal-button--confirm').on('click', function () {
+                        window.location = window.location.href;
+                    });
+
                 } else {
                     sweet_alert('Error!', response.message, response.status);
                 }
