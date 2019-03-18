@@ -23,7 +23,7 @@
     <section id="promo" class="promo section">
         <div class="container intro">
             <div class="row">
-                <div class="features-intro col-lg-5 col-md-6 col-12">
+                <div class="features-intro col-lg-7 col-md-7 col-12">
 
 <!--                        <h2 class="title">Welcome to Gecharl connect.</h2>-->
 <!--                        <span style="font-max-size: small">Your one stop shop on Airtime,Mobile data and bills payment</span>-->
@@ -31,7 +31,7 @@
 <!--                    <a class="btn btn-cta btn-cta-secondary" href="--><?//= base_url('page/all-services/'); ?><!--">All Service</a>-->
 
                 </div><!--//intro-->
-                <div class="features-video col-lg-7 col-md-6 col-12">
+                <div class="features-video col-lg-5 col-md-5 col-12">
                     <div class="card-bg-white border border-success rounded">
 
                         <h3>Do It Quick - <small class="text-muted">get airtime</small></h3>
