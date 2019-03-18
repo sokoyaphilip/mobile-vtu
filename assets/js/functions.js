@@ -209,7 +209,7 @@ $(document).ready(function() {
         let recipents = $('#data-recipents').val();
         let network = $('#network').val();
         let network_name = $('#network').find(':selected').data('network-name');
-
+        let wallet = $(this).data('wallet');
         if( recipents === '') {
             _btn.prop('disabled', false);
             sweet_alert('Error', 'Number field can not be empty', 'error');
@@ -234,7 +234,7 @@ $(document).ready(function() {
             url : base_url + 'aj/data_purchase/',
             method: "POST",
             cache: false,
-            data: {'product_id' : product_id, 'plan_id' : plan_id, 'recipents' : recipents, 'network' : network, 'network_name' : network_name },
+            data: {'product_id' : product_id, 'wallet' : wallet, 'plan_id' : plan_id, 'recipents' : recipents, 'network' : network, 'network_name' : network_name },
             success : function(response){
                 if( response.status === 'success' ){
                     sweet_alert('Success', response.message, 'success', false);
@@ -295,6 +295,7 @@ $(document).ready(function() {
         let recipents = $('#recipents').val();
         let network_name = $('#airtime_network').find(':selected').data('network-name');
         let discount = $('#airtime_network').find(':selected').data('discount');
+        let wallet = $(this).data('wallet');
 
         if( amount === '' || amount < 100 ){
             sweet_alert('Error', 'Sorry amount can not be less than N100', 'error');
@@ -320,7 +321,7 @@ $(document).ready(function() {
             url : base_url + 'aj/buy_airtime/',
             method: "POST",
             cache : false,
-            data: {'product_id' : product_id, 'amount' : amount, 'discount' : discount, 'network' : network, 'recipents' : recipents, 'network_name' : network_name},
+            data: {'product_id' : product_id, 'wallet': wallet, 'amount' : amount, 'discount' : discount, 'network' : network, 'recipents' : recipents, 'network_name' : network_name},
             success : function(response){
                 if( response.status === 'success' ){
                     sweet_alert('Success', response.message, 'success', false);

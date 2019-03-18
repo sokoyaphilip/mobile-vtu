@@ -217,7 +217,7 @@ class Aj extends CI_Controller {
         $recipents = $this->input->post('recipents', true);
         $network_id = $this->input->post('network', true);
         $network_name = $this->input->post('network_name', true);
-        $wallet = $this->session->userdata('wallet');
+        $wallet = $this->input->post('wallet');
         $user_id = $this->session->userdata('user_id');
 
         // check for number validity
@@ -333,7 +333,7 @@ class Aj extends CI_Controller {
         $amount = $this->input->post('amount', true);
         $recipents = $this->input->post('recipents', true);
         $network_name = $this->input->post('network_name', true);
-        $wallet = $this->session->userdata('wallet');
+        $wallet = $this->input->post('wallet');
         $discount = $this->input->post('discount');
 
         // check number validity
@@ -447,7 +447,7 @@ class Aj extends CI_Controller {
         $amount = $this->input->post('amount', true);
         $recipents = $this->input->post('recipents', true);
         $network_name = $this->input->post('network_name', true);
-        $wallet = $this->session->userdata('wallet');
+//        $wallet = $this->session->userdata('wallet');
         $payment = $this->input->post('payment');
         $discount = $this->input->post('discount');
 
@@ -505,10 +505,10 @@ class Aj extends CI_Controller {
                 $total_amount = $total_amount - ( $discount/100 * $total_amount );
             }
 
-            if( $payment == 2 && $total_amount > $wallet ){
-                $response['message'] = "You don't have enough fund to process this, please fund your wallet first.";
-                $this->return_response($response);
-            }
+//            if( $payment == 2 && $total_amount > $wallet ){
+//                $response['message'] = "You don't have enough fund to process this, please fund your wallet first.";
+//                $this->return_response($response);
+//            }
             $description = ucfirst( $network_name) . " ({$amount}) airtime purchase for {$message} recipent";
             $transaction_id = $this->site->generate_code('transactions', 'trans_id');
             $insert_data = array(
@@ -524,26 +524,26 @@ class Aj extends CI_Controller {
             // Call Payment Channel
 
             // Success from payment channel -> Call the API
-            if( $payment == 2 ) {
-                foreach( $valid_numbers as $number ){
-                    $data = array(
-                        'url'       => "https://www.nellobytesystems.com/APIBuyCableTV.asp",
-                        'network'   => $network_name,
-                        'amount'    => $amount,
-                        'number'    => $number
-                    );
-                    $return = $this->callAirtimeAPI( $data );
-                    if( $return['status'] == "ORDER_RECEIVED" || $return['status'] == "ORDER_COMPLETED" ){
-                        $insert_data['orderid'] = $return['orderid'];
-                        $insert_data['status'] = 'success';
-                        $insert_data['payment_status'] = $return['status'];
-                    }else{
-                        $insert_data['status'] = 'pending';
-                        $insert_data['orderid'] = $return['orderid'];
-                        $insert_data['payment_status'] = $return['status'];
-                    }
-                }
-            }
+//            if( $payment == 2 ) {
+//                foreach( $valid_numbers as $number ){
+//                    $data = array(
+//                        'url'       => "https://www.nellobytesystems.com/APIBuyCableTV.asp",
+//                        'network'   => $network_name,
+//                        'amount'    => $amount,
+//                        'number'    => $number
+//                    );
+//                    $return = $this->callAirtimeAPI( $data );
+//                    if( $return['status'] == "ORDER_RECEIVED" || $return['status'] == "ORDER_COMPLETED" ){
+//                        $insert_data['orderid'] = $return['orderid'];
+//                        $insert_data['status'] = 'success';
+//                        $insert_data['payment_status'] = $return['status'];
+//                    }else{
+//                        $insert_data['status'] = 'pending';
+//                        $insert_data['orderid'] = $return['orderid'];
+//                        $insert_data['payment_status'] = $return['status'];
+//                    }
+//                }
+//            }
             // else call the payment channel
             $this->site->insert_data('transactions', $insert_data);
             $response['status'] = 'success';

@@ -75,7 +75,7 @@
                                             <?php if($this->session->userdata('logged_in')) : ?>
                                                 <option value="2" selected>Pay From Wallet</option>
                                             <?php else :  ?>
-                                                <option value="1">Bank Deposit / Transfer</option>
+<!--                                                <option value="1">Bank Deposit / Transfer</option>-->
                                                 <option value="2" disabled >Pay From My Wallet <?=( !$this->session->userdata('logged_in')) ? '- Logged In First' : ''; ?></option>
                                                 <option value="3">Pay Via Paystack</option>
                                             <?php endif; ?>
