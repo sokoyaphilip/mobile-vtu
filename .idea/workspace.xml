@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/language/english/english_lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/language/english/english_lang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/landing/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/landing/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/landing/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/landing/home.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,10 +16,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/app/admin/plans.php">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Ajaxify.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="58" column="52" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
+            <state relative-caret-position="344">
+              <caret line="1007" column="8" selection-start-line="1007" selection-start-column="8" selection-end-line="1008" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -54,7 +51,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/landing/about.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
+            <state relative-caret-position="164">
               <caret line="14" column="248" selection-start-line="14" selection-start-column="248" selection-end-line="14" selection-end-column="248" />
             </state>
           </provider>
@@ -92,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/application/language/english/english_lang.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" column="123" selection-start-line="6" selection-start-column="123" selection-end-line="6" selection-end-column="123" />
+              <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -127,7 +124,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>delete_service</find>
       <find>delete-service</find>
       <find>discoun</find>
       <find>discount</find>
@@ -157,6 +153,7 @@
       <find>payme</find>
       <find>dstv</find>
       <find>gotv</find>
+      <find>function return_response</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -379,12 +376,12 @@
       <workItem from="1552594885571" duration="40953000" />
       <workItem from="1552741826590" duration="33820000" />
       <workItem from="1552806310815" duration="16061000" />
-      <workItem from="1552890834660" duration="427000" />
+      <workItem from="1552890834660" duration="2274000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="418942000" />
+    <option name="totallyTimeSpent" value="420789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -713,13 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Ajaxify.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2835">
-          <caret line="189" column="47" selection-start-line="189" selection-start-column="32" selection-end-line="189" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/app/users/wallet.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
@@ -782,13 +772,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/landing/about.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="248" selection-start-line="14" selection-start-column="248" selection-end-line="14" selection-end-column="248" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/landing/home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -804,10 +787,24 @@
         <state relative-caret-position="-225" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Ajaxify.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="1007" column="8" selection-start-line="1007" selection-start-column="8" selection-end-line="1008" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/landing/about.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="14" column="248" selection-start-line="14" selection-start-column="248" selection-end-line="14" selection-end-column="248" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/language/english/english_lang.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="123" selection-start-line="6" selection-start-column="123" selection-end-line="6" selection-end-column="123" />
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
         </state>
       </provider>
     </entry>
