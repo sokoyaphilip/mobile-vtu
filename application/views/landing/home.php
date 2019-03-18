@@ -161,7 +161,7 @@
                         </div><!--//icon-->
                         <div class="content">
                             <h3 class="title">Affordable</h3>
-                            <p class="desc">Gechael focuses on offering subsidised Internet subscription and Airtime on all Telecommunication Networks. With Gecharl you are sure of saving on your data/airtime. </p>
+                            <p class="desc">Gecharl focuses on offering subsidised Internet subscription and Airtime on all Telecommunication Networks. With Gecharl you are sure of saving on your data/airtime. </p>
                         </div><!--//content-->
                     </div><!--//item-->
                 </div>
