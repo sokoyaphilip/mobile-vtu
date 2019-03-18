@@ -34,7 +34,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url: base_url + 'ajaxify/login/',
+            url: base_url + 'aj/login/',
             method: 'POST',
             cache: false,
             data: {'login_username': login_username, 'password': login_password},
@@ -48,6 +48,11 @@ $(document).ready(function() {
             },
             error: function (response) {
                 console.log(response);
+            },
+            statusCode: {
+                303 : function(){
+                    alert("Page Not FOund");
+                }
             }
         });
     });
@@ -78,7 +83,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url: base_url + 'ajaxify/signup/',
+            url: base_url + 'aj/signup/',
             method: 'POST',
             cache: false,
             data: {'signup_email': signup_email, 'signup_phone': signup_phone, 'password': password, 'confirm_password' : confirm_password},
@@ -151,7 +156,7 @@ $(document).ready(function() {
         }
         // Generate Transaction ID , message coming as Transaction ID
         $.ajax({
-            url : base_url + 'ajaxify/fund_wallet/',
+            url : base_url + 'aj/fund_wallet/',
             method : "POST",
             data : {'payment_method' : payment_method, 'amount' : amount, 'product_id' : product_id },
             success: function (response) {
@@ -216,7 +221,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url : base_url + 'ajaxify/data_purchase/',
+            url : base_url + 'aj/data_purchase/',
             method: "POST",
             cache: false,
             data: {'product_id' : product_id, 'plan_id' : plan_id, 'recipents' : recipents, 'network' : network, 'network_name' : network_name },
@@ -302,7 +307,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url : base_url + 'ajaxify/buy_airtime/',
+            url : base_url + 'aj/buy_airtime/',
             method: "POST",
             cache : false,
             data: {'product_id' : product_id, 'amount' : amount, 'discount' : discount, 'network' : network, 'recipents' : recipents, 'network_name' : network_name},
@@ -360,7 +365,7 @@ $(document).ready(function() {
         // payment method
 
         $.ajax({
-            url : base_url + 'ajaxify/quick_airtime/',
+            url : base_url + 'aj/quick_airtime/',
             method: "POST",
             cache:false,
             data: {'product_id' : product_id, 'discount' : discount, 'amount' : amount, 'network' : network, 'payment' : payment, 'recipents' : recipents, 'network_name' : network_name},
@@ -432,7 +437,7 @@ $(document).ready(function() {
         }
         //7028877148
         $.ajax({
-            url : base_url + 'ajaxify/tv_cable/',
+            url : base_url + 'aj/tv_cable/',
             method: "POST",
             data: {'product_id' : product_id,
                     'plan_id' : plan_id, 'smart_card_number' : smart_card_number,
@@ -503,7 +508,7 @@ $(document).ready(function() {
         }
         //7028877148
         $.ajax({
-            url : base_url + 'ajaxify/electricity_bill/',
+            url : base_url + 'aj/electricity_bill/',
             method: "POST",
             data: {'product_id' : product_id,
                 'plan_id' : plan_id, 'amount' : amount, 'discount' : discount,
@@ -548,7 +553,7 @@ $(document).ready(function() {
         }
         // Generate Transaction ID , message coming as Transaction ID
         $.ajax({
-            url : base_url + 'ajaxify/fund_wallet/',
+            url : base_url + 'aj/fund_wallet/',
             method : "POST",
             data : {'payment_method' : payment_method, 'amount' : amount, 'product_id' : product_id },
             success: function (response) {
@@ -602,7 +607,7 @@ $(document).ready(function() {
             .append('<option value="" selected>--Select Plan --</option>');
 
         $.ajax({
-            url : base_url + 'ajaxify/fetch_plans/',
+            url : base_url + 'aj/fetch_plans/',
             method: "POST",
             data: {'service_id' : service_id },
             success : function(response){
@@ -638,7 +643,7 @@ $(document).ready(function() {
             if (willDelete) {
 
                 $.ajax({
-                    url : base_url + 'ajaxify/delete_service/',
+                    url : base_url + 'aj/delete_service/',
                     method: 'POST',
                     cache: false,
                     data : {'service_id' : id },
@@ -676,7 +681,7 @@ $(document).ready(function() {
             if (willDelete) {
 
                 $.ajax({
-                    url : base_url + 'ajaxify/delete_plan/',
+                    url : base_url + 'aj/delete_plan/',
                     method: 'POST',
                     cache: false,
                     data : {'plan_id' : id },
@@ -707,7 +712,7 @@ $(document).ready(function() {
         $('#plan-body').empty();
         $('.plan-name').text($(this).data('name'));
         $.ajax({
-            url : base_url + 'ajaxify/fetch_plans/',
+            url : base_url + 'aj/fetch_plans/',
             method: 'POST',
             cache: false,
             data : {'service_id' : sid },
@@ -743,7 +748,7 @@ $(document).ready(function() {
         let id = $('#edit_plan_id').val();
 
         $.ajax({
-            url : base_url + 'ajaxify/update_plan/',
+            url : base_url + 'aj/update_plan/',
             method: 'POST',
             cache: false,
             data : {'id' : id, 'plan_name' : plan_name, 'plan_amount' : plan_amount },
@@ -770,7 +775,7 @@ $(document).ready(function() {
         let network_name = $('#network').find(':selected').data('network-name');
         if( $('#network').val() !== '' && number !== '' ){
             $.ajax({
-                url : base_url + 'ajaxify/verify_iuc_number/',
+                url : base_url + 'aj/verify_iuc_number/',
                 method: "POST",
                 data: { 'iuc' : number ,'network' : network_name},
                 success: function( response ){
@@ -876,8 +881,9 @@ function payWithPaystack( data ){
 
 function verifyPaystack( pref, ref){
     $.ajax({
-        url : base_url + 'ajaxify/verifyPaystack/',
+        url : base_url + 'aj/verifyPaystack/',
         method : "POST",
+        cache: false,
         data : {'reference' : pref, 'ref' : ref },
         success: function (response) {
             if( response.status === 'success' ){
