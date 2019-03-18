@@ -24,7 +24,6 @@
 
                             <form>
                             <div class="col-sm-12 sort-panel">
-                                <?= form_open(); ?>
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">

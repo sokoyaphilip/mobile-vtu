@@ -597,7 +597,9 @@ $(document).ready(function() {
     $('#airtime_network').on('change', function () {
         if( $(this).val() ){
             let discount = $(this).find(':selected').data('discount');
-            $('.you-pay').text('You get '+ discount +'% discount');
+            if( discount > 0 ){
+                $('.you-pay').text('You get '+ discount +'% discount');
+            }
         }
     });
 

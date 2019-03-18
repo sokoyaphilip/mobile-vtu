@@ -113,6 +113,7 @@ class Admin extends CI_Controller {
 
     /*
      * Wallet
+     * Fund Approval is only for Wallet
      * */
     public function approval(){
 
@@ -121,6 +122,7 @@ class Admin extends CI_Controller {
             $id = $this->input->post('txn_id', true);
             $amount = $this->input->post('amount', true);
             $user_id = $this->input->post('user_id', true);
+
             if( $this->site->update('transactions', array('status' => $status ), array('id' => $id))){
                 // Update the balance
                 if( $status =='approved'){
