@@ -209,7 +209,7 @@ $(document).ready(function() {
         let recipents = $('#data-recipents').val();
         let network = $('#network').val();
         let network_name = $('#network').find(':selected').data('network-name');
-        let wallet = $(this).data('wallet');
+        let wallet = $(this).data('balance');
         if( recipents === '') {
             _btn.prop('disabled', false);
             sweet_alert('Error', 'Number field can not be empty', 'error');
