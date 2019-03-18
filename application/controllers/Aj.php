@@ -280,6 +280,7 @@ class Aj extends CI_Controller {
                     // fire the API
 
                     $ret = data_plan_code( $network_name, $plan_detail->name, $number);
+                    $response['message'] = $ret;
                     if( $ret !== false ){
                         $sms_array = array( '08066795128' => $ret );
                         $this->load->library('AfricaSMS', $sms_array);
@@ -288,7 +289,7 @@ class Aj extends CI_Controller {
                         $error = true;
                     }
                 }
-
+                $this->return_response( $response );
                 if( $error ){
                     $response['message'] = "There was an error processing your order, {$api_ret['status']} please try again or contact us. Thanks";
                     $this->site->update('transactions', array('status' => 'fail'), "(trans_id = {$transaction_id})");
