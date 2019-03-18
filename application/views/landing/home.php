@@ -122,6 +122,7 @@
     <!-- ******PRESS****** -->
     <div class="press">
         <div class="container text-center">
+            <h3><b>Our partners</b></h3><hr style="width: 60%;" />
             <div class="row">
                 <div class="press-item col-lg-2 col-md-4 col-6"><a href="https://www.mtnonline.com"><img class="img-fluid" src="<?= base_url('assets/images/partners/mtn.png'); ?>" alt="MTN Nigeria"></a></div>
                 <div class="press-item col-lg-2 col-md-4 col-6"><a href="https://www.etisalat.com"><img class="img-fluid" src="<?= base_url('assets/images/partners/etisalat.png'); ?>" alt="Etisalat Nigeria"></a></div>
@@ -129,8 +130,8 @@
                 <div class="press-item col-lg-2 col-md-4 col-6"><a href="https://www.airtel.com.ng/"><img class="img-fluid" style="width: 90px" src="<?= base_url('assets/images/partners/airtel.png'); ?>" alt="Airtel Nigeria"></a></div>
 <!--                <div class="press-item col-lg-2 col-md-4 col-6"><a href="https://www.smile.com.ng/"><img class="img-fluid" style="width: 90px" src="--><?//= base_url('assets/images/partners/smile.png'); ?><!--" alt="Smile Nigeria"></a></div>-->
 <!--                <div class="press-item col-lg-2 col-md-4 col-6"><a href="https://www.spectranet.com.ng/"><img class="img-fluid" style="width: 90px" src="--><?//= base_url('assets/images/partners/spectranet.png'); ?><!--" alt="Spectranet Nigeria"></a></div>-->
-                <div class="press-item col-lg-2 col-md-4 col-6"><a href="https://www.spectranet.com.ng/"><img class="img-fluid" style="width: 90px" src="<?= base_url('assets/images/partners/dstv.jpeg'); ?>" alt="Spectranet Nigeria"></a></div>
-                <div class="press-item col-lg-2 col-md-4 col-6"><a href="https://www.spectranet.com.ng/"><img class="img-fluid" style="width: 90px" src="<?= base_url('assets/images/partners/gotv.png'); ?>" alt="Spectranet Nigeria"></a></div>
+                <div class="press-item col-lg-2 col-md-4 col-6"><a href="https://www.spectranet.com.ng/"><img class="img-fluid" style="width: 90px" src="<?= base_url('assets/images/partners/dstv.jpeg'); ?>" alt="DSTV Nigeria"></a></div>
+                <div class="press-item col-lg-2 col-md-4 col-6"><a href="https://www.spectranet.com.ng/"><img class="img-fluid" style="width: 90px" src="<?= base_url('assets/images/partners/gotv.jpeg'); ?>" alt="GoTV Nigeria"></a></div>
 
             </div><!--row-->
         </div>

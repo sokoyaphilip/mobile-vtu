@@ -12,7 +12,7 @@
         <section id="about-us" class="about-us section">
             <div class="container text-center">
                 <h2 class="title">About Us</h2>
-                <p class="intro mx-auto mb-2">Gecharl connect is a platform through which you can make convenient payment for your day to day services like Phone Airtime Recharge, Internet Data bundle subscription, Cable TV subscription such as DTSV, GOTV, Startimes, Electricity bills (PHCN) and many other services. </p>
+                <p class="intro mx-auto mb-2">Gecharl connect is a platform through which you can make convenient payment for your day to day services like Phone Airtime Recharge, Internet Data bundle subscription, Cable TV subscription such as DSTV, GOTV, Startimes, Electricity bills (PHCN) and many other services. </p>
                 <p class="intro mx-auto mb-2">Gecharl connect is committed to changing the lives of our customers, families and friends by making sure that their day to day payment of product and services is stress free and convenient.</p>
                 <p class="intro mx-auto mb-2">We pride ourselves as record breakers in offering this kind of service. Gecharl connect works perfectly on every device, it’s quick to sign up, easy to navigate and you can get started right now by creating an account using just your email and phone number.</p>
                 <p class="intro mx-auto mb-2">Our vision is to become the leading platform for your everyday payment and also provide a convenient atmosphere for consumers to get the real value of what they pay for.<br />

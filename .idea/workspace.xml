@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/application/helpers/site_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/helpers/site_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/app/admin/plans.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/app/admin/plans.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/language/english/english_lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/language/english/english_lang.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/landing/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/landing/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/landing/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/landing/home.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,48 +19,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Ajaxify.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="189" column="47" selection-start-line="189" selection-start-column="32" selection-end-line="189" selection-end-column="47" />
-              <folding>
-                <element signature="n#delete_plan#0;n#Ajax#0;n#!!top" />
-                <element signature="n#update_plan#0;n#Ajax#0;n#!!top" />
-                <element signature="n#buy_airtime#0;n#Ajax#0;n#!!top" />
-                <element signature="n#tv_cable#0;n#Ajax#0;n#!!top" />
-                <element signature="n#electricity_bill#0;n#Ajax#0;n#!!top" />
-                <element signature="n#verify_iuc_number#0;n#Ajax#0;n#!!top" />
-                <element signature="n#_submitGet#0;n#Ajax#0;n#!!top" />
-                <element signature="n#callAirtimeAPI#0;n#Ajax#0;n#!!top" />
-                <element signature="n#callCableAPI#0;n#Ajax#0;n#!!top" />
-                <element signature="n#return_response#0;n#Ajax#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/app/users/wallet.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="57" column="98" lean-forward="true" selection-start-line="57" selection-start-column="98" selection-end-line="57" selection-end-column="98" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/helpers/site_helper.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="348" column="27" selection-start-line="348" selection-start-column="27" selection-end-line="348" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/app/admin/plans.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
+            <state relative-caret-position="870">
               <caret line="58" column="52" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
             </state>
           </provider>
@@ -67,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/app/users/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="118" column="63" lean-forward="true" selection-start-line="118" selection-start-column="63" selection-end-line="118" selection-end-column="63" />
+            <state relative-caret-position="1770">
+              <caret line="118" column="63" selection-start-line="118" selection-start-column="63" selection-end-line="118" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -76,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="135" column="47" selection-start-line="135" selection-start-column="33" selection-end-line="135" selection-end-column="47" />
+            <state relative-caret-position="75">
+              <caret line="18" column="12" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="12" />
               <folding>
                 <element signature="e#14#593#0" />
                 <element signature="n#!!block;n#format_currency#0" />
@@ -89,10 +52,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/landing/about.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="14" column="248" selection-start-line="14" selection-start-column="248" selection-end-line="14" selection-end-column="248" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/resources/menu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="29" column="69" lean-forward="true" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+            <state relative-caret-position="435">
+              <caret line="29" column="69" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -100,11 +72,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/landing/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="78" column="160" selection-start-line="78" selection-start-column="160" selection-end-line="78" selection-end-column="160" />
+            <state relative-caret-position="299">
+              <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/landing/contact.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-225" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/language/english/english_lang.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="123" selection-start-line="6" selection-start-column="123" selection-end-line="6" selection-end-column="123" />
             </state>
           </provider>
         </entry>
@@ -121,7 +109,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/resources/login-modal.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="1245">
               <caret line="83" column="45" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
             </state>
           </provider>
@@ -139,8 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>function ser</find>
-      <find>delete</find>
       <find>delete_service</find>
       <find>delete-service</find>
       <find>discoun</find>
@@ -167,8 +153,10 @@
       <find>verifyPaystack</find>
       <find>sign</find>
       <find>fund</find>
-      <find>payme</find>
       <find>Amoun</find>
+      <find>payme</find>
+      <find>dstv</find>
+      <find>gotv</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -180,7 +168,6 @@
         <option value="$PROJECT_DIR$/application/views/landing/contact.php" />
         <option value="$PROJECT_DIR$/application/views/sitemap.php" />
         <option value="$PROJECT_DIR$/application/views/resources/faq.php" />
-        <option value="$PROJECT_DIR$/application/views/landing/about.php" />
         <option value="$PROJECT_DIR$/application/views/landing/faq.php" />
         <option value="$PROJECT_DIR$/application/models/Site_model.php" />
         <option value="$PROJECT_DIR$/application/views/landing/404.php" />
@@ -201,7 +188,6 @@
         <option value="$PROJECT_DIR$/application/views/app/admin/wallet.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/wallet.php" />
         <option value="$PROJECT_DIR$/application/views/resources/users/left_menu.php" />
-        <option value="$PROJECT_DIR$/application/language/english/english_lang.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/airtime_to_cash.php" />
         <option value="$PROJECT_DIR$/application/views/app/admin/approval.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/data.php" />
@@ -220,7 +206,6 @@
         <option value="$PROJECT_DIR$/assets/css/theme-1.css" />
         <option value="$PROJECT_DIR$/application/views/resources/footer.php" />
         <option value="$PROJECT_DIR$/application/views/resources/script.php" />
-        <option value="$PROJECT_DIR$/application/views/landing/home.php" />
         <option value="$PROJECT_DIR$/application/views/resources/menu.php" />
         <option value="$PROJECT_DIR$/application/controllers/Ajax.php" />
         <option value="$PROJECT_DIR$/assets/js/functions.js" />
@@ -228,6 +213,9 @@
         <option value="$PROJECT_DIR$/application/controllers/Ajaxify.php" />
         <option value="$PROJECT_DIR$/application/views/app/admin/plans.php" />
         <option value="$PROJECT_DIR$/application/helpers/site_helper.php" />
+        <option value="$PROJECT_DIR$/application/views/landing/about.php" />
+        <option value="$PROJECT_DIR$/application/views/landing/home.php" />
+        <option value="$PROJECT_DIR$/application/language/english/english_lang.php" />
       </list>
     </option>
   </component>
@@ -280,7 +268,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -308,6 +295,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -390,18 +378,19 @@
       <workItem from="1552571660378" duration="726000" />
       <workItem from="1552594885571" duration="40953000" />
       <workItem from="1552741826590" duration="33820000" />
-      <workItem from="1552806310815" duration="14289000" />
+      <workItem from="1552806310815" duration="16061000" />
+      <workItem from="1552890834660" duration="427000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="416743000" />
+    <option name="totallyTimeSpent" value="418942000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1956242" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1981982" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -426,16 +415,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/landing/404.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="83" selection-start-line="17" selection-start-column="83" selection-end-line="17" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/landing/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -520,13 +499,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="37" column="151" selection-start-line="37" selection-start-column="151" selection-end-line="37" selection-end-column="151" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/language/english/english_lang.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-start-column="2" selection-end-line="12" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -741,20 +713,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/resources/menu.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/Ajaxify.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="29" column="69" lean-forward="true" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+        <state relative-caret-position="2835">
+          <caret line="189" column="47" selection-start-line="189" selection-start-column="32" selection-end-line="189" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/landing/home.php">
+    <entry file="file://$PROJECT_DIR$/application/views/app/users/wallet.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="78" column="160" selection-start-line="78" selection-start-column="160" selection-end-line="78" selection-end-column="160" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="855">
+          <caret line="57" column="98" selection-start-line="57" selection-start-column="98" selection-end-line="57" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helpers/site_helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5220">
+          <caret line="348" column="27" selection-start-line="348" selection-start-column="27" selection-end-line="348" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/app/admin/plans.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="52" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/app/users/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1770">
+          <caret line="118" column="63" selection-start-line="118" selection-start-column="63" selection-end-line="118" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/resources/menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="69" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -767,41 +764,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/resources/login-modal.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="1245">
           <caret line="83" column="45" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Ajaxify.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="189" column="47" selection-start-line="189" selection-start-column="32" selection-end-line="189" selection-end-column="47" />
-          <folding>
-            <element signature="n#delete_plan#0;n#Ajax#0;n#!!top" />
-            <element signature="n#update_plan#0;n#Ajax#0;n#!!top" />
-            <element signature="n#buy_airtime#0;n#Ajax#0;n#!!top" />
-            <element signature="n#tv_cable#0;n#Ajax#0;n#!!top" />
-            <element signature="n#electricity_bill#0;n#Ajax#0;n#!!top" />
-            <element signature="n#verify_iuc_number#0;n#Ajax#0;n#!!top" />
-            <element signature="n#_submitGet#0;n#Ajax#0;n#!!top" />
-            <element signature="n#callAirtimeAPI#0;n#Ajax#0;n#!!top" />
-            <element signature="n#callCableAPI#0;n#Ajax#0;n#!!top" />
-            <element signature="n#return_response#0;n#Ajax#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/app/users/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="118" column="63" lean-forward="true" selection-start-line="118" selection-start-column="63" selection-end-line="118" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="135" column="47" selection-start-line="135" selection-start-column="33" selection-end-line="135" selection-end-column="47" />
+        <state relative-caret-position="75">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="12" />
           <folding>
             <element signature="e#14#593#0" />
             <element signature="n#!!block;n#format_currency#0" />
@@ -811,24 +782,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/app/users/wallet.php">
+    <entry file="file://$PROJECT_DIR$/application/views/landing/about.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="57" column="98" lean-forward="true" selection-start-line="57" selection-start-column="98" selection-end-line="57" selection-end-column="98" />
+        <state relative-caret-position="195">
+          <caret line="14" column="248" selection-start-line="14" selection-start-column="248" selection-end-line="14" selection-end-column="248" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/app/admin/plans.php">
+    <entry file="file://$PROJECT_DIR$/application/views/landing/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="58" column="52" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
+        <state relative-caret-position="299">
+          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+          <folding>
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/helpers/site_helper.php">
+    <entry file="file://$PROJECT_DIR$/application/views/landing/contact.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="348" column="27" selection-start-line="348" selection-start-column="27" selection-end-line="348" selection-end-column="27" />
+        <state relative-caret-position="-225" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/language/english/english_lang.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="123" selection-start-line="6" selection-start-column="123" selection-end-line="6" selection-end-column="123" />
         </state>
       </provider>
     </entry>
