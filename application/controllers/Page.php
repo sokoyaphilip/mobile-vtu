@@ -60,6 +60,7 @@ class Page extends CI_Controller {
      * */
     public function reseller_pricing(){
 	    $page_data['page'] = 'data';
+        $page_data['data'] = $this->site->get_result('services', 'id, title, message', "(product_id = 1)");
 	    $this->load->view('landing/pricing', $page_data);
     }
 
@@ -68,6 +69,7 @@ class Page extends CI_Controller {
      * */
     public function retail_pricing(){
         $page_data['page'] = 'data';
+        $page_data['data'] = $this->site->get_result('services', 'id, title, message', "(product_id = 1)");
         $this->load->view('landing/retail_pricing', $page_data);
     }
 

@@ -204,9 +204,9 @@
                                         <li><?= $list->name; ?> - <?= ngn( $list->amount);?></li>
                                 <?php endforeach;?>
                             </ul>
-                            <a class="btn btn-cta btn-cta-primary" href="#">
+                            <p class="btn btn-cta btn-cta-primary" href="#">
                                 <span class="extra"><?= $datakey->message; ?></span>
-                            </a>
+                            </p>
                         </div>
                     </div><!--//item-->
                 <?php endforeach; ?>
