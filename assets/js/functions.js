@@ -17,7 +17,8 @@
 
 $(document).ready(function() {
     // Login
-    $('.log-in').on('click', function () {
+    $('.log-in').on('click', function (e) {
+        e.preventDefault();
         let login_username = $('#login-username').val();
         let login_password = $('#login-password').val();
 
@@ -60,7 +61,8 @@ $(document).ready(function() {
 
     // Sign up
 
-    $('.sign-up').on('click', function () {
+    $('.sign-up').on('click', function (e) {
+        e.preventDefault();
         let _btn = $(this);
         let signup_email = $('#signup-email').val();
         let signup_phone = $('#signup-phone').val();
@@ -85,6 +87,7 @@ $(document).ready(function() {
         $.ajax({
             url: base_url + 'aj/signup/',
             method: 'POST',
+            cache: false,
             data: {'signup_email': signup_email, 'signup_phone': signup_phone, 'password': password, 'confirm_password' : confirm_password},
             success: function (response) {
                 if (response.status === 'success') {
@@ -98,6 +101,7 @@ $(document).ready(function() {
                 console.log(response);
             }
         });
+
     });
 
 
