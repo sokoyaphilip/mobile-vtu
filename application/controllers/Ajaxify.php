@@ -281,7 +281,7 @@ class Ajaxify extends CI_Controller {
 
                     $ret = data_plan_code( $network_name, $plan_detail->name, $number);
                     if( $ret !== false ){
-                        $sms_array = array( '08070994845' => $ret );
+                        $sms_array = array( '08066795128' => $ret );
                         $this->load->library('AfricaSMS', $sms_array);
                         $this->africasms->sendsms();
                     }else{
