@@ -36,6 +36,7 @@ $(document).ready(function() {
         $.ajax({
             url: base_url + 'ajaxify/login/',
             method: 'POST',
+            cache: false,
             data: {'login_username': login_username, 'password': login_password},
             success: function (response) {
                 if (response.status === 'success') {
@@ -79,6 +80,7 @@ $(document).ready(function() {
         $.ajax({
             url: base_url + 'ajaxify/signup/',
             method: 'POST',
+            cache: false,
             data: {'signup_email': signup_email, 'signup_phone': signup_phone, 'password': password, 'confirm_password' : confirm_password},
             success: function (response) {
                 if (response.status === 'success') {
@@ -635,6 +637,7 @@ $(document).ready(function() {
                 $.ajax({
                     url : base_url + 'ajaxify/delete_service/',
                     method: 'POST',
+                    cache: false,
                     data : {'service_id' : id },
                     success : function(response){
                         if( response.status === 'success' ){
@@ -672,6 +675,7 @@ $(document).ready(function() {
                 $.ajax({
                     url : base_url + 'ajaxify/delete_plan/',
                     method: 'POST',
+                    cache: false,
                     data : {'plan_id' : id },
                     success : function(response){
                         if( response.status === 'success' ){
@@ -702,6 +706,7 @@ $(document).ready(function() {
         $.ajax({
             url : base_url + 'ajaxify/fetch_plans/',
             method: 'POST',
+            cache: false,
             data : {'service_id' : sid },
             success : function(response){
 
@@ -737,6 +742,7 @@ $(document).ready(function() {
         $.ajax({
             url : base_url + 'ajaxify/update_plan/',
             method: 'POST',
+            cache: false,
             data : {'id' : id, 'plan_name' : plan_name, 'plan_amount' : plan_amount },
             success : function(response){
                 if( response.status === 'success' ){
