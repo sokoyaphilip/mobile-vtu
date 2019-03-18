@@ -11,7 +11,7 @@
     <meta name="description" content="Gecharl focuses in offering subsidised Internet subscription and Airtime on all Telecommunication Networks. With Gecharl you are sure of saving on your Data/Airtime purchase.. Your one stop shop on bills payment, airtime/VTU and Mobile Data">
     <meta name="author" content="github.com/sokoyaphilip">
     <meta name="keywords" content="subscribe gotv,dstv, startimes, data plan in nigeria, recharge card, mtn, glo, 9mobile, airtile, vtu,sme, data plan, cheap data, browsing cheat, browsing plan">
-    <link rel="shortcut icon" href="<?= base_url('assets/favicon.ico'); ?>">
+    <link rel="shortcut icon" href="<?= base_url('assets/images/favicon.png'); ?>">
     <link href="<?= base_url('assets/fonts/fonts.googleapis.com/css5319.css?family=Lato:300,400,300italic,400italic'); ?>" rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
     <link href="<?= base_url('assets/fonts/fonts.googleapis.com/csse3e5.css?family=Montserrat:400,700'); ?>" rel='stylesheet' type='text/css'>
@@ -27,11 +27,11 @@
     <link id="theme-style" rel="stylesheet" href="<?= base_url('assets/css/theme-1.css')?>">
     <link id="main-style" rel="stylesheet" href="<?= base_url('assets/css/main.css')?>">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url('assets/favicon/apple-touch-icon.png')?>">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('assets/favicon/favicon-32x32.png'); ?>">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/favicon/favicon-16x16.png'); ?>">
-    <link rel="manifest" href="<?= base_url('assets/favicon/site.webmanifest');?>">
-    <link rel="mask-icon" href="<?= base_url('assets/favicon/safari-pinned-tab.svg');?>" color="#6dbd63">
+<!--    <link rel="apple-touch-icon" sizes="180x180" href="--><?//= base_url('assets/favicon/apple-touch-icon.png')?><!--">-->
+<!--    <link rel="icon" type="image/png" sizes="32x32" href="--><?//= base_url('assets/favicon/favicon-32x32.png'); ?><!--">-->
+<!--    <link rel="icon" type="image/png" sizes="16x16" href="--><?//= base_url('assets/favicon/favicon-16x16.png'); ?><!--">-->
+<!--    <link rel="manifest" href="--><?//= base_url('assets/favicon/site.webmanifest');?><!--">-->
+<!--    <link rel="mask-icon" href="--><?//= base_url('assets/favicon/safari-pinned-tab.svg');?><!--" color="#6dbd63">-->
     <meta name="msapplication-TileColor" content="#00a300">
     <meta name="theme-color" content="#2a9651"/>
 

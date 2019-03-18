@@ -1,9 +1,9 @@
 <header id="header" class="header">
     <div class="container">
-        <h1 class="logo">
+        <h1 class="logo col-md-3">
             <a href="<?= base_url(); ?>">
                 <span class="logo-title">
-                    <img style="width: 20%;" src="<?= base_url('assets/images/gecharl-logo.png')?>" alt="Gecharl.com" />
+                    <img style="width: 70%;margin-top:-15px;" src="<?= base_url('assets/images/gecharl-logo.png')?>" alt="Gecharl.com" />
                 </span>
             </a>
         </h1><!--//logo-->
