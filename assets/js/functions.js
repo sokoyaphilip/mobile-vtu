@@ -85,7 +85,6 @@ $(document).ready(function() {
         $.ajax({
             url: base_url + 'aj/signup/',
             method: 'POST',
-            cache: false,
             data: {'signup_email': signup_email, 'signup_phone': signup_phone, 'password': password, 'confirm_password' : confirm_password},
             success: function (response) {
                 if (response.status === 'success') {
