@@ -10,6 +10,8 @@ class Home extends CI_Controller {
             $page_data['user'] = $this->get_profile($this->session->userdata('logged_id'));
         }
         $page_data['services'] = $this->site->run_sql("SELECT id,title,network_name, discount FROM services WHERE product_id = '2'")->result();
+
+        $page_data['data'] = $this->site->get_result('services', 'id, title, message', "(product_id = 1)");
 		$this->load->view('landing/home', $page_data);
 	}
 
