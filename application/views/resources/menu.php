@@ -2,7 +2,9 @@
     <div class="container">
         <h1 class="logo">
             <a href="<?= base_url(); ?>">
-                <span class="logo-title">Gecharl.com</span>
+                <span class="logo-title">
+                    <img style="width: 20%;" src="<?= base_url('assets/images/gecharl-logo.png')?>" alt="Gecharl.com" />
+                </span>
             </a>
         </h1><!--//logo-->
         <nav class="main-nav navbar navbar-expand-md navbar-dark" role="navigation">
