@@ -346,7 +346,7 @@ function data_plan_code( $network , $plan, $number){
                     break;
                 case "500MB":
                     return "SMEB {$number} 500 8025";
-                case "200MB":
+                case "250MB":
                     return "SMEA {$number} 250 8025";
                 default :
                     return false;

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/application/controllers/Aj.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Aj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/helpers/site_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/helpers/site_helper.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,23 +112,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="282" column="140" selection-start-line="282" selection-start-column="140" selection-end-line="282" selection-end-column="140" />
+            <state relative-caret-position="359">
+              <caret line="292" column="29" lean-forward="true" selection-start-line="292" selection-start-column="29" selection-end-line="292" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Admin.php">
+        <entry file="file://$PROJECT_DIR$/application/helpers/site_helper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="115" column="35" selection-start-line="115" selection-start-column="35" selection-end-line="115" selection-end-column="35" />
-              <folding>
-                <element signature="n#index#0;n#Admin#0;n#!!top" />
-                <element signature="n#tocashprocess#0;n#Admin#0;n#!!top" />
-                <element signature="n#users#0;n#Admin#0;n#!!top" />
-                <element signature="n#api_variation#0;n#Admin#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="313">
+              <caret line="348" column="24" selection-start-line="348" selection-start-column="24" selection-end-line="348" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -171,9 +166,9 @@
       <find>you are s</find>
       <find>you ge</find>
       <find>network</find>
-      <find>data_purchase</find>
       <find>data-purchase</find>
       <find>data-pu</find>
+      <find>data_purchase</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -218,7 +213,6 @@
         <option value="$PROJECT_DIR$/application/language/english/english_lang.php" />
         <option value="$PROJECT_DIR$/application/controllers/Ajaxify.php" />
         <option value="$PROJECT_DIR$/application/controllers/Home.php" />
-        <option value="$PROJECT_DIR$/application/helpers/site_helper.php" />
         <option value="$PROJECT_DIR$/application/controllers/Page.php" />
         <option value="$PROJECT_DIR$/application/views/landing/retail_pricing.php" />
         <option value="$PROJECT_DIR$/application/views/landing/pricing.php" />
@@ -232,6 +226,7 @@
         <option value="$PROJECT_DIR$/application/views/app/users/data.php" />
         <option value="$PROJECT_DIR$/application/views/landing/home.php" />
         <option value="$PROJECT_DIR$/assets/js/functions.js" />
+        <option value="$PROJECT_DIR$/application/helpers/site_helper.php" />
         <option value="$PROJECT_DIR$/application/controllers/Aj.php" />
       </list>
     </option>
@@ -404,12 +399,12 @@
       <workItem from="1552806310815" duration="16061000" />
       <workItem from="1552890834660" duration="7916000" />
       <workItem from="1552906853487" duration="9924000" />
-      <workItem from="1552921377429" duration="6517000" />
+      <workItem from="1552921377429" duration="6798000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="442872000" />
+    <option name="totallyTimeSpent" value="443153000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -630,13 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/helpers/site_helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/landing/about.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -811,10 +799,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/helpers/site_helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="348" column="24" selection-start-line="348" selection-start-column="24" selection-end-line="348" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="282" column="140" selection-start-line="282" selection-start-column="140" selection-end-line="282" selection-end-column="140" />
+        <state relative-caret-position="359">
+          <caret line="292" column="29" lean-forward="true" selection-start-line="292" selection-start-column="29" selection-end-line="292" selection-end-column="29" />
         </state>
       </provider>
     </entry>
