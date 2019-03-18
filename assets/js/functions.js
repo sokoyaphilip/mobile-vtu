@@ -84,7 +84,7 @@ $(document).ready(function() {
             data: {'signup_email': signup_email, 'signup_phone': signup_phone, 'password': password, 'confirm_password' : confirm_password},
             success: function (response) {
                 if (response.status === 'success') {
-                    setTimeout(function(){  window.location.href = window.location.href; }, 2000);
+                    setTimeout(function(){  location.reload(true); }, 2000);
                     sweet_alert('Success!', "Registration successfull. Buy Airtime - Data - Subscribe your TV Decoder...", 'success');
                 } else {
                     sweet_alert('Error!', response.message, response.status);
@@ -218,6 +218,7 @@ $(document).ready(function() {
         $.ajax({
             url : base_url + 'ajaxify/data_purchase/',
             method: "POST",
+            cache: false,
             data: {'product_id' : product_id, 'plan_id' : plan_id, 'recipents' : recipents, 'network' : network, 'network_name' : network_name },
             success : function(response){
                 if( response.status === 'success' ){
@@ -303,6 +304,7 @@ $(document).ready(function() {
         $.ajax({
             url : base_url + 'ajaxify/buy_airtime/',
             method: "POST",
+            cache : false,
             data: {'product_id' : product_id, 'amount' : amount, 'discount' : discount, 'network' : network, 'recipents' : recipents, 'network_name' : network_name},
             success : function(response){
                 if( response.status === 'success' ){
@@ -360,6 +362,7 @@ $(document).ready(function() {
         $.ajax({
             url : base_url + 'ajaxify/quick_airtime/',
             method: "POST",
+            cache:false,
             data: {'product_id' : product_id, 'discount' : discount, 'amount' : amount, 'network' : network, 'payment' : payment, 'recipents' : recipents, 'network_name' : network_name},
             success : function(response){
                 if( response.status === 'success' ){
