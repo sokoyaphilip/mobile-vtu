@@ -22,13 +22,13 @@ $(document).ready(function() {
         let login_username = $('#login-username').val();
         let login_password = $('#login-password').val();
 
-        if( login_username == '' ){
+        if( login_username === '' ){
             _btn.prop('disabled', false);
             sweet_alert('Error', 'Username field can not be empty', 'error');
             return false;
         }
 
-        if( login_password == '' ){
+        if( login_password === '' ){
             _btn.prop('disabled', false);
             sweet_alert('Error', 'Password field can not be empty', 'error');
             return false;
@@ -56,6 +56,8 @@ $(document).ready(function() {
                 }
             }
         });
+
+        return false;
     });
 
 
@@ -101,6 +103,7 @@ $(document).ready(function() {
                 console.log(response);
             }
         });
+        return false;
 
     });
 
