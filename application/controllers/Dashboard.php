@@ -250,14 +250,14 @@ class Dashboard extends CI_Controller {
                 }
                 break;
             case 'password_change':
-                die( 'Here');
+
                 $this->form_validation->set_rules('password', 'Password','trim|required|xss_clean');
                 $this->form_validation->set_rules('new_password', 'New Password','trim|required|xss_clean');
                 $this->form_validation->set_rules('confirm_password', 'Confirm Password','trim|required|xss_clean|min_length[6]|max_length[15]|matches[new_password]');
 
                 $password = cleanit($_POST['password']);
                 if(!$this->user->cur_pass_match($password, $uid, 'users')){
-                    $this->session->set_flashdata('error_msg', "Oops! The password does not match your current password.". $password);
+                    $this->session->set_flashdata('error_msg', "Oops! The password does not match your current password. and ". $password);
                     redirect($_SERVER['HTTP_REFERER']);
                 }
                 $new_password = cleanit( $_POST['new_password'] );
