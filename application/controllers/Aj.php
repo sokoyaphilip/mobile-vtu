@@ -519,7 +519,7 @@ class Aj extends CI_Controller {
             }
 
             if( $payment == 2 && $total_amount > $wallet ){
-                $response['message'] = "You don't have enough fund to process this, please fund your wallet first.";
+                $response['message'] = "You don't have enough fund to process this, please fund your wallet first." . $wallet;
                 $this->return_response($response);
             }
             $description = ucfirst( $network_name) . " ({$amount}) airtime purchase for {$message} recipent";
