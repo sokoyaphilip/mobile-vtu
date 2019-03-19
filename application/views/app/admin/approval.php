@@ -57,7 +57,7 @@
                                                         <td><?= payment_id_replacer($funding->description); ?></td>
                                                         <td><?= ngn($funding->amount)?></td>
                                                         <td>
-                                                            <form class="form-inline" method="post" action="<?= base_url('admin/wallet')?>" id="<?= $funding->id?>">
+                                                            <form class="form-inline" method="post" action="<?= base_url('admin/approval')?>" id="<?= $funding->id?>">
                                                                 <div class="form-group mx-sm-3 mb-2">
                                                                     <label for="action" class="sr-only">Action</label>
                                                                     <select class="form-control-sm" name="action" required>
