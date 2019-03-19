@@ -10,42 +10,42 @@
         
         <section id="about-us" class="about-us section">
             <div class="container">
-                <h2 class="title text-center">Login</h2>
+                <h2 class="title text-center">Create an account with us</h2>
 
                 <div class="row">
                     <div class="contact-form col-lg-6 col-12 ml-lg-auto mr-lg-auto">
                         <form class="login-form">
                             <div class="form-group email">
                                 <i class="fas fa-envelope"></i>
-                                <label class="sr-only" for="signup-email">Your email</label>
-                                <input id="signup-email" name="signup-email" required type="email" class="form-control login-email" placeholder="Your email" autocomplete="off">
+                                <label for="signup-email">Your email</label>
+                                <input id="signup-email" name="signup-email" required type="email" class="form-control login-email"  autocomplete="off">
                             </div><!--//form-group-->
                             <div class="form-group email">
                                 <i class="fas fa-phone"></i>
-                                <label class="sr-only" for="signup-email">Your phone number</label>
-                                <input id="signup-phone" name="signup-phone" required type="text" class="form-control login-email" placeholder="Your Number" autocomplete="off">
+                                <label for="signup-email">Your phone number</label>
+                                <input id="signup-phone" name="signup-phone" required type="text" class="form-control login-email"  autocomplete="off">
                             </div><!--//form-group-->
                             <div class="form-group name">
                                 <i class="fas fa-phone"></i>
-                                <label class="sr-only" for="signup-email">Full name</label>
-                                <input id="signup-name" name="signup-name" required type="text" class="form-control login-name" placeholder="Full name" autocomplete="off">
+                                <label for="signup-email">Full name</label>
+                                <input id="signup-name" name="signup-name" required type="text" class="form-control login-name" autocomplete="off">
                             </div><!--//form-group-->
                             <div class="form-group password">
                                 <i class="fas fa-lock"></i>
-                                <label class="" for="signup-password">Your password</label>
-                                <input id="signup-password" name="signup-password" required type="password" class="form-control signup-password" placeholder="Password" autocomplete="off">
+                                <label  for="signup-password">Your password</label>
+                                <input id="signup-password" name="signup-password" required type="password" class="form-control signup-password"  autocomplete="off">
                             </div><!--//form-group-->
                             <div class="form-group password">
                                 <i class="fas fa-lock"></i>
-                                <label class="sr-only" for="signup-password">Confirm password</label>
-                                <input id="confirm-password" name="confirm-password" required type="password" class="form-control confirm-password" placeholder="Confirm Password" autocomplete="off">
+                                <label for="signup-password">Confirm password</label>
+                                <input id="confirm-password" name="confirm-password" required type="password" class="form-control confirm-password" autocomplete="off">
                             </div><!--//form-group-->
                             <button type="button" class="btn btn-block btn-cta-primary sign-up">Sign up</button>
                         </form>
                         <br />
                         <div class="text-center">
                             <div class="divider"><span>Or</span></div>
-                            <p>Already have an account? <a class="login-link" id="login-link" href="<?= base_url('auth/login/'); ?>">Lon In</a></p>
+                            <p>Already have an account? <a class="login-link" href="<?= base_url('auth/login/'); ?>">Log In</a></p>
                         </div>
                     </div>
                 </div>
