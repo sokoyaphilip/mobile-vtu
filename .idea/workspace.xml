@@ -18,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="259" column="120" lean-forward="true" selection-start-line="259" selection-start-column="120" selection-end-line="259" selection-end-column="120" />
+            <state relative-caret-position="241">
+              <caret line="257" column="60" selection-start-line="257" selection-start-column="60" selection-end-line="257" selection-end-column="60" />
               <folding>
                 <element signature="n#wallet#0;n#Dashboard#0;n#!!top" />
                 <element signature="n#airtime_to_cash#0;n#Dashboard#0;n#!!top" />
@@ -309,12 +309,12 @@
       <workItem from="1552890834660" duration="7916000" />
       <workItem from="1552906853487" duration="9924000" />
       <workItem from="1552921377429" duration="29468000" />
-      <workItem from="1553011098707" duration="4462000" />
+      <workItem from="1553011098707" duration="4551000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="470285000" />
+    <option name="totallyTimeSpent" value="470374000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -706,8 +706,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="259" column="120" lean-forward="true" selection-start-line="259" selection-start-column="120" selection-end-line="259" selection-end-column="120" />
+        <state relative-caret-position="241">
+          <caret line="257" column="60" selection-start-line="257" selection-start-column="60" selection-end-line="257" selection-end-column="60" />
           <folding>
             <element signature="n#wallet#0;n#Dashboard#0;n#!!top" />
             <element signature="n#airtime_to_cash#0;n#Dashboard#0;n#!!top" />
