@@ -13,15 +13,16 @@
                 <h2 class="title text-center">Retrieve Your Password</h2>
                 <div class="row">
                     <?php $this->load->view('msg_view'); ?>
-                    <?= form_open('auth/forgot/')?>
+                    <?= form_open('auth/forgot/', 'class="login-form"')?>
                         <div class="contact-form col-lg-6 col-12 ml-lg-auto mr-lg-auto">
-                            <form class="login-form">
-                                <div class="form-group email">
-                                    <label class="" for="login-email">Your email</label>
-                                    <input id="email" name="email" type="text" required class="form-control login-email" placeholder="Your email" autocomplete="off">
-                                </div><!--//form-group-->
+                            <div class="form-group email">
+                                <label class="" for="login-email">Your email</label>
+                                <input id="email" name="email" type="text" required class="form-control login-email" placeholder="Your email" autocomplete="off">
+                            </div><!--//form-group-->
+                            <div id="captcha" class="form-group">
+                                <?= $this->recaptcha->getWidget(); ?>
+                            </div>
                                 <button type="submit"  class="btn btn-block btn-cta-primary">Retrieve</button>
-                            </form>
                             <br />
                             <div class="text-center">
                                 <div class="divider"><span>Or</span></div>
@@ -64,6 +65,7 @@
 <!--[if !IE]>-->
 <script type="text/javascript" src="<?= base_url('assets/js/animations.js')?>"></script>
 <!--<![endif]-->
+<?= $this->recaptcha->getScriptTag(); ?>
 </body>
 </html>
 

@@ -75,6 +75,7 @@
 
 <!--[if !IE]>-->
 <script type="text/javascript" src="<?= base_url('assets/js/animations.js')?>"></script>
+
 <!--<![endif]-->
 </body>
 </html>
