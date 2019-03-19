@@ -311,7 +311,7 @@ class Aj extends CI_Controller {
                 if( $this->site->set_field('users', 'wallet', "wallet-{$total_amount}", "id={$user_id}") ){
                     $this->site->insert_data('transactions', $insert_data);
                     $response['status'] = 'success';
-                    $response['message'] = "Thanks for using Gecharl. Your {$plan_detail->name} data plan order for {$message} has been processed and should be received in less than 2 minutes. <br />";
+                    $response['message'] = "Thanks for using Gecharl. Your {$plan_detail->name} data plan order for {$message} has been processed and should be received in less than a minutes. <br />";
                     if( $invalid_numbers != '' ){
                         $response['message'] .=  $invalid_numbers ." was not processed. because they are invalid or {$network_name} number";
                     }
@@ -427,7 +427,7 @@ class Aj extends CI_Controller {
                 if( $this->site->set_field('users', 'wallet', "wallet-{$total_amount}", "id={$user_id}") ){
                     $this->site->insert_data('transactions', $insert_data);
                     $response['status'] = 'success';
-                    $response['message'] = "Thanks for using Gecharl. Your order {$message} has been processed and should be received in less than 2 minutes. <br />";
+                    $response['message'] = "Thanks for using Gecharl. Your order {$message} has been processed and should be received in less than a minute. <br />";
                     if( $invalid_numbers != '' ){
                         $response['message'] .=  $invalid_numbers ." was not processed. because they are invalid or {$network_name} number";
                     }

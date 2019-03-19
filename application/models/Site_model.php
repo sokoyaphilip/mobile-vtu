@@ -107,6 +107,20 @@ class Site_model extends CI_Model
         return $this->db->query( $query );
     }
 
+    // Change Password
+    function change_password($password, $access = '', $table = 'users')
+    {
+        $salt = salt(50);
+        $password = shaPassword($password, $salt);
+        $data = array(
+            'password' => $password,
+            'salt' => $salt
+        );
+        $this->db->where('id', $access);
+        return $this->db->update($table, $data);
+    }
+
+
 
     /*
      * Update

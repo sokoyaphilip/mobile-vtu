@@ -42,7 +42,7 @@ class Page extends CI_Controller {
                  $this->email->to('hello@gecharl.com');
                  $this->email->subject( $name.' A new message from contact page');
                  if( $this->email->send() ) {
-                     $this->session->set_flashdata('success_msg', "We received your messahe and will get back to you shortly");
+                     $this->session->set_flashdata('success_msg', "We received your message and will get back to you shortly");
                  }else{
                      $this->session->set_flashdata('error_msg', "There was an error sending your message... Please try again or use the chat widget.");
                  }
