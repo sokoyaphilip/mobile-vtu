@@ -9,7 +9,7 @@
     <!--//header-->
         
         <section id="about-us" class="about-us section">
-            <div class="container">
+            <div class="container text-center">
                 <h2 class="title">Login</h2>
 
                 <div class="row">
@@ -27,7 +27,7 @@
                             </div><!--//form-group-->
                             <div class="form-group password">
                                 <i class="fas fa-lock"></i>
-                                <label class="sr-only" for="signup-password">Your password</label>
+                                <label class="" for="signup-password">Your password</label>
                                 <input id="signup-password" name="signup-password" required type="password" class="form-control signup-password" placeholder="Password" autocomplete="off">
                             </div><!--//form-group-->
                             <div class="form-group password">
@@ -59,6 +59,10 @@
 <script type="text/javascript" src="<?= base_url('assets/plugins/isMobile/isMobile.min.js')?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/plugins/flexslider/jquery.flexslider-min.js')?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/main.js')?>"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script type="text/javascript" src="<?= $this->user->auto_version('assets/js/main.js')?>"></script>
+<script type="text/javascript" src="<?= $this->user->auto_version('assets/js/functions.js'); ?>"></script>
 
 <!--[if !IE]>-->
 <script type="text/javascript" src="<?= base_url('assets/js/animations.js')?>"></script>
