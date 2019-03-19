@@ -12,8 +12,9 @@
             <div class="container">
                 <h2 class="title text-center">Retrieve Your Password</h2>
                 <div class="row">
-                    <?php $this->load->view('msg_view'); ?>
+
                     <div class="contact-form col-lg-6 col-12 ml-lg-auto mr-lg-auto">
+                        <?php $this->load->view('msg_view'); ?>
                         <form class="login-form" method="post" action="<?= base_url('auth/forgot/'); ?>">
                             <div class="form-group email">
                                 <label class="" for="login-email">Your email</label>
