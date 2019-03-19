@@ -185,7 +185,12 @@ class Aj extends CI_Controller {
         $transaction_id = $this->site->generate_code('transactions', 'trans_id');
         $description = "Wallet funding via {{$payment_method}}";
         // paystack charge
-        $charge = (2.5/100) * $amount;
+        $charge = 0;
+        if( $amount < 2500 ){
+            $charge = (1.5 * 100 ) * $amount;
+        }elseif( $amount > 2500 ){
+            $charge = ((1.5 * 100) * $amount ) + 100;
+        }
         $insert_data = array(
             'amount'        => $amount,
             'charge'        => $charge,
@@ -519,7 +524,12 @@ class Aj extends CI_Controller {
 //            }
             $description = ucfirst( $network_name) . " ({$amount}) airtime purchase for {$message} recipent";
             $transaction_id = $this->site->generate_code('transactions', 'trans_id');
-            $charge = (2.5/100) * $total_amount;
+            $charge = 0;
+            if( $total_amount < 2500 ){
+                $charge = (1.5 * 100 ) * $amount;
+            }elseif( $total_amount > 2500 ){
+                $charge = ((1.5 * 100) * $amount ) + 100;
+            }
             $insert_data = array(
                 'amount'        => $total_amount,
                 'charge'        => $charge,

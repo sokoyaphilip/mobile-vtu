@@ -29,7 +29,7 @@
                                             <div class="form-group">
                                                 <label class="label" for="Network">Select Network</label>
                                                 <select class="form-control" id="network" name="network">
-                                                    <option value="" selected>-- Select Network --</option>
+                                                    <option value="" selected>-- Select TV Cable --</option>
                                                     <?php foreach ($networks as $network ): ?>
                                                         <option data-network-name="<?= $network->network_name; ?>" value="<?= $network->id?>"><?= ucwords($network->title); ?></option>
                                                     <?php endforeach; ?>
