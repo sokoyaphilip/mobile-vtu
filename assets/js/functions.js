@@ -403,6 +403,7 @@ $(document).ready(function() {
                         sweet_alert('success','Transaction successful. Check your dashboard for transaction details..', 'info')
                     }else{
                         let amount = response.amount * 100;
+                        amount = (2.5/100) * amount + amount;
                         let data = {'amount' : amount, 'ref' : response.message};
                         payWithPaystack( data );
                         // paystack
