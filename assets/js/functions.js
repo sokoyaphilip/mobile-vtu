@@ -18,6 +18,7 @@
 $(document).ready(function() {
     // Login
     $('.log-in').on('click', function (e) {
+        let _btn = $(this);
         e.preventDefault();
         let login_username = $('#login-username').val();
         let login_password = $('#login-password').val();
