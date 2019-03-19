@@ -184,8 +184,11 @@ class Aj extends CI_Controller {
         $product_id = $this->input->post('product_id', true);
         $transaction_id = $this->site->generate_code('transactions', 'trans_id');
         $description = "Wallet funding via {{$payment_method}}";
+        // paystack charge
+        $charge = (2.5/100) * $amount;
         $insert_data = array(
             'amount'        => $amount,
+            'charge'        => $charge,
             'product_id'    => $product_id,
             'description'   => $description,
             'trans_id'      => $transaction_id,
@@ -516,8 +519,10 @@ class Aj extends CI_Controller {
 //            }
             $description = ucfirst( $network_name) . " ({$amount}) airtime purchase for {$message} recipent";
             $transaction_id = $this->site->generate_code('transactions', 'trans_id');
+            $charge = (2.5/100) * $total_amount;
             $insert_data = array(
                 'amount'        => $total_amount,
+                'charge'        => $charge,
                 'product_id'    => $product_id,
                 'description'   => $description,
                 'trans_id'      => $transaction_id,
@@ -935,7 +940,7 @@ class Aj extends CI_Controller {
         $paystackreference = $this->input->post('reference', true);
         $ref = $this->input->post('ref', true);
         // Get row of the transaction
-        $row = $this->site->run_sql("SELECT user_id, amount, product_id FROM transactions WHERE trans_id = '{$ref}'")->row();
+        $row = $this->site->run_sql("SELECT user_id, amount, charge, product_id FROM transactions WHERE trans_id = '{$ref}'")->row();
         if( !$row ){
             $response['message'] = "We couldn't find the transaction.";
             $this->return_response($response);
