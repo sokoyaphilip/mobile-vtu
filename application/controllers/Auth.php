@@ -60,7 +60,6 @@ class Auth extends CI_Controller {
                         $message = "Hi {$row->name}, \r\n\r\nYou requested to retrieve your password, please find below your new password.\r\n\r\n {$new_password}.\r\n
                         After login in to your account, you can change it to your preferred password.\r\n\r\nHave a great day.\r\n\r\nBest Regards,\r\n\r\nGecharl.com";
 
-                        $this->load->library->email('email');
                         $this->email->clear(TRUE);
                         $this->email->set_newline("\r\n");
                         $this->email->from('hello@gecharl.com', 'Gecharl.com');
@@ -69,7 +68,7 @@ class Auth extends CI_Controller {
                         $this->email->message($message);
                         if( $this->email->send()){
                             $this->session->set_flashdata('success_msg', "Congrats, a new password has been sent to your mail.");
-                            redirect('auth/forgot/');
+                            redirect('auth/login/');
                         }else{
                             $this->session->set_flashdata('error_msg',"There was an error sending the mail...");
                             redirect('auth/forgot/');

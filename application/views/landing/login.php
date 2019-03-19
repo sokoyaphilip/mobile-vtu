@@ -15,6 +15,7 @@
                 <div class="row">
                     <div class="contact-form col-lg-6 col-12 ml-lg-auto mr-lg-auto">
                         <form class="login-form">
+                            <?php $this->load->view('msg_view'); ?>
                             <div class="form-group email">
                                 <label class="" for="login-email">Your email or Phone number</label>
                                 <input id="login-username" name="login_username" type="text" required class="form-control login-email" placeholder="Your email or phone number" autocomplete="off">
