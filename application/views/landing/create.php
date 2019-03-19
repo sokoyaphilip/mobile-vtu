@@ -10,7 +10,7 @@
         
         <section id="about-us" class="about-us section">
             <div class="container">
-                <h2 class="title text-center">Create an account with us</h2>
+                <h4 class="title text-center">Create an account with us</h4>
 
                 <div class="row">
                     <div class="contact-form col-lg-6 col-12 ml-lg-auto mr-lg-auto">
@@ -45,7 +45,7 @@
                         <br />
                         <div class="text-center">
                             <div class="divider"><span>Or</span></div>
-                            <p>Already have an account? <a class="login-link" href="<?= base_url('auth/login/'); ?>">Log In</a></p>
+                            <p>Already have an account? <a href="<?= base_url('auth/login/'); ?>">Log In</a></p>
                         </div>
                     </div>
                 </div>

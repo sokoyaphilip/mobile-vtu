@@ -37,7 +37,7 @@
                         <br />
                         <div class="text-center">
                             <div class="divider"><span>Or</span></div>
-                            <p>New to Gecharl? <a class="signup-link" id="signup-link" href="<?= base_url('auth/create/'); ?>">Sign up now</a></p>
+                            <p>New to Gecharl? <a href="<?= base_url('auth/create/'); ?>">Sign up now</a></p>
                         </div>
                     </div>
                 </div>
