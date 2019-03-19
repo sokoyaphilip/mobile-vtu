@@ -13,8 +13,8 @@
                 <h2 class="title text-center">Retrieve Your Password</h2>
                 <div class="row">
                     <?php $this->load->view('msg_view'); ?>
-                    <?= form_open('auth/forgot/', 'class="login-form"')?>
-                        <div class="contact-form col-lg-6 col-12 ml-lg-auto mr-lg-auto">
+                    <div class="contact-form col-lg-6 col-12 ml-lg-auto mr-lg-auto">
+                        <form class="login-form" method="post" action="<?= base_url('auth/forgot/'); ?>">
                             <div class="form-group email">
                                 <label class="" for="login-email">Your email</label>
                                 <input id="email" name="email" type="text" required class="form-control login-email" placeholder="Your email" autocomplete="off">
@@ -22,14 +22,14 @@
                             <div id="captcha" class="form-group">
                                 <?= $this->recaptcha->getWidget(); ?>
                             </div>
-                                <button type="submit"  class="btn btn-block btn-cta-primary">Retrieve</button>
+                            <button type="submit"  class="btn btn-block btn-cta-primary">Retrieve</button>
                             <br />
                             <div class="text-center">
                                 <div class="divider"><span>Or</span></div>
                                 <p>Remember your login details? <a href="<?= base_url('auth/login/'); ?>">Login</a></p>
                             </div>
-                        </div>
-                    <?= form_close(); ?>
+                        </form>
+                    </div>
                 </div>
             </div><!--//container-->
         </section><!--//about-us-->
