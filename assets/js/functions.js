@@ -69,6 +69,7 @@ $(document).ready(function() {
         let _btn = $(this);
         let signup_email = $('#signup-email').val();
         let signup_phone = $('#signup-phone').val();
+        let signup_name = $('#signup-name').val();
         let password = $('#signup-password').val();
         let confirm_password = $('#confirm-password').val();
         if( signup_email === '' ){
@@ -81,6 +82,13 @@ $(document).ready(function() {
             sweet_alert('Error', 'Phone number field can not be empty', 'error');
             return false;
         }
+
+        if( signup_name === '' ){
+            _btn.prop('disabled', false);
+            sweet_alert('Error', 'Full name field can not be empty', 'error');
+            return false;
+        }
+
         if( password === '' ){
             _btn.prop('disabled', false);
             sweet_alert('Error', 'Password field can not be empty', 'error');
@@ -90,7 +98,7 @@ $(document).ready(function() {
         $.ajax({
             url: base_url + 'aj/signup/',
             method: 'POST',
-            data: {'signup_email': signup_email, 'signup_phone': signup_phone, 'password': password, 'confirm_password' : confirm_password},
+            data: {'signup_email': signup_email, 'signup_phone': signup_phone, 'signup_name': signup_name, 'password': password, 'confirm_password' : confirm_password},
             success: function (response) {
                 if (response.status === 'success') {
 

@@ -49,6 +49,7 @@ class Aj extends CI_Controller {
         $response = array('status' => 'error');
         $this->form_validation->set_rules('signup_email', 'Email Address', 'trim|required|xss_clean|valid_email|is_unique[users.email]', array('is_unique' => 'This %s has already been registered!'));
         $this->form_validation->set_rules('signup_phone', 'Phone number','trim|required|xss_clean|is_unique[users.phone]', array('is_unique' => 'This %s has already been registered!'));
+        $this->form_validation->set_rules('signup_name', 'Full name','trim|required|xss_clean|min_length[3]|max_length[55]');
         $this->form_validation->set_rules('password', 'Password','trim|required|xss_clean|min_length[6]|max_length[15]');
         $this->form_validation->set_rules('confirm_password', 'Confirm Password','trim|required|xss_clean|min_length[6]|max_length[15]|matches[password]');
 
@@ -63,6 +64,7 @@ class Aj extends CI_Controller {
             $data = array(
                 'email' => $this->input->post('signup_email', true),
                 'phone' => $this->input->post('signup_phone', true),
+                'name' => $this->input->post('signup_name', true),
                 'salt' => $salt,
                 'password' => shaPassword($this->input->post('password'), $salt),
                 'ip' => $_SERVER['REMOTE_ADDR'],

@@ -9,8 +9,8 @@
     <!--//header-->
         
         <section id="about-us" class="about-us section">
-            <div class="container text-center">
-                <h2 class="title">Login</h2>
+            <div class="container">
+                <h2 class="title text-center">Login</h2>
 
                 <div class="row">
                     <div class="contact-form col-lg-6 col-12 ml-lg-auto mr-lg-auto">
@@ -25,6 +25,11 @@
                                 <label class="sr-only" for="signup-email">Your phone number</label>
                                 <input id="signup-phone" name="signup-phone" required type="text" class="form-control login-email" placeholder="Your Number" autocomplete="off">
                             </div><!--//form-group-->
+                            <div class="form-group name">
+                                <i class="fas fa-phone"></i>
+                                <label class="sr-only" for="signup-email">Full name</label>
+                                <input id="signup-name" name="signup-name" required type="text" class="form-control login-name" placeholder="Full name" autocomplete="off">
+                            </div><!--//form-group-->
                             <div class="form-group password">
                                 <i class="fas fa-lock"></i>
                                 <label class="" for="signup-password">Your password</label>
@@ -37,6 +42,11 @@
                             </div><!--//form-group-->
                             <button type="button" class="btn btn-block btn-cta-primary sign-up">Sign up</button>
                         </form>
+                        <br />
+                        <div class="text-center">
+                            <div class="divider"><span>Or</span></div>
+                            <p>Already have an account? <a class="login-link" id="login-link" href="<?= base_url('auth/login/'); ?>">Lon In</a></p>
+                        </div>
                     </div>
                 </div>
             </div><!--//container-->

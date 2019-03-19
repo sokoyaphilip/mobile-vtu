@@ -36,8 +36,9 @@
                     <li class="<?php if( $page == 'contact') echo 'active'; ?> nav-item"><a class="nav-link" href="<?= base_url('contact/'); ?>">Contact</a></li>
                     <?php if( !$this->session->userdata('logged_in')) : ?>
 <!--                        <li class="nav-item"><a class="nav-link login-trigger" data-toggle="modal" data-target="#login-modal">Log in</a></li>-->
+                        <!--<li class="nav-item nav-item-cta last"><a class="nav-link btn btn-cta btn-cta-primary" data-toggle="modal" data-target="#signup-modal" >Sign Up</a></li>-->
                         <li class="nav-item"><a class="nav-link" href="<?= base_url('auth/login/')?>" >Log in</a></li>
-                        <li class="nav-item nav-item-cta last"><a class="nav-link btn btn-cta btn-cta-primary" data-toggle="modal" data-target="#signup-modal" >Sign Up</a></li>
+                        <li class="nav-item nav-item-cta last"><a class="nav-link btn btn-cta btn-cta-primary" href="<?= base_url('auth/create/');?>">Sign Up</a></li>
                     <?php else : ?>
                         <li class="nav-item"><a class="nav-link" href="<?= base_url('logout/')?>">Log out</a></li>
                         <?php if( $this->session->userdata('is_admin') == 1 ) : ?>

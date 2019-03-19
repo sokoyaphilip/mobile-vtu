@@ -35,8 +35,10 @@
                             <button type="button"  class="btn btn-block btn-cta-primary log-in">Log in</button>
                         </form>
                         <br />
-                        <div class="divider"><span>Or</span></div>
-                        <p>New to Gecharl? <a class="signup-link" id="signup-link" href="<?= base_url('auth/create/'); ?>">Sign up now</a></p>
+                        <div class="text-center">
+                            <div class="divider"><span>Or</span></div>
+                            <p>New to Gecharl? <a class="signup-link" id="signup-link" href="<?= base_url('auth/create/'); ?>">Sign up now</a></p>
+                        </div>
                     </div>
                 </div>
             </div><!--//container-->
