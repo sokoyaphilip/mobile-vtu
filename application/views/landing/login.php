@@ -28,7 +28,7 @@
                                         <input type="checkbox"> Remember me
                                     </label>
                                     <span class="pull-right">
-                                    <a href="#" id="resetpass-link" data-toggle="modal" data-target="#resetpass-modal">Forgot password?</a>
+                                    <a href="<?= base_url('auth/forgot/'); ?>">Forgot password?</a>
                                 </span>
                                 </p>
                             </div><!--//form-group-->
