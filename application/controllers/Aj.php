@@ -318,7 +318,7 @@ class Aj extends CI_Controller {
                 }
             }
         }else{
-            $response['message'] = "We couldn't process your order because the number(s) {$invalid_numbers} is/are not ". ucfirst($network_name). " numbers ";
+            $response['message'] = "We couldn't process your order because the number(s) {$invalid_numbers} is not ". ucfirst($network_name). " number(s) ";
             $this->return_response($response);
         }
 
@@ -434,7 +434,7 @@ class Aj extends CI_Controller {
                 }
             }
         }else{
-            $response['message'] = "We couldn't process your order because the number(s) {$invalid_numbers} is/are not ". ucfirst($network_name). " numbers ";
+            $response['message'] = "We couldn't process your order because the number(s) {$invalid_numbers} is not ". ucfirst($network_name). " number(s) ";
             $this->return_response($response);
         }
 
@@ -561,7 +561,7 @@ class Aj extends CI_Controller {
             $response['amount'] = $total_amount;
             $this->return_response($response);
         }else{
-            $response['message'] = "We couldn't process your order because the number(s) {$invalid_numbers} is/are not ". ucfirst($network_name). " numbers ";
+            $response['message'] = "We couldn't process your order because the number(s) {$invalid_numbers} is not ". ucfirst($network_name). " number(s) ";
             $this->return_response($response);
         }
     }
