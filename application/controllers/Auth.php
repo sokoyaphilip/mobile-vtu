@@ -57,8 +57,7 @@ class Auth extends CI_Controller {
                     $new_password = random_string('alnum', 10);
                     if( $this->site->change_password( $new_password , $row->id) ){
                         // send mail
-                        $message = "Hi {$row->name}, \r\n\r\nYou requested to retrieve your password, please find below your new password.\r\n\r\n {$new_password}.\r\n
-                        After login in to your account, you can change it to your preferred password.\r\n\r\nHave a great day.\r\n\r\nBest Regards,\r\n\r\nGecharl.com";
+                        $message = "Hi {$row->name}, \r\n\r\nYou requested to retrieve your password, please find below your new password.\r\n\r\n {$new_password}\r\nAfter login in to your account, you can change it to your preferred password.\r\n\r\nHave a great day.\r\n\r\nBest Regards,\r\n\r\nGecharl.com";
 
                         $this->email->clear(TRUE);
                         $this->email->set_newline("\r\n");
