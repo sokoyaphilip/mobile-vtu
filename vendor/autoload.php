@@ -4,8 +4,4 @@
 
 require_once __DIR__ . '/composer/autoload_real.php';
 
-include_once __DIR__. '/GuzzleHttp/functions.php';
-include_once __DIR__. '/GuzzleHttp/Psr7/functions.php';
-include_once __DIR__. '/GuzzleHttp/Promise/functions.php';
-
 return ComposerAutoloaderInit05ed26f76ab438baedefb061ba9bb6e2::getLoader();
