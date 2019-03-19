@@ -27,10 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/HandlerStack.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
-              <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
-              <caret line="41" column="48" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
+            <state relative-caret-position="90">
+              <caret line="39" column="60" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -290,6 +288,21 @@
               <item name="vendor" type="462c0819:PsiDirectoryNode" />
               <item name="guzzlehttp" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="gecharl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gecharl" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="guzzlehttp" type="462c0819:PsiDirectoryNode" />
+              <item name="guzzle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gecharl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gecharl" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="guzzlehttp" type="462c0819:PsiDirectoryNode" />
+              <item name="guzzle" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -379,12 +392,12 @@
       <workItem from="1552806310815" duration="16061000" />
       <workItem from="1552890834660" duration="7916000" />
       <workItem from="1552906853487" duration="9924000" />
-      <workItem from="1552921377429" duration="13139000" />
+      <workItem from="1552921377429" duration="13355000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="449494000" />
+    <option name="totallyTimeSpent" value="449710000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -790,10 +803,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/HandlerStack.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
-          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
-          <caret line="41" column="48" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
+        <state relative-caret-position="90">
+          <caret line="39" column="60" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="60" />
         </state>
       </provider>
     </entry>
