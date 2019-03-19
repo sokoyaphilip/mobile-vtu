@@ -95,7 +95,7 @@ Class User_model extends CI_Model
         if ($password) {
             $this->db->where('id', $access);
             $row = $this->db->get($table)->row();
-            $curpassword = $row()->password;
+            $curpassword = $row->password;
             $password = shaPassword($password, $row->salt);
             if (trim($password) === $curpassword) {
                 return true;
