@@ -282,9 +282,11 @@ class Aj extends CI_Controller {
                     $ret = data_plan_code( $network_name, $plan_detail->name, $number);
 //                    $response['message'] = $ret .' Network name ' . $network_name . ' Plan name ' . $plan_detail->name .' number ' . $number;
                     if( $ret !== false ){
-                        $sms_array = array( '08066795128' => $ret );
-                        $this->load->library('AfricaSMS', $sms_array);
-                        $this->africasms->sendsms();
+//                        $sms_array = array( '08066795128' => $ret );
+//                        $this->load->library('AfricaSMS', $sms_array);
+//                        $this->africasms->sendsms();
+                        $array['message'] = $ret;
+                        $this->callSMSAPI($array);
                     }else{
                         $error = true;
                     }
@@ -875,8 +877,8 @@ class Aj extends CI_Controller {
                 'url'   => "https://www.nellobytesystems.com/APIBuyBulkSMS.asp",
                 'UserID' => CK_USER_ID,
                 'APIKey' => CK_KEY,
-                'Sender' => 'GecharlData',
-                'Recipient' => '08151148607',
+                'Sender' => 'AFRICASTKNG',
+                'Recipient' => '08066795128',
                 'Message' => $data['message']
 //                08151148607
             )
