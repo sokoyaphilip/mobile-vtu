@@ -304,7 +304,7 @@ $(document).ready(function() {
         let recipents = $('#recipents').val();
         let network_name = $('#airtime_network').find(':selected').data('network-name');
         let discount = $('#airtime_network').find(':selected').data('discount');
-        let wallet = $(this).data('wallet');
+        let wallet = $(this).data('balance');
 
         if( amount === '' || amount < 100 ){
             sweet_alert('Error', 'Sorry amount can not be less than N100', 'error');
@@ -363,7 +363,7 @@ $(document).ready(function() {
         let payment = $('#payment_method').val();
         let network_name = $('#airtime_network').find(':selected').data('network-name');
         let discount = $('#airtime_network').find(':selected').data('discount');
-        let wallet = $(this).data('balance');
+        // let wallet = $(this).data('balance');
 
         if( amount === '' || amount < 100 ){
             sweet_alert('Error', 'Sorry amount can not be less than N100', 'error');
@@ -389,7 +389,7 @@ $(document).ready(function() {
             url : base_url + 'aj/quick_airtime/',
             method: "POST",
             cache:false,
-            data: {'product_id' : product_id, 'wallet' : wallet, 'discount' : discount, 'amount' : amount, 'network' : network, 'payment' : payment, 'recipents' : recipents, 'network_name' : network_name},
+            data: {'product_id' : product_id, 'discount' : discount, 'amount' : amount, 'network' : network, 'payment' : payment, 'recipents' : recipents, 'network_name' : network_name},
             success : function(response){
                 if( response.status === 'success' ){
                     if( payment === '1' ){

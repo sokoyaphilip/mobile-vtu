@@ -92,7 +92,7 @@
                                         <input type="hidden" id="product_id" value="2">
                                         <button type="button" class="btn btn-cta btn-cta-primary btn-sm col-sm-4 airtime-purchase" data-balance="<?= $user->wallet;?>">Buy Now</button>
                                     <?php else : ?>
-                                        <button type="button" class="btn btn-cta-primary quick-airtime"  data-balance="<?= $user->wallet;?>"->Buy Now</button>
+                                        <button type="button" class="btn btn-cta-primary quick-airtime"->Buy Now</button>
                                     <?php endif; ?>
                                 </div>
                             </div>
