@@ -460,7 +460,7 @@ class Aj extends CI_Controller {
         $amount = $this->input->post('amount', true);
         $recipents = $this->input->post('recipents', true);
         $network_name = $this->input->post('network_name', true);
-//        $wallet = $this->session->userdata('wallet');
+        $wallet = $this->input->post('wallet');
         $payment = $this->input->post('payment');
         $discount = $this->input->post('discount');
 
@@ -518,10 +518,10 @@ class Aj extends CI_Controller {
                 $total_amount = $total_amount - ( $discount/100 * $total_amount );
             }
 
-//            if( $payment == 2 && $total_amount > $wallet ){
-//                $response['message'] = "You don't have enough fund to process this, please fund your wallet first.";
-//                $this->return_response($response);
-//            }
+            if( $payment == 2 && $total_amount > $wallet ){
+                $response['message'] = "You don't have enough fund to process this, please fund your wallet first.";
+                $this->return_response($response);
+            }
             $description = ucfirst( $network_name) . " ({$amount}) airtime purchase for {$message} recipent";
             $transaction_id = $this->site->generate_code('transactions', 'trans_id');
             $charge = 0;
