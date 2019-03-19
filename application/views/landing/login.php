@@ -9,14 +9,14 @@
     <!--//header-->
 
         <section id="about-us" class="about-us section">
-            <div class="container text-center">
-                <h2 class="title">Login</h2>
+            <div class="container">
+                <h2 class="title text-center">Login</h2>
 
                 <div class="row">
                     <div class="contact-form col-lg-6 col-12 ml-lg-auto mr-lg-auto">
                         <form class="login-form">
                             <div class="form-group email">
-                                <label class="" for="login-email">Your email</label>
+                                <label class="" for="login-email">Your email or Phone number</label>
                                 <input id="login-username" name="login_username" type="text" required class="form-control login-email" placeholder="Your email or phone number" autocomplete="off">
                             </div><!--//form-group-->
                             <div class="form-group password">
@@ -31,7 +31,6 @@
                                     <a href="#" id="resetpass-link" data-toggle="modal" data-target="#resetpass-modal">Forgot password?</a>
                                 </span>
                                 </p>
-
                             </div><!--//form-group-->
                             <button type="button"  class="btn btn-block btn-cta-primary log-in">Log in</button>
                         </form>
