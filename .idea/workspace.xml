@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/HandlerStack.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/HandlerStack.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,11 +24,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/HandlerStack.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+            <state relative-caret-position="300">
+              <caret line="41" column="83" selection-start-line="41" selection-start-column="83" selection-end-line="41" selection-end-column="83" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/functions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
             </state>
           </provider>
         </entry>
@@ -89,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_real.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="64" column="6" selection-start-line="64" selection-start-column="6" selection-end-line="68" selection-end-column="7" />
+            <state relative-caret-position="140">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
             </state>
           </provider>
         </entry>
@@ -145,10 +154,10 @@
       <find>you ge</find>
       <find>network</find>
       <find>data-purchase</find>
-      <find>data-pu</find>
       <find>data_purchase</find>
       <find>update</find>
       <find>Guzz</find>
+      <find>data-pu</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -206,8 +215,8 @@
         <option value="$PROJECT_DIR$/application/controllers/Aj.php" />
         <option value="$PROJECT_DIR$/vendor/autoload.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
-        <option value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/HandlerStack.php" />
         <option value="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
+        <option value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/HandlerStack.php" />
       </list>
     </option>
   </component>
@@ -368,12 +377,12 @@
       <workItem from="1552806310815" duration="16061000" />
       <workItem from="1552890834660" duration="7916000" />
       <workItem from="1552906853487" duration="9924000" />
-      <workItem from="1552921377429" duration="12696000" />
+      <workItem from="1552921377429" duration="13031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="449051000" />
+    <option name="totallyTimeSpent" value="449386000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -404,13 +413,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/app/admin/api_variation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="24" column="93" selection-start-line="24" selection-start-column="80" selection-end-line="24" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/app/admin/users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -705,20 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="211" column="42" selection-start-line="211" selection-start-column="42" selection-end-line="211" selection-end-column="42" />
-          <folding>
-            <element signature="e#14#593#0" />
-            <element signature="e#3066#3912#0" />
-            <element signature="n#!!block;n#format_currency#0" />
-            <element signature="n#!!block;n#sweet_alert#0" />
-            <element signature="n#!!block;n#addCommas#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/helpers/site_helper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
@@ -756,17 +744,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/HandlerStack.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/libraries/AfricaSMS.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-210">
           <caret line="1" column="22" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
         </state>
       </provider>
     </entry>
@@ -779,8 +767,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_real.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="64" column="6" selection-start-line="64" selection-start-column="6" selection-end-line="68" selection-end-column="7" />
+        <state relative-caret-position="140">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="211" column="42" selection-start-line="211" selection-start-column="42" selection-end-line="211" selection-end-column="42" />
+          <folding>
+            <element signature="e#14#593#0" />
+            <element signature="e#3066#3912#0" />
+            <element signature="n#!!block;n#format_currency#0" />
+            <element signature="n#!!block;n#sweet_alert#0" />
+            <element signature="n#!!block;n#addCommas#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/HandlerStack.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="41" column="83" selection-start-line="41" selection-start-column="83" selection-end-line="41" selection-end-column="83" />
         </state>
       </provider>
     </entry>
