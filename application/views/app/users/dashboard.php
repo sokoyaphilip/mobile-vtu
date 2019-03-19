@@ -114,7 +114,7 @@
                                     <?php foreach( $transactions as $transaction ): ?>
                                         <tr>
                                             <td><?= $transaction->trans_id; ?></td>
-                                            <td><?= neatDate( $transaction->date_initiated); ?></td>
+                                            <td><?= neatDate( $transaction->date_initiated) . ' ' . neatTime( $transaction->date_initiated); ?></td>
                                             <td><?= product_name($transaction->product_id); ?></td>
                                             <td><?= payment_id_replacer($transaction->description); ?></td>
                                             <td><?= ngn($transaction->amount)?></td>
