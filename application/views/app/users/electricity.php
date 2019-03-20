@@ -83,6 +83,8 @@
                                 <input type="hidden" id="user_meter_name" value="" />
                                 <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 electricity-bill" data-balance="<?= $user->wallet;?>">Pay Now</button>
                                 <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear Form</button>&nbsp;&nbsp;
+
+                                <?= form_close(); ?>
                                 <div id="processing"
                                      style="display:none;position: center;top: 0;left: 0;width: auto;height: auto%;background: #f4f4f4;z-index: 99;">
                                     <div class="text"
@@ -93,7 +95,6 @@
                                                 style="color: rgba(2.399780888618386%,61.74193548387097%,46.81068368248487%,0.843);">Please wait...</b>
                                     </div>
                                 </div>
-                                <?= form_close(); ?>
 
                             </div>
                         </div>
