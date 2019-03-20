@@ -45,6 +45,19 @@
 
                                         <div class="col-sm-12">
                                             <div class="form-group">
+                                                <label for="iuc-number">Meter Type</label>
+                                                <div class="form-group g-brd-gray-light-v7 g-rounded-25 mb-0">
+                                                    <select class="form-control" id="meter_type" name="meter_type">
+                                                        <option value="" selected>-- Select Meter Type --</option>
+                                                        <option value="prepaid">Prepaid</option>
+                                                        <option value="postpaid">Postpaid</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
                                                 <label for="iuc-number">Meter Number</label>
                                                 <input type="text" name="meter_number" id="meter_number" class="form-control number" required autocomplete="off" placeholder="Meter Number">
                                                 <span class="text-danger" id="meter-info"></span>
