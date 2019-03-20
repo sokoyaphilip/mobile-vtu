@@ -1036,24 +1036,6 @@ class Aj extends CI_Controller {
         }
     }
 
-
-    function verifyMeter() {
-        $url = "http://www.vtpass.com/ajax/merchant-verify?"
-        $url = "http://request url with parameters";
-        $ch = curl_init();
-        curl_setopt_array($ch, array(
-            CURLOPT_URL => $url,
-            CURLOPT_RETURNTRANSFER => true
-        ));
-
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        $output = curl_exec($ch);
-        curl_close($ch);
-        echo $output;
-        exit;
-    }
-
     /* General FUnction
      * Help us to return the response
      * */

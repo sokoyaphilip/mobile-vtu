@@ -33,7 +33,7 @@
                                                     <?php foreach ( $plans as $plan ): ?>
                                                         <option
                                                                 data-network-name="<?= $plan->network_name; ?>"
-                                                                data-variation-name="<?= $plan->network_name; ?>"
+                                                                data-variation-name="<?= $plan->variation_name; ?>"
                                                                 data-service-id="<?= $plan->service_id; ?>"
                                                                 data-service-discount="<?= $plan->discount; ?>"
                                                                 value="<?= $plan->id?>">
