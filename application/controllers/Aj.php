@@ -953,7 +953,7 @@ class Aj extends CI_Controller {
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
             curl_setopt($ch, CURLOPT_POST, false);
             $response = curl_exec($ch);
-            $response = json_decode($response, TRUE);
+            $response = json_decode($response);
             curl_close($ch);
         }
         echo $response;

@@ -845,6 +845,7 @@ $(document).ready(function() {
                 url : base_url + 'aj/verifyMeter/',
                 method: "POST",
                 data: { 'service' : service ,'code' : meter_number},
+                dataType: 'JSON',
                 success: function( response ){
                     // console.log(response);
                     if( response.length){
