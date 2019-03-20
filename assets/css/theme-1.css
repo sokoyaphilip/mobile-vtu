@@ -355,34 +355,34 @@ textarea {
 
 .bg-slider-wrapper .flexslider .slide.slide-1 {
     background: #fff url(../images/background/slide1.jpg) no-repeat 50% top;
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .bg-slider-wrapper .flexslider .slide.slide-2 {
     background: #fff url(../images/background/slide2.jpg) no-repeat 50% top;
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .bg-slider-wrapper .flexslider .slide.slide-3 {
     background: #fff url(../images/background/slide3.jpg) no-repeat 50% top;
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .bg-slider-wrapper .flexslider .slide.slide-4 {
     background: #fff url(../images/background/slide4.jpg) no-repeat 50% top;
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .bg-slider-wrapper .flexslider .flex-control-nav {
