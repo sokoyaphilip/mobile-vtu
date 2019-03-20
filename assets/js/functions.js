@@ -848,8 +848,7 @@ $(document).ready(function() {
                 dataType: 'JSON',
                 success: function( response ){
                     // console.log(response);
-                    alert(response.data.Customer_Name);
-                    if( response.length){
+                    if( response.data.Customer_Name ){
                         $('.electricity-bill').prop('disabled', false);
                         $('#meter-info').text(response.data.Customer_Name);
                     }else{
