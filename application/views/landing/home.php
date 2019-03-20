@@ -20,9 +20,8 @@
 
     <!-- ******PROMO****** -->
 
+    <!-- ******PROMO****** -->
     <section id="promo" class="promo section">
-
-
         <div class="bg-slider-wrapper">
             <div id="bg-slider" class="flexslider bg-slider">
                 <ul class="slides">
@@ -34,8 +33,6 @@
             </div>
         </div><!--//bg-slider-wrapper-->
     </section><!--//promo-->
-
-
 
 
 
