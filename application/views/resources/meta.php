@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/plugins/animate-css/animate.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('assets/plugins/flexslider/flexslider.css'); ?>">
     <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="<?= $this->auto_version('assets/css/theme-1.css');?>">
+    <link id="theme-style" rel="stylesheet" href="<?= $this->user->auto_version('assets/css/theme-1.css');?>">
     <link id="main-style" rel="stylesheet" href="<?= base_url('assets/css/main.css')?>">
 
 <!--    <link rel="apple-touch-icon" sizes="180x180" href="--><?//= base_url('assets/favicon/apple-touch-icon.png')?><!--">-->

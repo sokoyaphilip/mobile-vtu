@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/application/views/resources/meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/resources/meta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/theme-1.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/theme-1.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +66,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/resources/meta.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="205">
@@ -80,12 +79,12 @@
         <entry file="file://$PROJECT_DIR$/application/views/resources/script.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="88" />
+              <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="99" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/theme-1.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="181">
@@ -157,8 +156,8 @@
       <find>you ge</find>
       <find>media</find>
       <find>get</find>
-      <find>slide</find>
       <find>the</find>
+      <find>slide</find>
       <find>auto</find>
     </findStrings>
   </component>
@@ -217,8 +216,8 @@
         <option value="$PROJECT_DIR$/assets/js/functions.js" />
         <option value="$PROJECT_DIR$/application/controllers/Aj.php" />
         <option value="$PROJECT_DIR$/application/views/landing/home.php" />
-        <option value="$PROJECT_DIR$/application/views/resources/meta.php" />
         <option value="$PROJECT_DIR$/assets/css/theme-1.css" />
+        <option value="$PROJECT_DIR$/application/views/resources/meta.php" />
       </list>
     </option>
   </component>
@@ -371,12 +370,12 @@
       <workItem from="1552921377429" duration="29468000" />
       <workItem from="1553011098707" duration="7191000" />
       <workItem from="1553052526695" duration="3085000" />
-      <workItem from="1553073232550" duration="6888000" />
+      <workItem from="1553073232550" duration="6967000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="482987000" />
+    <option name="totallyTimeSpent" value="483066000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -765,10 +764,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/theme-1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="1088" lean-forward="true" selection-start-line="1088" selection-end-line="1088" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/resources/script.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="88" />
+          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="99" />
         </state>
       </provider>
     </entry>
@@ -776,13 +782,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/theme-1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="1088" lean-forward="true" selection-start-line="1088" selection-end-line="1088" />
         </state>
       </provider>
     </entry>
