@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/helpers/site_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/helpers/site_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Aj.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Aj.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="781" column="29" lean-forward="true" selection-start-line="781" selection-start-column="29" selection-end-line="781" selection-end-column="29" />
+            <state relative-caret-position="331">
+              <caret line="980" column="5" selection-start-line="980" selection-start-column="5" selection-end-line="980" selection-end-column="5" />
               <folding>
                 <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
                 <element signature="n#verifyPaystack#0;n#Aj#0;n#!!top" />
@@ -29,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/helpers/site_helper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="378" column="22" lean-forward="true" selection-start-line="378" selection-start-column="22" selection-end-line="378" selection-end-column="22" />
+            <state relative-caret-position="270">
+              <caret line="376" column="22" lean-forward="true" selection-start-line="376" selection-start-column="22" selection-end-line="376" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -231,8 +230,8 @@
         <option value="$PROJECT_DIR$/application/views/landing/home.php" />
         <option value="$PROJECT_DIR$/application/views/landing/about.php" />
         <option value="$PROJECT_DIR$/assets/js/functions.js" />
-        <option value="$PROJECT_DIR$/application/controllers/Aj.php" />
         <option value="$PROJECT_DIR$/application/helpers/site_helper.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Aj.php" />
       </list>
     </option>
   </component>
@@ -398,12 +397,12 @@
       <workItem from="1553052526695" duration="3085000" />
       <workItem from="1553073232550" duration="6967000" />
       <workItem from="1553092433877" duration="9819000" />
-      <workItem from="1553114560258" duration="3138000" />
+      <workItem from="1553114560258" duration="3431000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="496023000" />
+    <option name="totallyTimeSpent" value="496316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -787,17 +786,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="781" column="29" lean-forward="true" selection-start-line="781" selection-start-column="29" selection-end-line="781" selection-end-column="29" />
-          <folding>
-            <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
-            <element signature="n#verifyPaystack#0;n#Aj#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
@@ -813,8 +801,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/helpers/site_helper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="378" column="22" lean-forward="true" selection-start-line="378" selection-start-column="22" selection-end-line="378" selection-end-column="22" />
+        <state relative-caret-position="270">
+          <caret line="376" column="22" lean-forward="true" selection-start-line="376" selection-start-column="22" selection-end-line="376" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="980" column="5" selection-start-line="980" selection-start-column="5" selection-end-line="980" selection-end-column="5" />
+          <folding>
+            <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
+            <element signature="n#verifyPaystack#0;n#Aj#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

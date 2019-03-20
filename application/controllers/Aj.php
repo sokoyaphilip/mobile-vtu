@@ -961,6 +961,24 @@ class Aj extends CI_Controller {
         exit;
     }
 
+    function vtpass_curl( $data ){
+        $curl       = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => VTPASS_HOST,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_USERPWD => VTPASS_USERNAME.":" .VTPASS_PASSWORD,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $data,
+        ));
+        $response = curl_exec($curl);
+        $response = json_decode($response, TRUE);
+        curl_close($curl);
+        return $response;
+    }
 
     function verifyPaystack(){
         $response = array('status' => 'error');
