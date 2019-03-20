@@ -83,6 +83,15 @@
                                 <input type="hidden" id="user_meter_name" value="" />
                                 <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 electricity-bill" data-balance="<?= $user->wallet;?>">Pay Now</button>
                                 <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear Form</button>&nbsp;&nbsp;
+                                <div id="processing"
+                                     style="display:none;position: center;top: 0;left: 0;width: auto;height: auto%;background: #f4f4f4;z-index: 99;">
+                                    <div class="text"
+                                         style="position: absolute;top: 35%;left: 0;height: 100%;width: 100%;font-size: 18px;text-align: center;">
+                                        <img src="<?= base_url('assets/images/load.gif'); ?>"
+                                             alt="Processing...">
+                                            Checking your meter number!
+                                    </div>
+                                </div>
                                 <?= form_close(); ?>
 
                             </div>

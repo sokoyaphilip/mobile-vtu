@@ -838,6 +838,7 @@ $(document).ready(function() {
 
     // vaidate meter number
     $('#meter_number').on('blur', function () {
+        $('#processing').show();
         let meter_number = $(this).val();
         let service = $('#plan').find(':selected').data('variation-name');
         if( meter_number !== '' ){
@@ -851,9 +852,12 @@ $(document).ready(function() {
                     if( response.data.Customer_Name ){
                         $('.electricity-bill').prop('disabled', false);
                         $('#meter-info').text(response.data.Customer_Name);
+                        $('#processing').hide();
+                        
                     }else{
                         $('#meter-info').text("Your meter number is invalid, and can't proceed.");
                         $('.electricity-bill').prop('disabled', false);
+                        $('#processing').hide();
                     }
                 }
             });
