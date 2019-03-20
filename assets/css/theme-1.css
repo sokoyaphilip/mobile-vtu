@@ -1088,8 +1088,14 @@ body.modal-open {
 
 .promo {
     position: relative;
-    min-height: 150px
+    min-height: 620px
 }
+@media (min-width:576px) {
+    .promo {
+        min-height: 150px !important;
+    }
+}
+
 
 .promo .intro {
     color: #fff;
