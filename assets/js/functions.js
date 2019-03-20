@@ -848,9 +848,9 @@ $(document).ready(function() {
                 dataType: 'JSON',
                 success: function( response ){
                     // console.log(response);
+                    alert(response.data.Customer_Name);
                     if( response.length){
                         $('.electricity-bill').prop('disabled', false);
-                        // alert(response.data);
                         $('#meter-info').text(response.data.Customer_Name);
                     }else{
                         $('#meter-info').text("Your meter number is invalid, and can't proceed.");
