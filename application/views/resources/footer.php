@@ -6,9 +6,7 @@
                 <div class="footer-col col-lg-5 col-md-7 col-12 about">
                     <div class="footer-col-inner">
                         <h3 class="title">About Us</h3>
-                        <p>Our Mission is to deliver subsidized Internet Data Subscription and Airtime at wholesale Prices in the quickest and most convenient way possible<br />
-                            Our Vision is to be number 1 in every product we offer and the market we service.<br />
-                            Gecharl focuses in offering subsidised Internet subscription and Airtime on all Telecommunication Networks. With Gecharl you are sure of saving on your Data/Airtime purchase</p>
+                        <p>Gecharl owned by Gecharl Resources(RC 2182021 ), offers best deals when it comes to internet Data Plans, Bulksms, Perfect money, Bills payment like GOTV, DSTV & STARTIMES.</p>
                     </div><!--//footer-col-inner-->
                 </div><!--//foooter-col-->
                 <div class="footer-col col-lg-3 col-md-4 col-12 mr-lg-auto links">

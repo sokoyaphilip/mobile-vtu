@@ -135,6 +135,8 @@
         <a class="btn btn-cta btn-cta-secondary" href="<?= base_url('retail-data-pricing/')?>">Retail Data Pricing</a>
     </div>
 
+    <?php $this->load->view('faq'); ?>
+
 </div><!--//wrapper-->
 
 <!-- ******FOOTER****** -->
