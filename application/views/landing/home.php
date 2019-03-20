@@ -25,10 +25,10 @@
         <div class="bg-slider-wrapper">
             <div id="bg-slider" class="flexslider bg-slider">
                 <ul class="slides">
-                    <li class="slide slide-1"></li>
-                    <li class="slide slide-2"></li>
-                    <li class="slide slide-3"></li>
-                    <li class="slide slide-4"></li>
+                    <li class="mainslide slide slide-1"></li>
+                    <li class="mainslide slide slide-2"></li>
+                    <li class="mainslide slide slide-3"></li>
+                    <li class="mainslide slide slide-4"></li>
                 </ul>
             </div>
         </div><!--//bg-slider-wrapper-->

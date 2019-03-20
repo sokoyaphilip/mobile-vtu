@@ -1094,8 +1094,8 @@ body.modal-open {
     .promo {
         min-height: 150px !important;
     }
-    .slide {
-        min-height: 150px !important;
+    li.mainslide.slide {
+        height: 150px !important;
     }
 }
 
