@@ -1090,8 +1090,11 @@ body.modal-open {
     position: relative;
     min-height: 620px
 }
-@media (min-width:576px) {
+@media (max-width:576px) {
     .promo {
+        min-height: 150px !important;
+    }
+    .slide {
         min-height: 150px !important;
     }
 }
