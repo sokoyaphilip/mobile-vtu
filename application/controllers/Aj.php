@@ -643,8 +643,6 @@ class Aj extends CI_Controller {
                         try {
                             // call the API
                             $return = $this->vtpass_curl( $data );
-                            $response['message'] = $return;
-                            $this->return_response( $response );
                             $update_data = array();
                             if( $return['code'] == "000"){
                                 $update_data['orderid'] = $return['content'][0]['requestId'];
@@ -659,7 +657,7 @@ class Aj extends CI_Controller {
                                 $update_data['orderid'] = $return['content'][0]['requestId'];
                                 $update_data['payment_status'] = $return['response_description'];
                                 $response['status'] = 'error';
-                                $response['message'] = "There was an error subscribing your  {$network_name}, please try again. Contact us if debited.." . $return;
+                                $response['message'] = "There was an error subscribing your  {$network_name}, please try again. Contact us if debited.." ;
 
                             }
                             $this->site->update('transactions',  $update_data, array('trans_id' => $transaction_id));
@@ -779,7 +777,7 @@ class Aj extends CI_Controller {
                                 $update_data['orderid'] = $return['content'][0]['requestId'];
                                 $update_data['payment_status'] = $return['response_description'];
                                 $response['status'] = 'error';
-                                $response['message'] = "There was an error subscribing your {$plan_detail->name}, please try again. Contact us if debited..";
+                                $response['message'] = "There was an error subscribing your {$plan_detail->name}, please try again. Contact us if debited.." .$return;
                                 $this->return_response( $response );
                             }
 

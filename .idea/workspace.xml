@@ -18,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="645" column="59" selection-start-line="645" selection-start-column="59" selection-end-line="645" selection-end-column="59" />
+            <state relative-caret-position="175">
+              <caret line="659" column="153" selection-start-line="659" selection-start-column="153" selection-end-line="659" selection-end-column="153" />
               <folding>
                 <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
                 <element signature="n#verifyPaystack#0;n#Aj#0;n#!!top" />
@@ -397,12 +397,12 @@
       <workItem from="1553052526695" duration="3085000" />
       <workItem from="1553073232550" duration="6967000" />
       <workItem from="1553092433877" duration="9819000" />
-      <workItem from="1553114560258" duration="4214000" />
+      <workItem from="1553114560258" duration="4401000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="497099000" />
+    <option name="totallyTimeSpent" value="497286000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -421,7 +421,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32918397" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32780084" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32780084" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32882273" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -808,8 +808,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="645" column="59" selection-start-line="645" selection-start-column="59" selection-end-line="645" selection-end-column="59" />
+        <state relative-caret-position="175">
+          <caret line="659" column="153" selection-start-line="659" selection-start-column="153" selection-end-line="659" selection-end-column="153" />
           <folding>
             <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
             <element signature="n#verifyPaystack#0;n#Aj#0;n#!!top" />
