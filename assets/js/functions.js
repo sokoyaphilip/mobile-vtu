@@ -849,8 +849,8 @@ $(document).ready(function() {
                     // console.log(response);
                     if( response.length){
                         $('.electricity-bill').prop('disabled', false);
-                        alert(response.data);
-                        $('#meter-info').text(response.data[0].Customer_Name);
+                        // alert(response.data);
+                        $('#meter-info').text(response.data.Customer_Name);
                     }else{
                         $('#meter-info').text("Your meter number is invalid, and can't proceed.");
                         $('.electricity-bill').prop('disabled', false);
@@ -859,6 +859,7 @@ $(document).ready(function() {
             });
         }
     });
+
 
 
     // Pin transfer
