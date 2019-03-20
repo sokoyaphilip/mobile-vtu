@@ -328,7 +328,7 @@ textarea {
     width: 100%;
     top: 0;
     left: 0;
-    height: 620px;
+    /*height: 620px;*/
     background: #fff
 }
 
@@ -1088,7 +1088,7 @@ body.modal-open {
 
 .promo {
     position: relative;
-    min-height: 620px
+    min-height: 150px
 }
 
 .promo .intro {
