@@ -643,6 +643,8 @@ class Aj extends CI_Controller {
                         try {
                             // call the API
                             $return = $this->vtpass_curl( $data );
+                            $response['message'] = $return;
+                            $this->return_response( $response );
                             $update_data = array();
                             if( $return['code'] == "000"){
                                 $update_data['orderid'] = $return['content'][0]['requestId'];
