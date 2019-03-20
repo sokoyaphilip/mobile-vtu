@@ -285,7 +285,7 @@ class Aj extends CI_Controller {
                     'user_id'        => $user_id,
                     'status'        => 'success'
                 );
-                $error = false; $api_ret = 'ORDER_COMPLETED';
+                $error = false; $ret = 'ORDER_COMPLETED';
                 foreach( $valid_numbers as $number ){
                     // fire the API
 
@@ -299,12 +299,12 @@ class Aj extends CI_Controller {
                         $this->callSMSAPI($array);
                     }else{
                         $error = true;
+                        $ret = $ret;
                     }
                 }
 //                $this->return_response( $response );
                 if( $error ){
-                    $response['message'] = "There was an error processing your order, {$api_ret['status']} please try again or contact us. Thanks";
-                    $this->site->update('transactions', array('status' => 'fail'), "(trans_id = {$transaction_id})");
+                    $response['message'] = "There was an error processing your order, {$ret} please try again or contact us. Thanks";
                     $this->return_response( $response );
                 }
 

@@ -616,7 +616,7 @@ $(document).ready(function() {
         if( $(this).val() ){
             let discount = $(this).find(':selected').data('discount');
             if( discount > 0 ){
-                $('.you-pay').text('You get '+ discount +'% discount');
+                $('.you-pay').text('You will receive '+ discount +'% discount for this transaction.');
             }
         }
     });
@@ -630,7 +630,7 @@ $(document).ready(function() {
         if( discount === undefined) discount = $(this).find(':selected').data('discount');
 
         if( discount > 0 ) {
-            $('.you-pay').html('You get '+ discount +' % discount');
+            $('.you-pay').html('You will receive '+ discount +'% discount for this transaction.');
         }
 
         $('#network_plan')

@@ -31,7 +31,75 @@
 <!--                    <a class="btn btn-cta btn-cta-secondary" href="--><?//= base_url('page/all-services/'); ?><!--">All Service</a>-->
 
                 </div><!--//intro-->
+                <div class="features-video col-lg-5 col-md-5 col-12">
+                    <div class="card-bg-white border border-success rounded">
 
+                        <h3>Do It Quick - <small class="text-muted">get airtime</small></h3>
+                        <form class="easy-airtime-form">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <label for="airtime-name">I will like to buy</label>
+                                        <select class="form-control" name="service" id="airtime_network" required>
+                                            <option value="" selected>-- Select Network --</option>
+                                            <?php foreach($services as $service ) : ?>
+                                                <option value="<?= $service->id; ?>" data-discount="<?= $service->discount; ?>"
+                                                        data-network-name="<?= $service->network_name; ?>"><?= ucwords($service->title); ?></option>
+                                            <?php endforeach;?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <label for="amount">Amount</label>
+                                        <input type="text" name="amount" class="form-control number" required id="amount" placeholder="Amount" autocomplete="off"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="recipents">Phone No(s)</label>
+                                        <input type="text" name="recipents" required id="recipents" class="form-control" placeholder="The receiver phone nos" />
+                                        <span class="text-muted">Separate phone nos with comma.</span><br />
+                                        <span class="text-success you-pay"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="pay_with">Pay With</label>
+                                        <select class="form-control" name="payment_method" id="payment_method" required>
+                                            <option value="">-- Payment Method --</option>
+                                            <?php if($this->session->userdata('logged_in')) : ?>
+                                                <option value="2" selected>Pay From Wallet</option>
+                                            <?php else :  ?>
+<!--                                                <option value="1">Bank Deposit / Transfer</option>-->
+                                                <option value="2" disabled >Pay From My Wallet <?=( !$this->session->userdata('logged_in')) ? '- Logged In First' : ''; ?></option>
+                                                <option value="3">Pay Via Paystack</option>
+                                            <?php endif; ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <input type="hidden" id="product_id" value="2">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <?php if( $this->session->userdata('logged_in')) : ?>
+                                        <input type="hidden" id="product_id" value="2">
+                                        <button type="button" class="btn btn-cta btn-cta-primary btn-sm col-sm-4 airtime-purchase" data-balance="<?= $user->wallet;?>">Buy Now</button>
+                                    <?php else : ?>
+                                        <button type="button" class="btn btn-cta-primary quick-airtime"->Buy Now</button>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div><!--//video-->
             </div><!--//row-->
         </div><!--//intro-->
 
