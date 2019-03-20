@@ -836,8 +836,8 @@ $(document).ready(function() {
                 method: "POST",
                 data: { 'service' : service ,'code' : meter_number},
                 success: function( data ){
-                    console.log(data);
-                    if( data.length !== '' && data['code'] == '1' ){
+                    // console.log(data);
+                    if( data.length){
                         $('.electricity-bill').prop('disabled', false);
                         $('#meter-info').text(data['data']['Customer_Name']);
                     }else{
