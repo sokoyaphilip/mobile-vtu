@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/application/views/app/users/electricity.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/app/users/electricity.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/functions.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,12 +49,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="576" column="48" selection-start-line="576" selection-start-column="48" selection-end-line="576" selection-end-column="48" />
+            <state relative-caret-position="316">
+              <caret line="851" column="72" selection-start-line="851" selection-start-column="72" selection-end-line="851" selection-end-column="72" />
               <folding>
                 <element signature="e#14#593#0" />
-                <element signature="e#20469#21624#0" />
-                <element signature="e#21685#23565#0" />
                 <element signature="n#!!block;n#format_currency#0" />
                 <element signature="n#!!block;n#sweet_alert#0" />
                 <element signature="n#!!block;n#addCommas#0" />
@@ -140,7 +137,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>2.5</find>
       <find>quic</find>
       <find>Y`ou don't have enough money in your wallet for the transaction.</find>
       <find>ou don't have enough money in your wallet for the transaction.</find>
@@ -170,6 +166,7 @@
       <find>electricity-bill</find>
       <find>modal</find>
       <find>meter-info</find>
+      <find>response</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -227,8 +224,8 @@
         <option value="$PROJECT_DIR$/application/views/resources/meta.php" />
         <option value="$PROJECT_DIR$/application/controllers/Dashboard.php" />
         <option value="$PROJECT_DIR$/application/controllers/Aj.php" />
-        <option value="$PROJECT_DIR$/assets/js/functions.js" />
         <option value="$PROJECT_DIR$/application/views/app/users/electricity.php" />
+        <option value="$PROJECT_DIR$/assets/js/functions.js" />
       </list>
     </option>
   </component>
@@ -382,12 +379,12 @@
       <workItem from="1553011098707" duration="7191000" />
       <workItem from="1553052526695" duration="3085000" />
       <workItem from="1553073232550" duration="6967000" />
-      <workItem from="1553092433877" duration="3910000" />
+      <workItem from="1553092433877" duration="4086000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="486976000" />
+    <option name="totallyTimeSpent" value="487152000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -784,12 +781,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="576" column="48" selection-start-line="576" selection-start-column="48" selection-end-line="576" selection-end-column="48" />
+        <state relative-caret-position="316">
+          <caret line="851" column="72" selection-start-line="851" selection-start-column="72" selection-end-line="851" selection-end-column="72" />
           <folding>
             <element signature="e#14#593#0" />
-            <element signature="e#20469#21624#0" />
-            <element signature="e#21685#23565#0" />
             <element signature="n#!!block;n#format_currency#0" />
             <element signature="n#!!block;n#sweet_alert#0" />
             <element signature="n#!!block;n#addCommas#0" />

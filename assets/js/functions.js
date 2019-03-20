@@ -849,7 +849,7 @@ $(document).ready(function() {
                     // console.log(data);
                     if( data.length){
                         $('.electricity-bill').prop('disabled', false);
-                        $('#meter-info').text(data.Customer_Name);
+                        $('#meter-info').text(data.data['Customer_Name']);
                     }else{
                         $('#meter-info').text("Your meter number is invalid, and can't proceed.");
                         $('.electricity-bill').prop('disabled', false);
