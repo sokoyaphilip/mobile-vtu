@@ -86,11 +86,15 @@
                                 <input type="hidden" id="product_id" value="3">
                                 <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 tv-cable" data-balance="<?= $user->wallet;?>">Subscribe</button>
                                 <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear Form</button>&nbsp;&nbsp;
-                                <div class="text"
-                                     style="position: absolute;top: 35%;left: 0;height: 100%;width: 100%;font-size: 18px;text-align: center;">
-                                    <img src="<?= base_url('assets/images/load.gif'); ?>"
-                                         alt="Processing...">
-                                    Checking your meter number!
+                                <div id="processing"
+                                     style="display:none;position: center;top: 0;left: 0;width: auto;height: auto%;background: #f4f4f4;z-index: 99;">
+                                    <div class="text"
+                                         style="position: absolute;top: 35%;left: 0;height: 100%;width: 100%;font-size: 18px;text-align: center;">
+                                        <img src="<?= base_url('assets/images/load.gif'); ?>"
+                                             alt="Processing...">
+                                        Checking your IUC/Smart code number! <br><b
+                                                style="color: rgba(2.399780888618386%,61.74193548387097%,46.81068368248487%,0.843);">Please wait...</b>
+                                    </div>
                                 </div>
                                 <?= form_close(); ?>
 

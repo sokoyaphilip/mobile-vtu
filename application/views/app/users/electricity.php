@@ -89,7 +89,8 @@
                                          style="position: absolute;top: 35%;left: 0;height: 100%;width: 100%;font-size: 18px;text-align: center;">
                                         <img src="<?= base_url('assets/images/load.gif'); ?>"
                                              alt="Processing...">
-                                            Checking your meter number!
+                                        Checking your meter number! <br><b
+                                                style="color: rgba(2.399780888618386%,61.74193548387097%,46.81068368248487%,0.843);">Please wait...</b>
                                     </div>
                                 </div>
                                 <?= form_close(); ?>
