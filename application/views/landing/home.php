@@ -21,19 +21,7 @@
     <!-- ******PROMO****** -->
 
     <section id="promo" class="promo section">
-        <div class="container intro">
-            <div class="row">
-                <div class="features-intro col-lg-7 col-md-7 col-12">
 
-<!--                        <h2 class="title">Welcome to Gecharl connect.</h2>-->
-<!--                        <span style="font-max-size: small">Your one stop shop on Airtime,Mobile data and bills payment</span>-->
-<!--                        <p class="summary">Gecharl focuses on offering subsidised Internet subscription and Airtime on all Telecommunication Networks. With Gecharl you are sure of saving on your Data/Airtime purchase. </p>-->
-<!--                    <a class="btn btn-cta btn-cta-secondary" href="--><?//= base_url('page/all-services/'); ?><!--">All Service</a>-->
-
-                </div><!--//intro-->
-
-            </div><!--//row-->
-        </div><!--//intro-->
 
         <div class="bg-slider-wrapper">
             <div id="bg-slider" class="flexslider bg-slider">
