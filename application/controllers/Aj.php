@@ -699,6 +699,7 @@ class Aj extends CI_Controller {
         $this->form_validation->set_rules('phone_number', 'Phone number','trim|required|xss_clean');
         $this->form_validation->set_rules('network', 'Network','trim|required|xss_clean');
         $this->form_validation->set_rules('plan_id', 'Plan','trim|required|xss_clean');
+        $this->form_validation->set_rules('user_meter_name', 'User Meter Name','trim|required|xss_clean');
 
 
         if( $this->form_validation->run() == FALSE ){
@@ -770,7 +771,7 @@ class Aj extends CI_Controller {
                                 $update_data['payment_status'] = $return['response_description'];
                                 $this->site->set_field('users', 'wallet', "wallet-{$amount}", "id={$user_id}");
                                 $response['status'] = 'success';
-                                $response['message'] = "Thank you for paying your {$plan_detail->name} bill with us. Your transaction code is <b>{$transaction_id}</b>, more details on your dashboard.";
+                                $response['message'] = "Thank you for paying your {$plan_detail->name} - {$meter_number} bill with us. Your transaction code is <b>{$transaction_id}</b>, more details on your dashboard.";
                             }else{
                                 $update_data['status'] = 'fail';
                                 $update_data['orderid'] = $return['content'][0]['requestId'];

@@ -553,6 +553,7 @@ $(document).ready(function() {
                 'plan_id' : plan_id, 'amount' : amount, 'discount' : discount,
                 'meter_number' : meter_number,
                 'phone_number' : phone_number,
+                'user_meter_name' : meter_name,
                 'network' : network, 'network_name' : network_name },
             success : function(response){
                 if( response.status === 'success' ){
@@ -855,6 +856,7 @@ $(document).ready(function() {
                     if( response.data.Customer_Name ){
                         $('.electricity-bill').prop('disabled', false);
                         $('#meter-info').text(response.data.Customer_Name);
+                        $('#user_meter_name').val(response.data.Customer_Name);
                         $('#processing').hide();
                         
                     }else{
