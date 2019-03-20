@@ -814,6 +814,7 @@ $(document).ready(function() {
 
     // validate the smart card number
     $('#smart_card_number').on('blur', function(){
+        $('#processing').show();
         let number = $(this).val();
         let network_name = $('#network').find(':selected').data('network-name');
         if( $('#network').val() !== '' && number !== '' ){
@@ -824,11 +825,13 @@ $(document).ready(function() {
                 success: function( response ){
                     if( response['message'] === 'invalid_smartcardno' ){
                         $('.tv-cable').prop('disabled', true);
-                        $('#smart-card-info').text('Invalid Smart card number.')
+                        $('#smart-card-info').text('Invalid Smart card number.');
+                        $('#processing').hide();
                     }else{
                         $('#smart-card-info').text(`Customer Name: ${response['message']}`);
                         $('#registered_name').val(response['message']);
                         $('.tv-cable').prop('disabled', false);
+                        $('#processing').hide();
                     }
                 }
             });

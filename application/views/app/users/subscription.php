@@ -86,6 +86,12 @@
                                 <input type="hidden" id="product_id" value="3">
                                 <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 tv-cable" data-balance="<?= $user->wallet;?>">Subscribe</button>
                                 <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear Form</button>&nbsp;&nbsp;
+                                <div class="text"
+                                     style="position: absolute;top: 35%;left: 0;height: 100%;width: 100%;font-size: 18px;text-align: center;">
+                                    <img src="<?= base_url('assets/images/load.gif'); ?>"
+                                         alt="Processing...">
+                                    Checking your meter number!
+                                </div>
                                 <?= form_close(); ?>
 
                             </div>
