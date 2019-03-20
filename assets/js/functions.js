@@ -845,11 +845,11 @@ $(document).ready(function() {
                 url : base_url + 'aj/verifyMeter/',
                 method: "POST",
                 data: { 'service' : service ,'code' : meter_number},
-                success: function( data ){
-                    // console.log(data);
-                    if( data.length){
+                success: function( response ){
+                    // console.log(response);
+                    if( response.length){
                         $('.electricity-bill').prop('disabled', false);
-                        $('#meter-info').text(data.data['Customer_Name']);
+                        $('#meter-info').text(response.data);
                     }else{
                         $('#meter-info').text("Your meter number is invalid, and can't proceed.");
                         $('.electricity-bill').prop('disabled', false);

@@ -49,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="851" column="72" selection-start-line="851" selection-start-column="72" selection-end-line="851" selection-end-column="72" />
+            <state relative-caret-position="237">
+              <caret line="851" column="59" selection-start-line="851" selection-start-column="59" selection-end-line="851" selection-end-column="59" />
               <folding>
                 <element signature="e#14#593#0" />
                 <element signature="n#!!block;n#format_currency#0" />
@@ -379,12 +379,12 @@
       <workItem from="1553011098707" duration="7191000" />
       <workItem from="1553052526695" duration="3085000" />
       <workItem from="1553073232550" duration="6967000" />
-      <workItem from="1553092433877" duration="4086000" />
+      <workItem from="1553092433877" duration="5609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="487152000" />
+    <option name="totallyTimeSpent" value="488675000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -781,8 +781,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="851" column="72" selection-start-line="851" selection-start-column="72" selection-end-line="851" selection-end-column="72" />
+        <state relative-caret-position="237">
+          <caret line="851" column="59" selection-start-line="851" selection-start-column="59" selection-end-line="851" selection-end-column="59" />
           <folding>
             <element signature="e#14#593#0" />
             <element signature="n#!!block;n#format_currency#0" />
