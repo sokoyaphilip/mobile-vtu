@@ -77,9 +77,10 @@
                                                 <input type="text" name="amount" id="amount" class="form-control number" required placeholder="How much will you like to pay?">
                                             </div>
                                         </div>
-
                                     </div>
+
                                 <input type="hidden" id="product_id" value="4">
+                                <input type="hidden" id="user_meter_name" value="" />
                                 <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 electricity-bill" data-balance="<?= $user->wallet;?>">Pay Now</button>
                                 <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear Form</button>&nbsp;&nbsp;
                                 <?= form_close(); ?>
@@ -91,6 +92,38 @@
 
             </div>
         </section>
+
+        <div class="modal fade" id="confirm">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Please confirm</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <table class="table table-striped" id="table">
+                            <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th class="text-center">Plan Name</th>
+                                <th class="text-center">Plan Amount</th>
+                            </tr>
+                            </thead>
+                            <tbody id="plan-body">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
 
     </div><!--//wrapper-->

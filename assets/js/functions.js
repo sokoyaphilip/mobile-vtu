@@ -507,6 +507,7 @@ $(document).ready(function() {
         let network_name = $('#plan').find(':selected').data('network-name');
         let network = $('#plan').find(':selected').data('service-id');
         let discount = $('#plan').find(':selected').data('service-discount');
+        let meter_name = $('#user_meter_name').val();
 
         if( amount === '') {
             _btn.prop('disabled', false);
@@ -535,7 +536,16 @@ $(document).ready(function() {
             _btn.text("Pay Now");
             return false;
         }
-        //7028877148
+
+        if( meter_name === '') {
+            _btn.prop('disabled', false);
+            sweet_alert('Error', "We can't proceed because your meter number is invalid.", 'error');
+            _btn.text("Pay Now");
+            return false;
+        }
+
+
+        //54150383294
         $.ajax({
             url : base_url + 'aj/electricity_bill/',
             method: "POST",
@@ -839,7 +849,7 @@ $(document).ready(function() {
                     // console.log(data);
                     if( data.length){
                         $('.electricity-bill').prop('disabled', false);
-                        $('#meter-info').text(data['data']['Customer_Name']);
+                        $('#meter-info').text(data.Customer_Name);
                     }else{
                         $('#meter-info').text("Your meter number is invalid, and can't proceed.");
                         $('.electricity-bill').prop('disabled', false);
