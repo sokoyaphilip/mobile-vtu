@@ -825,6 +825,26 @@ $(document).ready(function() {
         }
     });
 
+
+    // vaidate meter number
+    $('#meter_number').on('blur', function () {
+        let meter_number = $(this).val();
+        let service = $('#plan').find(':selected').data('variation-name');
+        if( meter_number !== '' ){
+            $.getJSON(`http://www.vtpass.com/ajax/merchant-verify?service=${service}&code=${meter_number}`,
+                function(data) {
+                    if( data.length !== '' && data['code'] == '1' ){
+                        $('.electricity-bill').prop('disabled', false);
+                        $('#meter-info').text(data['data']['Customer_Name']);
+                    }else{
+                        $('#meter-info').text("Your meter number is invalid, and can't proceed.");
+                        $('.electricity-bill').prop('disabled', false);
+                    }
+                });
+        }
+    });
+
+
     // Pin transfer
     // $('#pin_amount').on('change', function () {
     //     let _val = $(this).val();
