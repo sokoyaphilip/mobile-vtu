@@ -18,7 +18,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
+            <state relative-caret-position="403">
               <caret line="1037" lean-forward="true" selection-start-line="1037" selection-end-line="1037" />
               <folding>
                 <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
@@ -49,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="851" column="45" selection-start-line="851" selection-start-column="45" selection-end-line="851" selection-end-column="45" />
+            <state relative-caret-position="175">
+              <caret line="853" column="26" lean-forward="true" selection-start-line="853" selection-start-column="26" selection-end-line="853" selection-end-column="26" />
               <folding>
                 <element signature="e#14#593#0" />
                 <element signature="n#!!block;n#format_currency#0" />
@@ -137,7 +137,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>quic</find>
       <find>Y`ou don't have enough money in your wallet for the transaction.</find>
       <find>ou don't have enough money in your wallet for the transaction.</find>
       <find>buy_airtime</find>
@@ -161,12 +160,13 @@
       <find>slide</find>
       <find>auto</find>
       <find>electrici</find>
-      <find>curl</find>
       <find>validate</find>
       <find>electricity-bill</find>
       <find>modal</find>
       <find>meter-info</find>
       <find>response</find>
+      <find>curl</find>
+      <find>[</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -379,12 +379,12 @@
       <workItem from="1553011098707" duration="7191000" />
       <workItem from="1553052526695" duration="3085000" />
       <workItem from="1553073232550" duration="6967000" />
-      <workItem from="1553092433877" duration="5728000" />
+      <workItem from="1553092433877" duration="6889000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="488794000" />
+    <option name="totallyTimeSpent" value="489955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -748,17 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="1037" lean-forward="true" selection-start-line="1037" selection-end-line="1037" />
-          <folding>
-            <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
-            <element signature="n#verifyPaystack#0;n#Aj#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/app/admin/plans.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="55">
@@ -779,10 +768,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="1037" lean-forward="true" selection-start-line="1037" selection-end-line="1037" />
+          <folding>
+            <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
+            <element signature="n#verifyPaystack#0;n#Aj#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="851" column="45" selection-start-line="851" selection-start-column="45" selection-end-line="851" selection-end-column="45" />
+        <state relative-caret-position="175">
+          <caret line="853" column="26" lean-forward="true" selection-start-line="853" selection-start-column="26" selection-end-line="853" selection-end-column="26" />
           <folding>
             <element signature="e#14#593#0" />
             <element signature="n#!!block;n#format_currency#0" />
