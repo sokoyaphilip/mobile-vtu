@@ -20,8 +20,9 @@
                     <b>Think Data think Gecharl!!!</b>
                 </p>
             </div><!--//container-->
-        </section><!--//about-us-->    
+        </section><!--//about-us-->
 
+        <?php $this->load->view('resources/faq'); ?>
             
     </div><!--//wrapper-->
 
