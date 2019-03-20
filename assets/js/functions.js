@@ -831,8 +831,12 @@ $(document).ready(function() {
         let meter_number = $(this).val();
         let service = $('#plan').find(':selected').data('variation-name');
         if( meter_number !== '' ){
-            $.getJSON(`http://www.vtpass.com/ajax/merchant-verify?service=${service}&code=${meter_number}`,
-                function(data) {
+            $.ajax({
+                url : base_url + 'aj/verifyMeter/',
+                method: "POST",
+                data: { 'service' : service ,'code' : meter_number},
+                success: function( data ){
+                    console.log(data);
                     if( data.length !== '' && data['code'] == '1' ){
                         $('.electricity-bill').prop('disabled', false);
                         $('#meter-info').text(data['data']['Customer_Name']);
@@ -840,7 +844,8 @@ $(document).ready(function() {
                         $('#meter-info').text("Your meter number is invalid, and can't proceed.");
                         $('.electricity-bill').prop('disabled', false);
                     }
-                });
+                }
+            });
         }
     });
 

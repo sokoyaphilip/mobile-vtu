@@ -925,23 +925,39 @@ class Aj extends CI_Controller {
         return $getResponse;
     }
 
-    function vtpass_curl( $data ){
-        $curl       = curl_init();
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => VTPASS_HOST,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_USERPWD => VTPASS_USERNAME.":" .VTPASS_PASSWORD,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_POSTFIELDS => $data,
-        ));
-        $response = curl_exec($curl);
-        $response = json_decode($response, TRUE);
-        curl_close($curl);
-        return $response;
+    function verifyMeter(){
+        $post_url = "http://www.vtpass.com/ajax/merchant-verify";
+        $data = array(
+            'service' => $_POST['service'],
+            'code'      => $_POST['code']
+        );
+        $ponmo = http_build_query($data);
+        $url = $post_url .'?'. $ponmo; // json
+        $headers = array(
+            "GET /HTTP/1.1",
+            "User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.1) Gecko/2008070208 Firefox/3.0.1",
+            "Accept: */* ",
+            "Accept-Language: en-us,en;q=0.5",
+            "Keep-Alive: 300",
+            "Connection: keep-alive"
+        );
+        if( ini_get('allow_url_fopen') ) {
+            $response = file_get_contents($url);
+        } else {
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+            curl_setopt($ch, CURLOPT_POST, false);
+            $response = curl_exec($ch);
+            $response = json_decode($response, TRUE);
+            curl_close($ch);
+        }
+        echo $response;
+        exit;
     }
 
 
@@ -1020,6 +1036,23 @@ class Aj extends CI_Controller {
         }
     }
 
+
+    function verifyMeter() {
+        $url = "http://www.vtpass.com/ajax/merchant-verify?"
+        $url = "http://request url with parameters";
+        $ch = curl_init();
+        curl_setopt_array($ch, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true
+        ));
+
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        $output = curl_exec($ch);
+        curl_close($ch);
+        echo $output;
+        exit;
+    }
 
     /* General FUnction
      * Help us to return the response
