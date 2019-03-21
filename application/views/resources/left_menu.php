@@ -3,8 +3,8 @@
  $this->db->where('status', 'pending');
  $wallet_count = $this->db->get('transactions')->num_rows();
  ?>
-<div class="col-md-4 sub-section">
-    <div class="hidden-xs hidden-md">
+<div class="hidden-xs hidden-md">
+    <div class="col-md-4 sub-section">
         <h3 class="heading">Hello Admin</h3>
         <div class="content left-content">
             <ul class="list-unstyled feature-list">
