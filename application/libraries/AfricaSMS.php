@@ -14,7 +14,7 @@ class AfricaSMS {
         // $apikey     = "d69b04b7fd1cf8b156a2fc04139b37dbef25c8acc990718aae7d3ed11db2d141";
         $username   = "ArtisansUsers";
         $apikey     = "9ac256570d664969766b527a7635f13f84bad5633c1b34757be00bef961bf308";
-        die ( $username . ' and ' . $apikey );
+//        die ( $username . ' and ' . $apikey );
         $AT         = new AfricasTalking($username, $apikey);
         $sms        = $AT->sms();
         if( is_array($this->recipents) && !empty($this->recipents)){
