@@ -37,9 +37,6 @@ class HandlerStack
      */
     public static function create(callable $handler = null)
     {
-        include_once dirname(dirname(__DIR__)).'/guzzle/src/functions.php';
-        include_once dirname(dirname(__DIR__)).'/psr7/src/functions.php';
-        include_once dirname(dirname(__DIR__)).'/promise/src/functions.php';
         $stack = new self($handler ?: choose_handler());
         $stack->push(Middleware::httpErrors(), 'http_errors');
         $stack->push(Middleware::redirect(), 'allow_redirects');
