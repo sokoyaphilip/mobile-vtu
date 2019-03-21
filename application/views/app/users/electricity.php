@@ -18,7 +18,7 @@
                     <?php $this->load->view('resources/users/left_menu'); ?>
                     <div class="col-md-8 sub-section">
 
-                        <?php $this->load->view('resources/users/left_menu-mobile'); ?>
+                        <?php $this->load->view('resources/left_menu-mobile'); ?>
 
                         <h3 class="heading">Electricity Payment</h3>
                         <div class="content right-content">
