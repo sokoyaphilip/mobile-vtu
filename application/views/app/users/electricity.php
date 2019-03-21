@@ -19,6 +19,7 @@
                         <?php $this->load->view('resources/users/left_menu'); ?>
                     <?php endif;?>
                     <div class="col-md-8 col-12 sub-section">
+                        <?php $this->load->view('resources/left_menu-mobile'); ?>
                         <h3 class="heading">Electricity Payment</h3>
                         <div class="content right-content">
                             <div class="well"></div>
