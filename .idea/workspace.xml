@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/application/controllers/Aj.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Aj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/helpers/site_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/helpers/site_helper.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="294" column="56" selection-start-line="294" selection-start-column="56" selection-end-line="294" selection-end-column="56" />
+            <state relative-caret-position="235">
+              <caret line="898" column="43" selection-start-line="898" selection-start-column="43" selection-end-line="898" selection-end-column="43" />
               <folding>
                 <element signature="n#fetch_plans#0;n#Aj#0;n#!!top" />
                 <element signature="n#fund_wallet#0;n#Aj#0;n#!!top" />
@@ -29,7 +30,6 @@
                 <element signature="n#electricity_bill#0;n#Aj#0;n#!!top" />
                 <element signature="n#verify_iuc_number#0;n#Aj#0;n#!!top" />
                 <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
-                <element signature="n#callSMSAPI#0;n#Aj#0;n#!!top" />
                 <element signature="n#verifyPaystack#0;n#Aj#0;n#!!top" />
               </folding>
             </state>
@@ -39,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/helpers/site_helper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="359" column="30" lean-forward="true" selection-start-line="359" selection-start-column="30" selection-end-line="359" selection-end-column="30" />
+            <state relative-caret-position="76">
+              <caret line="414" column="45" selection-start-line="414" selection-start-column="45" selection-end-line="414" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -223,7 +223,6 @@
         <option value="$PROJECT_DIR$/application/views/resources/users/left_menu.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/electricity.php" />
         <option value="$PROJECT_DIR$/environment.php" />
-        <option value="$PROJECT_DIR$/application/helpers/site_helper.php" />
         <option value="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
         <option value="$PROJECT_DIR$/assets/js/functions.js" />
         <option value="$PROJECT_DIR$/application/views/landing/home.php" />
@@ -235,6 +234,7 @@
         <option value="$PROJECT_DIR$/application/config/development/constants.php" />
         <option value="$PROJECT_DIR$/application/config/production/constants.php" />
         <option value="$PROJECT_DIR$/application/libraries/AfricaSMS.php" />
+        <option value="$PROJECT_DIR$/application/helpers/site_helper.php" />
         <option value="$PROJECT_DIR$/application/controllers/Aj.php" />
       </list>
     </option>
@@ -401,12 +401,12 @@
       <workItem from="1553052526695" duration="3085000" />
       <workItem from="1553073232550" duration="6967000" />
       <workItem from="1553092433877" duration="9819000" />
-      <workItem from="1553114560258" duration="36302000" />
+      <workItem from="1553114560258" duration="36605000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="529187000" />
+    <option name="totallyTimeSpent" value="529490000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -810,8 +810,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/helpers/site_helper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="359" column="30" lean-forward="true" selection-start-line="359" selection-start-column="30" selection-end-line="359" selection-end-column="30" />
+        <state relative-caret-position="76">
+          <caret line="414" column="45" selection-start-line="414" selection-start-column="45" selection-end-line="414" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -827,8 +827,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="294" column="56" selection-start-line="294" selection-start-column="56" selection-end-line="294" selection-end-column="56" />
+        <state relative-caret-position="235">
+          <caret line="898" column="43" selection-start-line="898" selection-start-column="43" selection-end-line="898" selection-end-column="43" />
           <folding>
             <element signature="n#fetch_plans#0;n#Aj#0;n#!!top" />
             <element signature="n#fund_wallet#0;n#Aj#0;n#!!top" />
@@ -838,7 +838,6 @@
             <element signature="n#electricity_bill#0;n#Aj#0;n#!!top" />
             <element signature="n#verify_iuc_number#0;n#Aj#0;n#!!top" />
             <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
-            <element signature="n#callSMSAPI#0;n#Aj#0;n#!!top" />
             <element signature="n#verifyPaystack#0;n#Aj#0;n#!!top" />
           </folding>
         </state>
