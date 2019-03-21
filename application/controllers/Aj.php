@@ -730,12 +730,12 @@ class Aj extends CI_Controller {
         if( $discount > 1 ){
             $amount = $amount - ( $discount/100 * $amount );
         }
-        $description = "N{$amount} payment  for {$plan_detail->name} " . ucwords( $network_name) . " bill.";
+
         $transaction_id = $this->site->generate_code('transactions', 'trans_id');
         $insert_data = array(
             'amount'        => $amount,
             'product_id'    => $product_id,
-            'description'   => $description,
+            'descriptiom' => ''.
             'trans_id'      => $transaction_id,
             'payment_method' => 2,
             'date_initiated'    => get_now(),
@@ -764,10 +764,13 @@ class Aj extends CI_Controller {
                         try {
                             // call the API
                             $return = $this->vtpass_curl( $data );
+                            $response['message'] = print_r( $response);
+                            $this->return_response( $response );
                             $update_data = array();
                             if( $return['code'] == "000"){
                                 $update_data['orderid'] = $return['content'][0]['requestId'];
                                 $update_data['status'] = 'success';
+                                $update_data['description'] = "N{$amount} payment  for {$plan_detail->name} " . ucwords( $network_name) . " bill. with Token ()";
                                 $update_data['payment_status'] = $return['response_description'];
                                 $this->site->set_field('users', 'wallet', "wallet-{$amount}", "id={$user_id}");
                                 $response['status'] = 'success';
@@ -776,8 +779,9 @@ class Aj extends CI_Controller {
                                 $update_data['status'] = 'fail';
                                 $update_data['orderid'] = $return['content'][0]['requestId'];
                                 $update_data['payment_status'] = $return['response_description'];
+                                $update_data['description'] = "N{$amount} payment  for {$plan_detail->name} " . ucwords( $network_name) . " bill.";
                                 $response['status'] = 'error';
-                                $response['message'] = "There was an error subscribing your {$plan_detail->name}, please try again. Contact us if debited.." .$return;
+                                $response['message'] = "There was an error subscribing your {$plan_detail->name}, please try again. Contact us if debited..";
                                 $this->return_response( $response );
                             }
 

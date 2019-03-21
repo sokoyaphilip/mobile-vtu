@@ -845,7 +845,7 @@ $(document).ready(function() {
         $('#processing').show();
         let meter_number = $(this).val();
         let service = $('#plan').find(':selected').data('variation-name');
-        if( meter_number !== '' ){
+        if( meter_number !== '' || meter_number.length > 0 ){
             $.ajax({
                 url : base_url + 'aj/verifyMeter/',
                 method: "POST",
