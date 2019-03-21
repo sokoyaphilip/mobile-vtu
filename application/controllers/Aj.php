@@ -735,7 +735,7 @@ class Aj extends CI_Controller {
         $insert_data = array(
             'amount'        => $amount,
             'product_id'    => $product_id,
-            'descriptiom' => ' ',
+            'description' => ' ',
             'trans_id'      => $transaction_id,
             'payment_method' => 2,
             'date_initiated'    => get_now(),
