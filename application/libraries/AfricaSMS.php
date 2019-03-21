@@ -27,7 +27,7 @@ class AfricaSMS {
                             'message' => $message,
                             'enqueue' => true
                         ));
-                        print_r($return);
+                        echo 'You are here';
                     } catch (Exception $e) {
                     }
                 }
