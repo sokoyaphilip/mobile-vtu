@@ -23,12 +23,11 @@ class AfricaSMS {
                 if( !empty( $key ) || !is_null($key) ){
                     $recipent = $this->remove( $key );
                     try {
-                        $return = $sms->send(array(
+                        $sms->send(array(
                             'to' => $recipent,
                             'message' => $message,
                             'enqueue' => true
                         ));
-                        print_r($return);
                     } catch (Exception $e) {
                         echo $e;
                     }
