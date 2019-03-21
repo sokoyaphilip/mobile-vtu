@@ -8,7 +8,7 @@ if(! defined('ENVIRONMENT') )
         case 'gecharl.com' :
         case 'https://www.gecharl.com':
         case 'www.gecharl.com':
-            define('ENVIRONMENT', 'production');
+            define('ENVIRONMENT', 'development');
             break;
 
         case 'dev.gecharl.com' :
