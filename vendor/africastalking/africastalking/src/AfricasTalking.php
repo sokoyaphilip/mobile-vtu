@@ -30,10 +30,10 @@ class AfricasTalking
 			$this->baseDomain = self::BASE_DOMAIN;
 		}
 
-		$this->baseUrl = "http://api." . $this->baseDomain . "/version1/";
-		$this->voiceUrl = "http://voice." . $this->baseDomain . "/";
-		$this->paymentsUrl = "http://payments." . $this->baseDomain . '/';
-		$this->checkoutTokenUrl = "http://api." . $this->baseDomain . '/';
+		$this->baseUrl = "https://api." . $this->baseDomain . "/version1/";
+		$this->voiceUrl = "https://voice." . $this->baseDomain . "/";
+		$this->paymentsUrl = "https://payments." . $this->baseDomain . '/';
+		$this->checkoutTokenUrl = "https://api." . $this->baseDomain . '/';
 
 		$this->username = $username;
 		$this->apiKey = $apiKey;
