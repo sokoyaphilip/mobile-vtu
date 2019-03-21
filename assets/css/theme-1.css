@@ -377,14 +377,6 @@ textarea {
     background-size: 100%;
 }
 
-.bg-slider-wrapper .flexslider .slide.slide-4 {
-    background: #fff url(../images/background/slide4.jpg) no-repeat 50% top;
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-}
-
 .bg-slider-wrapper .flexslider .flex-control-nav {
     z-index: 20;
     bottom: 45px;
@@ -1089,7 +1081,7 @@ body.modal-open {
 
 .promo {
     position: relative;
-    min-height: 620px
+    min-height: 500px
 }
 @media (max-width:576px) {
     .promo {
