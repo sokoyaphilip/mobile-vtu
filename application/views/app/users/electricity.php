@@ -15,11 +15,10 @@
             <div class="container dashboard-cover">
 <!--                <h2 class="title">Welcome to your dashboard</h2>-->
                 <div class="row">
-                    <?php $this->load->view('resources/users/left_menu'); ?>
-                    <div class="col-md-8 sub-section">
-
-                        <?php $this->load->view('resources/left_menu-mobile'); ?>
-
+                    <?php if(!$this->agent->is_mobile()) :?>
+                        <?php $this->load->view('resources/users/left_menu'); ?>
+                    <?php endif;?>
+                    <div class="col-md-8 col-12 sub-section">
                         <h3 class="heading">Electricity Payment</h3>
                         <div class="content right-content">
                             <div class="well"></div>
