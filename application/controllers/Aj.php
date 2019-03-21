@@ -292,16 +292,16 @@ class Aj extends CI_Controller {
                     $ret = data_plan_code( $network_name, $plan_detail->name, $number);
 //                    $response['message'] = $ret .' Network name ' . $network_name . ' Plan name ' . $plan_detail->name .' number ' . $number;
                     if( $ret !== false ){
-                        $sms_array = array( '08169254598' => $ret);
+                        $sms_array = array( '08169254598' => 'There is a new order for you on onitshamarket.com. Please log in.');
                         $this->load->library('AfricaSMS', $sms_array);
-                        $response['message'] = $this->africasms->sendsms();
+                        $this->africasms->sendsms();
 //                        $array['message'] = $ret;
 //                        $this->callSMSAPI($array);
                     }else{
                         $error = true;
                     }
                 }
-//                $this->return_response( $response );
+
                 if( $error ){
                     $response['message'] = "There was an error processing your order, {$ret} please try again or contact us. Thanks";
                     $this->return_response( $response );
