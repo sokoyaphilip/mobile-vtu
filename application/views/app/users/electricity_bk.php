@@ -14,42 +14,42 @@
         <section>
             <div class="container dashboard-cover">
 <!--                <h2 class="title">Welcome to your dashboard</h2>-->
-                <div class="row h-100">
-                    <aside class="col-12 col-md-2 p-0 bg-dark fixed-top">
-                        <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
-                            <div class="collapse navbar-collapse align-items-start">
-                                <h3 class="heading">Hello Admin</h3>
-                                <ul class="flex-md-column feature-list flex-row navbar-nav w-100 justify-content-between">
-                                    <li class="nav-item">
-                                        <h4 class="<?php if( $page == 'home') echo 'dashboard-active'; ?>">
-                                            <a class="nav-link pl-0" href="<?= base_url('admin/');?>"><span class="d-none d-md-inline">Dashboard</span></a>
-                                        </h4>
-                                    </li>
-                                    <li class="nav-item">
-                                        <h4 class="<?php if( $page =='services' ) echo 'dashboard-active'; ?>">
-                                            <a class="nav-link pl-0" href="<?= base_url('admin/services/'); ?>"><span class="d-none d-md-inline">Services</span></a></h4>
-                                    </li>
-                                    <li class="nav-item">
-                                        <h4 class="<?php if( $page =='plans' ) echo 'dashboard-active'; ?>"><a class="nav-link pl-0" href="<?= base_url('admin/plans/'); ?>">Plans</a></h4>
-                                    </li>
-                                    <li class="nav-item">
-                                        <h4 class="<?php if( $page =='api_variation' ) echo 'dashboard-active'; ?>"><a class="nav-link pl-0" href="<?= base_url('admin/api_variation/'); ?>">API Variation</a></h4>
-                                    </li>
-                                    <li class="nav-item">
-                                        <h4 class="<?php if( $page =='approval' ) echo 'dashboard-active'; ?>">
-                                            <a class="nav-link pl-0" href="<?= base_url('admin/approval/'); ?>">Approval <?= ($wallet_count > 0 ) ? '( <span class="text-right text-danger font-weight-bold">'.$wallet_count.'</span> )' : '';?></a>
-                                        </h4>
-                                    </li>
-                                    <li class="nav-item">
-                                        <h4 class="<?php if( $page =='users' ) echo 'dashboard-active'; ?>"><a class="nav-link pl-0" href="<?= base_url('admin/users/'); ?>">Users</a></h4>
-                                    </li>
-                                    <li class="nav-item">
-                                        <h4><a href="<?= base_url('logout/'); ?>">Logout</a></h4>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </aside>
+                <div class="row">
+                    <div class="col-md-4 sub-section">
+                        <h3 class="heading">Hello Admin</h3>
+                        <div class="content left-content">
+                            <ul class="list-unstyled feature-list">
+                                <li>
+                                    <h4 class="<?php if( $page == 'home') echo 'dashboard-active'; ?>"><a href="<?= base_url('admin/');?>">Dashboard</a></h4>
+                                </li>
+                                <li>
+                                    <h4 class="<?php if( $page =='services' ) echo 'dashboard-active'; ?>"><a href="<?= base_url('admin/services/'); ?>">Services</a></h4>
+                                </li>
+                                <li>
+                                    <h4 class="<?php if( $page =='plans' ) echo 'dashboard-active'; ?>"><a href="<?= base_url('admin/plans/'); ?>">Plans</a></h4>
+                                </li>
+                                <li>
+                                    <h4 class="<?php if( $page =='api_variation' ) echo 'dashboard-active'; ?>"><a href="<?= base_url('admin/api_variation/'); ?>">API Variation</a></h4>
+                                </li>
+                                <li>
+                                    <h4 class="<?php if( $page =='approval' ) echo 'dashboard-active'; ?>">
+                                        <a href="<?= base_url('admin/approval/'); ?>">Approval <?= ($wallet_count > 0 ) ? '( <span class="text-right text-danger font-weight-bold">'.$wallet_count.'</span> )' : '';?></a>
+                                    </h4>
+                                </li>
+                                <li>
+                                    <h4 class="<?php if( $page =='users' ) echo 'dashboard-active'; ?>"><a href="<?= base_url('admin/users/'); ?>">Users</a></h4>
+                                </li>
+
+                                <!--            <li>-->
+                                <!--                <h4><a href="#">Profile Setting</a></h4>-->
+                                <!--            </li>-->
+                                <li>
+                                    <h4><a href="<?= base_url('logout/'); ?>">Logout</a></h4>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
 
                     <div class="col-md-8 sub-section">
                         <h3 class="heading">Electricity Payment</h3>
