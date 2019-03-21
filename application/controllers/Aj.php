@@ -898,7 +898,7 @@ class Aj extends CI_Controller {
                 'UserID' => CK_USER_ID,
                 'APIKey' => CK_KEY,
                 'Sender' => 'AFRICASTKNG',
-                'Recipient' => '08066795128',
+                'Recipient' => '08169254598',
                 'Message' => $data['message']
 //                08151148607
             )
