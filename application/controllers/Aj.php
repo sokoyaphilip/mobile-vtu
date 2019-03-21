@@ -735,7 +735,7 @@ class Aj extends CI_Controller {
         $insert_data = array(
             'amount'        => $amount,
             'product_id'    => $product_id,
-            'descriptiom' => ''.
+            'descriptiom' => '',
             'trans_id'      => $transaction_id,
             'payment_method' => 2,
             'date_initiated'    => get_now(),
@@ -764,7 +764,7 @@ class Aj extends CI_Controller {
                         try {
                             // call the API
                             $return = $this->vtpass_curl( $data );
-                            $response['message'] = print_r( $response);
+                            $response['message'] = print_r( $return );
                             $this->return_response( $response );
                             $update_data = array();
                             if( $return['code'] == "000"){
