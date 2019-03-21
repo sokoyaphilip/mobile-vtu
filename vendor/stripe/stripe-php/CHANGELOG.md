@@ -1,5 +1,44 @@
 # Changelog
 
+## 6.31.0 - 2019-03-18
+* [#600](https://github.com/stripe/stripe-php/pull/600) Add support for the `PaymentMethod` resource and APIs
+* [#606](https://github.com/stripe/stripe-php/pull/606) Add support for retrieving a Checkout `Session`
+* [#611](https://github.com/stripe/stripe-php/pull/611) Add support for deleting a Terminal `Location` and `Reader`
+
+## 6.30.5 - 2019-03-11
+* [#607](https://github.com/stripe/stripe-php/pull/607) Correctly handle case where a metadata key is called `metadata`
+
+## 6.30.4 - 2019-02-27
+* [#602](https://github.com/stripe/stripe-php/pull/602) Add `subscription_schedule` to `Subscription` for PHPDoc.
+
+## 6.30.3 - 2019-02-26
+* [#603](https://github.com/stripe/stripe-php/pull/603) Improve PHPDoc on the `Source` object to cover all types of Sources currently supported.
+
+## 6.30.2 - 2019-02-25
+* [#601](https://github.com/stripe/stripe-php/pull/601) Fix PHPDoc across multiple resources and add support for new events.
+
+## 6.30.1 - 2019-02-16
+* [#599](https://github.com/stripe/stripe-php/pull/599) Fix PHPDoc for `SubscriptionSchedule` and `SubscriptionScheduleRevision`
+
+## 6.30.0 - 2019-02-12
+* [#590](https://github.com/stripe/stripe-php/pull/590) Add support for `SubscriptionSchedule` and `SubscriptionScheduleRevision`
+
+## 6.29.3 - 2019-01-31
+* [#592](https://github.com/stripe/stripe-php/pull/592) Some more PHPDoc fixes
+
+## 6.29.2 - 2019-01-31
+* [#591](https://github.com/stripe/stripe-php/pull/591) Fix PHPDoc for nested resources
+
+## 6.29.1 - 2019-01-25
+* [#566](https://github.com/stripe/stripe-php/pull/566) Fix dangling message contents
+* [#586](https://github.com/stripe/stripe-php/pull/586) Don't overwrite `CURLOPT_HTTP_VERSION` option
+
+## 6.29.0 - 2019-01-23
+* [#579](https://github.com/stripe/stripe-php/pull/579) Rename `CheckoutSession` to `Session` and move it under the `Checkout` namespace. This is a breaking change, but we've reached out to affected merchants and all new merchants would use the new approach.
+
+## 6.28.1 - 2019-01-21
+* [#580](https://github.com/stripe/stripe-php/pull/580) Properly serialize `individual` on `Account` objects
+
 ## 6.28.0 - 2019-01-03
 * [#576](https://github.com/stripe/stripe-php/pull/576) Add support for iterating directly over `Collection` instances
 
