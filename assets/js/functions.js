@@ -295,6 +295,7 @@ $(document).ready(function() {
     // Airtime Purchase
     $('.airtime-purchase').on('click', function(e){
         e.preventDefault();
+        let _btn = $(this);
         $(this).prop('disabled', true);
         $(this).text("Processing...");
 

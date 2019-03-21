@@ -22,7 +22,7 @@ class AfricaSMS {
                 if( !empty( $key ) || !is_null($key) ){
                     $recipent = $this->remove( $key );
                     try {
-                        $sms->send(array(
+                        return $sms->send(array(
                             'to' => $recipent,
                             'message' => $message,
                             'enqueue' => true
