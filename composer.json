@@ -12,6 +12,7 @@
 	},
 	"require": {
 		"php": ">=5.3.7",
+		"stripe/stripe-php": "^6.28",
 		"africastalking/africastalking": "^2.1"
 	},
 	"suggest": {
