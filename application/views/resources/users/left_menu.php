@@ -3,7 +3,7 @@
 // $this->db->where('status', 'pending');
 // $wallet_count = $this->db->get('transactions')->num_rows();
  ?>
-<div class="col-md-4 sub-section hidden-lg"">
+<div class="col-md-4 sub-section">
     <h3 class="heading">Hi <?= (!is_null($user->name)) ? ucwords($user->name) : $user->phone;?></h3>
     <div class="content left-content">
         <h3 class="text-danger text-center">Wallet Balance <br />   <small><?= ngn($user->wallet);?></small></h3>
