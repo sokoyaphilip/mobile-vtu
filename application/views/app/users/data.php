@@ -78,7 +78,7 @@
                             </div>
                         </div>
 
-                        <h3>10 latest transactions on Data</h3>
+                        <h4>10 latest transactions on Data</h4><hr />
                         <div style="margin-top: 20px" class="table-responsive">
                             <table class="table table-striped" id="table">
                                 <thead>
