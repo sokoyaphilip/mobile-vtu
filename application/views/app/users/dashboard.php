@@ -102,6 +102,7 @@
                                 <table class="table table-striped" id="table">
                                     <thead>
                                     <tr>
+                                        <th style="display: none"></th>
                                         <th>Transaction ID</th>
                                         <th>Date & Time</th>
                                         <th>Type</th>
@@ -113,6 +114,7 @@
                                     <tbody>
                                     <?php foreach( $transactions as $transaction ): ?>
                                         <tr>
+                                            <td style="display:none;"><?= $transaction->id; ?></td>
                                             <td><?= $transaction->trans_id; ?></td>
                                             <td><?= neatDate( $transaction->date_initiated) . ' ' . neatTime( $transaction->date_initiated); ?></td>
                                             <td><?= product_name($transaction->product_id); ?></td>
