@@ -80,7 +80,7 @@
 
                                 <input type="hidden" id="product_id" value="4">
                                 <input type="hidden" id="user_meter_name" value="" />
-                                <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 electricity-bill" data-balance="<?= $user->wallet;?>">Pay Now</button>
+                                <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 electricity-bill" data-balance="<?= $user->wallet;?>">Pay Now</button>&nbsp;&nbsp;
                                 <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear Form</button>&nbsp;&nbsp;
 
                                 <?= form_close(); ?>
