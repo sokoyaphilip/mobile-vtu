@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/application/controllers/Aj.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Aj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/app/users/wallet.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/app/users/wallet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/functions.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="295" column="61" selection-start-line="295" selection-start-column="61" selection-end-line="295" selection-end-column="61" />
+            <state relative-caret-position="175">
+              <caret line="298" column="71" selection-start-line="298" selection-start-column="71" selection-end-line="298" selection-end-column="71" />
               <folding>
                 <element signature="n#fetch_plans#0;n#Aj#0;n#!!top" />
                 <element signature="n#buy_airtime#0;n#Aj#0;n#!!top" />
@@ -408,12 +406,12 @@
       <workItem from="1553052526695" duration="3085000" />
       <workItem from="1553073232550" duration="6967000" />
       <workItem from="1553092433877" duration="9819000" />
-      <workItem from="1553114560258" duration="41848000" />
+      <workItem from="1553114560258" duration="42127000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="534733000" />
+    <option name="totallyTimeSpent" value="535012000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -432,7 +430,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32918397" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32780084" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32780084" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32882273" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -834,8 +832,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="295" column="61" selection-start-line="295" selection-start-column="61" selection-end-line="295" selection-end-column="61" />
+        <state relative-caret-position="175">
+          <caret line="298" column="71" selection-start-line="298" selection-start-column="71" selection-end-line="298" selection-end-column="71" />
           <folding>
             <element signature="n#fetch_plans#0;n#Aj#0;n#!!top" />
             <element signature="n#buy_airtime#0;n#Aj#0;n#!!top" />

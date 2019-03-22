@@ -293,7 +293,11 @@ class Aj extends CI_Controller {
 //                    $response['message'] = $ret .' Network name ' . $network_name . ' Plan name ' . $plan_detail->name .' number ' . $number;
                     if( $ret !== false ){
 //                        $sms_array = array( '08169254598' => 'A new order on ' . $plan_detail->name . ' ' . $ret);
-                        $sms_array = array( '08169254598' => $ret);
+                        if( $plan_detail->name !== 'mtn' ){
+                            $sms_array = array( '09069118406' => $plan_detail->name . ' ' . $ret);
+                        }else{
+                            $sms_array = array( '09069118406' => $ret);
+                        }
                         $this->load->library('AfricaSMS', $sms_array);
                         $this->africasms->sendsms();
 //                        $array['message'] = ' A new order from Gecharl ' . $ret;
