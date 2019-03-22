@@ -91,8 +91,6 @@
                                             <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear</button>&nbsp;&nbsp;
                                             <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 transfer-now" data-balance="<?= $user->wallet;?>">Transfer Now</button>
                                         </form>
-
-
                                     </div>
                                 </div>
 

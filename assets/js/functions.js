@@ -189,6 +189,15 @@ $(document).ready(function() {
                             window.location = window.location.href;
                         });
                     }else{ // 3
+
+                        let charge = 0;
+                        if( amount < 2500 ){
+                            charge = (1.5 * 100 ) * amount;
+                        }else if( amount >=  2500 ){
+                            charge = ((1.5 * 100) * amount ) + 100;
+                        }
+
+                        amount += charge;
                         let data = {'amount' : amount * 100, 'ref' : response.message};
                         payWithPaystack( data );
                     }
@@ -404,8 +413,6 @@ $(document).ready(function() {
                     }else if( payment === 2 ){
                         sweet_alert('success','Transaction successful. Check your dashboard for transaction details..', 'info')
                     }else{
-
-                        let amount = response.amount * 100;
                         let charge = 0;
                         if( amount < 2500 ){
                             charge = (1.5 * 100 ) * amount;
@@ -413,7 +420,7 @@ $(document).ready(function() {
                             charge = ((1.5 * 100) * amount ) + 100;
                         }
                         amount += charge;
-                        let data = {'amount' : amount, 'ref' : response.message};
+                        let data = {'amount' : amount * 100, 'ref' : response.message};
                         payWithPaystack( data );
                         // paystack
                     }
