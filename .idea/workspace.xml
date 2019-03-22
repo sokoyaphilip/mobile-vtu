@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/application/controllers/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/app/users/airtime.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/app/users/airtime.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/app/users/data.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/app/users/data.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,11 +61,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+            <state relative-caret-position="391">
+              <caret line="61" column="225" selection-start-line="61" selection-start-column="225" selection-end-line="61" selection-end-column="225" />
+              <caret line="72" column="225" selection-start-line="72" selection-start-column="225" selection-end-line="72" selection-end-column="225" />
               <folding>
                 <element signature="n#wallet#0;n#Dashboard#0;n#!!top" />
                 <element signature="n#airtime_to_cash#0;n#Dashboard#0;n#!!top" />
@@ -78,7 +77,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/app/users/data.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="376">
@@ -251,8 +250,8 @@
         <option value="$PROJECT_DIR$/assets/css/theme-1.css" />
         <option value="$PROJECT_DIR$/assets/js/functions.js" />
         <option value="$PROJECT_DIR$/application/views/app/users/airtime.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Dashboard.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/data.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Dashboard.php" />
       </list>
     </option>
   </component>
@@ -419,12 +418,12 @@
       <workItem from="1553073232550" duration="6967000" />
       <workItem from="1553092433877" duration="9819000" />
       <workItem from="1553114560258" duration="43405000" />
-      <workItem from="1553242029342" duration="3354000" />
+      <workItem from="1553242029342" duration="3567000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="539644000" />
+    <option name="totallyTimeSpent" value="539857000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -834,19 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
-          <folding>
-            <element signature="n#wallet#0;n#Dashboard#0;n#!!top" />
-            <element signature="n#airtime_to_cash#0;n#Dashboard#0;n#!!top" />
-            <element signature="n#airtime_process#0;n#Dashboard#0;n#!!top" />
-            <element signature="n#profile_setting#0;n#Dashboard#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/app/users/airtime.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
@@ -871,6 +857,20 @@
             <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="61" column="225" selection-start-line="61" selection-start-column="225" selection-end-line="61" selection-end-column="225" />
+          <caret line="72" column="225" selection-start-line="72" selection-start-column="225" selection-end-line="72" selection-end-column="225" />
+          <folding>
+            <element signature="n#wallet#0;n#Dashboard#0;n#!!top" />
+            <element signature="n#airtime_to_cash#0;n#Dashboard#0;n#!!top" />
+            <element signature="n#airtime_process#0;n#Dashboard#0;n#!!top" />
+            <element signature="n#profile_setting#0;n#Dashboard#0;n#!!top" />
           </folding>
         </state>
       </provider>
