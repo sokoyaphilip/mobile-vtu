@@ -69,6 +69,36 @@
                             </form>
 
                             </div>
+
+                        <h4>10 latest transactions on Airtime</h4><hr />
+                        <div style="margin-top: 20px" class="table-responsive">
+                            <table class="table table-striped" id="table">
+                                <thead>
+                                <tr>
+                                    <th style="display: none;"></th>
+                                    <th>Transaction ID</th>
+                                    <th>Date & Time</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php foreach( $transactions as $transaction ): ?>
+                                    <tr>
+                                        <td style="display: none"><?= $transaction->id; ?></td>
+                                        <td><?= $transaction->trans_id; ?></td>
+                                        <td><?= neatDate( $transaction->date_initiated) . ' ' . neatTime( $transaction->date_initiated); ?></td>
+                                        <td><?= product_name($transaction->product_id); ?></td>
+                                        <td><?= payment_id_replacer($transaction->description); ?></td>
+                                        <td><?= ngn($transaction->amount)?></td>
+                                        <td><?= statusLabel( $transaction->status);?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
                         </div>
                     </div>
                 </div>
