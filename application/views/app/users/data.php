@@ -71,10 +71,9 @@
 
                                     </div>
                                     <input type="hidden" id="product_id" value="1">
-                                <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 data-purchase" data-balance="<?= $user->wallet;?>">Buy Now</button>
+                                <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 data-purchase" data-balance="<?= $user->wallet;?>">Buy Now</button>&nbsp;&nbsp;
                                 <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear Form</button>&nbsp;&nbsp;
                                 <?= form_close(); ?>
-
                             </div>
                         </div>
 
