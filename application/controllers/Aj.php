@@ -292,8 +292,11 @@ class Aj extends CI_Controller {
                     $ret = data_plan_code( $network_name, $plan_detail->name, $number);
 //                    $response['message'] = $ret .' Network name ' . $network_name . ' Plan name ' . $plan_detail->name .' number ' . $number;
                     if( $ret !== false ){
-//                        $sms_array = array( '08169254598' => 'A new order on ' . $plan_detail->name . ' ' . $ret);
-                        $sms_array = array( '09069118406' => $ret);
+                        if( $network_name != 'mtn' || $network_name != "MTN" ){
+                            $sms_array = array( '08066795128' => $ret);
+                        }else{
+                            $sms_array = array( '09069118406' => $ret);
+                        }
                         $this->load->library('AfricaSMS', $sms_array);
                         $this->africasms->sendsms();
 //                        $array['message'] = ' A new order from Gecharl ' . $ret;
