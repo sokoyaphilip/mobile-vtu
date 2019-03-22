@@ -60,7 +60,7 @@ class Dashboard extends CI_Controller {
         $page_data['user'] = $this->get_profile($id);
         $page_data['networks'] = $this->site->run_sql("SELECT p.slug, s.id, s.title, s.network_name, discount FROM products p LEFT JOIN services s ON (p.id = s.product_id) WHERE p.title ='data' ")->result();
         $page_data['transactions'] = $this->site->run_sql("SELECT id, trans_id, amount, description, date_initiated,payment_method, product_id, status FROM transactions WHERE product_id = 1 AND user_id = {$id} ORDER BY date_initiated DESC LIMIT 10")->result();
-        var_dump( $page_data['transactions'] );
+//        var_dump( $page_data['transactions'] );
         $this->load->view('app/users/data', $page_data);
     }
 
