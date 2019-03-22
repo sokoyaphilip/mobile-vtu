@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/application/controllers/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/functions.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6945">
-              <caret line="987" column="1" selection-start-line="987" selection-start-column="1" selection-end-line="987" selection-end-column="1" />
+            <state relative-caret-position="212">
+              <caret line="992" column="21" selection-start-line="992" selection-start-column="21" selection-end-line="992" selection-end-column="21" />
               <folding>
                 <element signature="e#14#593#0" />
                 <element signature="e#5771#7552#0" />
@@ -56,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/application/controllers/Dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="331">
-              <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+              <caret line="61" column="238" selection-start-line="61" selection-start-column="238" selection-end-line="61" selection-end-column="238" />
               <folding>
                 <element signature="n#airtime_process#0;n#Dashboard#0;n#!!top" />
                 <element signature="n#profile_setting#0;n#Dashboard#0;n#!!top" />
@@ -140,7 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>electrici</find>
       <find>validate</find>
       <find>modal</find>
       <find>meter-info</find>
@@ -170,6 +170,7 @@
       <find>verifyPaystack</find>
       <find>fund</find>
       <find>@med</find>
+      <find>data</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -221,13 +222,13 @@
         <option value="$PROJECT_DIR$/application/helpers/site_helper.php" />
         <option value="$PROJECT_DIR$/application/controllers/Aj.php" />
         <option value="$PROJECT_DIR$/assets/css/theme-1.css" />
-        <option value="$PROJECT_DIR$/assets/js/functions.js" />
         <option value="$PROJECT_DIR$/application/views/app/users/wallet.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/dashboard.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/airtime.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/subscription.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/electricity.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/data.php" />
+        <option value="$PROJECT_DIR$/assets/js/functions.js" />
         <option value="$PROJECT_DIR$/application/controllers/Dashboard.php" />
       </list>
     </option>
@@ -396,12 +397,12 @@
       <workItem from="1553092433877" duration="9819000" />
       <workItem from="1553114560258" duration="43405000" />
       <workItem from="1553242029342" duration="5257000" />
-      <workItem from="1553257752750" duration="1326000" />
+      <workItem from="1553257752750" duration="1477000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="542873000" />
+    <option name="totallyTimeSpent" value="543024000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -735,32 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6945">
-          <caret line="987" column="1" selection-start-line="987" selection-start-column="1" selection-end-line="987" selection-end-column="1" />
-          <folding>
-            <element signature="e#14#593#0" />
-            <element signature="e#5771#7552#0" />
-            <element signature="e#13321#16768#0" />
-            <element signature="e#16842#19139#0" />
-            <element signature="e#19222#22294#0" />
-            <element signature="e#22346#24226#0" />
-            <element signature="e#24384#24650#0" />
-            <element signature="e#24696#25975#0" />
-            <element signature="e#26205#27452#0" />
-            <element signature="e#27520#28718#0" />
-            <element signature="e#28815#29784#0" />
-            <element signature="e#29837#30056#0" />
-            <element signature="e#30110#31050#0" />
-            <element signature="n#!!block;n#format_currency#0" />
-            <element signature="n#!!block;n#sweet_alert#0" />
-            <element signature="n#!!block;n#addCommas#0" />
-            <element signature="n#!!block;n#payWithPaystack#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/helpers/site_helper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3330">
@@ -817,10 +792,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="992" column="21" selection-start-line="992" selection-start-column="21" selection-end-line="992" selection-end-column="21" />
+          <folding>
+            <element signature="e#14#593#0" />
+            <element signature="e#5771#7552#0" />
+            <element signature="e#13321#16768#0" />
+            <element signature="e#16842#19139#0" />
+            <element signature="e#19222#22294#0" />
+            <element signature="e#22346#24226#0" />
+            <element signature="e#24384#24650#0" />
+            <element signature="e#24696#25975#0" />
+            <element signature="e#26205#27452#0" />
+            <element signature="e#27520#28718#0" />
+            <element signature="e#28815#29784#0" />
+            <element signature="e#29837#30056#0" />
+            <element signature="e#30110#31050#0" />
+            <element signature="n#!!block;n#format_currency#0" />
+            <element signature="n#!!block;n#sweet_alert#0" />
+            <element signature="n#!!block;n#addCommas#0" />
+            <element signature="n#!!block;n#payWithPaystack#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
-          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+          <caret line="61" column="238" selection-start-line="61" selection-start-column="238" selection-end-line="61" selection-end-column="238" />
           <folding>
             <element signature="n#airtime_process#0;n#Dashboard#0;n#!!top" />
             <element signature="n#profile_setting#0;n#Dashboard#0;n#!!top" />
