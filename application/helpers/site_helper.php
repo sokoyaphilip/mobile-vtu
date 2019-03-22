@@ -336,18 +336,19 @@ function data_plan_code( $network , $plan, $number){
             switch ($plan) {
                 // 250MB - 150, 500MB - 250, 1GB -450,2GB -900, 5GB-2250
                 case '5GB':
-                    return "SMEE {$number} 5000 8025";
+                    return "SMEE {$number} 5000 3372";
                     break;
                 case '2GB':
-                    return "SMED {$number} 2000 8025";
+                    return "SMED {$number} 2000 3372";
                     break;
                 case '1GB':
-                    return "SMEC {$number} 1000 8025";
+                    return "SMEC {$number} 1000 3372";
                     break;
                 case "500MB":
-                    return "SMEB {$number} 500 8025";
+                    return "SMEB {$number} 500 3372";
+                    break;
                 case "250MB":
-                    return "SMEA {$number} 250 8025";
+                    return "SMEA {$number} 250 3372";
                 default :
                     return false;
                     break;
