@@ -95,7 +95,7 @@
                                 <?php foreach( $transactions as $transaction ): ?>
                                     <tr>
                                         <td style="display: none"><?= $transaction->id; ?></td>
-                                        <td><?= $transaction->trans_id; ?></td>
+                                        <td><?= $transaction->id .'-'. $transaction->trans_id; ?></td>
                                         <td><?= neatDate( $transaction->date_initiated) . ' ' . neatTime( $transaction->date_initiated); ?></td>
                                         <td><?= product_name($transaction->product_id); ?></td>
                                         <td><?= payment_id_replacer($transaction->description); ?></td>
