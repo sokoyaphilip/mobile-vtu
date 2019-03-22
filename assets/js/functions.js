@@ -990,7 +990,7 @@ function verifyPaystack( pref, ref){
 
 $(document).ready( function () {
     $('.table').DataTable({
-        "order": [[ 1, "desc" ]]
+        "order": [[ 0, "desc" ]]
     });
 } );
 
