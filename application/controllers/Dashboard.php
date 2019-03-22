@@ -82,6 +82,7 @@ class Dashboard extends CI_Controller {
         $page_data['title'] = 'Subscribe your GoTV, DSTV, Startimes ... decoder';
         $page_data['user'] = $this->get_profile($id);
         $page_data['networks'] = $this->site->run_sql("SELECT p.slug, s.id, s.title, network_name, discount FROM products p LEFT JOIN services s ON (p.id = s.product_id) WHERE p.slug ='tv-subscription' ")->result();
+        $page_data['transactions'] = $this->site->run_sql("SELECT id, trans_id, amount, description, date_initiated,payment_method, product_id, status FROM transactions WHERE product_id = 3 AND user_id = {$id} ORDER BY id ASC LIMIT 10")->result();
         $this->load->view('app/users/subscription', $page_data);
 
     }
@@ -98,6 +99,7 @@ class Dashboard extends CI_Controller {
         JOIN plans pl ON (pl.sid = s.id)
         LEFT JOIN api_variation api ON (api.plan_id = pl.id)
         WHERE p.slug ='electricity-bill' ")->result();
+        $page_data['transactions'] = $this->site->run_sql("SELECT id, trans_id, amount, description, date_initiated,payment_method, product_id, status FROM transactions WHERE product_id = 4 AND user_id = {$id} ORDER BY id ASC LIMIT 10")->result();
         $this->load->view('app/users/electricity', $page_data);
     }
 
@@ -108,6 +110,7 @@ class Dashboard extends CI_Controller {
         $page_data['title'] = 'My Wallet';
         $page_data['user'] = $this->get_profile( $id );
         $page_data['fundings'] = $this->site->get_result('transactions', '*' , " user_id = {$id}");
+        $page_data['transactions'] = $this->site->run_sql("SELECT id, trans_id, amount, description, date_initiated,payment_method, product_id, status FROM transactions WHERE (product_id = 6 or product_id =7) AND user_id = {$id} ORDER BY id ASC LIMIT 10")->result();
         $this->load->view('app/users/wallet', $page_data);
 
     }
