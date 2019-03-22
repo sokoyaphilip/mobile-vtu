@@ -988,5 +988,10 @@ function verifyPaystack( pref, ref){
 }
 
 
+$(document).ready( function () {
+    $('.table').DataTable();
+} );
+
+
 
 

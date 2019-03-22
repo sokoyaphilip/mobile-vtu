@@ -58,8 +58,6 @@
                                             <span class="text-success you-pay"></span>
                                         </div>
                                         <br />
-
-
 <!--                                        <div class="col-sm-12">-->
 <!--                                            <div class="form-group">-->
 <!--                                                <label for="how_to_pay">How will you like to pay?</label>-->
@@ -79,6 +77,34 @@
 
                             </div>
                         </div>
+
+                        <h3>10 latest transactions on Data</h3>
+                        <div style="margin-top: 20px" class="table-responsive">
+                            <table class="table table-striped" id="table">
+                                <thead>
+                                <tr>
+                                    <th>Transaction ID</th>
+                                    <th>Date & Time</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php foreach( $transactions as $transaction ): ?>
+                                    <tr>
+                                        <td><?= $transaction->trans_id; ?></td>
+                                        <td><?= neatDate( $transaction->date_initiated) . ' ' . neatTime( $transaction->date_initiated); ?></td>
+                                        <td><?= product_name($transaction->product_id); ?></td>
+                                        <td><?= payment_id_replacer($transaction->description); ?></td>
+                                        <td><?= ngn($transaction->amount)?></td>
+                                        <td><?= statusLabel( $transaction->status);?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -95,6 +121,7 @@
 
     <!-- Javascript -->
     <?php $this->load->view('resources/script'); ?>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
 </body>
 </html>
