@@ -94,17 +94,6 @@
                     </div>
                 </div><!--//card-->
 
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title"><a data-parent="#accordion" data-toggle="collapse" class="card-toggle" href="#faq7"><i class="fas fa-plus-square"></i>Hope the data won't get exhausted quickly or disappear?</a></h4>
-                    </div>
-
-                    <div class="card-collapse collapse" id="faq7">
-                        <div class="card-body">
-                            Our data plans are sourced from the network providers, therefore consumption rate is similar to the data gotten directly from them.
-                        </div>
-                    </div>
-                </div><!--//card-->
             </div>
             <div class="col-12 col-md-6">
 

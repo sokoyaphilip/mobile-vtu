@@ -94,6 +94,7 @@
                                 <table class="table table-striped" id="table">
                                     <thead>
                                     <tr>
+                                        <th style="display: none"><?= $transaction->id; ?></th>
                                         <th>Transaction ID</th>
                                         <th>User ID</th>
                                         <th>Date & Time</th>
@@ -106,6 +107,7 @@
                                     <tbody>
                                     <?php foreach( $transactions as $transaction ): ?>
                                         <tr>
+                                            <td style="display: none;"><?= $transaction->id; ?></td>
                                             <td><?= $transaction->trans_id; ?></td>
                                             <td><?= $transaction->phone; ?></td>
                                             <td><?= neatDate( $transaction->date_initiated) . ' ' . neatTime( $transaction->date_initiated); ?></td>
