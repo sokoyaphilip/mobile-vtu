@@ -110,8 +110,8 @@ defined('VTPASS_PASSWORD') OR define('VTPASS_PASSWORD', "sandbox");
 
 
 //Paystack
-defined('S_KEY') OR define('S_KEY', 'sk_test_6717b8968b68041291feddbfa9cb13378776da4b');
-defined('P_KEY') OR define('P_KEY', 'pk_test_c33d0063db515c137b1f410e0294ae7188b2e88c');
+defined('S_KEY') OR define('S_KEY', 'sk_test_7f9e0d2c426861d566a1abf1bffee4839a1176ea');
+defined('P_KEY') OR define('P_KEY', 'pk_test_89ca6e3e4316cc4ec8f983eea76a5c3ba32631e4');
 
 //SMS
 defined('SMS_USERNAME') OR define('SMS_USERNAME', 'ArtisansUsers');
