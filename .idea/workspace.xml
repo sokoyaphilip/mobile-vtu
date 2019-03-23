@@ -65,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
@@ -115,16 +115,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/app/users/electricity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="98" column="28" selection-start-line="98" selection-start-column="28" selection-end-line="126" selection-end-column="34" />
+            <state relative-caret-position="391">
+              <caret line="127" column="30" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="30" />
               <folding>
                 <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
                 <element signature="e#5627#5633#0#HTML" expanded="true" />
                 <element signature="e#5633#5639#0#HTML" expanded="true" />
-                <element signature="n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
                 <element signature="n#div#0;n#div#0;n#body#0;n#!!top" />
               </folding>
             </state>
@@ -134,8 +134,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/app/users/data.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="79" column="24" lean-forward="true" selection-start-line="79" selection-start-column="24" selection-end-line="107" selection-end-column="30" />
+            <state relative-caret-position="211">
+              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
               <folding>
                 <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
               </folding>
@@ -254,8 +254,8 @@
         <option value="$PROJECT_DIR$/application/config/development/constants.php" />
         <option value="$PROJECT_DIR$/application/config/production/constants.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/subscription.php" />
-        <option value="$PROJECT_DIR$/application/views/app/users/electricity.php" />
         <option value="$PROJECT_DIR$/application/controllers/Aj.php" />
+        <option value="$PROJECT_DIR$/application/views/app/users/electricity.php" />
       </list>
     </option>
   </component>
@@ -423,12 +423,12 @@
       <workItem from="1553092433877" duration="9819000" />
       <workItem from="1553114560258" duration="43405000" />
       <workItem from="1553242029342" duration="5257000" />
-      <workItem from="1553257752750" duration="10364000" />
+      <workItem from="1553257752750" duration="10557000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="551911000" />
+    <option name="totallyTimeSpent" value="552104000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -818,16 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/app/users/data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="79" column="24" lean-forward="true" selection-start-line="79" selection-start-column="24" selection-end-line="107" selection-end-column="30" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/app/users/subscription.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="376">
@@ -836,20 +826,6 @@
             <element signature="e#5847#5853#0#HTML" expanded="true" />
             <element signature="e#5853#5859#0#HTML" expanded="true" />
             <element signature="n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/app/users/electricity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="98" column="28" selection-start-line="98" selection-start-column="28" selection-end-line="126" selection-end-column="34" />
-          <folding>
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
-            <element signature="e#5627#5633#0#HTML" expanded="true" />
-            <element signature="e#5633#5639#0#HTML" expanded="true" />
-            <element signature="n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#body#0;n#!!top" />
           </folding>
         </state>
       </provider>
@@ -863,6 +839,30 @@
             <element signature="n#quick_airtime#0;n#Aj#0;n#!!top" />
             <element signature="n#verify_iuc_number#0;n#Aj#0;n#!!top" />
             <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/app/users/data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/app/users/electricity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="127" column="30" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="30" />
+          <folding>
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
+            <element signature="e#5627#5633#0#HTML" expanded="true" />
+            <element signature="e#5633#5639#0#HTML" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#body#0;n#!!top" />
           </folding>
         </state>
       </provider>
