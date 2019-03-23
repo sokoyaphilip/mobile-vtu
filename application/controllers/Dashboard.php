@@ -279,7 +279,100 @@ class Dashboard extends CI_Controller {
 
     }
 
-	function get_profile($id){
-	    return $this->site->run_sql("SELECT phone, email, name, user_code, wallet, account_type FROM users where id = {$id}")->row();
+    public function payment_made(){
+        $tid = cleanit( $this->input->get('tid', true));
+        if( !$tid ) redirect( $_SERVER['HTTP_REFERER']);
+
+        $row = $this->site->run_sql("SELECT amount, trans_id, description FROM transactions WHERE trans_id = {$tid}")->row();
+        if( !$row ){
+            $this->session->set_flashdata('error_msg', "The transaction does not exist.");
+            redirect( 'dashboard/wallet/');
+        }else{
+            $page_data['row'] = $row;
+            $page_data['page'] = 'payment_made';
+            $page_data['title'] = "Payment Made";
+            $page_data['user'] = $this->get_profile($this->session->userdata('logged_id'));
+            $this->load->view('app/users/payment_made', $page_data);
+        }
     }
+
+    function payment_made_process(){
+        if( $this->input->post()){
+            $data = array(
+                'tid' => cleanit( $_POST['tid']),
+                'bank_name' => cleanit($_POST['bank_name']),
+                'amount_paid'   => cleanit($_POST['amount_paid']),
+                'deposit_type'  => cleanit($_POST['deposit_type']),
+                'remark'        => cleanit($_POST['remark']),
+                'date_paid'     => date('Y/m/d', strtotime(cleanit($_POST['date_paid'])))
+            );
+
+            $tid = cleanit($_POST['tid']);
+            $check = $this->site->run_sql("SELECT id FROM transaction_status WHERE tid = {$tid}")->row();
+            if($check){
+                $this->session->set_flashdata('error_msg', "We already receive your message.");
+                redirect( $_SERVER['HTTP_REFERER']);
+            }
+            if( $this->site->insert_data('transaction_status', $data)){
+                $amount = $this->input->post('amount_paid');
+                $array['message'] = 'A user just claimed to pay N'.$amount .' Go to dashboard to confirm.';
+                $this->callSMSAPI($array);
+                $this->session->set_flashdata('success_msg', "Your request has been received, we'll treat it as soon as possible.");
+                redirect('dashboard/wallet/');
+            }else{
+                $this->session->set_flashdata('error_msg', "There was an error processing your request.");
+                redirect( $_SERVER['HTTP_REFERER']);
+            }
+        }
+    }
+    private function _submitGet( $data ){
+        $post_url = $data['url'];
+        unset($data['url']);
+        $ponmo = http_build_query($data);
+        $url = $post_url .'?'. $ponmo; // json
+        $headers = array(
+            "GET /HTTP/1.1",
+            "User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.1) Gecko/2008070208 Firefox/3.0.1",
+            "Accept: */* ",
+            "Accept-Language: en-us,en;q=0.5",
+            "Keep-Alive: 300",
+            "Connection: keep-alive"
+        );
+        if( ini_get('allow_url_fopen') ) {
+            $response = file_get_contents($url);
+        } else {
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+            curl_setopt($ch, CURLOPT_POST, false);
+            $response = curl_exec($ch);
+            $response = json_decode($response, TRUE);
+            curl_close($ch);
+        }
+        return $response;
+    }
+    public function callSMSAPI( $data ){
+        $getResponse = $this->_submitGet(
+            array(
+                'url'   => "https://www.nellobytesystems.com/APIBuyBulkSMS.asp",
+                'UserID' => CK_USER_ID,
+                'APIKey' => CK_KEY,
+                'Sender' => 'Gecharl',
+                'Recipient' => '08066795128',
+                'Message' => $data['message']
+//                08151148607
+            )
+        );
+        return json_decode($getResponse, true);
+    }
+
+
+    function get_profile($id){
+        return $this->site->run_sql("SELECT phone, email, name, user_code, wallet, account_type FROM users where id = {$id}")->row();
+    }
+
 }

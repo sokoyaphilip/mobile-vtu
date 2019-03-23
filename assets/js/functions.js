@@ -183,7 +183,7 @@ $(document).ready(function() {
                     console.log(payment_method);
                     if( payment_method === '1' ){ // Payment via Bank Transfer
                         sweet_alert('Info',
-                            `Please pay to any of our account details, and use the transaction ID as reference ${response.message}. <b>Ogechi Charles-Mbaeto</b><br />GTB: 0216290799 or Fidelity: 6070020271 or Keystone: 6021461466.`,
+                            `Please only confirm that you have paid by clicking on "Confirm Payment" at the transaction table below. YOur transaction ID is ${response.message}`,
                             'info', false);
                         $('.swal-button--confirm').on('click', function () {
                             window.location = window.location.href;
@@ -214,7 +214,7 @@ $(document).ready(function() {
 
     });
 
-
+    /*To display bank details for Users*/
     $('#payment_method').on('change', function () {
         $('#bank_col').css('display', 'none');
         let _value = $(this).val();

@@ -66,7 +66,7 @@
 
                                             <div class="col-sm-12">
                                                 <div class="form-group" style="display: none;" id="bank_col">
-                                                    <label class="label" for="Payment method">Payment Method</label>
+                                                    <label class="label" for="Bank">Bank</label>
                                                     <select class="form-control" name="bank" id="bank" required>
                                                         <option value=""> -- Select the bank you're paying to --</option>
                                                         <?php
@@ -126,7 +126,12 @@
                                             <?php foreach( $transactions as $transaction ): ?>
                                                 <tr>
                                                     <td style="display: none"><?= $transaction->id; ?></td>
-                                                    <td><?= $transaction->trans_id; ?></td>
+                                                    <td>
+                                                        <?= $transaction->trans_id; ?>
+                                                        <?php if( $transaction->payment_method == 1 && $transaction->status == 'pending') : ?>
+                                                            <span><a href="<?= base_url('dashboard/payment_made/?tid=' . $transaction->trans_id)?>">Confirm Payment</a></span>
+                                                        <?php endif;?>
+                                                    </td>
                                                     <td><?= neatDate( $transaction->date_initiated) . ' ' . neatTime( $transaction->date_initiated); ?></td>
                                                     <td><?= product_name($transaction->product_id); ?></td>
                                                     <td><?= payment_id_replacer($transaction->description); ?></td>
