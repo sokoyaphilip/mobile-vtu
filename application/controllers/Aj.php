@@ -273,7 +273,7 @@ class Aj extends CI_Controller {
                 $this->return_response($response);
             }else{
                 $user_id = $this->session->userdata('logged_id');
-                $description = ucfirst( $network_name) . " data purchase for {$count} recipent";
+                $description = ucfirst( $network_name) . " data purchase for {$count} recipent ({$message})";
                 $transaction_id = $this->site->generate_code('transactions', 'trans_id');
                 $insert_data = array(
                     'amount'        => $total_amount,
