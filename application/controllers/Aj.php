@@ -718,8 +718,9 @@ class Aj extends CI_Controller {
         $phone_number = $this->input->post('phone_number');
         $discount = $this->input->post('discount');
         $network_name = $this->input->post('network_name', true ); // electricity
-        $wallet = $this->session->userdata('wallet');
         $user_id = $this->session->userdata('logged_id');
+        $wallet = $this->input->post('wallet');
+
 
 
         // verify...
@@ -744,6 +745,11 @@ class Aj extends CI_Controller {
             'user_id'        => $user_id,
             'status'        => 'pending'
         );
+
+        if ( $amount > $wallet){
+            $response['message'] = "Sorry, you don't have sufficient balance for this transaction... Please fund your account.";
+            $this->return_response( $response );
+        }
 
         if( $variation_detail ){
             switch ( $variation_detail->api_source) {
@@ -780,7 +786,7 @@ class Aj extends CI_Controller {
                                 $update_data['status'] = 'fail';
                                 $update_data['orderid'] = $return['content'][0]['requestId'];
                                 $update_data['payment_status'] = $return['response_description'];
-                                $update_data['description'] = "N{$amount} payment  for {$plan_detail->name} " . ucwords( $network_name) . " bill.";
+                                $update_data['description'] = "N{$amount} payment  for {$plan_detail->name} () " . ucwords( $network_name) . " bill.";
                                 $response['status'] = 'error';
                                 $response['message'] = "There was an error subscribing your {$plan_detail->name}, please try again. Contact us if debited..";
                                 $this->return_response( $response );
@@ -804,12 +810,6 @@ class Aj extends CI_Controller {
             }
         }else{
             $response['message'] = "Oops! We can't process your order now, contact us via WhatsApp (" . lang['contact_no']. ")";
-            $this->return_response( $response );
-        }
-
-
-        if( $plan_detail->amount > $wallet ){
-            $response['message'] = "Oops! Sorry you don't have sufficient fund in your wallet to process the order.";
             $this->return_response( $response );
         }
 
