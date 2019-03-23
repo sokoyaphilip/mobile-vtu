@@ -22,6 +22,9 @@
                             <div class="well"></div>
                             <?php $this->load->view('msg_view'); ?>
                             <div class="col-sm-12 sort-panel">
+                                <div class="alert alert-info">
+                                    <h3><b>Please be informed that your account will be blocked if you submit false payment.</b></h3>
+                                </div>
 
                                 <?= form_open('dashboard/payment_made_process/')?>
 
