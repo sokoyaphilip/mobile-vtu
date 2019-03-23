@@ -58,7 +58,7 @@
                                                         <select class="form-control" name="payment_method" id="payment_method" required>
                                                             <option value=""> -- How will you like to pay? --</option>
                                                             <option value="1">Bank Transfer / Deposit</option>
-                                                            <option value="3">Pay Online Via Paystack</option>
+                                                            <option value="3">Pay Online Via Paystack (With Card) - ( 1.5% fee )</option>
                                                         </select>
                                                     </div>
                                                 </div>
