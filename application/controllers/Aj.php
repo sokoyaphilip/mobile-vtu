@@ -186,10 +186,12 @@ class Aj extends CI_Controller {
         $description = "Wallet funding via {{$payment_method}}";
         // paystack charge
         $charge = 0;
-        if( $amount < 2500 ){
-            $charge = (1.5 * 100 ) * $amount;
-        }elseif( $amount > 2500 ){
-            $charge = ((1.5 * 100) * $amount ) + 100;
+        if( $payment_method == 3 ){
+            if( $amount < 2500 ){
+                $charge = (1.5 * $amount ) / $amount;
+            }elseif( $amount > 2500 ){
+                $charge = (1.5 * $amount ) / $amount + 100;
+            }
         }
         $insert_data = array(
             'amount'        => $amount,
@@ -527,10 +529,14 @@ class Aj extends CI_Controller {
             $description = ucfirst( $network_name) . " ({$amount}) airtime purchase for {$message} recipent";
             $transaction_id = $this->site->generate_code('transactions', 'trans_id');
             $charge = 0;
-            if( $total_amount < 2500 ){
-                $charge = (1.5 * 100 ) * $amount;
-            }elseif( $total_amount > 2500 ){
-                $charge = ((1.5 * 100) * $amount ) + 100;
+            $payment_method = 3;
+            if( $payment_method == 3 ) {
+
+                if( $total_amount < 2500 ){
+                    $charge = (1.5 * $amount ) / $amount;
+                }elseif( $total_amount > 2500 ){
+                    $charge = (1.5 * $amount ) / $amount + 100;
+                }
             }
             $insert_data = array(
                 'amount'        => $total_amount,
