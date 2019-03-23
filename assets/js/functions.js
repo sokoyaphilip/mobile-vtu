@@ -962,7 +962,7 @@ function payWithPaystack( data ){
             verifyPaystack( response.reference, data.ref );
         },
         onClose: function(){
-            sweet_alert('Info', "You closed the window, and for this reason we couldn'nt validate your payment", 'info');
+            sweet_alert('Info', "You closed the window, and for this reason we could'nt validate your payment", 'info');
         }
     });
     handler.openIframe();
