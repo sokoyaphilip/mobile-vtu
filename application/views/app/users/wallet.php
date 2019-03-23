@@ -63,6 +63,21 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div class="col-sm-12" style="display: none;" id="bank_col">
+                                                <div class="form-group">
+                                                    <label class="label" for="Payment method">Payment Method</label>
+                                                    <select class="form-control" name="bank" id="bank" required>
+                                                        <option value=""> -- Select the bank you're paying to --</option>
+                                                        <?php
+                                                        $banks = explode(',', lang('company_banks'));
+                                                        foreach( $banks as $bank ):
+                                                            ?>
+                                                            <option value="<?= trim( $bank ); ?>"> <?= trim($bank); ?> </option>
+                                                        <?php endforeach;?>
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <input type="hidden" name="product_id" id="product_id" value="6" />
                                             <input type="hidden" name="post_type" value="wallet_funding" />
                                             <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear</button>&nbsp;&nbsp;

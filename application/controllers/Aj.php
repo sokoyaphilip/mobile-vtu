@@ -906,8 +906,8 @@ class Aj extends CI_Controller {
                 'url'   => "https://www.nellobytesystems.com/APIBuyBulkSMS.asp",
                 'UserID' => CK_USER_ID,
                 'APIKey' => CK_KEY,
-                'Sender' => 'AFRICASTKNG',
-                'Recipient' => '08070994845',
+                'Sender' => 'Gecharl',
+                'Recipient' => '08066795128',
                 'Message' => $data['message']
 //                08151148607
             )
@@ -1030,10 +1030,11 @@ class Aj extends CI_Controller {
                             $this->db->trans_complete();
                             if ($this->db->trans_status() === FALSE){
                                 $this->db->trans_rollback();
-                                $response['message'] = "There was an error updating your payment. PLease chat us up if debited.";
+                                $response['message'] = "There was an error updating your payment. Please chat us up if debited.";
                                 $this->return_response($response);
                             }else{
                                 // Send a message to the admin??
+
                                 $this->db->trans_commit();
                                 $response['status'] = 'success';
                                 $response['message'] = "Transaction successful.";

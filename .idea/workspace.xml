@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/application/controllers/Aj.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Aj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/app/users/wallet.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/app/users/wallet.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/functions.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,10 +20,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="197" column="25" selection-start-line="197" selection-start-column="25" selection-end-line="197" selection-end-column="25" />
+            <state relative-caret-position="295">
+              <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
               <folding>
                 <element signature="e#14#593#0" />
+                <element signature="e#5081#7561#0" />
                 <element signature="e#13321#16768#0" />
                 <element signature="e#16842#19139#0" />
                 <element signature="n#!!block;n#format_currency#0" />
@@ -51,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="537" column="40" selection-start-line="537" selection-start-column="40" selection-end-line="537" selection-end-column="40" />
+            <state relative-caret-position="160">
+              <caret line="194" column="9" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="9" />
               <folding>
                 <element signature="n#fetch_plans#0;n#Aj#0;n#!!top" />
                 <element signature="n#tv_cable#0;n#Aj#0;n#!!top" />
@@ -94,11 +96,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/app/users/wallet.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="57" column="105" selection-start-line="57" selection-start-column="91" selection-end-line="57" selection-end-column="105" />
+            <state relative-caret-position="391">
+              <caret line="79" column="50" selection-start-line="79" selection-start-column="50" selection-end-line="79" selection-end-column="50" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="259" column="27" selection-start-line="259" selection-start-column="18" selection-end-line="259" selection-end-column="27" />
+            <state relative-caret-position="100">
+              <caret line="239" column="60" selection-start-line="239" selection-start-column="60" selection-end-line="239" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -138,8 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>there was</find>
-      <find>callSm</find>
       <find>slide</find>
       <find>airtime-purchase</find>
       <find>calls</find>
@@ -153,14 +156,12 @@
       <find>trans</find>
       <find>elect</find>
       <find>electr</find>
-      <find>data</find>
       <find>inser</find>
       <find>electric</find>
       <find>electricity</find>
       <find>payment</find>
       <find>paymen</find>
       <find>fund</find>
-      <find>password_</find>
       <find>forgot</find>
       <find>pay-now</find>
       <find>payment_method</find>
@@ -168,6 +169,10 @@
       <find>fund_wall</find>
       <find>fund_</find>
       <find>charge</find>
+      <find>password_</find>
+      <find>data</find>
+      <find>fund_walle</find>
+      <find>amount += charge;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -210,7 +215,6 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/composer.lock" />
         <option value="$PROJECT_DIR$/assets/css/theme-1.css" />
-        <option value="$PROJECT_DIR$/application/views/app/users/wallet.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/dashboard.php" />
         <option value="$PROJECT_DIR$/application/controllers/Dashboard.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/data.php" />
@@ -225,8 +229,9 @@
         <option value="$PROJECT_DIR$/application/controllers/Page.php" />
         <option value="$PROJECT_DIR$/application/views/resources/meta.php" />
         <option value="$PROJECT_DIR$/application/helpers/site_helper.php" />
-        <option value="$PROJECT_DIR$/assets/js/functions.js" />
         <option value="$PROJECT_DIR$/application/controllers/Aj.php" />
+        <option value="$PROJECT_DIR$/assets/js/functions.js" />
+        <option value="$PROJECT_DIR$/application/views/app/users/wallet.php" />
       </list>
     </option>
   </component>
@@ -395,12 +400,12 @@
       <workItem from="1553114560258" duration="43405000" />
       <workItem from="1553242029342" duration="5257000" />
       <workItem from="1553257752750" duration="14069000" />
-      <workItem from="1553338544906" duration="8142000" />
+      <workItem from="1553338544906" duration="10056000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="563758000" />
+    <option name="totallyTimeSpent" value="565672000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -738,13 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="259" column="27" selection-start-line="259" selection-start-column="18" selection-end-line="259" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Auth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
@@ -773,13 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/app/users/wallet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="57" column="105" selection-start-line="57" selection-start-column="91" selection-end-line="57" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/production/constants.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
@@ -787,12 +778,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="239" column="60" selection-start-line="239" selection-start-column="60" selection-end-line="239" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="194" column="9" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="9" />
+          <folding>
+            <element signature="n#fetch_plans#0;n#Aj#0;n#!!top" />
+            <element signature="n#tv_cable#0;n#Aj#0;n#!!top" />
+            <element signature="n#electricity_bill#0;n#Aj#0;n#!!top" />
+            <element signature="n#verify_iuc_number#0;n#Aj#0;n#!!top" />
+            <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="197" column="25" selection-start-line="197" selection-start-column="25" selection-end-line="197" selection-end-column="25" />
+        <state relative-caret-position="295">
+          <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
           <folding>
             <element signature="e#14#593#0" />
+            <element signature="e#5081#7561#0" />
             <element signature="e#13321#16768#0" />
             <element signature="e#16842#19139#0" />
             <element signature="n#!!block;n#format_currency#0" />
@@ -802,16 +815,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
+    <entry file="file://$PROJECT_DIR$/application/views/app/users/wallet.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="537" column="40" selection-start-line="537" selection-start-column="40" selection-end-line="537" selection-end-column="40" />
+        <state relative-caret-position="391">
+          <caret line="79" column="50" selection-start-line="79" selection-start-column="50" selection-end-line="79" selection-end-column="50" />
           <folding>
-            <element signature="n#fetch_plans#0;n#Aj#0;n#!!top" />
-            <element signature="n#tv_cable#0;n#Aj#0;n#!!top" />
-            <element signature="n#electricity_bill#0;n#Aj#0;n#!!top" />
-            <element signature="n#verify_iuc_number#0;n#Aj#0;n#!!top" />
-            <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

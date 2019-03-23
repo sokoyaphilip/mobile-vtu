@@ -213,7 +213,15 @@ $(document).ready(function() {
         });
 
     });
-    
+
+
+    $('#payment_method').on('change', function () {
+        $('#bank_col').css('display', 'none');
+        let _value = $(this).val();
+        if( _value === 1 ) { $('#bank_col').css('display', 'block'); }
+    });
+
+
     // Data Purchase
     $('.data-purchase').on('click', function (e) {
 
