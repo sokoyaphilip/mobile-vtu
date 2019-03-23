@@ -516,7 +516,7 @@ $(document).ready(function() {
         let network = $('#plan').find(':selected').data('service-id');
         let discount = $('#plan').find(':selected').data('service-discount');
         let meter_name = $('#user_meter_name').val();
-        let wallet = _btn('balance');
+        let wallet = _btn.data('balance');
 
         if( amount === '') {
             _btn.prop('disabled', false);
