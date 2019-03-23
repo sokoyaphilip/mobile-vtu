@@ -47,18 +47,18 @@ class Admin extends CI_Controller {
         $first_day = date('Y-m-d', strtotime('first day of the week'));
         $last_day = date('Y-m-d', strtotime('last day of the week'));
         $page_data['week'] = $this->site->run_sql("SELECT SUM(amount) amount FROM transactions 
-        WHERE date_initiated BETWEEN('{$first_day}' AND '{$last_day}') AND (status = 'success' OR status = 'approve' )  ")->row()->amount;
+        WHERE date_initiated BETWEEN('{$first_day}' AND '{$last_day}') AND (status = 'success' OR status = 'approved' )  ")->row()->amount;
 
         $first_day = date('Y-m-d', strtotime('first day of the month'));
         $last_day = date('Y-m-d', strtotime('last day of the month'));
         $page_data['month'] = $this->site->run_sql("SELECT SUM(amount) amount FROM transactions 
-        WHERE date_initiated BETWEEN('{$first_day}' AND '{$last_day}') AND (status = 'success' OR status = 'approve' ) ")->row()->amount;
+        WHERE date_initiated BETWEEN('{$first_day}' AND '{$last_day}') AND (status = 'success' OR status = 'approved' ) ")->row()->amount;
 
 
         $first_day = date('Y-m-d', strtotime('first day of the year'));
         $last_day = date('Y-m-d', strtotime('last day of the year'));
         $page_data['year'] = $this->site->run_sql("SELECT SUM(amount) amount FROM transactions 
-        WHERE date_initiated BETWEEN ('{$first_day}' AND '{$last_day}') AND (status = 'success' OR status = 'approve' )")->row()->amount;
+        WHERE date_initiated BETWEEN ('{$first_day}' AND '{$last_day}') AND (status = 'success' OR status = 'approved' )")->row()->amount;
 
         $page_data['transactions'] = $this->site->run_sql( $query )->result();
 		$this->load->view('app/admin/dashboard', $page_data);
@@ -177,8 +177,9 @@ class Admin extends CI_Controller {
     public function confirm_payment(){
         $tid = $this->input->get('tid', true);
         if( $tid ){
-            $row = $this->site->run_sql("SELECT t.amount t.id, s.bank_name, s.amount_paid, s.deposit_type, s.remark, s.date_paid FROM transactions t JOIN transaction_status s ON (s.tid = t.trans_id)")->row();
-
+            $page_data['row'] = $this->site->run_sql("SELECT t.amount t.id, s.bank_name, s.amount_paid, s.deposit_type, s.remark, s.date_paid FROM transactions t JOIN transaction_status s ON (s.tid = t.trans_id)")->row();
+            $page_data['users'] = $this->site->get_result('users');
+            $this->load->view('app/admin/confirm+payment', $page_data);
         }
     }
 

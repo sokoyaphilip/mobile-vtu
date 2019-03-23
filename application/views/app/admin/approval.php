@@ -152,12 +152,6 @@
 
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
-    <script>
-        $(document).ready( function () {
-            $('.table').DataTable();
-        } );
-    </script>
-
 </body>
 </html>
 
