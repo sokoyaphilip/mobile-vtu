@@ -54,7 +54,9 @@
                                                         <td style="display: none;"><?= $funding->id; ?></td>
                                                         <td>
                                                             <?= $funding->trans_id; ?>
-                                                            <?php if($funding->status == 'pending' && $this->site->run_sql("SELECT id FROM transaction_status WHERE tid = {$funding->trans_id}")->num_rows()) : ?>
+                                                            <?php
+                                                                $check = $this->site->run_sql("SELECT id FROM transaction_status WHERE tid = {$funding->trans_id}")->num_rows();
+                                                            if( count($check)) : ?>
                                                                 <span><a href="<?= base_url('admin/confirm_payment/?tid='. $funding->trans_id);?>">Confirm Payment</a></span>
                                                             <?php endif;?>
                                                         </td>
