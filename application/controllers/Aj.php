@@ -1018,7 +1018,7 @@ class Aj extends CI_Controller {
                             $this->db->trans_start();
                             $this->site->update('transactions', array('status' => 'success', 'payment_status' => $result['message']), "(trans_id = {$ref})" );
                             if( $row->product_id == 6){
-                                // WAllet funding
+                                // WAlleNPat funding
                                 $this->site->set_field('users', 'wallet', "wallet+{$amount}", "id={$row->user_id}");
                             }
                             $this->db->trans_complete();
