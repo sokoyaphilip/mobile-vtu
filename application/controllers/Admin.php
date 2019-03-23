@@ -174,6 +174,13 @@ class Admin extends CI_Controller {
 
     }
 
+    public function confirm_payment(){
+        $tid = $this->input->get('tid', true);
+        if( $tid ){
+
+        }
+    }
+
 
     /*
      * Users

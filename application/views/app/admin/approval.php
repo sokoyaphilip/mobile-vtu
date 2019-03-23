@@ -38,6 +38,7 @@
                                             <table class="table table-striped" id="table">
                                                 <thead>
                                                 <tr>
+                                                    <th style="display: none"></th>
                                                     <th>ID</th>
                                                     <th>Name</th>
                                                     <th>Phone / Email</th>
@@ -50,7 +51,13 @@
                                                 <tbody>
                                                 <?php foreach( $fundings as $funding ): ?>
                                                     <tr>
-                                                        <td><?= $funding->trans_id; ?></td>
+                                                        <td style="display: none;"><?= $funding->id; ?></td>
+                                                        <td>
+                                                            <?= $funding->trans_id; ?>
+                                                            <?php if($funding->status == 'pending' && $this->site->run_sql("SELECT id FROM transaction_status WHERE tid = {$funding->trans_id}")->num_rows()) : ?>
+                                                                <span><a href="<?= base_url('admin/confirm_payment/?tid='. $funding->trans_id);?>">Confirm Payment</a></span>
+                                                            <?php endif;?>
+                                                        </td>
                                                         <td><?= (!is_null($funding->name)) ? ucwords($funding->name) : 'Not Set'; ?></td>
                                                         <td><?= $funding->phone . ' / ' . $funding->email; ?></td>
                                                         <td><?= neatDate( $funding->date_initiated); ?></td>
