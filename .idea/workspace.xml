@@ -4,7 +4,6 @@
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/application/controllers/Aj.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Aj.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/app/users/electricity.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/app/users/electricity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/app/users/subscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/app/users/subscription.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,8 +68,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="768" column="73" selection-start-line="768" selection-start-column="73" selection-end-line="768" selection-end-column="73" />
+            <state relative-caret-position="190">
+              <caret line="769" column="51" lean-forward="true" selection-start-line="769" selection-start-column="51" selection-end-line="769" selection-end-column="51" />
               <folding>
                 <element signature="n#fetch_plans#0;n#Aj#0;n#!!top" />
                 <element signature="n#quick_airtime#0;n#Aj#0;n#!!top" />
@@ -119,8 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/app/users/electricity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="125" selection-end-column="38" />
+            <state relative-caret-position="76">
+              <caret line="98" column="28" selection-start-line="98" selection-start-column="28" selection-end-line="126" selection-end-column="34" />
               <folding>
                 <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
                 <element signature="e#5627#5633#0#HTML" expanded="true" />
@@ -168,7 +167,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>verify</find>
       <find>processing</find>
       <find>reta</find>
       <find>electricity_bill</find>
@@ -198,6 +196,7 @@
       <find>data</find>
       <find>electr</find>
       <find>inser</find>
+      <find>electricity</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -254,8 +253,8 @@
         <option value="$PROJECT_DIR$/application/helpers/site_helper.php" />
         <option value="$PROJECT_DIR$/application/config/development/constants.php" />
         <option value="$PROJECT_DIR$/application/config/production/constants.php" />
-        <option value="$PROJECT_DIR$/application/views/app/users/electricity.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/subscription.php" />
+        <option value="$PROJECT_DIR$/application/views/app/users/electricity.php" />
         <option value="$PROJECT_DIR$/application/controllers/Aj.php" />
       </list>
     </option>
@@ -424,12 +423,12 @@
       <workItem from="1553092433877" duration="9819000" />
       <workItem from="1553114560258" duration="43405000" />
       <workItem from="1553242029342" duration="5257000" />
-      <workItem from="1553257752750" duration="10186000" />
+      <workItem from="1553257752750" duration="10364000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="551733000" />
+    <option name="totallyTimeSpent" value="551911000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -829,20 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/app/users/electricity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="125" selection-end-column="38" />
-          <folding>
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
-            <element signature="e#5627#5633#0#HTML" expanded="true" />
-            <element signature="e#5633#5639#0#HTML" expanded="true" />
-            <element signature="n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#body#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/app/users/subscription.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="376">
@@ -855,10 +840,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/app/users/electricity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="98" column="28" selection-start-line="98" selection-start-column="28" selection-end-line="126" selection-end-column="34" />
+          <folding>
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
+            <element signature="e#5627#5633#0#HTML" expanded="true" />
+            <element signature="e#5633#5639#0#HTML" expanded="true" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#body#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="768" column="73" selection-start-line="768" selection-start-column="73" selection-end-line="768" selection-end-column="73" />
+        <state relative-caret-position="190">
+          <caret line="769" column="51" lean-forward="true" selection-start-line="769" selection-start-column="51" selection-end-line="769" selection-end-column="51" />
           <folding>
             <element signature="n#fetch_plans#0;n#Aj#0;n#!!top" />
             <element signature="n#quick_airtime#0;n#Aj#0;n#!!top" />
