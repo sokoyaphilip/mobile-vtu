@@ -162,7 +162,7 @@ $(document).ready(function() {
         let payment_method = $('#payment_method').val();
         let amount = $('#pay_amount').val();
         let product_id = $('#product_id').val();
-
+        let bank = $('#bank').val();
         if( amount < 500 ){
             sweet_alert('error', 'You can only pay N500 and above', 'error');
             _this.prop('disabled', false);
@@ -177,7 +177,7 @@ $(document).ready(function() {
         $.ajax({
             url : base_url + 'aj/fund_wallet/',
             method : "POST",
-            data : {'payment_method' : payment_method, 'amount' : amount, 'product_id' : product_id },
+            data : {'payment_method' : payment_method, 'amount' : amount, 'product_id' : product_id, 'bank' : bank },
             success: function (response) {
                 if( response.status === 'success' ){
                     console.log(payment_method);
@@ -216,9 +216,11 @@ $(document).ready(function() {
 
     /*To display bank details for Users*/
     $('#payment_method').on('change', function () {
-        $('#bank_col').css('display', 'none');
+        $('#bank_col').css({'display' :'none'});
         let _value = $(this).val();
-        if( _value === 1 ) { $('#bank_col').css('display', 'block'); }
+        if( _value === '1' ) {
+            $('#bank_col').css({'display' :'block'});
+        }
     });
 
 

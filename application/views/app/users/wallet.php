@@ -63,19 +63,20 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <div class="col-sm-12">
-                                                <div class="form-group" style="display: none;" id="bank_col">
-                                                    <label class="label" for="Bank">Bank</label>
-                                                    <select class="form-control" name="bank" id="bank" required>
-                                                        <option value=""> -- Select the bank you're paying to --</option>
-                                                        <?php
-                                                        $banks = explode(',', lang('company_banks'));
-                                                        foreach( $banks as $bank ):
-                                                            ?>
-                                                            <option value="<?= trim( $bank ); ?>"> <?= trim($bank); ?> </option>
-                                                        <?php endforeach;?>
-                                                    </select>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group" style="display: none;" id="bank_col">
+                                                        <label class="label" for="Bank">Bank</label>
+                                                        <select class="form-control" name="bank" id="bank" required>
+                                                            <option value=""> -- Select the bank you're paying to --</option>
+                                                            <?php
+                                                            $banks = explode(',', lang('company_banks'));
+                                                            foreach( $banks as $bank ):
+                                                                ?>
+                                                                <option value="<?= trim( $bank ); ?>"> <?= trim($bank); ?> </option>
+                                                            <?php endforeach;?>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
 
