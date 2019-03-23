@@ -64,8 +64,8 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-sm-12" style="display: none;" id="bank_col">
-                                                <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="form-group" style="display: none;" id="bank_col">
                                                     <label class="label" for="Payment method">Payment Method</label>
                                                     <select class="form-control" name="bank" id="bank" required>
                                                         <option value=""> -- Select the bank you're paying to --</option>
