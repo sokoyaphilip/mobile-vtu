@@ -177,6 +177,7 @@ class Admin extends CI_Controller {
     public function confirm_payment(){
         $tid = $this->input->get('tid', true);
         if( $tid ){
+            $row = $this->site->run_sql("SELECT t.amount t.id, s.bank_name, s.amount_paid, s.deposit_type, s.remark, s.date_paid FROM transactions t JOIN transaction_status s ON (s.tid = t.trans_id)")->row();
 
         }
     }

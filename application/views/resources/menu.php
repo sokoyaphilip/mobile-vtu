@@ -14,13 +14,14 @@
             <div class="navbar-collapse collapse justify-content-end" id="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="<?php if( $page == 'home') echo 'active'; ?> nav-item"><a class="nav-link" href="<?= base_url()?>">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="<?php if( $page == 'pricing') echo 'active'; ?> nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Data Pricing <i class="fa fa-angle-down"></i></a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="<?= base_url('reseller-data-pricing/')?>">Reseller Data Pricing</a>
-                            <a class="dropdown-item" href="<?= base_url('retail-data-pricing/')?>">Retail Data Pricing</a>
-                        </div>
-                    </li><!--//dropdown-->
+<!--                    <li class="nav-item dropdown">-->
+<!--                        <a class="--><?php //if( $page == 'pricing') echo 'active'; ?><!-- nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Data Pricing <i class="fa fa-angle-down"></i></a>-->
+<!--                        <div class="dropdown-menu dropdown-menu-right">-->
+<!--                            <a class="dropdown-item" href="--><?//= base_url('reseller-data-pricing/')?><!--">Reseller Data Pricing</a>-->
+<!--                            <a class="dropdown-item" href="--><?//= base_url('retail-data-pricing/')?><!--">Retail Data Pricing</a>-->
+<!--                        </div>-->
+<!--                    </li>-->
+                    <!--//dropdown-->
 
                     <li class="nav-item dropdown">
                         <a class="<?php if( $page == 'pricing') echo 'active'; ?> nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Services <i class="fa fa-angle-down"></i></a>

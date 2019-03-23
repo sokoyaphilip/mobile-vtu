@@ -109,7 +109,7 @@
                                         <tr>
                                             <td style="display: none;"><?= $transaction->id; ?></td>
                                             <td><?= $transaction->trans_id; ?></td>
-                                            <td><?= $transaction->phone; ?></td>
+                                            <td><?= $transaction->name . '('.$transaction->phone.')'; ?></td>
                                             <td><?= neatDate( $transaction->date_initiated) . ' ' . neatTime( $transaction->date_initiated); ?></td>
                                             <td><?= paymentMethod($transaction->payment_method); ?></td>
                                             <td><?= payment_id_replacer($transaction->description); ?></td>

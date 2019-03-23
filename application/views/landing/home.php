@@ -130,9 +130,9 @@
         </div><!--//container-->
     </section><!--//price-plan-->
 
-    <div class="more text-center" style="padding-bottom: 30px;">
-        <a class="btn btn-cta btn-cta-secondary" href="<?= base_url('retail-data-pricing/')?>">Retail Data Pricing</a>
-    </div>
+<!--    <div class="more text-center" style="padding-bottom: 30px;">-->
+<!--        <a class="btn btn-cta btn-cta-secondary" href="--><?//= base_url('retail-data-pricing/')?><!--">Retail Data Pricing</a>-->
+<!--    </div>-->
 
     <?php $this->load->view('resources/faq'); ?>
 
