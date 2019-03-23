@@ -188,9 +188,9 @@ class Aj extends CI_Controller {
         $charge = 0;
         if( $payment_method == 3 ){
             if( $amount < 2500 ){
-                $charge = (1.5 * $amount ) / $amount;
+                $charge = (1.5 / 100 ) * $amount;
             }elseif( $amount > 2500 ){
-                $charge = (1.5 * $amount ) / $amount + 100;
+                $charge = (1.5 / 100 ) * $amount + 100;
             }
         }
         $insert_data = array(
@@ -533,9 +533,9 @@ class Aj extends CI_Controller {
             if( $payment_method == 3 ) {
 
                 if( $total_amount < 2500 ){
-                    $charge = (1.5 * $amount ) / $amount;
+                    $charge = (1.5 / 100 ) * $amount;
                 }elseif( $total_amount > 2500 ){
-                    $charge = (1.5 * $amount ) / $amount + 100;
+                    $charge = (1.5 / 100 ) * $amount + 100;
                 }
             }
             $insert_data = array(
