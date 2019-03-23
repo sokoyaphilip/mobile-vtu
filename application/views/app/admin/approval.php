@@ -56,7 +56,7 @@
                                                             <?= $funding->trans_id; ?>
                                                             <?php
                                                                 $check = $this->site->run_sql("SELECT id FROM transaction_status WHERE tid = {$funding->trans_id}")->num_rows();
-                                                            if( count($check)) : ?>
+                                                            if( $check > 0 ) : ?>
                                                                 <span><a href="<?= base_url('admin/confirm_payment/?tid='. $funding->trans_id);?>">Confirm Payment</a></span>
                                                             <?php endif;?>
                                                         </td>
