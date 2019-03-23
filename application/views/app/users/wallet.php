@@ -78,6 +78,8 @@
                                                     </select>
                                                 </div>
                                             </div>
+
+
                                             <input type="hidden" name="product_id" id="product_id" value="6" />
                                             <input type="hidden" name="post_type" value="wallet_funding" />
                                             <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear</button>&nbsp;&nbsp;
