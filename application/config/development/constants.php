@@ -104,7 +104,7 @@ defined('CK_AIRTIME_URL')      OR define('CK_AIRTIME_URL', "https://www.nellobyt
 
 
 // VT PASS
-defined('VTPASS_HOST') OR define('VTPASS_HOST', "http://sandbox.vtpass.com/api/payfix");
+defined('VTPASS_HOST') OR define('VTPASS_HOST', "http://sandbox.vtpass.com/api/payflex");
 defined('VTPASS_USERNAME') OR define('VTPASS_USERNAME', "sandbox@vtpass.com");
 defined('VTPASS_PASSWORD') OR define('VTPASS_PASSWORD', "sandbox");
 
