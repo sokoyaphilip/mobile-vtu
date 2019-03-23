@@ -97,7 +97,8 @@
 
                             </div>
                         </div>
-                        <h4>10 latest transactions on Electricity Payment</h4><hr />
+
+                        <h4>10 latest transactions on Electricity Bills</h4><hr />
                         <div style="margin-top: 20px" class="table-responsive">
                             <table class="table table-striped" id="table">
                                 <thead>
@@ -126,6 +127,7 @@
                                 </tbody>
                             </table>
                         </div>
+
                     </div>
                 </div>
 
