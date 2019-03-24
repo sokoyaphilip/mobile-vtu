@@ -177,10 +177,12 @@ class Admin extends CI_Controller {
     public function confirm_payment(){
         $tid = $this->input->get('tid', true);
         if( $tid ){
-            $page_data['row'] = $this->site->run_sql("SELECT t.amount t.id, s.bank_name, s.amount_paid, s.deposit_type, s.remark, s.date_paid FROM transactions t LEFT JOIN transaction_status s ON (s.tid = t.trans_id) 
+            $page_data['row'] = $this->site->run_sql("SELECT t.amount, t.id,t.user_id, s.bank_name, s.amount_paid, s.deposit_type, s.remark, s.date_paid FROM transactions t LEFT JOIN transaction_status s ON (s.tid = t.trans_id) 
 WHERE t.trans_id = {$tid}")->row();
             $page_data['users'] = $this->site->get_result('users');
-            $this->load->view('app/admin/confirm+payment', $page_data);
+            $page_data['title'] = "Confirm Payment";
+            $page_data['page'] = 'Confirm Payment';
+            $this->load->view('app/admin/confirm_payment', $page_data);
         }
     }
 

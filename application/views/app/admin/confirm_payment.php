@@ -21,47 +21,52 @@
                         <div class="content right-content">
                             <div class="col-sm-12 sort-panel">
                                 <?php $this->load->view('msg_view');?>
-                                <form method="POST" action="<?= base_url('admin/plans/')?>">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <h4>Paid From : <?= $row->bank_name; ?></h4>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <h4>Amount Paid : <?= $row->amount_paid; ?></h4>
-                                        </div>
-
-                                        <div class="col-sm-6">
-                                            <h4>Deposit Type : <?= $row->deposit_type; ?></h4>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <h4>Date Paid : <?= date('Y/m/d', strtotime($row->date_paid)); ?></h4>
-                                        </div>
-
-                                        <div class="col-sm-12">
-                                            <label>Remark</label>
-                                            <p><?= $row->remark; ?></p>
-                                        </div>
-
-                                        <div class="col-sm-6">
-                                            <h4>Amount Initiated To Pay : <?= $row->amount; ?></h4>
-                                        </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h3>Paid From</h3>
+                                        <?= $row->bank_name; ?>
                                     </div>
 
-                                    <form class="form-inline" method="post" action="<?= base_url('admin/approval')?>" id="<?= $funding->id?>">
-                                        <div class="form-group mx-sm-3 mb-2">
-                                            <label for="action" class="sr-only">Action</label>
-                                            <select class="form-control-sm" name="action" required>
-                                                <option value=""> -- Select action --</option>
-                                                <option value="approved"> Approve </option>
-                                                <option value="declined"> Decline </option>
-                                            </select>
-                                            <input type="hidden" name="txn_id" value="<?= $funding->id; ?>" />
-                                            <input type="hidden" name="user_id" value="<?= $funding->user_id; ?>" />
-                                            <input type="hidden" name="amount" value="<?= $funding->amount; ?>" />
-                                        </div>
-                                        <button type="submit" class="btn btn-sm btn-outline-success mb-2">Submit</button>
-                                    </form>
+                                    <div class="col-sm-12">
+                                        <h3>Amount Paid</h3>
+                                        <?= ngn($row->amount_paid); ?>
+                                    </div>
 
+                                    <div class="col-sm-12">
+                                        <h3>Deposit Type </h3>
+                                        <?= $row->deposit_type; ?>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <h3>Date Paid : </h3>
+                                        <?= date('Y/m/d', strtotime($row->date_paid)); ?>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <h3>Remark</h3>
+                                        <?= $row->remark; ?>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <h3>Amount Initiated To Pay </h3>
+                                        <?= ngn($row->amount); ?>
+                                    </div>
+                                </div>
+                                <br />
+                                <h4>Action</h4>
+                                <form class="form-inline" method="post" action="<?= base_url('admin/approval')?>">
+                                    <div class="form-group mx-sm-3 mb-2">
+                                        <label for="action" class="sr-only">Action</label>
+                                        <select class="form-control-sm" name="action" required>
+                                            <option value=""> -- Select action --</option>
+                                            <option value="approved"> Approve </option>
+                                            <option value="declined"> Decline </option>
+                                        </select>
+                                        <input type="hidden" name="txn_id" value="<?= $row->id; ?>" />
+                                        <input type="hidden" name="user_id" value="<?= $row->user_id; ?>" />
+                                        <input type="hidden" name="amount" value="<?= $row->amount; ?>" />
+                                    </div>
+                                    <button type="submit" class="btn btn-sm btn-outline-success mb-2">Submit</button>
                                 </form>
                             </div>
                         </div>
