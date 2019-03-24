@@ -30,6 +30,8 @@
                                             <th>Email/Phone</th>
                                             <th>Wallet</th>
                                             <th>Last Login</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -42,6 +44,8 @@
                                                 <td><?= $user->email . ' ' . $user->phone; ?></td>
                                                 <td><?= $user->wallet; ?></td>
                                                 <td><?= neatDate($user->last_login) . ' ' . neatTime($user->last_login); ?></td>
+                                                <td><?= $user->status; ?></td>
+                                                <td>Action</td>
                                             </tr>
                                         <?php endforeach; ?>
                                         </tbody>
