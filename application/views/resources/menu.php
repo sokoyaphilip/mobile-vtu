@@ -26,11 +26,11 @@
                     <li class="nav-item dropdown">
                         <a class="<?php if( $page == 'pricing') echo 'active'; ?> nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Services <i class="fa fa-angle-down"></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#">Internet Data</a>
-                            <a class="dropdown-item" href="#">Airtime Purchase</a>
-                            <a class="dropdown-item" href="#">Electricity Bills</a>
-                            <a class="dropdown-item" href="#">TV subscription</a>
-                            <a class="dropdown-item" href="#">Airtime to Cash</a>
+                            <a class="dropdown-item" href="<?= base_url('auth/login/'); ?>">Internet Data</a>
+                            <a class="dropdown-item" href="<?= base_url('auth/login/'); ?>">Airtime Purchase</a>
+                            <a class="dropdown-item" href="<?= base_url('auth/login/'); ?>">Electricity Bills</a>
+                            <a class="dropdown-item" href="<?= base_url('auth/login/'); ?>">TV subscription</a>
+                            <a class="dropdown-item" href="<?= base_url('auth/login/'); ?>">Airtime to Cash</a>
                         </div>
                     </li><!--//dropdown-->
                     <li class="<?php if( $page == 'about') echo 'active'; ?> nav-item"><a class="nav-link" href="<?= base_url('about/'); ?>">About Us</a></li>

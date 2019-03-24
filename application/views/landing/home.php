@@ -57,7 +57,7 @@
     <section id="why" class="why section">
         <div class="container">
             <h2 class="title text-center">Why Use Gecharl.com</h2>
-            <p class="intro text-center">With gecharl, you are sure of saving up to 4% of your data subscription, airtime, electricity, TV cable bills</p>
+            <p class="intro text-center">With Gecharl you are sure of saving up to 20% on your data purchase. Get discount when you purchase airtime and pay bills at your finger tips</p>
             <div class="row">
                 <div style="padding-bottom: 0px; margin-bottom: -140px;" class="benefits col-lg-6 col-md-6 col-12">
                     <div class="item">

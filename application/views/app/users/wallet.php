@@ -30,7 +30,7 @@
                                         <a class="nav-link active" id="fund-tab" data-toggle="tab" href="#fund_tab" role="tab" aria-controls="fund" aria-selected="true">Fund Wallet</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="transfer-tab" data-toggle="tab" href="#transfer_tab" role="tab" aria-controls="transfer" aria-selected="false">Fund Transfer</a>
+                                        <a class="nav-link" id="transfer-tab" data-toggle="tab" href="#transfer_tab" role="tab" aria-controls="transfer" aria-selected="false">Wallet Transfer</a>
                                     </li>
                                 </ul>
 

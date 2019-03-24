@@ -11,12 +11,13 @@
                 </div><!--//foooter-col-->
                 <div class="footer-col col-lg-3 col-md-4 col-12 mr-lg-auto links">
                     <div class="footer-col-inner">
-                        <h3 class="title">Quick Link</h3>
+                        <h3 class="title">Services We Offer Link</h3>
                         <ul class="list-unstyled">
-                            
-                            <li><a class="text-white" href="<?= base_url('reseller-data-pricing')?>"><i class="fas fa-caret-right"></i>Reseller Data Pricing</a></li>
-                            <li><a class="text-white" href="<?= base_url('retail-data-pricing')?>"><i class="fas fa-caret-right"></i>Retail Data Pricing</a></li>
-
+                            <li>Internet Data</li>
+                            <li>Airtime Purchase</li>
+                            <li>Electricity Bills</li>
+                            <li>TV Subscription</li>
+                            <li>Airtime to Cash</li>
                         </ul>
                     </div><!--//footer-col-inner-->
                 </div><!--//foooter-col-->

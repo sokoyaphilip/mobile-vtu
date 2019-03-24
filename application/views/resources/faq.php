@@ -94,6 +94,18 @@
                     </div>
                 </div><!--//card-->
 
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"><a data-parent="#accordion" data-toggle="collapse" class="card-toggle" href="#faq14"><i class="fas fa-plus-square"></i>I paid into your bank account but my wallet was not autocredited/</a></h4>
+                    </div>
+
+                    <div class="card-collapse collapse" id="faq14">
+                        <div class="card-body">
+                            Please chat customers service via whatsapp, send the amount paid, bank paid into, date of payment and your username.
+                        </div>
+                    </div>
+                </div><!--//card-->
+
             </div>
             <div class="col-12 col-md-6">
 
@@ -169,17 +181,7 @@
                     </div>
                 </div><!--card -->
 
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title"><a data-parent="#accordion" data-toggle="collapse" class="card-toggle" href="#faq14"><i class="fas fa-plus-square"></i>I paid into your bank account but my wallet was not autocredited/</a></h4>
-                    </div>
 
-                    <div class="card-collapse collapse" id="faq14">
-                        <div class="card-body">
-                            Please chat customers service via whatsapp, send the amount paid, bank paid into, date of payment and your username.
-                        </div>
-                    </div>
-                </div><!--//card-->
             </div>
         </div><!--//row-->
         <div class="more text-center">

@@ -19,25 +19,34 @@
                         <h3 class="heading">Users</h3>
                         <div class="content right-content">
                             <?php $this->load->view('msg_view'); ?>
-
                             <div class="row">
-                                <?php foreach($users as $user ) : ?>
-                                <div class="col-sm-4">
-                                    <div class="card mb-3" style="max-width: 540px;">
-                                        <div class="card-body">
-                                            <h5 class="card-title text-success"><?= character_limiter(ucwords($user->name), 14)?> - <span class="text-right text-danger"><?= ngn( $user->wallet)?></span></h5>
-                                            <p class="card-text">
-                                                E: <small class="text-muted"><?= $user->email; ?></small><br />
-                                                P: <small class="text-muted"><?= $user->phone; ?></small>
-                                                Last Login: <small class="text-muted">Logged in <?= ago($user->last_login)?></small>
-                                            </p>
-                                            <p class="card-text">
-                                                More coming soon
-                                            </p>
-                                        </div>
-                                    </div>
+
+                                <div style="margin-top: 20px" class="table-responsive">
+                                    <table class="table table-striped" id="table">
+                                        <thead>
+                                        <tr>
+                                            <th style="display: none;"></th>
+                                            <th>Name</th>
+                                            <th>Email/Phone</th>
+                                            <th>Wallet</th>
+                                            <th>Last Login</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php foreach( $users as $user ): ?>
+                                            <tr>
+                                                <td style="display: none"><?= $user->id; ?></td>
+                                                <td>
+                                                    <?= $user->name; ?>
+                                                </td>
+                                                <td><?= $user->email . ' ' . $user->phone; ?></td>
+                                                <td><?= $user->wallet; ?></td>
+                                                <td><?= neatDate($user->last_login) . ' ' . neatTime($user->last_login); ?></td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <?php endforeach;?>
                             </div>
 
                         </div>
