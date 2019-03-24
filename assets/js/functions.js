@@ -198,7 +198,7 @@ $(document).ready(function() {
                         }
                         amount = (parseInt(amount) + parseInt(charge));
                         // alert(amount + ' ' + charge);
-                        let data = {'amount' : amount, 'ref' : response.message};
+                        let data = {'amount' : amount * 100, 'ref' : response.message};
                         payWithPaystack( data );
                     }
 
