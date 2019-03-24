@@ -45,7 +45,18 @@
                                                 <td><?= $user->wallet; ?></td>
                                                 <td><?= neatDate($user->last_login) . ' ' . neatTime($user->last_login); ?></td>
                                                 <td><?= $user->status; ?></td>
-                                                <td>Action</td>
+                                                <td>
+                                                    <div class="btn-group" role="group">
+                                                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            Action
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                            <a class="dropdown-item" href="<?= base_url('admin/user_action/active/' . $user->id); ?>">Unblock</a>
+                                                            <a class="dropdown-item" href="<?= base_url('admin/user_action/block/' . $user->id); ?>">Block</a>
+                                                            <a class="dropdown-item" href="<?= base_url('admin/user_action/delete/' . $user->id); ?>">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                             </tr>
                                         <?php endforeach; ?>
                                         </tbody>

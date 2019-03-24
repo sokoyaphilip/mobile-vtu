@@ -184,6 +184,23 @@ WHERE t.trans_id = {$tid}")->row();
         }
     }
 
+    function user_action(){
+        $action = $this->uri->segment(3);
+        $user_id = $this->uri->segment(4);
+        if( !$action || ! $user_id ){
+            $this->session->set_flashdata('error_msg', 'Something is wrong somewhere...');
+            redirect( $_SERVER['HTTP_REFERER']);
+        }
+        if( $action == 'delete' ){
+            $this->site->delete("(user_id = {$user_id})", 'transactions');
+            $this->site->delete("(id = {$user_id})", 'users');
+        }else{
+            $this->site->update('users', array('status' => $action), "(id = {$user_id})");
+        }
+        $this->session->set_flashdata('success_msg', "Action successful");
+        redirect( $_SERVER['HTTP_REFERER']);
+    }
+
 
     /*
      * Users

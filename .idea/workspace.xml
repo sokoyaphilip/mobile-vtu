@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/application/controllers/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/app/admin/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/app/admin/users.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,8 +88,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/app/admin/users.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+            <state relative-caret-position="301">
+              <caret line="55" column="156" selection-start-line="55" selection-start-column="156" selection-end-line="55" selection-end-column="156" />
             </state>
           </provider>
         </entry>
@@ -96,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-50">
-              <caret line="179" column="167" selection-start-line="179" selection-start-column="167" selection-end-line="179" selection-end-column="167" />
+            <state relative-caret-position="256">
+              <caret line="192" column="9" lean-forward="true" selection-start-line="192" selection-start-column="9" selection-end-line="192" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -212,7 +213,6 @@
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/application/views/app/admin/confirm_payment.php" />
         <option value="$PROJECT_DIR$/application/views/app/admin/dashboard.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Admin.php" />
         <option value="$PROJECT_DIR$/application/views/app/admin/approval.php" />
         <option value="$PROJECT_DIR$/assets/js/functions.js" />
         <option value="$PROJECT_DIR$/application/views/app/users/wallet.php" />
@@ -220,6 +220,7 @@
         <option value="$PROJECT_DIR$/application/views/resources/footer.php" />
         <option value="$PROJECT_DIR$/application/views/resources/faq.php" />
         <option value="$PROJECT_DIR$/application/views/resources/menu.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Admin.php" />
         <option value="$PROJECT_DIR$/application/views/app/admin/users.php" />
       </list>
     </option>
@@ -418,12 +419,12 @@
       <workItem from="1553114560258" duration="43405000" />
       <workItem from="1553242029342" duration="5257000" />
       <workItem from="1553257752750" duration="14069000" />
-      <workItem from="1553338544906" duration="25543000" />
+      <workItem from="1553338544906" duration="26798000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="581159000" />
+    <option name="totallyTimeSpent" value="582414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -828,15 +829,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-50">
-          <caret line="179" column="167" selection-start-line="179" selection-start-column="167" selection-end-line="179" selection-end-column="167" />
+        <state relative-caret-position="256">
+          <caret line="192" column="9" lean-forward="true" selection-start-line="192" selection-start-column="9" selection-end-line="192" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/app/admin/users.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
+        <state relative-caret-position="301">
+          <caret line="55" column="156" selection-start-line="55" selection-start-column="156" selection-end-line="55" selection-end-column="156" />
         </state>
       </provider>
     </entry>
