@@ -992,6 +992,9 @@ function verifyPaystack( pref, ref){
                 sweet_alert('Error!', response.message, response.status );
                 console.log(response.message);
             }
+            $('.swal-button--confirm').on('click', function () {
+                window.location = window.location.href;
+            });
         },
         error : function (response) {
             console.log(response.responseText);
