@@ -79,6 +79,7 @@
                                                     <option value="airtel">Airtel</option>
                                                     <option value="gotv">GoTV</option>
                                                     <option value="dstv">DSTV</option>
+                                                    <option value="startimes">STARTIMES</option>
                                                     <option value="electricity">Electricity</option>
                                                 </select>
                                             </div>
