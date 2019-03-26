@@ -238,8 +238,8 @@ class Aj extends CI_Controller {
         $message = $description_number =  $invalid_numbers = '';
         $valid_numbers = array();
         $numbers = explode( ',', $recipents);
-        die('You are here' . $numbers);
         foreach( $numbers as $key => $msisdn ){
+            die('You are here' . $msisdn);
             $msisdn = preg_replace('/\D/', '', $msisdn);
             $strlen = strlen( $msisdn );
             switch ($strlen) {
