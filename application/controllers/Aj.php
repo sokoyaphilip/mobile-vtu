@@ -244,6 +244,7 @@ class Aj extends CI_Controller {
             $strlen = strlen( $msisdn );
             switch ($strlen) {
                 case 11:
+                    die('You are here');
                     $local_prefix = substr($msisdn, 0 , 4);
                     if( in_array($local_prefix, NIGERIA_TELCOS[$network_name])){
                         array_push($valid_numbers, $msisdn);
