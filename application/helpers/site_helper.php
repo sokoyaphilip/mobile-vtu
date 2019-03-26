@@ -433,6 +433,34 @@ function data_plan_code( $network , $plan, $number){
             }
 
         case "airtel":
+
+            switch ( $plan ){
+                case '750MB':
+                    return "*141*5*2*2*1*1{$number}*1985#";
+                    break;
+                case '1.5GB':
+                    return "*141*5*2*1*5*1{$number}*1985#";
+                    break;
+                case "3.5GB":
+                    return "**141*5*2*1*4*1{$number}*1985#";
+                    break;
+                case "5.5GB":
+                    return "*141*5*2*1*3*1{$number}*1985#";
+                    break;
+                case "12GB":
+                    return "*141*5*2*3*1*1{$number}*1985#";
+                    break;
+                case "25GB":
+                    return "*141*5*2*3*2*1{$number}*1985#";
+                    break;
+                case "40GB":
+                    return "*141*5*2*3*3*1{$number}*1985#";
+                    break;
+                default:
+                    return false;
+                    break;
+            }
+
             return false;
             break;
         default:

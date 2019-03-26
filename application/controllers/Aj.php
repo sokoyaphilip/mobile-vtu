@@ -292,9 +292,9 @@ class Aj extends CI_Controller {
                 $error = false; $ret = 'ORDER_COMPLETED';
                 foreach( $valid_numbers as $number ){
                     // fire the API
-
                     $ret = data_plan_code( $network_name, $plan_detail->name, $number);
-//                    $response['message'] = $ret .' Network name ' . $network_name . ' Plan name ' . $plan_detail->name .' number ' . $number;
+
+                    $response['message'] = $ret .' Network name ' . $network_name . ' Plan name ' . $plan_detail->name .' number ' . $number;
                     if( $ret !== false ){
 //                        if( $network_name != 'mtn' || $network_name != "MTN" ){
 //                            $sms_array = array( '08066795128' => $ret);
@@ -309,7 +309,7 @@ class Aj extends CI_Controller {
                         $error = true;
                     }
                 }
-
+                $this->return_response( $response );
                 if( $error ){
                     $response['message'] = "There was an error processing your order, {$ret} please try again or contact us. Thanks";
                     $this->return_response( $response );
