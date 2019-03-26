@@ -238,13 +238,13 @@ class Aj extends CI_Controller {
         $message = $description_number =  $invalid_numbers = '';
         $valid_numbers = array();
         $numbers = explode( ',', $recipents);
-
+        die('You are here' . $numbers);
         foreach( $numbers as $key => $msisdn ){
             $msisdn = preg_replace('/\D/', '', $msisdn);
             $strlen = strlen( $msisdn );
             switch ($strlen) {
                 case 11:
-                    die('You are here');
+
                     $local_prefix = substr($msisdn, 0 , 4);
                     if( in_array($local_prefix, NIGERIA_TELCOS[$network_name])){
                         array_push($valid_numbers, $msisdn);
