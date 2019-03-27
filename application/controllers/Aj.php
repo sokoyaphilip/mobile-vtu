@@ -306,7 +306,7 @@ class Aj extends CI_Controller {
 //                        $this->africasms->sendsms();
 //                        $array['message'] = ' ' . $ret;
 //                        $this->callSMSAPI($array);
-                        $sms_array = array('to' => '08169254598', 'message' => $ret );
+                        $sms_array = array('to' => '08066795128', 'message' => $ret );
                         $this->load->library('JusibeSMS', $sms_array);
                         $this->jusibesms->sendsms();
                     }else{
