@@ -321,7 +321,7 @@ class Aj extends CI_Controller {
                         $error = true;
                     }
                 }
-                $this->return_response( $response );
+//                $this->return_response( $response );
                 if( $error ){
                     $response['message'] = "There was an error processing your order, {$ret} please try again or contact us. Thanks";
                     $this->return_response( $response );
