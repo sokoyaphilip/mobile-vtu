@@ -16,7 +16,7 @@ class JusibeSMS {
         $jusibe = new Jusibe( $public_key, $access_token);
         $payload = array(
             'to' => $this->sms['to'],
-            'from' => 'GecharlData',
+            'from' => 'GecharlRes',
             'message' => $this->sms['message']
         );
 
