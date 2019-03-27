@@ -358,28 +358,28 @@ function data_plan_code( $network , $plan, $number){
         case "etisalat":
             switch ( $plan ) {
             case "1GB":
-                return "Etisalat *229*2*7*{$number}#";
+                return " *229*2*7*{$number}#";
                 break;
             case "1.5GB":
-                return "Etisalat *229*2*25*{$number}#";
+                return " *229*2*25*{$number}#";
                 break;
             case "2.5GB":
-                return "Etisalat *229*2*8*{$number}#";
+                return " *229*2*8*{$number}#";
                 break;
             case "4GB":
-                return "Etisalat *229*2*35*{$number}#";
+                return " *229*2*35*{$number}#";
                 break;
             case "5.5GB":
-                return "Etisalat *229*2*36*{$number}#";
+                return " *229*2*36*{$number}#";
                 break;
             case "11.5GB":
-                return "Etisalat *229*2*5*{$number}#";
+                return " *229*2*5*{$number}#";
                 break;
             case "15GB":
-                return "Etisalat *229*4*1*{$number}#";
+                return " *229*4*1*{$number}#";
                 break;
             case "27.5GB":
-                return "Etisalat *229*4*3*{$number}#";
+                return " *229*4*3*{$number}#";
                 break;
             default:
                 return false;
@@ -389,43 +389,43 @@ function data_plan_code( $network , $plan, $number){
         case "glo":
             switch ( $plan ){
                 case '15MB':
-                    return "GLO *127*32*{$number}#";
+                    return " *127*32*{$number}#";
                     break;
                 case '900MB':
-                    return "GLO *127*57*{$number}#";
+                    return " *127*57*{$number}#";
                     break;
                 case "1.84GB":
-                    return "GLO *127*53*{$number}#";
+                    return " *127*53*{$number}#";
                     break;
                 case "4.5GB":
-                    return "GLO *127*55*{$number}#";
+                    return " *127*55*{$number}#";
                     break;
                 case "7.2GB":
-                    return "GLO *127*58*{$number}#";
+                    return " *127*58*{$number}#";
                     break;
                 case "8.75GB":
-                    return "GLO *127*54*{$number}#";
+                    return " *127*54*{$number}#";
                     break;
                 case "12.5GB":
-                    return "GLO *127*59*{$number}#";
+                    return " *127*59*{$number}#";
                     break;
                 case "15.6GB":
-                    return "GLO *127*2*{$number}#";
+                    return " *127*2*{$number}#";
                     break;
                 case "25GB":
-                    return "GLO *127*1*{$number}#";
+                    return " *127*1*{$number}#";
                     break;
                 case "32.5GB":
-                    return "*127*11*{$number}#";
+                    return " *127*11*{$number}#";
                     break;
                 case "52.5GB":
-                    return "GLO *127*12*{$number}#";
+                    return " *127*12*{$number}#";
                     break;
                 case "62.5GB":
-                    return "GLO *127*13*{$number}#";
+                    return " *127*13*{$number}#";
                     break;
                 case "78.75GB":
-                    return "GLO *127*33*{$number}#";
+                    return " *127*33*{$number}#";
                     break;
                 default:
                     return false;
@@ -436,32 +436,31 @@ function data_plan_code( $network , $plan, $number){
 
             switch ( $plan ){
                 case '750MB':
-                    return "*141*5*2*2*1*1{$number}*1985#";
+                    return " *141*5*2*2*1*1{$number}*1985#";
                     break;
                 case '1.5GB':
-                    return "*141*5*2*1*5*1{$number}*1985#";
+                    return " *141*5*2*1*5*1{$number}*1985#";
                     break;
                 case "3.5GB":
-                    return "**141*5*2*1*4*1{$number}*1985#";
+                    return " *141*5*2*1*4*1{$number}*1985#";
                     break;
                 case "5.5GB":
-                    return "*141*5*2*1*3*1{$number}*1985#";
+                    return " *141*5*2*1*3*1{$number}*1985#";
                     break;
                 case "12GB":
-                    return "*141*5*2*3*1*1{$number}*1985#";
+                    return " *141*5*2*3*1*1{$number}*1985#";
                     break;
                 case "25GB":
-                    return "*141*5*2*3*2*1{$number}*1985#";
+                    return " *141*5*2*3*2*1{$number}*1985#";
                     break;
                 case "40GB":
-                    return "*141*5*2*3*3*1{$number}*1985#";
+                    return " *141*5*2*3*3*1{$number}*1985#";
                     break;
                 default:
                     return false;
                     break;
             }
 
-            return false;
             break;
         default:
             return false;
