@@ -21,7 +21,7 @@ class JusibeSMS {
         );
 
         try {
-            return $jusibe->sendSMS($payload)->getResponse();;
+            return $jusibe->sendSMS($payload)->getResponse();
         } catch(Exception $e) {
             echo $e->getMessage();
         }
