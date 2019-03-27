@@ -18,7 +18,7 @@
                     <?php $this->load->view('resources/users/left_menu'); ?>
 
                     <div class="col-md-8 sub-section">
-                        <h3 class="heading">Wallet</h3>
+                        <h3 class="heading">Airtime To Cash</h3>
                         <div class="content right-content">
                             <div class="well"></div>
                             <?php $this->load->view('msg_view'); ?>
