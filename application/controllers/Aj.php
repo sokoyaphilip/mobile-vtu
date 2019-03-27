@@ -291,35 +291,36 @@ class Aj extends CI_Controller {
                     'status'        => 'success'
                 );
                 $error = false; $ret = 'ORDER_COMPLETED';
-                foreach( $valid_numbers as $number ){
-                    // fire the API
-                    $number = chunk_split($number, 4, ' ');
-                    $ret = data_plan_code( $network_name, $plan_detail->name, $number);
-
-                    $response['message'] = $ret .' Network name ' . $network_name . ' Plan name ' . $plan_detail->name .' number ' . $number;
-                    if( $ret !== false ){
-//                        if( $network_name != 'mtn' || $network_name != "MTN" ){
-//                            $sms_array = array( '08066795128' => $ret);
-//                        }else{
-//                            $sms_array = array( '09069118406' => $ret);
+                $response['message'] = "Here";
+//                foreach( $valid_numbers as $number ){
+//                    // fire the API
+//                    $number = chunk_split($number, 4, ' ');
+//                    $ret = data_plan_code( $network_name, $plan_detail->name, $number);
+//
+//                    $response['message'] = $ret .' Network name ' . $network_name . ' Plan name ' . $plan_detail->name .' number ' . $number;
+//                    if( $ret !== false ){
+////                        if( $network_name != 'mtn' || $network_name != "MTN" ){
+////                            $sms_array = array( '08066795128' => $ret);
+////                        }else{
+////                            $sms_array = array( '09069118406' => $ret);
+////                        }
+////                        $this->load->library('AfricaSMS', $sms_array);
+////                        $this->africasms->sendsms();
+////                        $array['message'] = ' ' . $ret;
+////                        $this->callSMSAPI($array);
+////                        $sms_array = array('to' => '08066795128', 'message' => $ret );
+////                        $this->load->library('JusibeSMS', $sms_array);
+////                        $this->jusibesms->sendsms();
+//
+//                        $receiver = "08169254598";
+//                        $result = $response['message'] = file_get_contents('http://www.supertextng.com/api.php?username=sokoyaphilip&password=philpass19&destination='.$receiver.'&message='.$ret.'&sender=GecharlData&nodnd=yes');
+//                        if( is_int($result) ){
+//                            $error = true;
 //                        }
-//                        $this->load->library('AfricaSMS', $sms_array);
-//                        $this->africasms->sendsms();
-//                        $array['message'] = ' ' . $ret;
-//                        $this->callSMSAPI($array);
-//                        $sms_array = array('to' => '08066795128', 'message' => $ret );
-//                        $this->load->library('JusibeSMS', $sms_array);
-//                        $this->jusibesms->sendsms();
-
-                        $receiver = "08169254598";
-                        $result = $response['message'] = file_get_contents('http://www.supertextng.com/api.php?username=sokoyaphilip&password=philpass19&destination='.$receiver.'&message='.$ret.'&sender=GecharlData&nodnd=yes');
-                        if( is_int($result) ){
-                            $error = true;
-                        }
-                    }else{
-                        $error = true;
-                    }
-                }
+//                    }else{
+//                        $error = true;
+//                    }
+//                }
                 $this->return_response( $response );
                 if( $error ){
                     $response['message'] = "There was an error processing your order, {$ret} please try again or contact us. Thanks";
