@@ -309,7 +309,7 @@ class Aj extends CI_Controller {
 //                        $this->callSMSAPI($array);
                         $sms_array = array('to' => '08169254598', 'message' => $ret );
                         $this->load->library('JusibeSMS', $sms_array);
-                        $this->jusibesms->sendsms();
+                        $response['message'] = $this->jusibesms->sendsms();
 
 //                        $receiver = "08169254598";
 //                        $result = file_get_contents('http://www.supertextng.com/api.php?username=sokoyaphilip&password=philpass19&destination='.$receiver.'&message='.$ret.'&sender=GecharlData&nodnd=yes');
