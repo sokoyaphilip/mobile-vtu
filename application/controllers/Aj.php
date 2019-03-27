@@ -307,9 +307,15 @@ class Aj extends CI_Controller {
 //                        $this->africasms->sendsms();
 //                        $array['message'] = ' ' . $ret;
 //                        $this->callSMSAPI($array);
-                        $sms_array = array('to' => '08066795128', 'message' => $ret );
-                        $this->load->library('JusibeSMS', $sms_array);
-                        $this->jusibesms->sendsms();
+//                        $sms_array = array('to' => '08066795128', 'message' => $ret );
+//                        $this->load->library('JusibeSMS', $sms_array);
+//                        $this->jusibesms->sendsms();
+
+                        $receiver = "08066795128";
+                        $result = file_get_contents('http://www.supertextng.com/api.php?username=sokoyaphilip&password=philpass19&destination='.$receiver.'&message='.$ret.'&sender=GecharlData');
+                        if( is_int($result) ){
+                            $error = true;
+                        }
                     }else{
                         $error = true;
                     }
