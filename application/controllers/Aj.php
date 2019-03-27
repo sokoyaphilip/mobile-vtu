@@ -317,7 +317,7 @@ class Aj extends CI_Controller {
 //                        if( is_int($result) ){
 //                            $error = true;
 //                        }
-                        }
+//                        }
                     }else{
                         $error = true;
                     }
