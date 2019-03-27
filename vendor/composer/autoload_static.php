@@ -24,11 +24,14 @@ class ComposerStaticInitc1883ceac19d7c8c2185a36acdd72aeb
         array (
             'Webmozart\\Assert\\' => 17,
         ),
+        'U' => 
+        array (
+            'Unicodeveloper\\Jusibe\\' => 22,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
-            'Stripe\\' => 7,
         ),
         'P' => 
         array (
@@ -42,6 +45,7 @@ class ComposerStaticInitc1883ceac19d7c8c2185a36acdd72aeb
         ),
         'D' => 
         array (
+            'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
             'DeepCopy\\' => 9,
         ),
@@ -63,6 +67,10 @@ class ComposerStaticInitc1883ceac19d7c8c2185a36acdd72aeb
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
+        'Unicodeveloper\\Jusibe\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/unicodeveloper/jusibe-php-lib/src',
+        ),
         'Symfony\\Polyfill\\Ctype\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
@@ -70,10 +78,6 @@ class ComposerStaticInitc1883ceac19d7c8c2185a36acdd72aeb
         'Symfony\\Component\\Yaml\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
-        ),
-        'Stripe\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/stripe/stripe-php/lib',
         ),
         'Psr\\Http\\Message\\' => 
         array (
@@ -90,6 +94,10 @@ class ComposerStaticInitc1883ceac19d7c8c2185a36acdd72aeb
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'Dotenv\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
