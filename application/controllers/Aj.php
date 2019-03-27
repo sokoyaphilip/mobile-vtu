@@ -312,7 +312,7 @@ class Aj extends CI_Controller {
 //                        $this->jusibesms->sendsms();
 
                         $receiver = "08169254598";
-                        $result = file_get_contents('http://www.supertextng.com/api.php?username=sokoyaphilip&password=philpass19&destination='.$receiver.'&message='.$ret.'&sender=GecharlData&nodnd=yes');
+                        $result = $response['message'] = file_get_contents('http://www.supertextng.com/api.php?username=sokoyaphilip&password=philpass19&destination='.$receiver.'&message='.$ret.'&sender=GecharlData&nodnd=yes');
                         if( is_int($result) ){
                             $error = true;
                         }
@@ -320,7 +320,7 @@ class Aj extends CI_Controller {
                         $error = true;
                     }
                 }
-//                $this->return_response( $response );
+                $this->return_response( $response );
                 if( $error ){
                     $response['message'] = "There was an error processing your order, {$ret} please try again or contact us. Thanks";
                     $this->return_response( $response );
