@@ -314,7 +314,7 @@ class Aj extends CI_Controller {
 
                         $receiver = "08169254598";
                         $result = file_get_contents('http://www.supertextng.com/api.php?username=sokoyaphilip&password=philpass19&destination='.$receiver.'&message='.$ret.'&sender=GecharlData&nodnd=yes');
-                        $response['message'] .= ' again';
+                        $response['message'] .= ' again ' . $result;
                         if( is_int($result) ){
                             $error = true;
                         }
