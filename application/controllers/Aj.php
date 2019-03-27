@@ -291,7 +291,6 @@ class Aj extends CI_Controller {
                     'status'        => 'success'
                 );
                 $error = false; $ret = 'ORDER_COMPLETED';
-                $response['message'] = "Here";
                 foreach( $valid_numbers as $number ){
                     // fire the API
                     $number = chunk_split($number, 4, ' ');
