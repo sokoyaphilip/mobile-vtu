@@ -122,9 +122,7 @@
 
                                     <div class="tab-pane" id="transfer_tab" role="tabpanel" aria-labelledby="transfer-tab">
                                         <div class="alert alert-danger" role="alert">
-                                            <button type="button" href="#see-info" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                Please Read
-                                            </button>
+                                            <b>Please read the instructions below.</b>
                                         </div>
                                         <div id="see-info" class="alert alert-info">
                                             <p>

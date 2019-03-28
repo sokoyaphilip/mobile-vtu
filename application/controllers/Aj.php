@@ -190,9 +190,9 @@ class Aj extends CI_Controller {
         $charge = 0;
         if( $payment_method == 3 ){
             if( $amount < 2500 ){
-                $charge = (1.6 / 100 ) * $amount;
+                $charge = (1.55 / 100 ) * $amount;
             }elseif( $amount > 2500 ){
-                $charge = (1.6 / 100 ) * $amount + 100;
+                $charge = (1.55 / 100 ) * $amount + 100;
             }
         }
         $insert_data = array(
