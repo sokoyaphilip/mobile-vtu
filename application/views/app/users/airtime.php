@@ -40,7 +40,7 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label class="label" for="plan">Amount</label>
-                                                <input type="text" name="amount" id="amount" class="form-control number amount" autocomplete="off" />
+                                                <input type="text" name="amount" id="amount" class="form-control number" autocomplete="off" />
                                             </div>
                                         </div>
 
