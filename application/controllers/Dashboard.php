@@ -223,6 +223,10 @@ class Dashboard extends CI_Controller {
                 $product_id = $this->input->post('product_id');
                 $airtime_pin_network = $this->input->post('airtime_pin_network');
                 $amount = $this->input->post('amount');
+                if( $amount < 500 || $amount > 5000 ){
+                    $this->session->set_flashdata('error_msg', "You can only send airtime between N500 and N5000");
+                    redirect($_SERVER['HTTP_REFERER']);
+                }
                 $outgoing = $this->input->post('amount_earned');
                 $transaction_id = $this->site->generate_code('transactions', 'trans_id');
                 $description = ucwords($network) . " N" . $amount . ucwords( $airtime_pin_network ). " airtime transfer to gecharl.com";
