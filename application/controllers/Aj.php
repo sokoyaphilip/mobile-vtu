@@ -407,6 +407,8 @@ class Aj extends CI_Controller {
             if( $discount > 1 ){
                 $total_amount = $total_amount - ( $discount/100 * $total_amount );
             }
+            $response['message'] = $total_amount;
+            $this->return_response( $response );
             if( $total_amount > $wallet ){
                 $response['message'] = "You don't have enough money in your wallet for the transaction.";
                 $this->return_response($response);
@@ -631,8 +633,6 @@ class Aj extends CI_Controller {
 
         $variation_detail = $this->site->run_sql("SELECT variation_name, variation_amount, api_source FROM api_variation WHERE plan_id = {$plan_id}")->row();
 
-
-
         $description = ucwords( $network_name) . " subscription plan for {$plan_detail->name} at N{$plan_detail->amount}.";
         $transaction_id = $this->site->generate_code('transactions', 'trans_id');
 
@@ -654,12 +654,12 @@ class Aj extends CI_Controller {
                     if( $this->site->insert_data('transactions', $insert_data)){
                         $data = array(
                             'serviceID' => $network_name,
-//                        'billersCode' => $smart_card_number,
-                            'billersCode' => "1111111111",
+                            'billersCode' => $smart_card_number,
+//                            'billersCode' => "1111111111",
                             'variation_code' => $variation_detail->variation_name,
                             'amount'    => (int)$variation_detail->variation_amount,
-//                        'phone'     => (int) $registered_number,
-                            'phone'     => "08123456789",
+                            'phone'     => $registered_number,
+//                            'phone'     => "08123456789",
                             'request_id'    => $transaction_id
                         );
 
@@ -673,7 +673,7 @@ class Aj extends CI_Controller {
                                 $update_data['payment_status'] = $return['response_description'];
                                 $this->site->set_field('users', 'wallet', "wallet-{$plan_detail->amount}", "id={$user_id}");
                                 $response['status'] = 'success';
-                                $response['message'] = "Thank you for subscribing your {$network_name} cable with us. Your transaction code is <b>{$transaction_id}</b>, more details on your dashboard.";
+                                $response['message'] = "Thank you for subscribing your {$network_name} ({$smart_card_number}) cable with us. Your transaction code is <b>{$transaction_id}</b>, more details on your dashboard.";
 
                             }else{
                                 $update_data['status'] = 'fail';
