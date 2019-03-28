@@ -123,10 +123,10 @@
                                     <div class="tab-pane" id="transfer_tab" role="tabpanel" aria-labelledby="transfer-tab">
                                         <div class="alert alert-danger" role="alert">
                                             <button type="button" href="#see-info" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                Single toggle
+                                                Please Read
                                             </button>
                                         </div>
-                                        <div class="alert alert-info">
+                                        <div id="see-info" class="alert alert-info">
                                             <p>
                                                 <ul>
                                                     <li><b>Your account may be blocked if we get multiple request at short period of time from you.</b></li>
