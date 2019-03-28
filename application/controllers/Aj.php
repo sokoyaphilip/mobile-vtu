@@ -407,8 +407,8 @@ class Aj extends CI_Controller {
             if( $discount > 1 ){
                 $total_amount = $total_amount - ( $discount/100 * $total_amount );
             }
-            $response['message'] = $total_amount;
-            $this->return_response( $response );
+//            $response['message'] = $total_amount;
+//            $this->return_response( $response );
             if( $total_amount > $wallet ){
                 $response['message'] = "You don't have enough money in your wallet for the transaction.";
                 $this->return_response($response);
