@@ -675,7 +675,7 @@ class Aj extends CI_Controller {
                                 $update_data['payment_status'] = $return['response_description'];
                                 $this->site->set_field('users', 'wallet', "wallet-{$plan_detail->amount}", "id={$user_id}");
                                 $response['status'] = 'success';
-                                $response['message'] = "Thank you for subscribing your {$network_name} ({$smart_card_number}) cable with us. Your transaction code is <b>{$transaction_id}</b>, more details on your dashboard.";
+                                $response['message'] = "Thank you for subscribing your {$network_name} ({$smart_card_number}) - {$variation_detail->variation_amount} cable with us. Your transaction code is <b>{$transaction_id}</b>, more details on your dashboard.";
 
                             }else{
                                 $update_data['status'] = 'fail';
