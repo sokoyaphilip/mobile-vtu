@@ -196,7 +196,7 @@ $(document).ready(function() {
                         }else if( amount >=  2500 ){
                             charge = ((1.55 / 100) * amount ) + 100;
                         }
-                        amount = (parseInt(amount) + parseInt(charge));
+                        amount = (parseInt(amount) + parseFloat(charge));
                         // alert(amount + ' ' + charge);
                         let data = {'amount' : amount * 100, 'ref' : response.message};
                         payWithPaystack( data );
