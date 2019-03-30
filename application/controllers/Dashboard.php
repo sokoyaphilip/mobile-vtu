@@ -18,7 +18,6 @@ class Dashboard extends CI_Controller {
         $id = $this->session->userdata('logged_id');
         $page_data['user'] = $this->get_profile($id);
         $page_data['products'] = $this->site->get_result('products');
-
         $query = "SELECT * FROM transactions WHERE user_id = {$id} ORDER BY id DESC ";
         $start = $end = $transaction ='';
         if( $this->input->post() ){
@@ -43,12 +42,7 @@ class Dashboard extends CI_Controller {
                 $query .= " AND product_id = '{$transaction}' ORDER BY id DESC";
             }
         }
-
-//        var_dump($_POST);
-
         $page_data['transactions'] = $this->site->run_sql( $query )->result();
-
-//        var_dump( $page_data['transactions'] ); exit;
 		$this->load->view('app/users/dashboard', $page_data);
 	}
 

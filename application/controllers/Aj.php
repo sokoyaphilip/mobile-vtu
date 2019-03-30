@@ -293,7 +293,7 @@ class Aj extends CI_Controller {
                 $error = false; $ret = 'ORDER_COMPLETED';
                 foreach( $valid_numbers as $number ){
                     // fire the API
-                    $number = chunk_split($number, 4, ' ');
+//                    $number = chunk_split($number, 4, ' ');
                     $ret = data_plan_code( $network_name, $plan_detail->name, $number);
 
 //                    $response['message'] = $ret .' Network name ' . $network_name . ' Plan name ' . $plan_detail->name .' number ' . $number;
