@@ -63,7 +63,7 @@
                                                         </td>
                                                         <td><?= (!is_null($funding->name)) ? ucwords($funding->name) : 'Not Set'; ?></td>
                                                         <td><?= $funding->phone . ' / ' . $funding->email; ?></td>
-                                                        <td><?= neatDate( $funding->date_initiated); ?></td>
+                                                        <td><?= neatDate( $funding->date_initiated) . neatTime($funding->date_initiated); ?></td>
                                                         <td><?= payment_id_replacer($funding->description); ?></td>
                                                         <td><?= ngn($funding->amount)?></td>
                                                         <td>
@@ -104,7 +104,7 @@
                                                 <tbody>
                                                 <?php foreach( $airtime_to_cash_pin as $cash ): ?>
                                                     <tr>
-                                                        <td><?= neatDate($cash->datetime)?></td>
+                                                        <td><?= neatDate($cash->datetime) . neatTime($cash->datetime)?></td>
                                                         <td><?= $cash->details; ?></td>
                                                         <td><?= ngn($cash->incoming)?></td>
                                                         <td><?= ngn($cash->outgoing)?></td>

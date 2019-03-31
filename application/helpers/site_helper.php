@@ -69,7 +69,7 @@ if (!function_exists('neatTime')) {
     function neatTime($dt){
         $bdate = $dt;
         $bdate = str_replace('/', '-', $bdate);
-        $nice_date = date('g:i a', strtotime($bdate));
+        $nice_date = date('g:i a', strtotime($bdate . ' plus one hour'));
         return $nice_date;
     }
 }
