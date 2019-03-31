@@ -294,6 +294,7 @@ class Dashboard extends CI_Controller {
                 $this->form_validation->set_rules('account_name', 'Account name','trim|required|xss_clean|max_length[50]');
                 $this->form_validation->set_rules('account_type', 'Account type','trim|required|xss_clean');
                 $this->form_validation->set_rules('bank_name', 'Bank name','trim|required|xss_clean');
+                $this->form_validation->set_rules('account_number', 'Account Number','trim|required|xss_clean');
                 if( $this->form_validation->run() == false ){
                     $this->session->set_flashdata('error_msg', validation_errors());
                     redirect($_SERVER['HTTP_REFERER']);
@@ -308,6 +309,7 @@ class Dashboard extends CI_Controller {
                         'account_name' => cleanit($_POST['account_name']),
                         'account_type' => cleanit($_POST['account_type']),
                         'bank_name' => cleanit($_POST['bank_name']),
+                        'account_number' => cleanit($_POST['account_number']),
                     );
 
                     if( $this->site->update('users', $data, "(id = {$uid})")){

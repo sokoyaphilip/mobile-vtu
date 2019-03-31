@@ -75,7 +75,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-sm-12">
+                                            <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label for="bank_name">Bank Name</label>
                                                     <select name="bank_name" class="form-control">
@@ -86,6 +86,13 @@
                                                         <?php endforeach;
                                                         ?>
                                                     </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="account_type">Account Number</label>
+                                                    <input type="text" value="<?= $user->account_number;?>" required placeholder="Account number" name="account_number">
                                                 </div>
                                             </div>
 
