@@ -92,7 +92,7 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label for="account_type">Account Number</label>
-                                                    <input type="text" value="<?= $user->account_number;?>" required placeholder="Account number" name="account_number">
+                                                    <input class="form-control" type="text" value="<?= $user->account_number;?>" required placeholder="Account number" name="account_number">
                                                 </div>
                                             </div>
 
