@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/application/views/app/users/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/app/users/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Dashboard.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/app/users/profile.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="353">
-              <caret line="94" column="78" selection-start-line="94" selection-start-column="78" selection-end-line="94" selection-end-column="78" />
+              <caret line="94" column="187" selection-start-line="94" selection-start-column="173" selection-end-line="94" selection-end-column="187" />
             </state>
           </provider>
         </entry>
@@ -114,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="311" column="74" selection-start-line="311" selection-start-column="74" selection-end-line="311" selection-end-column="74" />
+            <state relative-caret-position="202">
+              <caret line="283" column="123" selection-start-line="283" selection-start-column="123" selection-end-line="283" selection-end-column="123" />
               <folding>
                 <element signature="n#airtime_process#0;n#Dashboard#0;n#!!top" />
                 <element signature="n#payment_made#0;n#Dashboard#0;n#!!top" />
@@ -151,7 +151,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>confir</find>
       <find>api</find>
       <find>080</find>
       <find>got</find>
@@ -181,6 +180,7 @@
       <find>wallet</find>
       <find>neat</find>
       <find>profile_s</find>
+      <find>profile</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -238,8 +238,8 @@
         <option value="$PROJECT_DIR$/application/controllers/Aj.php" />
         <option value="$PROJECT_DIR$/application/helpers/site_helper.php" />
         <option value="$PROJECT_DIR$/application/views/app/admin/approval.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Dashboard.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/profile.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Dashboard.php" />
       </list>
     </option>
   </component>
@@ -441,12 +441,12 @@
       <workItem from="1553793037668" duration="12430000" />
       <workItem from="1553862208068" duration="10601000" />
       <workItem from="1553978480753" duration="1833000" />
-      <workItem from="1554023396112" duration="6090000" />
+      <workItem from="1554023396112" duration="6565000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="657228000" />
+    <option name="totallyTimeSpent" value="657703000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -857,10 +857,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/app/users/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="94" column="187" selection-start-line="94" selection-start-column="173" selection-end-line="94" selection-end-column="187" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="311" column="74" selection-start-line="311" selection-start-column="74" selection-end-line="311" selection-end-column="74" />
+        <state relative-caret-position="202">
+          <caret line="283" column="123" selection-start-line="283" selection-start-column="123" selection-end-line="283" selection-end-column="123" />
           <folding>
             <element signature="n#airtime_process#0;n#Dashboard#0;n#!!top" />
             <element signature="n#payment_made#0;n#Dashboard#0;n#!!top" />
@@ -868,13 +875,6 @@
             <element signature="n#_submitGet#0;n#Dashboard#0;n#!!top" />
             <element signature="n#callSMSAPI#0;n#Dashboard#0;n#!!top" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/app/users/profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="94" column="78" selection-start-line="94" selection-start-column="78" selection-end-line="94" selection-end-column="78" />
         </state>
       </provider>
     </entry>

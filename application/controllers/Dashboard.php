@@ -281,7 +281,7 @@ class Dashboard extends CI_Controller {
         $id = $this->session->userdata('logged_id');
         $page_data['page'] = 'profile';
         $page_data['title'] = "Proile Setting";
-        $page_data['user'] = $this->site->run_sql("SELECT name, phone, email,user_code,wallet, account_name, account_type, bank_name FROM users WHERE id = {$id}")->row();
+        $page_data['user'] = $this->site->run_sql("SELECT name, phone, email,user_code,wallet, account_name,account_number, account_type, bank_name FROM users WHERE id = {$id}")->row();
         $this->load->view('app/users/profile', $page_data);
     }
 
