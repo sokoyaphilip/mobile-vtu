@@ -37,11 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/app/admin/approval.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="106" column="94" selection-start-line="106" selection-start-column="94" selection-end-line="106" selection-end-column="94" />
-              <folding>
-                <element signature="e#3017#6566#0#PHP" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="65" column="106" selection-start-line="65" selection-start-column="106" selection-end-line="65" selection-end-column="106" />
             </state>
           </provider>
         </entry>
@@ -433,12 +430,12 @@
       <workItem from="1553793037668" duration="12430000" />
       <workItem from="1553862208068" duration="10601000" />
       <workItem from="1553978480753" duration="1833000" />
-      <workItem from="1554023396112" duration="4148000" />
+      <workItem from="1554023396112" duration="4866000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="655286000" />
+    <option name="totallyTimeSpent" value="656004000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -859,11 +856,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/app/admin/approval.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="106" column="94" selection-start-line="106" selection-start-column="94" selection-end-line="106" selection-end-column="94" />
-          <folding>
-            <element signature="e#3017#6566#0#PHP" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="65" column="106" selection-start-line="65" selection-start-column="106" selection-end-line="65" selection-end-column="106" />
         </state>
       </provider>
     </entry>

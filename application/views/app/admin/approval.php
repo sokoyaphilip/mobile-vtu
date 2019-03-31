@@ -63,7 +63,7 @@
                                                         </td>
                                                         <td><?= (!is_null($funding->name)) ? ucwords($funding->name) : 'Not Set'; ?></td>
                                                         <td><?= $funding->phone . ' / ' . $funding->email; ?></td>
-                                                        <td><?= neatDate( $funding->date_initiated) . neatTime($funding->date_initiated); ?></td>
+                                                        <td><?= neatDate( $funding->date_initiated) . ' '. neatTime($funding->date_initiated); ?></td>
                                                         <td><?= payment_id_replacer($funding->description); ?></td>
                                                         <td><?= ngn($funding->amount)?></td>
                                                         <td>
