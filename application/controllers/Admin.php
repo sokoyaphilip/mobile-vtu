@@ -273,6 +273,73 @@ WHERE t.trans_id = {$tid}")->row();
     }
 
 
+    // Profile
+    public function profile(){
+        $id = $this->session->userdata('logged_id');
+        $page_data['page'] = 'profile';
+        $page_data['title'] = "Profile Setting";
+        $page_data['user'] = $this->site->run_sql("SELECT name, phone, email,user_code,wallet, account_name,account_number, account_type, bank_name FROM users WHERE id = {$id}")->row();
+        $this->load->view('app/admin/profile', $page_data);
+    }
+
+    function profile_setting(){
+        $action_type = $this->input->post('post_type');
+        $uid = $this->session->userdata('logged_id');
+        switch ( $action_type ){
+            case 'account':
+                $this->form_validation->set_rules('name', 'Full name','trim|required|xss_clean|min_length[3]|max_length[50]');
+                $this->form_validation->set_rules('account_name', 'Account name','trim|required|xss_clean|max_length[50]');
+                $this->form_validation->set_rules('account_type', 'Account type','trim|required|xss_clean');
+                $this->form_validation->set_rules('bank_name', 'Bank name','trim|required|xss_clean');
+                $this->form_validation->set_rules('account_number', 'Account Number','trim|required|xss_clean');
+                if( $this->form_validation->run() == false ){
+                    $this->session->set_flashdata('error_msg', validation_errors());
+                    redirect($_SERVER['HTTP_REFERER']);
+                }else{
+                    $password = cleanit($_POST['confirm_password']);
+                    if(!$this->user->cur_pass_match($password, $uid, 'users')){
+                        $this->session->set_flashdata('error_msg', "Oops! The password does not match your current password.");
+                        redirect($_SERVER['HTTP_REFERER']);
+                    }
+                    $data = array(
+                        'name' => cleanit($_POST['name']),
+                        'account_name' => cleanit($_POST['account_name']),
+                        'account_type' => cleanit($_POST['account_type']),
+                        'bank_name' => cleanit($_POST['bank_name']),
+                        'account_number' => cleanit($_POST['account_number']),
+                    );
+
+                    if( $this->site->update('users', $data, "(id = {$uid})")){
+                        $this->session->set_flashdata('success_msg', "Profile updated successfully.");
+                    }else{
+                        $this->session->set_flashdata('error_msg', "There was an error updating your profile.");
+                    }
+                    redirect($_SERVER['HTTP_REFERER']);
+                }
+                break;
+            case 'password_change':
+
+                $this->form_validation->set_rules('current_password', 'Password','trim|required|xss_clean');
+                $this->form_validation->set_rules('new_password', 'New Password','trim|required|xss_clean');
+                $this->form_validation->set_rules('confirm_password', 'Confirm Password','trim|required|xss_clean|min_length[6]|max_length[15]|matches[new_password]');
+
+                $password = cleanit($_POST['current_password']);
+                if(!$this->user->cur_pass_match($password, $uid, 'users')){
+                    $this->session->set_flashdata('error_msg', "Oops! The password does not match your current password. ");
+                    redirect($_SERVER['HTTP_REFERER']);
+                }
+                $new_password = cleanit( $_POST['new_password'] );
+                if( $this->user->change_password( $new_password, $uid, 'users')){
+                    $this->session->set_flashdata('success_msg', "Password changed successfully.");
+                }else{
+                    $this->session->set_flashdata('error_msg', "There was an error updating your password.");
+                }
+                redirect($_SERVER['HTTP_REFERER']);
+        }
+
+    }
+
+
     /*
      * API Variation And Plan
      * */

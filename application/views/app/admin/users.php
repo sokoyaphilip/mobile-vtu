@@ -42,7 +42,7 @@
                                                     <?= $user->name; ?>
                                                 </td>
                                                 <td><?= $user->email . ' ' . $user->phone; ?></td>
-                                                <td><?= $user->wallet; ?></td>
+                                                <td><?= ngn($user->wallet); ?></td>
                                                 <td><?= neatDate($user->last_login) . ' ' . neatTime($user->last_login); ?></td>
                                                 <td><?= $user->status; ?></td>
                                                 <td>
