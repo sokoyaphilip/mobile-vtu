@@ -41,7 +41,6 @@ class Admin extends CI_Controller {
         }
         $today = date('Y-m-d', strtotime('today'));
 
-        die( $today);
 
         $today = $this->site->run_sql("SELECT SUM(amount * 1) amount FROM transactions WHERE date_initiated = '{$today}' AND (status = 'success' OR status = 'approved') GROUP BY trans_id")->result_array();
         $page_data['today'] = array_sum(array_column($today, 'amount'));
