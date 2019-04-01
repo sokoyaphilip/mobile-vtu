@@ -52,7 +52,7 @@
                                         <?= ngn($row->amount); ?>
                                     </div>
 
-                                    <div>
+                                    <div class="col-sm-12">
                                         <h3>Proof of Payment </h3>
                                         <a href="<?= base_url('pop/' . $row->pop); ?>" title="Proof of payment">
                                             <img src="<?= base_url('pop/' . $row->pop); ?>" style="width: 60%;" />
