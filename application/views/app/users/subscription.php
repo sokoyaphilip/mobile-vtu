@@ -69,7 +69,7 @@
 
                                     </div>
                                 <input type="hidden" id="product_id" value="3">
-                                <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 tv-cable" data-balance="<?= $user->wallet;?>">Subscribe</button>&nbsp;&nbsp;
+                                <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4 tv-cable" disabled data-balance="<?= $user->wallet;?>">Coming Soon!</button>&nbsp;&nbsp;
                                 <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear Form</button>&nbsp;&nbsp;
 
                                 <?= form_close(); ?>
