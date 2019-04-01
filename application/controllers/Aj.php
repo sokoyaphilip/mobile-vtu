@@ -753,6 +753,10 @@ class Aj extends CI_Controller {
 
         $variation_detail = $this->site->run_sql("SELECT variation_name, api_source FROM api_variation WHERE plan_id = {$plan_id} LIMIT 1")->row();
 
+        if( $plan_detail->amount > $wallet ){
+            $response['message'] = "Oops! Sorry you don't have sufficient fund in your wallet to process the order, please fund your wallet first.";
+            $this->return_response( $response );
+        }
 
         // Do they have discount
         if( $discount > 1 ){
