@@ -41,9 +41,9 @@ class Admin extends CI_Controller {
         }
         $today = date('Y-m-d', strtotime('today'));
 
-        $today = $this->site->run_sql("SELECT SUM(amount * 1) amount FROM transactions WHERE (status = 'success' OR status = 'approved') GROUP BY trans_id")->result_array();
+        $today = $this->site->run_sql("SELECT SUM(amount * 1) amount FROM transactions WHERE date_initiated = '{$today}' AND (status = 'success' OR status = 'approved') GROUP BY trans_id")->result_array();
         $page_data['today'] = array_sum(array_column($today, 'amount'));
-        var_dump( $page_data['today']);
+//        var_dump( $page_data['today']);
 
         $first_day = date('Y-m-d', strtotime('first day of the week'));
         $last_day = date('Y-m-d', strtotime('last day of the week'));
