@@ -41,19 +41,19 @@ class Admin extends CI_Controller {
         }
         $today = date('Y-m-d', strtotime('today'));
 
-        $today = $this->site->run_sql("SELECT SUM(amount) amount FROM transactions WHERE date_initiated = '$today' AND (status = 'success' OR status = 'approved') GROUP BY trans_id")->result_array();
+        $today = $this->site->run_sql("SELECT SUM(amount * 1) amount FROM transactions WHERE date_initiated = '$today' AND (status = 'success' OR status = 'approved') GROUP BY trans_id")->result_array();
         $page_data['today'] = array_sum(array_column($today, 'amount'));
 
-//        die("SELECT SUM(amount) amount FROM transactions WHERE date_initiated = '$today' AND (status = 'success' OR status = 'approve') ");
+//        die("SELECT SUM(amount * 1) amount FROM transactions WHERE date_initiated = '$today' AND (status = 'success' OR status = 'approve') ");
         $first_day = date('Y-m-d', strtotime('first day of the week'));
         $last_day = date('Y-m-d', strtotime('last day of the week'));
-        $week = $this->site->run_sql("SELECT SUM(amount) amount FROM transactions 
+        $week = $this->site->run_sql("SELECT SUM(amount * 1) amount FROM transactions 
         WHERE date_initiated BETWEEN('{$first_day}' AND '{$last_day}') AND (status = 'success' OR status = 'approved' ) GROUP BY trans_id ")->result_array();
         $page_data['week'] = array_sum(array_column($week, 'amount'));
 
         $first_day = date('Y-m-d', strtotime('first day of the month'));
         $last_day = date('Y-m-d', strtotime('last day of the month'));
-        $month = $this->site->run_sql("SELECT SUM(amount) amount FROM transactions 
+        $month = $this->site->run_sql("SELECT SUM(amount * 1) amount FROM transactions 
         WHERE date_initiated BETWEEN('{$first_day}' AND '{$last_day}') AND (status = 'success' OR status = 'approved' ) GROUP BY trans_id")->result_array();
 
         $page_data['month'] = array_sum(array_column($month, 'amount'));
@@ -61,7 +61,7 @@ class Admin extends CI_Controller {
 
         $first_day = date('Y-m-d', strtotime('first day of the year'));
         $last_day = date('Y-m-d', strtotime('last day of the year'));
-        $year = $this->site->run_sql("SELECT SUM(amount) amount FROM transactions 
+        $year = $this->site->run_sql("SELECT SUM(amount * 1) amount FROM transactions 
         WHERE date_initiated BETWEEN ('{$first_day}' AND '{$last_day}') AND (status = 'success' OR status = 'approved' ) GROUP BY trans_id")->result_array();
         $page_data['year'] = array_sum(array_column($year, 'amount'));
 
