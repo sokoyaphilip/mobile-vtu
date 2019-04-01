@@ -18,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+            <state relative-caret-position="53">
+              <caret line="43" column="93" selection-start-line="43" selection-start-column="93" selection-end-line="43" selection-end-column="93" />
               <folding>
                 <element signature="e#631#1636#0#PHP" />
                 <element signature="n#services#0;n#Admin#0;n#!!top" />
@@ -445,12 +445,12 @@
       <workItem from="1553862208068" duration="10601000" />
       <workItem from="1553978480753" duration="1833000" />
       <workItem from="1554023396112" duration="9368000" />
-      <workItem from="1554124240573" duration="6316000" />
+      <workItem from="1554124240573" duration="6465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="666822000" />
+    <option name="totallyTimeSpent" value="666971000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -871,8 +871,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+        <state relative-caret-position="53">
+          <caret line="43" column="93" selection-start-line="43" selection-start-column="93" selection-end-line="43" selection-end-column="93" />
           <folding>
             <element signature="e#631#1636#0#PHP" />
             <element signature="n#services#0;n#Admin#0;n#!!top" />
