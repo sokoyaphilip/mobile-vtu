@@ -26,7 +26,7 @@
                                     <h3><b>Please be informed that your account will be blocked if you submit false payment.</b></h3>
                                 </div>
 
-                                <?= form_open('dashboard/payment_made_process/')?>
+                                <?= form_open_multipart('dashboard/payment_made_process/')?>
 
                                     <div class="col-sm-12">
                                         <div class="form-group">
@@ -73,6 +73,13 @@
                                         <div class="form-group">
                                             <label for="date paid">Date You Paid</label>
                                             <input type="date" name="date_paid" required class="form-control"  placeholder="Date you paid">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="pop">Upload Proof of Payment</label>
+                                            <input type="file" name="pop" required class="form-control" >
                                         </div>
                                     </div>
 

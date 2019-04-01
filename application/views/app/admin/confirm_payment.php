@@ -51,6 +51,13 @@
                                         <h3>Amount Initiated To Pay </h3>
                                         <?= ngn($row->amount); ?>
                                     </div>
+
+                                    <div>
+                                        <h3>Proof of Payment </h3>
+                                        <a href="<?= base_url('pop/' . $row->pop); ?>" title="Proof of payment">
+                                            <img src="<?= base_url('pop/' . $row->pop); ?>" style="width: 60%;" />
+                                        </a>
+                                    </div>
                                 </div>
                                 <br />
                                 <h4>Action</h4>

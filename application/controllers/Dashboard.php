@@ -376,6 +376,21 @@ class Dashboard extends CI_Controller {
                 $this->session->set_flashdata('error_msg', "We already receive your message.");
                 redirect( $_SERVER['HTTP_REFERER']);
             }
+            if( $_FILES['pop'] ){
+                $config = array(
+                    'upload_path' => "./pop/",
+                    'allowed_types' => "gif|jpg|png|jpeg",
+                    'overwrite' => FALSE,
+                    'max_size' => "2048000",
+                    'max_height' => "768",
+                    'max_width' => "1024",
+                    'encrypt_name'   => TRUE
+                );
+                $this->load->library('upload', $config);
+                if( $this->upload->do_upload('pop') ){
+                    $data['pop'] = $this->upload->data('file_name');
+                }
+            }
             if( $this->site->insert_data('transaction_status', $data)){
                 $amount = $this->input->post('amount_paid');
                 $array['message'] = 'A user just claimed to pay N'.$amount .' Go to dashboard to confirm.';
