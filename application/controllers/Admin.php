@@ -56,7 +56,7 @@ class Admin extends CI_Controller {
         $month = $this->site->run_sql("SELECT SUM(amount) amount FROM transactions 
         WHERE date_initiated BETWEEN('{$first_day}' AND '{$last_day}') AND (status = 'success' OR status = 'approved' ) ")->result_array();
 
-        $page_data['month'] = array_sum(array_column($week, 'amount'));
+        $page_data['month'] = array_sum(array_column($month, 'amount'));
 
 
         $first_day = date('Y-m-d', strtotime('first day of the year'));

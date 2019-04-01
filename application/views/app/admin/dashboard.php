@@ -26,7 +26,7 @@
                                     <div class="card border-info mb-3" style="max-width: 18rem;">
                                         <div class="card-body text-danger">
                                             <h5 class="card-title">Today Transactions</h5>
-                                            <p class="card-text"><?= ngn($today->amount); ?></p>
+                                            <p class="card-text"><?= ngn($today); ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -34,7 +34,7 @@
                                     <div class="card border-info mb-3" style="max-width: 18rem;">
                                         <div class="card-body text-info">
                                             <h5 class="card-title">This Week Transactions</h5>
-                                            <p class="card-text"><?= ngn($week->amount);?></p>
+                                            <p class="card-text"><?= ngn($week);?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -42,7 +42,7 @@
                                     <div class="card border-info mb-3" style="max-width: 18rem;">
                                         <div class="card-body text-primary">
                                             <h5 class="card-title">This Month Transaction</h5>
-                                            <p class="card-text"><?= ngn($month->amount)?></p>
+                                            <p class="card-text"><?= ngn($month)?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                                     <div class="card border-info mb-3" style="max-width: 18rem;">
                                         <div class="card-body text-success">
                                             <h5 class="card-title">This Year Transaction</h5>
-                                            <p class="card-text"><?= ngn($year->amount)?></p>
+                                            <p class="card-text"><?= ngn($year)?></p>
                                         </div>
                                     </div>
                                 </div>
