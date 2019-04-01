@@ -627,12 +627,17 @@ class Aj extends CI_Controller {
         $registered_name = $this->input->post('registered_name', true);
         $registered_number = $this->input->post('registered_number', true);
         $network_name = $this->input->post('network_name', true ); // gotv, dstv, startimes
-        $wallet = $this->session->userdata('wallet');
+        $wallet = $this->input->post('wallet');
         $user_id = $this->session->userdata('logged_id');
 
 
         // verify...
         $plan_detail = $this->site->run_sql("SELECT name, amount FROM plans WHERE id = {$plan_id}")->row();
+
+        if( $plan_detail->amount > $wallet ){
+            $response['message'] = "Oops! Sorry you don't have sufficient fund in your wallet to process the order, please fund your wallet first.";
+            $this->return_response( $response );
+        }
 
         $variation_detail = $this->site->run_sql("SELECT variation_name, variation_amount, api_source FROM api_variation WHERE plan_id = {$plan_id}")->row();
 
@@ -709,12 +714,6 @@ class Aj extends CI_Controller {
             }
         }else{
             $response['message'] = "Oops! We can't process your order now, contact us via WhatsApp (" . lang['contact_no']. ")";
-            $this->return_response( $response );
-        }
-
-
-        if( $plan_detail->amount > $wallet ){
-            $response['message'] = "Oops! Sorry you don't have sufficient fund in your wallet to process the order, please fund your wallet first.";
             $this->return_response( $response );
         }
 

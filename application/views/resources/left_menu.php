@@ -29,7 +29,7 @@
                     <h4 class="<?php if( $page =='users' ) echo 'dashboard-active'; ?>"><a href="<?= base_url('admin/users/'); ?>">Users</a></h4>
                 </li>
                 <li>
-                    <h4 class="<?php if( $page =='users' ) echo 'dashboard-active'; ?>"><a href="<?= base_url('admin/profile/'); ?>">Profile Setting</a></h4>
+                    <h4 class="<?php if( $page =='profile' ) echo 'dashboard-active'; ?>"><a href="<?= base_url('admin/profile/'); ?>">Profile Setting</a></h4>
                 </li>
                 <li>
                     <h4><a href="<?= base_url('logout/'); ?>">Logout</a></h4>

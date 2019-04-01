@@ -461,6 +461,8 @@ $(document).ready(function() {
         let registered_name = $('#registered_name').val();
         let registered_number = $('#registered_number').val();
         let network_name = $('#network').find(':selected').data('network-name');
+        let wallet =  _btn.data('balance');
+
 
         if( smart_card_number === '') {
             _btn.prop('disabled', false);
@@ -482,6 +484,8 @@ $(document).ready(function() {
             _btn.text('Subscribe');
             return false;
         }
+
+
         //7028877148
         $.ajax({
             url : base_url + 'aj/tv_cable/',
@@ -490,7 +494,7 @@ $(document).ready(function() {
                     'plan_id' : plan_id, 'smart_card_number' : smart_card_number,
                     'registered_name' : registered_name,
                     'registered_number' : registered_number,
-                    'network' : network, 'network_name' : network_name },
+                    'network' : network, 'network_name' : network_name, 'wallet': wallet},
             success : function(response){
                 if( response.status === 'success' ){
                     sweet_alert('Success', response.message, 'success', false);
