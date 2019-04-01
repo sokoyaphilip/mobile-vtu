@@ -18,7 +18,7 @@
                             <div class="form-group email">
                                 <i class="fas fa-envelope"></i>
                                 <label for="signup-email">Your email</label>
-                                <input id="signup-email" name="signup-email" required type="email" class="form-control login-email"  autocomplete="off">
+                                <input id="signup-email" autocapitalize="off" autocomplete="off" name="signup-email" required type="email" class="form-control login-email"  autocomplete="off">
                             </div><!--//form-group-->
                             <div class="form-group email">
                                 <i class="fas fa-phone"></i>

@@ -139,7 +139,7 @@
                                                     <li>For MTN: Your wallet will be credited with 85% of the amount you send eg: N1000, N850 will be credited.</li>
                                                     <li>For 9mobile: Your wallet will be credited with 80% of the amount you send eg: N1000, N800 will be credited.</li>
                                                     <li>You must not send any amount different from the amount filled.</li>
-                                                    <li>We accespt airtime Transfer only. Any VTU sent to us will not be credited to your wallet.</li>
+                                                    <li>We accept airtime Transfer only. Any VTU sent to us will not be credited to your wallet.</li>
                                                 </ul>
                                             </p>
                                         </div>
@@ -155,15 +155,6 @@
                                                                         value="<?= $network->network_name; ?>"><?= ucwords($network->title); ?></option>
                                                             <?php endforeach; ?>
                                                         </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="label" for="amount">Enter amount you're sending <span class="text-danger">* </span> </label>
-                                                        <input type="text" class="form-control number" name="amount" required />
                                                     </div>
                                                 </div>
                                             </div>

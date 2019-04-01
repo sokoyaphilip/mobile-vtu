@@ -18,7 +18,7 @@
                             <?php $this->load->view('msg_view'); ?>
                             <div class="form-group email">
                                 <label class="" for="login-email">Your email or Phone number</label>
-                                <input id="login-username" name="login_username" type="text" required class="form-control login-email" placeholder="Your email or phone number" autocomplete="off">
+                                <input id="login-username" autocapitalize="off" autocomplete="off" name="login_username" type="text" required class="form-control login-email" placeholder="Your email or phone number" autocomplete="off">
                             </div><!--//form-group-->
                             <div class="form-group password">
                                 <label class="" for="login-password">Password</label>
