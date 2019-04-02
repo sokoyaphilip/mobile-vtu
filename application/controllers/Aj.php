@@ -728,7 +728,6 @@ class Aj extends CI_Controller {
         $this->form_validation->set_rules('plan_id', 'Plan','trim|required|xss_clean');
         $this->form_validation->set_rules('user_meter_name', 'User Meter Name','trim|required|xss_clean');
 
-
         if( $this->form_validation->run() == FALSE ){
             $response['message'] = validation_errors();
             $this->return_response( $response );
