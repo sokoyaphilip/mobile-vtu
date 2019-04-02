@@ -45,7 +45,7 @@
                                                 <td>&#8358;
                                                     <form action="<?= base_url('admin/update_wallet/'); ?>" method="post" id="<?= $user->id;?>">
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control amount" name="wallet" value="<?= $user->wallet;?>" >
+                                                            <input type="text" class="form-control number" name="wallet" value="<?= $user->wallet;?>" >
                                                         </div>
                                                         <input type="hidden" name="user" value="<?= $user->name; ?>">
                                                         <input type="hidden" name="user_id" value="<?= $user->id; ?>">
