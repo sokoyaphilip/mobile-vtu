@@ -893,6 +893,22 @@ $(document).ready(function() {
         }
     });
 
+    $('.update-wallet').on('click', function(){
+        let id = $(this).data('wid');
+        swal({
+            title :'Are you sure?',
+            text : 'You are about updating this user wallet.',
+            icon: 'warning',
+            buttons : true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                $(`#${id}`).submit();
+            }else{
+                swal("Huh! Don't be scared... Nothing happens, smile :) ");
+            }
+        });
+    });
 
 
     // Pin transfer

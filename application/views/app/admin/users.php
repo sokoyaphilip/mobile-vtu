@@ -43,13 +43,13 @@
                                                 </td>
                                                 <td><?= $user->email . ' ' . $user->phone; ?></td>
                                                 <td>&#8358;
-                                                    <form action="<?= base_url('admin/update_wallet/'); ?>" method="POST" id="<?= $user->id;?>">
+                                                    <form action="<?= base_url('admin/update_wallet/'); ?>" id="<?= $user->id;?>">
                                                         <div class="form-group">
-                                                            <label for="User <?= $user->id;?> Wallet">Wallet</label>
-                                                            <input type="text" class="form-control amount" value="<?= $user->wallet;?>" >
+                                                            <input type="text" class="form-control amount" name="wallet" value="<?= $user->wallet;?>" >
                                                         </div>
                                                         <input type="hidden" name="user" value="<?= $user->name; ?>">
-                                                        <button type="submit" class="btn btn-sm">Update Wallet</button>
+                                                        <input type="hidden" name="user_id" value="<?= $user->id; ?>">
+                                                        <button type="button" data-wid="<?= $user->id; ?>" class="btn btn-sm btn-danger update-wallet">Update Wallet</button>
                                                     </form>
                                                 </td>
                                                 <td><?= neatDate($user->last_login) . ' ' . neatTime($user->last_login); ?></td>
