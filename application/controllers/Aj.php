@@ -654,64 +654,34 @@ class Aj extends CI_Controller {
             'user_id'        => $user_id,
             'status'        => 'pending'
         );
-
         if( $variation_detail ){
-            switch ( $variation_detail->api_source) {
-                case 'vtpass':
-                    // we're dealing with vtpass
-                    if( $this->site->insert_data('transactions', $insert_data)){
-                        $data = array(
-                            'serviceID' => $network_name,
-                            'billersCode' => $smart_card_number,
-//                            'billersCode' => "1111111111",
-                            'variation_code' => $variation_detail->variation_name,
-                            'amount'    => (int)$variation_detail->variation_amount,
-                            'phone'     => $registered_number,
-//                            'phone'     => "08123456789",
-                            'request_id'    => $transaction_id
-                        );
 
-                        try {
-                            // call the API
-                            $return = $this->vtpass_curl( $data );
-//                            $response['message'] = $return;
-//                            $this->return_response( $response );
-                            $update_data = array();
-                            if( $return['code'] == "000"){
-                                $update_data['orderid'] = $return['content'][0]['requestId'];
-                                $update_data['status'] = 'success';
-                                $update_data['payment_status'] = $return['response_description'];
-                                $this->site->set_field('users', 'wallet', "wallet-{$plan_detail->amount}", "id={$user_id}");
-                                $response['status'] = 'success';
-                                $response['message'] = "Thank you for subscribing your {$network_name} ({$smart_card_number}) - {$variation_detail->variation_amount} cable with us. Your transaction code is <b>{$transaction_id}</b>, more details on your dashboard.";
+            if( $this->site->insert_data('transactions', $insert_data)){
 
-                            }else{
-                                $update_data['status'] = 'fail';
-                                $update_data['orderid'] = $return['content'][0]['requestId'];
-                                $update_data['payment_status'] = $return['response_description'];
-                                $response['status'] = 'error';
-                                $response['message'] = "There was an error subscribing your  {$network_name}, please try again. Contact us if debited.." .$return ;
+                $update_data = array();
+                $sms_array = array('08066795128' => "{$network_name} ({$smart_card_number}) for {$plan_detail->amount} was just initiated, having ID of {$transaction_id}" );
+                $this->load->library('AfricaSMS', $sms_array);
+                $this->africasms->sendsms();
+                if( $this->africasms->sendsms() ){
+                    $update_data['orderid'] = '000000';
+                    $update_data['status'] = 'success';
+                    $update_data['payment_status'] = "success";
+                    $this->site->set_field('users', 'wallet', "wallet-{$plan_detail->amount}", "id={$user_id}");
+                    $response['status'] = 'success';
+                    $response['message'] = "Thank you for subscribing your {$network_name} ({$smart_card_number}) - {$variation_detail->variation_amount} cable with us. Your transaction code is <b>{$transaction_id}</b>, more details on your dashboard.";
 
-                            }
-                            $this->site->update('transactions',  $update_data, array('trans_id' => $transaction_id));
-                            $this->return_response( $response );
+                }else{
+                    $update_data['status'] = 'fail';
+                    $update_data['orderid'] = '112233';
+                    $update_data['payment_status'] = "fail";
+                    $response['status'] = 'error';
+                    $response['message'] = "There was an error subscribing your  {$network_name}, please try again. Contact us if debited..." ;
 
-                        } catch (Exception $e) {
-                            // No exception
-                            $update_data['status'] = 'fail';;
-                            $update_data['payment_status'] = "Transaction failed.";
-                            $this->site->update('transactions',  $update_data, array('trans_id' => $transaction_id));
-                        }
-
-                    }else{
-                        $response['message'] = "There was an error processing that order.";
-                        $this->return_response( $response );
-                    }
-                    break;
-
-                default:
-                    break;
+                }
+                $this->site->update('transactions',  $update_data, array('trans_id' => $transaction_id));
+                $this->return_response( $response );
             }
+
         }else{
             $response['message'] = "Oops! We can't process your order now, contact us via WhatsApp (" . lang['contact_no']. ")";
             $this->return_response( $response );
