@@ -94,7 +94,7 @@
                                     <input type="hidden" name="product_id" id="product_id" value="8" />
                                     <input type="hidden" name="amount_earned" id="amount_earned" value="" />
                                     <input type="hidden" name="post_type" value="pin_transfer" />
-                                    <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4" disabled type="submit">Submit</button>
+                                    <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4"  type="submit">Submit</button><br />
                                     <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear</button>&nbsp;&nbsp;
                                 </form>
 
