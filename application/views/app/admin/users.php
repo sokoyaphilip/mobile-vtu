@@ -10,7 +10,7 @@
         <!--//header-->
 
         <section>
-            <div class="container dashboard-cover">
+            <div class="container-fluid dashboard-cover">
 <!--                <h2 class="title">Welcome to your dashboard</h2>-->
                 <div class="row">
                     <?php $this->load->view('resources/left_menu'); ?>
@@ -42,7 +42,16 @@
                                                     <?= $user->name; ?>
                                                 </td>
                                                 <td><?= $user->email . ' ' . $user->phone; ?></td>
-                                                <td><?= ngn($user->wallet); ?></td>
+                                                <td>&#8358;
+                                                    <form action="<?= base_url('admin/update_wallet/'); ?>" method="POST" id="<?= $user->id;?>">
+                                                        <div class="form-group">
+                                                            <label for="User <?= $user->id;?> Wallet">Wallet</label>
+                                                            <input type="text" class="form-control amount" value="<?= $user->wallet;?>" >
+                                                        </div>
+                                                        <input type="hidden" name="user" value="<?= $user->name; ?>">
+                                                        <button type="submit" class="btn btn-sm">Update Wallet</button>
+                                                    </form>
+                                                </td>
                                                 <td><?= neatDate($user->last_login) . ' ' . neatTime($user->last_login); ?></td>
                                                 <td><?= $user->status; ?></td>
                                                 <td>
