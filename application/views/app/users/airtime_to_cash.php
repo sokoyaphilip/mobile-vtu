@@ -24,174 +24,79 @@
                             <?php $this->load->view('msg_view'); ?>
                             <div class="col-sm-12 sort-panel">
 
-                                <!-- Nav tabs -->
-                                <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="transfer-tab" disabled="" data-toggle="tab" href="#transfer_tab" role="tab" aria-controls="transfer" aria-selected="true">Airtime Transfer</a>
-
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="pin-tab" data-toggle="tab" href="#pin_tab" role="tab" aria-controls="pin" aria-selected="false">Recharge Pin Transfer</a>
-                                    </li>
-                                </ul>
-
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-
-                                    <div class="tab-pane active" id="transfer_tab" role="tabpanel" aria-labelledby="transfer-tab">
-                                        <div class="alert alert-danger" role="alert">
-                                            <b>Please read the instructions below.</b>
-                                        </div>
-                                        <div id="see-info" class="alert alert-info">
-                                            <p>
-                                                <ul>
-                                                    <li><b>Your account may be blocked if we get multiple request at short period of time from you.</b></li>
-                                                    <li>Fill in the form below correctly for Airtime to cash</li>
-                                                    <li>The minimum amount is N500 and maximum is N5,000</li>
-                                                    <li>If you want to send pin, please load it on any MTN sim and transfer to us.</li>
-                                                    <li>You must send the airtime within 20 minutes or the transaction will be automatically cancelled.</li>
-                                                    <li>To transfer MTN airtime *600*09069118406*amount*pin#</li>
-                                                    <li>To change MTN transfer pin *600*default pin* new pin* new pin*#</li>
-                                                    <li>To transfer 9mobile: *223*pin*amount*number#</li>
-                                                    <li>To change 9mobile transfer pin *247*default pin* new pin* new pin*# eg: *247*0000*new pin#</li>
-                                                    <li>For MTN: Your wallet will be credited with 85% of the amount you send eg: N1000, N850 will be credited.</li>
-                                                    <li>For 9mobile: Your wallet will be credited with 80% of the amount you send eg: N1000, N800 will be credited.</li>
-                                                    <li>You must not send any amount different from the amount filled.</li>
-                                                    <li>We accept airtime Transfer only. Any VTU sent to us will not be credited to your wallet.</li>
-                                                </ul>
-                                            </p>
-                                        </div>
-                                        <form id="airtime_transfer" action="<?= base_url('dashboard/airtime_process');?>" method="post">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="label" for="Network">Please select network <span class="text-danger">*</span></label>
-                                                        <select class="form-control" name="airtime_pin_network" id="airtime_pin_network" required>
-                                                            <option value=""> -- select --</option>
-                                                            <?php foreach ($networks as $network ): ?>
-                                                                <option data-discount="<?= $network->discount; ?>"
-                                                                        value="<?= $network->network_name; ?>"><?= ucwords($network->title); ?></option>
-                                                            <?php endforeach; ?>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="label" for="amount">Please select the amount you're sending <span class="text-danger">*</span></label>
-                                                        <select class="form-control" name="amount" id="pin_amount" required>
-                                                            <option value=""> -- select --</option>
-                                                            <?php for( $x = 100; $x <= 1000; $x += 100 ) : ?>
-                                                                <option value="<?= $x; ?>"> <?= ngn( $x ); ?></option>
-                                                            <?php endfor; ?>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row" style="display: none;">
-                                                <div class="col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="label" for="receiver">Please enter the number you are sending it from <span class="text-danger">*</span></label>
-                                                        <input type="text" name="sender" class="form-control number">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
+                                <form id="pin_transfer" action="<?= base_url('dashboard/airtime_process');?>" method="post">
+                                    <div class="row">
+                                        <div class="col-sm-12">
                                             <div class="form-group">
-                                                <span class="to_receive text-danger"></span>
-                                                <br />
+                                                <label class="label" for="Network">Please select network <span class="text-danger">*</span></label>
+                                                <select class="form-control" name="airtime_pin_network" id="airtime_pin_network" required>
+                                                    <option value=""> -- select --</option>
+                                                    <?php foreach ($networks as $network ): ?>
+                                                        <option data-discount="<?= $network->discount; ?>"
+                                                                value="<?= $network->network_name; ?>"><?= ucwords($network->title); ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                             </div>
-                                            <input type="hidden" name="product_id" id="product_id" value="9" />
-                                            <input type="hidden" name="amount_earned" id="amount_earned" value="" />
-                                            <input type="hidden" name="post_type" value="airtime_transfer" />
-                                            <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4" type="submit">Submit</button>
-                                            <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear</button>&nbsp;&nbsp;
-                                        </form>
+                                        </div>
                                     </div>
 
-                                    <div class="tab-pane" id="pin_tab" role="tabpanel" aria-labelledby="pin-tab">
-                                        <div class="alert alert-info">
-                                            <h3>Coming Pretty soon!</h3>
-                                        </div>
-                                        <form id="pin_transfer" action="<?= base_url('dashboard/airtime_process');?>" method="post">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="label" for="Network">Please select network <span class="text-danger">*</span></label>
-                                                        <select class="form-control" name="airtime_pin_network" id="airtime_pin_network" required>
-                                                            <option value=""> -- select --</option>
-                                                            <?php foreach ($networks as $network ): ?>
-                                                                <option data-discount="<?= $network->discount; ?>"
-                                                                        value="<?= $network->network_name; ?>"><?= ucwords($network->title); ?></option>
-                                                            <?php endforeach; ?>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="label" for="Network">Enter Pin <span class="text-danger">* </span> </label>
-                                                        <input type="text" class="form-control number" name="pin" required />
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="label" for="amount">Please select the amount you're sending <span class="text-danger">*</span></label>
-                                                        <select class="form-control" name="amount" id="pin_amount" required>
-                                                            <option value=""> -- select --</option>
-                                                            <?php for( $x = 100; $x <= 1000; $x += 100 ) : ?>
-                                                                <option value="<?= $x; ?>"> <?= ngn( $x ); ?></option>
-                                                            <?php endfor; ?>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="label" for="how_to_receive">How will you like to be funded <span class="text-danger">*</span></label>
-                                                        <select class="form-control" name="how_to_receive" id="how_to_receive" required>
-                                                            <option value="wallet">Fund my wallet</option>
-                                                            <option value="data" disabled>Swap with mobile data (From N1,000 above)</option>
-                                                            <option value="account" disabled>Transfer the money into my account (From N1,000 above)</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row" style="display: none;">
-                                                <div class="col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="label" for="receiver">Please enter the number <span class="text-danger">*</span></label>
-                                                        <input type="text" name="receiver" class="form-control">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
+                                    <div class="row">
+                                        <div class="col-sm-12">
                                             <div class="form-group">
-                                                <span class="to_receive text-danger"></span>
-                                                <br />
+                                                <label class="label" for="Network">Enter Pin <span class="text-danger">* </span> </label>
+                                                <input type="text" class="form-control number" name="pin" required />
                                             </div>
-
-                                            <input type="hidden" name="product_id" id="product_id" value="8" />
-                                            <input type="hidden" name="amount_earned" id="amount_earned" value="" />
-                                            <input type="hidden" name="post_type" value="pin_transfer" />
-                                            <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4" disabled type="submit">Submit</button>
-                                            <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear</button>&nbsp;&nbsp;
-                                        </form>
+                                        </div>
                                     </div>
-                                </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="label" for="amount">Please select the amount you're sending <span class="text-danger">*</span></label>
+                                                <select class="form-control" name="amount" id="pin_amount" required>
+                                                    <option value=""> -- select --</option>
+                                                    <?php for( $x = 100; $x <= 1000; $x += 100 ) : ?>
+                                                        <option value="<?= $x; ?>"> <?= ngn( $x ); ?></option>
+                                                    <?php endfor; ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="label" for="how_to_receive">How will you like to be funded <span class="text-danger">*</span></label>
+                                                <select class="form-control" name="how_to_receive" id="how_to_receive" required>
+                                                    <option value="wallet">Fund my wallet</option>
+                                                    <option value="data" disabled>Swap with mobile data (From N1,000 above)</option>
+                                                    <option value="account" disabled>Transfer the money into my account (From N1,000 above)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" style="display: none;">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="label" for="receiver">Please enter the number <span class="text-danger">*</span></label>
+                                                <input type="text" name="receiver" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <span class="to_receive text-danger"></span>
+                                        <br />
+                                    </div>
+
+                                    <input type="hidden" name="product_id" id="product_id" value="8" />
+                                    <input type="hidden" name="amount_earned" id="amount_earned" value="" />
+                                    <input type="hidden" name="post_type" value="pin_transfer" />
+                                    <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4" disabled type="submit">Submit</button>
+                                    <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear</button>&nbsp;&nbsp;
+                                </form>
 
                             </div>
                         </div>
