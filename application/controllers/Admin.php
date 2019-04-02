@@ -350,6 +350,8 @@ WHERE t.trans_id = {$tid}")->row();
         $wallet = $this->input->post('wallet');
         $id = $this->input->post('user_id');
         $name = $this->input->post('user');
+        var_dump( $_POST );
+        exit;
         if( $this->site->update('users', array('wallet' => $wallet ), array('id' => $id)) ){
             $this->session->set_flashdata('success_msg', "The user (" . ucwords($name) . $id . $wallet . ") wallet has been updated successfully.");
         }else{
