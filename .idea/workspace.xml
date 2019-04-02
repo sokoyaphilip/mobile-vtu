@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Aj.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Aj.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="845" column="36" selection-start-line="845" selection-start-column="36" selection-end-line="845" selection-end-column="36" />
+            <state relative-caret-position="172">
+              <caret line="990" column="12" selection-start-line="990" selection-start-column="12" selection-end-line="990" selection-end-column="12" />
               <folding>
                 <element signature="e#14#593#0" />
                 <element signature="e#26806#27022#0" />
@@ -83,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="676" column="42" lean-forward="true" selection-start-line="676" selection-start-column="42" selection-end-line="676" selection-end-column="42" />
+            <state relative-caret-position="263">
+              <caret line="662" column="16" selection-start-line="662" selection-start-column="16" selection-end-line="662" selection-end-column="16" />
               <folding>
                 <element signature="n#fetch_plans#0;n#Aj#0;n#!!top" />
                 <element signature="n#buy_airtime#0;n#Aj#0;n#!!top" />
@@ -156,8 +156,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tv_</find>
-      <find>buy_a</find>
       <find>inse</find>
       <find>plan</find>
       <find>we</find>
@@ -186,6 +184,8 @@
       <find>sms_arra</find>
       <find>tv_ca</find>
       <find>smart_card</find>
+      <find>callS</find>
+      <find>callSMSAPI</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -242,9 +242,9 @@
         <option value="$PROJECT_DIR$/application/views/app/admin/users.php" />
         <option value="$PROJECT_DIR$/application/controllers/Admin.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/airtime_to_cash.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Aj.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/subscription.php" />
         <option value="$PROJECT_DIR$/assets/js/functions.js" />
+        <option value="$PROJECT_DIR$/application/controllers/Aj.php" />
       </list>
     </option>
   </component>
@@ -447,12 +447,12 @@
       <workItem from="1553862208068" duration="10601000" />
       <workItem from="1553978480753" duration="1833000" />
       <workItem from="1554023396112" duration="9368000" />
-      <workItem from="1554124240573" duration="13267000" />
+      <workItem from="1554124240573" duration="13523000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="673773000" />
+    <option name="totallyTimeSpent" value="674029000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -844,22 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="676" column="42" lean-forward="true" selection-start-line="676" selection-start-column="42" selection-end-line="676" selection-end-column="42" />
-          <folding>
-            <element signature="n#fetch_plans#0;n#Aj#0;n#!!top" />
-            <element signature="n#buy_airtime#0;n#Aj#0;n#!!top" />
-            <element signature="n#quick_airtime#0;n#Aj#0;n#!!top" />
-            <element signature="n#electricity_bill#0;n#Aj#0;n#!!top" />
-            <element signature="n#verify_iuc_number#0;n#Aj#0;n#!!top" />
-            <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
-            <element signature="e#45882#48960#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/app/users/subscription.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -873,8 +857,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="845" column="36" selection-start-line="845" selection-start-column="36" selection-end-line="845" selection-end-column="36" />
+        <state relative-caret-position="172">
+          <caret line="990" column="12" selection-start-line="990" selection-start-column="12" selection-end-line="990" selection-end-column="12" />
           <folding>
             <element signature="e#14#593#0" />
             <element signature="e#26806#27022#0" />
@@ -882,6 +866,22 @@
             <element signature="n#!!block;n#format_currency#0" />
             <element signature="n#!!block;n#sweet_alert#0" />
             <element signature="n#!!block;n#addCommas#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="662" column="16" selection-start-line="662" selection-start-column="16" selection-end-line="662" selection-end-column="16" />
+          <folding>
+            <element signature="n#fetch_plans#0;n#Aj#0;n#!!top" />
+            <element signature="n#buy_airtime#0;n#Aj#0;n#!!top" />
+            <element signature="n#quick_airtime#0;n#Aj#0;n#!!top" />
+            <element signature="n#electricity_bill#0;n#Aj#0;n#!!top" />
+            <element signature="n#verify_iuc_number#0;n#Aj#0;n#!!top" />
+            <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
+            <element signature="e#45882#48960#0#PHP" />
           </folding>
         </state>
       </provider>

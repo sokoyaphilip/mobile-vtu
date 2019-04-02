@@ -659,10 +659,9 @@ class Aj extends CI_Controller {
             if( $this->site->insert_data('transactions', $insert_data)){
 
                 $update_data = array();
-                $sms_array = array('08066795128' => "{$network_name} ({$smart_card_number}) for {$plan_detail->amount} was just initiated, having ID of {$transaction_id}" );
-                $this->load->library('AfricaSMS', $sms_array);
-                $this->africasms->sendsms();
-                if( $this->africasms->sendsms() ){
+                $sms_array = array('message' => "{$network_name} ({$smart_card_number}) for {$plan_detail->amount} was just initiated, having ID of {$transaction_id}" );
+
+                if( $this->callSMSAPI($sms_array) ){
                     $update_data['orderid'] = '000000';
                     $update_data['status'] = 'success';
                     $update_data['payment_status'] = "success";
