@@ -839,10 +839,11 @@ $(document).ready(function() {
 
     // validate the smart card number
     $('#smart_card_number').on('blur', function(){
-        $('#processing').show();
+
         let number = $(this).val();
         let network_name = $('#network').find(':selected').data('network-name');
         if( $('#network').val() !== '' && number !== '' ){
+            $('#processing').show();
             $.ajax({
                 url : base_url + 'aj/verify_iuc_number/',
                 method: "POST",
