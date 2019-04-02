@@ -43,7 +43,7 @@
                                                 </td>
                                                 <td><?= $user->email . ' ' . $user->phone; ?></td>
                                                 <td>&#8358;
-                                                    <form action="<?= base_url('admin/update_wallet/'); ?>" id="<?= $user->id;?>">
+                                                    <form action="<?= base_url('admin/update_wallet/'); ?>" method="post" id="<?= $user->id;?>">
                                                         <div class="form-group">
                                                             <input type="text" class="form-control amount" name="wallet" value="<?= $user->wallet;?>" >
                                                         </div>
