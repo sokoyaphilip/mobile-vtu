@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e46ce8b-617f-4660-b0bb-5e8bc2102c31" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/application/controllers/Aj.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Aj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/app/users/subscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/app/users/subscription.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="896" column="32" selection-start-line="896" selection-start-column="32" selection-end-line="896" selection-end-column="32" />
+            <state relative-caret-position="637">
+              <caret line="490" column="38" selection-start-line="490" selection-start-column="33" selection-end-line="490" selection-end-column="38" />
               <folding>
                 <element signature="e#14#593#0" />
                 <element signature="e#26806#27022#0" />
@@ -83,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-22">
-              <caret line="661" column="95" selection-start-line="661" selection-start-column="95" selection-end-line="661" selection-end-column="95" />
+            <state relative-caret-position="203">
+              <caret line="676" column="42" lean-forward="true" selection-start-line="676" selection-start-column="42" selection-end-line="676" selection-end-column="42" />
               <folding>
                 <element signature="n#fetch_plans#0;n#Aj#0;n#!!top" />
                 <element signature="n#buy_airtime#0;n#Aj#0;n#!!top" />
@@ -96,6 +96,19 @@
                 <element signature="n#verify_iuc_number#0;n#Aj#0;n#!!top" />
                 <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
                 <element signature="e#45882#48960#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/app/users/subscription.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="71" column="146" selection-start-line="71" selection-start-column="146" selection-end-line="71" selection-end-column="146" />
+              <folding>
+                <element signature="e#4719#4725#0#HTML" expanded="true" />
+                <element signature="e#4725#4731#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -143,8 +156,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pay-no</find>
-      <find>fund_wal</find>
       <find>numb</find>
       <find>tv_</find>
       <find>buy_a</find>
@@ -173,6 +184,8 @@
       <find>delete</find>
       <find>update</find>
       <find>tv_cable</find>
+      <find>sms_arra</find>
+      <find>tv_ca</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -217,7 +230,6 @@
         <option value="$PROJECT_DIR$/application/helpers/site_helper.php" />
         <option value="$PROJECT_DIR$/application/views/app/admin/approval.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/profile.php" />
-        <option value="$PROJECT_DIR$/application/views/app/users/subscription.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/electricity.php" />
         <option value="$PROJECT_DIR$/application/views/app/admin/profile.php" />
         <option value="$PROJECT_DIR$/application/views/resources/left_menu.php" />
@@ -232,6 +244,7 @@
         <option value="$PROJECT_DIR$/application/controllers/Admin.php" />
         <option value="$PROJECT_DIR$/application/views/app/users/airtime_to_cash.php" />
         <option value="$PROJECT_DIR$/application/controllers/Aj.php" />
+        <option value="$PROJECT_DIR$/application/views/app/users/subscription.php" />
       </list>
     </option>
   </component>
@@ -434,12 +447,12 @@
       <workItem from="1553862208068" duration="10601000" />
       <workItem from="1553978480753" duration="1833000" />
       <workItem from="1554023396112" duration="9368000" />
-      <workItem from="1554124240573" duration="13003000" />
+      <workItem from="1554124240573" duration="13051000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="673509000" />
+    <option name="totallyTimeSpent" value="673557000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1600" height="873" extended-state="6" />
@@ -731,13 +744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/app/users/subscription.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="71" column="91" selection-start-line="71" selection-start-column="91" selection-end-line="71" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/app/users/electricity.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
@@ -787,21 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="896" column="32" selection-start-line="896" selection-start-column="32" selection-end-line="896" selection-end-column="32" />
-          <folding>
-            <element signature="e#14#593#0" />
-            <element signature="e#26806#27022#0" />
-            <element signature="e#32819#34009#0" />
-            <element signature="n#!!block;n#format_currency#0" />
-            <element signature="n#!!block;n#sweet_alert#0" />
-            <element signature="n#!!block;n#addCommas#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -855,8 +846,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Aj.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="661" column="95" selection-start-line="661" selection-start-column="95" selection-end-line="661" selection-end-column="95" />
+        <state relative-caret-position="203">
+          <caret line="676" column="42" lean-forward="true" selection-start-line="676" selection-start-column="42" selection-end-line="676" selection-end-column="42" />
           <folding>
             <element signature="n#fetch_plans#0;n#Aj#0;n#!!top" />
             <element signature="n#buy_airtime#0;n#Aj#0;n#!!top" />
@@ -865,6 +856,32 @@
             <element signature="n#verify_iuc_number#0;n#Aj#0;n#!!top" />
             <element signature="n#_submitGet#0;n#Aj#0;n#!!top" />
             <element signature="e#45882#48960#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="490" column="38" selection-start-line="490" selection-start-column="33" selection-end-line="490" selection-end-column="38" />
+          <folding>
+            <element signature="e#14#593#0" />
+            <element signature="e#26806#27022#0" />
+            <element signature="e#32819#34009#0" />
+            <element signature="n#!!block;n#format_currency#0" />
+            <element signature="n#!!block;n#sweet_alert#0" />
+            <element signature="n#!!block;n#addCommas#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/app/users/subscription.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="71" column="146" selection-start-line="71" selection-start-column="146" selection-end-line="71" selection-end-column="146" />
+          <folding>
+            <element signature="e#4719#4725#0#HTML" expanded="true" />
+            <element signature="e#4725#4731#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
