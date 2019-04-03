@@ -54,11 +54,11 @@
                                         </div>
                                     </div>
 
-                                    <div class="row" style="display: none;">
+                                    <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <label class="label" for="receiver">Enter the number <span class="text-danger">*</span></label>
-                                                <input type="text" name="receiver" class="form-control">
+                                                <label class="label" for="sender">Enter the number <span class="text-danger">*</span></label>
+                                                <input type="text" name="sender" class="form-control">
                                             </div>
                                         </div>
                                     </div>
