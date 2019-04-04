@@ -24,7 +24,29 @@
                             <?php $this->load->view('msg_view'); ?>
                             <div class="col-sm-12 sort-panel">
 
-                                <form id="pin_transfer" action="<?= base_url('dashboard/airtime_process');?>" method="post">
+                                <?php if( $row ) : ?>
+                                    <div class="col-4">
+                                        <p><?= $row->details; ?></p>
+                                    </div>
+                                    <p>
+                                        <b>Amount Initiated</b> : <?= $row->incoming; ?>
+                                    </p>
+                                    <p>
+                                        <b>Amount To Receive</b> : <?= $row->outgoing; ?>
+                                    </p>
+                                    <p>
+                                        <b>Network</b> : <?= $row->network; ?>
+                                    </p>
+                                    <p>
+                                        <b>Status</b> : <?= $row->status; ?>
+                                    </p>
+                                    <p>
+                                        <b>Date Initiated</b> : <?= neatDate($row->datetime) . ' ' . neatTime($row->datetime); ?>
+                                    </p>
+
+                                    <a class="btn btn-cta btn-cta-primary btn-sm col-sm-4" href="<?= base_url('dashboard/airtime_to_cash/')?>"  type="submit">Proceed</a>
+                                <?php else :?>
+                                    <form id="pin_transfer" action="<?= base_url('dashboard/airtime_process');?>" method="post">
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
@@ -57,7 +79,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <label class="label" for="sender">Enter the number <span class="text-danger">*</span></label>
+                                                <label class="label" for="sender">Enter the number you're sending it from <span class="text-danger">*</span></label>
                                                 <input type="text" name="sender" class="form-control">
                                             </div>
                                         </div>
@@ -73,6 +95,7 @@
                                     <button class="btn btn-cta btn-cta-primary btn-sm col-sm-4"  type="submit">Submit</button>
                                     <button type="reset" class="btn btn-cta btn-cta-secondary btn-sm col-sm-3">Clear</button>&nbsp;&nbsp;
                                 </form>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>

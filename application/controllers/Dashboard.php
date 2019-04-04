@@ -116,7 +116,6 @@ class Dashboard extends CI_Controller {
         $page_data['title'] = "Airtime to Cash";
         $page_data['user'] = $this->get_profile( $id );
         $page_data['networks'] = $this->site->run_sql("SELECT p.slug, s.id, s.title, network_name, discount FROM products p LEFT JOIN services s ON (p.id = s.product_id) WHERE p.title ='airtime' ")->result();
-        $page_data['fundings'] = $this->site->get_result('transactions', '*' , " user_id = {$id}");
         $this->load->view('app/users/airtime_to_cash', $page_data);
     }
 
@@ -237,6 +236,7 @@ class Dashboard extends CI_Controller {
 
                 try {
                     $details = ucwords($network) . " N" . $amount . ucwords( $airtime_pin_network ). " network transfer to gecharl.com";
+                    $details .= $this->switch_network_details( $network ,$amount);
                     $receiver = $this->input->post('receiver', true);
                     if( $receiver ) $details .= " : {$receiver}";
                     $this->db->trans_start();
@@ -252,14 +252,15 @@ class Dashboard extends CI_Controller {
                         'details' => $details,
                         'datetime'  => get_now()
                     );
-                    $this->site->insert_data('airtime_to_cash', $airtime_to_cash_table);
+                    $aid = $this->site->insert_data('airtime_to_cash', $airtime_to_cash_table);
                     $this->db->trans_complete();
                     if ($this->db->trans_status() === FALSE){
                         $this->session->set_flashdata('error_msg', 'There was an error processing your request.');
                         $this->db->trans_rollback();
                     }else{
                         // Send a message to the admin??
-                        $array['message'] = 'A user just sent '.$amount .' airtime to you via transfer, Go to dashboard to confirm.';
+                        redirect('dashboard/preview/?a=' . $aid );
+                        $array['message'] = 'A user just sent ' . $network .'('.$amount .') airtime to you via transfer, Go to dashboard to confirm.';
                         $this->callSMSAPI($array);
                         $this->db->trans_commit();
                         $this->session->set_flashdata('success_msg', 'Your request has been received and its under processed.');
@@ -271,6 +272,46 @@ class Dashboard extends CI_Controller {
                 redirect( $_SERVER['HTTP_REFERER']);
                 break;
 
+                break;
+        }
+    }
+
+    public function preview(){
+        $id = cleanit($this->input->get('a', true));
+        if( !$id ) redirect( $_SERVER['HTTP_REFERER']);
+        $row = $this->site->run_sql("SELECT * FROM airtime_to_cash WHERE id = {$id} ")->row();
+        if( !$row ){
+            $this->session->set_flashdata('error_msg', "Looks like you are looking for something else :( ");
+            redirect($_SERVER['HTTP_REFERER']);
+        }else{
+            $id = $this->session->userdata('logged_id');
+            $page_data['page'] = 'airtime2cash';
+            $page_data['title'] = "Airtime to Cash";
+            $page_data['user'] = $this->get_profile( $id );
+            $page_data['row'] = $row;
+            $this->load->view('app/users/airtime_to_cash', $page_data);
+        }
+    }
+
+    function switch_network_details( $network, $amount ){
+        $network = trim( strtolower($network) );
+        $detail = '';
+        switch ( $network ){
+            case 'glo':
+                break;
+            case '9mobile':
+                break;
+            case 'airtel':
+//                09073940928
+                $detail = "Kindly transfer N{$amount} airtime from Airtel network to 09073940928\n\r";
+                $detail .= "*432*1*# To 09073940928 If you don't have a PIN *432*1*# (Default pin:1234)";
+                return $detail;
+                break;
+            default:
+                // mtn
+                $detail = "Transfer N{$amount} airtime on your MTN network MTN Share ’N’ Sell by dialing *600*08066795128*{$amount}.0*PIN#";
+                $detail .= "\n\r If you don't have a PIN, use 1234 as your PIN Dial: *600*0000*new pin*new pin# i.e *600*0000*1234*1234# ";
+                return $detail;
                 break;
         }
     }
@@ -440,7 +481,8 @@ class Dashboard extends CI_Controller {
                 'UserID' => CK_USER_ID,
                 'APIKey' => CK_KEY,
                 'Sender' => 'Gecharl',
-                'Recipient' => '08066795128',
+//                'Recipient' => '08066795128',
+                'Recipient' => '08070994845',
                 'Message' => $data['message']
 //                08151148607
             )

@@ -314,13 +314,6 @@ class Aj extends CI_Controller {
 //                        $this->load->library('JusibeSMS', $sms_array);
 //                        $this->jusibesms->sendsms();
 
-//                        $receiver = "08169254598";
-//                        $result = file_get_contents('http://www.supertextng.com/api.php?username=sokoyaphilip&password=philpass19&destination='.$receiver.'&message='.$ret.'&sender=GecharlData&nodnd=yes');
-//                        $response['message'] .= ' again ' . $result;
-//                        if( is_int($result) ){
-//                            $error = true;
-//                        }
-//                        }
                     }else{
                         $error = true;
                     }
